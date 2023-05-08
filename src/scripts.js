@@ -61,6 +61,18 @@ function experiencePage() {
         </div>
     `);
 }
+
+function reposPage() {
+    clearBody();
+    $('#Content_Body').append(`
+        <div class="card">
+            <div class="card-body">
+                Here is where I will discuss the different repositories I have made recently
+            </div>
+        </div>
+    `);
+}
+
 function dogPage() {
     clearBody();
     $('#Content_Body').append(`
@@ -81,6 +93,7 @@ function hobbiesPage() {
         </div>
     `);
 }
+
 function contactMePage() {
     clearBody();
     $('#Content_Body').append(`
