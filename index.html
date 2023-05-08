@@ -5,11 +5,13 @@
         <link rel="stylesheet" href="./src/myStyle.css">
         <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
         <script src="./src/scripts.js"></script>
+        <script src="./src/pages/aboutMePage.js"></script>
+        <script src="./src/pages/experiencePage.js"></script>
     </head>
 <body>
     <div class="container-fluid">
         <div class="row flex-nowrap">
-            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0" style="background-color: #374955;">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 shadow-4-strong" style="background-color: #374955;">
                 <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                     <a href="#" onClick="clearBody()" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                         <img class="rounded-circle shadow-4-strong" alt="Me!" src="./assets/professional_photo.jpg" width="100%"/>
@@ -51,7 +53,11 @@
                     <hr>
                 </div>
             </div>
-            <div class="col py-3" style="background-image: url('./assets/beach.jpg'); background-size:cover;">
+            <div class="col py-3" style="
+                background-image: url('./assets/beach.jpg');
+                background-size:100% 100%;
+                background-attachment: fixed;
+            ">
                 <div id="Content_Body">
 
                 </div>

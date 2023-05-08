@@ -1,3 +1,12 @@
 span {
     color: aliceblue;
 }
+
+.cardbackdrop {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.cardmargins {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
