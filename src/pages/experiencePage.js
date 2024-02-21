@@ -13,7 +13,7 @@ function blackPointCyberCard() {
             <div class="row g-0 cardmargins">
                 <div class="col-md-2 cardbackdrop">
                     <a href="https://blackpointcyber.com/">
-                        <img src="https://blackpointcyber.com/wp-content/themes/blackpoint_cyber_wp/images/symbol-defs.svg#icon-blackpoint-cyber-logo-reversed" class="img-fluid rounded-start" alt="Atreo Logo">
+                        <img src="./assets/blackpointlogo.png" class="img-fluid rounded-start" alt="Atreo Logo">
                     </a>
                 </div>
                 <div class="col-md-10 cardbackdrop">
@@ -169,8 +169,8 @@ function emcCard() {
         <div class="card mb-3 bg-transparent border-0" style="max-width: 100%;">
             <div class="row g-0 cardmargins">
                 <div class="col-md-2 cardbackdrop">
-                    <a href="https://www.atreo.io/">
-                        <img src="./assets/Atreo_logo_transparent.png" class="img-fluid rounded-start" alt="Atreo Logo">
+                    <a href="https://www.emcins.com/">
+                        <img src="./assets/emc_insurance.png" class="img-fluid rounded-start" alt="Atreo Logo">
                     </a>
                 </div>
                 <div class="col-md-10 cardbackdrop">
@@ -209,8 +209,8 @@ function geekSquadCard() {
         <div class="card mb-3 bg-transparent border-0" style="max-width: 100%;">
             <div class="row g-0 cardmargins">
                 <div class="col-md-2 cardbackdrop">
-                    <a href="https://www.atreo.io/">
-                        <img src="./assets/Atreo_logo_transparent.png" class="img-fluid rounded-start" alt="Atreo Logo">
+                    <a href="https://geeksquad.com/">
+                        <img src="./assets/geek_squad.png" class="img-fluid rounded-start" alt="Atreo Logo">
                     </a>
                 </div>
                 <div class="col-md-10 cardbackdrop">
