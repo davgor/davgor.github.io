@@ -18,7 +18,7 @@ function blackPointCyberCard() {
                 </div>
                 <div class="col-md-10 cardbackdrop">
                     <div class="card-body">
-                        <h5 class="card-title">Geek Squad - Consultation Agent - 07/01/2015 - 08/15/2017</h5>
+                        <h5 class="card-title">Blackpoint Cyber - QA Manager - 05/21/2023 - Current </h5>
                         <p class="card-text">
                             Placeholder
                         </p>
