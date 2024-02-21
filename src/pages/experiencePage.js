@@ -13,7 +13,7 @@ function blackPointCyberCard() {
             <div class="row g-0 cardmargins">
                 <div class="col-md-2 cardbackdrop">
                     <a href="https://blackpointcyber.com/">
-                        <img src="./assets/blackpointlogo.png" class="img-fluid rounded-start" alt="Atreo Logo">
+                        <img src="./assets/blackpointlogo.png" class="img-fluid rounded-start" style="padding: 10px;" alt="Atreo Logo">
                     </a>
                 </div>
                 <div class="col-md-10 cardbackdrop">
@@ -41,7 +41,7 @@ function lyftCard() {
             <div class="row g-0 cardmargins">
                 <div class="col-md-2 cardbackdrop">
                     <a href="https://www.lyft.com/">
-                        <img src="./assets/lyft-logo-transparent.png" class="img-fluid rounded-start" alt="Lyft Logo">
+                        <img src="./assets/lyft-logo-transparent.png" style="padding: 10px;" class="img-fluid rounded-start" alt="Lyft Logo">
                     </a>
                 </div>
                 <div class="col-md-10 cardbackdrop">
@@ -103,7 +103,7 @@ function atreoCard() {
             <div class="row g-0 cardmargins">
                 <div class="col-md-2 cardbackdrop">
                     <a href="https://www.atreo.io/">
-                        <img src="./assets/Atreo_logo_transparent.png" class="img-fluid rounded-start" alt="Atreo Logo">
+                        <img src="./assets/Atreo_logo_transparent.png" style="padding: 10px;" class="img-fluid rounded-start" alt="Atreo Logo">
                     </a>
                 </div>
                 <div class="col-md-10 cardbackdrop">
@@ -170,7 +170,7 @@ function emcCard() {
             <div class="row g-0 cardmargins">
                 <div class="col-md-2 cardbackdrop">
                     <a href="https://www.emcins.com/">
-                        <img src="./assets/emc_insurance.png" class="img-fluid rounded-start" alt="Atreo Logo">
+                        <img src="./assets/emc_insurance.png" style="padding: 10px;" class="img-fluid rounded-start" alt="Atreo Logo">
                     </a>
                 </div>
                 <div class="col-md-10 cardbackdrop">
@@ -210,19 +210,23 @@ function geekSquadCard() {
             <div class="row g-0 cardmargins">
                 <div class="col-md-2 cardbackdrop">
                     <a href="https://geeksquad.com/">
-                        <img src="./assets/geek_squad.png" class="img-fluid rounded-start" alt="Atreo Logo">
+                        <img src="./assets/geek_squad.png" style="padding: 10px;" class="img-fluid rounded-start" alt="Atreo Logo">
                     </a>
                 </div>
                 <div class="col-md-10 cardbackdrop">
                     <div class="card-body">
                         <h5 class="card-title">Geek Squad - Consultation Agent - 07/01/2015 - 08/15/2017</h5>
                         <p class="card-text">
-                            Placeholder
+                            I was a consultation agent for Geek Squad while I was attending Des Moines Area Community College. During this time, I
+                            became adept at interacting with customers, and prospective clients. We would routinely help people through all manner of
+                            issues and would frequently work to free customer devices from different malware. Not only this but I also leveraged my skills
+                            in programming to recreate certain scams in a controlled environment, then educate the customer on how to get themselves out.
                         </p>
                         <h6><b>Achievements</b></h6>
                         <ul>
                             <li>
-                                Placeholder
+                                Created the scam simulator website, that would act as some malicious ads were at the time, for example requiring customers 
+                                to call a number to remove a pop up that would lock down their browser by throwing an alert in a loop. 
                             </li>
                         <ul>
                     </div>
