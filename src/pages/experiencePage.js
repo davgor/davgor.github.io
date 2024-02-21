@@ -2,6 +2,8 @@ function experiencePage() {
     clearBody();
     lyftCard();
     atreoCard();
+    emcCard();
+    geekSquadCard();
 }
 
 function lyftCard() {
@@ -101,12 +103,12 @@ function atreoCard() {
                             execution time, without sacraficing the test suites value.
                         </p>
                         <p class="card-text">
-                        Once the infrastructure to handle massive test suites was completed, we began to expand the automation engineer team, adding 2 
-                        additional automation engineers, who I then mentored on automation practices, <b>Typescript</b> development, 
-                        <b>Data Driven Testing</b>, and then managed their resourcing to different products within Atreo.io. I also helped design and 
-                        implement the hiring test to assess the skill levels of new incoming automation engineers, this allowed us to gauge an 
-                        individual's speed in learning a new automation framework, and got them more familiar with the company by having them crawl 
-                        on our corporate website. 
+                            Once the infrastructure to handle massive test suites was completed, we began to expand the automation engineer team, adding 2 
+                            additional automation engineers, who I then mentored on automation practices, <b>Typescript</b> development, 
+                            <b>Data Driven Testing</b>, and then managed their resourcing to different products within Atreo.io. I also helped design and 
+                            implement the hiring test to assess the skill levels of new incoming automation engineers, this allowed us to gauge an 
+                            individual's speed in learning a new automation framework, and got them more familiar with the company by having them crawl 
+                            on our corporate website. 
                         </p>
                         <h6><b>Achievements</b></h6>
                         <ul>
@@ -124,6 +126,74 @@ function atreoCard() {
                             </li>
                             <li>
                                 Lead a small team of Automation Engineers, and up-skilled manual quality assurance engineers to quality automation engineers.
+                            </li>
+                        <ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `);
+}
+
+function emcCard() {
+    addToBody(`
+        <div class="card mb-3 bg-transparent border-0" style="max-width: 100%;">
+            <div class="row g-0 cardmargins">
+                <div class="col-md-2 cardbackdrop">
+                    <a href="https://www.atreo.io/">
+                        <img src="./assets/Atreo_logo_transparent.png" class="img-fluid rounded-start" alt="Atreo Logo">
+                    </a>
+                </div>
+                <div class="col-md-10 cardbackdrop">
+                    <div class="card-body">
+                        <h5 class="card-title">EMC Insurance - QA Engineer 3 - 02/01/2021 - 07/23/2021</h5>
+                        <p class="card-text">
+                            Placeholder
+                        </p>
+                        <h6><b>Achievements</b></h6>
+                        <ul>
+                            <li>
+                                Placeholder
+                            </li>
+                        <ul>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">EMC Insurance - Application Developer 2 - 08/15/2017 - 02/01/2021</h5>
+                        <p class="card-text">
+                            Placeholder
+                        </p>
+                        <h6><b>Achievements</b></h6>
+                        <ul>
+                            <li>
+                                Placeholder
+                            </li>
+                        <ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `);
+}
+
+function geekSquadCard() {
+    addToBody(`
+        <div class="card mb-3 bg-transparent border-0" style="max-width: 100%;">
+            <div class="row g-0 cardmargins">
+                <div class="col-md-2 cardbackdrop">
+                    <a href="https://www.atreo.io/">
+                        <img src="./assets/Atreo_logo_transparent.png" class="img-fluid rounded-start" alt="Atreo Logo">
+                    </a>
+                </div>
+                <div class="col-md-10 cardbackdrop">
+                    <div class="card-body">
+                        <h5 class="card-title">Geek Squad - Consultation Agent - 07/01/2015 - 08/15/2017</h5>
+                        <p class="card-text">
+                            Placeholder
+                        </p>
+                        <h6><b>Achievements</b></h6>
+                        <ul>
+                            <li>
+                                Placeholder
                             </li>
                         <ul>
                     </div>
