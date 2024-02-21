@@ -1,9 +1,38 @@
 function experiencePage() {
     clearBody();
+    blackPointCyberCard();
     lyftCard();
     atreoCard();
     emcCard();
     geekSquadCard();
+}
+
+function blackPointCyberCard() {
+    addToBody(`
+        <div class="card mb-3 bg-transparent border-0" style="max-width: 100%;">
+            <div class="row g-0 cardmargins">
+                <div class="col-md-2 cardbackdrop">
+                    <a href="https://blackpointcyber.com/">
+                        <img src="https://blackpointcyber.com/wp-content/themes/blackpoint_cyber_wp/images/symbol-defs.svg#icon-blackpoint-cyber-logo-reversed" class="img-fluid rounded-start" alt="Atreo Logo">
+                    </a>
+                </div>
+                <div class="col-md-10 cardbackdrop">
+                    <div class="card-body">
+                        <h5 class="card-title">Geek Squad - Consultation Agent - 07/01/2015 - 08/15/2017</h5>
+                        <p class="card-text">
+                            Placeholder
+                        </p>
+                        <h6><b>Achievements</b></h6>
+                        <ul>
+                            <li>
+                                Placeholder
+                            </li>
+                        <ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `);
 }
 
 function lyftCard() {
