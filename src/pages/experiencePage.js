@@ -177,24 +177,65 @@ function emcCard() {
                     <div class="card-body">
                         <h5 class="card-title">EMC Insurance - QA Engineer 3 - 02/01/2021 - 07/23/2021</h5>
                         <p class="card-text">
-                            Placeholder
+                            After working with the QA team for several years at this point, I transitioned over to the QA department as a fully fledged
+                            QA. I was assigned to the forms team, and was given a small team of contractors to help write up automated tests, and improve the
+                            QA coverage on the forms team. During this time, I helped train my QA's on how to use ReadyAPI to create automated API tests, that would
+                            request a form, and do a pixel-by-pixel comparison with the template to ensure that the forms generated matched with the requested design.
+                            After working with the team for a few months I built out a series of documents that helped standardize our workflow, and dramatically improved 
+                            the efficiency of the team. To such an extent that I no longer needed to request 5 contractors for the forms team, eventually rolling off 2 forms QA's
+                            and by the time I left the role, I was able to leave without the role needing backfilled, and was taken over by one of the contractors I trained.
                         </p>
                         <h6><b>Achievements</b></h6>
                         <ul>
                             <li>
-                                Placeholder
+                                Built out standards and practices as well as training the QA contractors on those new standards, and guided them to adoption.
+                            </li>
+                            <li>
+                                Over the course of 5 months, I was able to improve the teams efficiency to the point to where we could roll off 2 contractors, allowing
+                                them to transition to more in need sections of the organization.
                             </li>
                         <ul>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">EMC Insurance - Application Developer 2 - 08/15/2017 - 02/01/2021</h5>
                         <p class="card-text">
-                            Placeholder
+                            This was my first job after college, I was hired as a developer for the EMC bonds team, where I would work with a small scrum team 
+                            to write and maintain the bonds software that EMC utilized. We were the first team to transition to a scrum team, and helped spearhead
+                            the company wide adoption of the SCRUM framework. During this time, we transition from mostly writing mapper applications to creating web-based
+                            applications. During this transition I helped train the team on how to code in JavaScript, and got everyone comfortable with web development. We eventually
+                            brought in a new forms process that allowed us to imbed form fillable pdfs into our legacy website, and retrieve information from the form, and leverage the data
+                            in a later process. 
+                        </p>
+                        <p class="card-text">
+                            After we transitioned to writing most of our code in JavaScript, I went to the QA team to begin writing automated tests. At this point all of 
+                            our testing was done by developers, and none of it was automated. After going to the the QA manager at the time started a pilot program to begin
+                            training developers on how to write automated tests for the web applications. This served 2 purposes, to allow developers to streamline their
+                            current QA process, and helped transition legacy developers over to more modern languages other than mapper. In our case we used Java, and Selenium. 
+                            Before too long I was helping train other developers, while completing my work for the Bonds team. 
+                        </p>
+                        <p class="card-text">
+                            After I had helped spin up the transition project for the QA team, the company began transitioning away from mapper, and began training the
+                            entire development department on more modern languages then mapper such as C#. I worked with my team to show them the in's and out's of Visual Studio
+                            and C#. After teaching them the principals of Object Orientated Programming, we began a transition to C#.
                         </p>
                         <h6><b>Achievements</b></h6>
                         <ul>
                             <li>
-                                Placeholder
+                                With the team, we were the first SCRUM team at EMC insurance, and spearheaded the company wide adoption of SCRUM.
+                            </li>
+                            <li>
+                                Designed and architected the adoption of the vendor that allowed us to utilize the innumerable forms that are within bonds,
+                                Then trained the team on JavaScript, while developing the new feature.
+                            </li>
+                            <li>
+                                Worked with the QA team to be the first legacy dev team to begin developing automated tests with Selenium.
+                            </li>
+                            <li>
+                                Helped the QA team develop the hybrid QA/Developer role, then began training other hybrid developers on how to write and 
+                                maintain automated tests, and how to leverage their routine automation within Jenkins.
+                            </li>
+                            <li>
+                                Trained and worked with the rest of my bonds team to prepare them to transition from mapper to C# as the company transitioned to a modern language.
                             </li>
                         <ul>
                     </div>
