@@ -29,16 +29,6 @@ function dogPage() {
         </div>
     `);
 }
-function hobbiesPage() {
-    clearBody();
-    $('#Content_Body').append(`
-        <div class="card ">
-            <div class="card-body">
-                Hobbies page will be here
-            </div>
-        </div>
-    `);
-}
 
 function contactMePage() {
     clearBody();
