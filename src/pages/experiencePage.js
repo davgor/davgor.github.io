@@ -27,7 +27,7 @@ function blackPointCyberCard() {
                             <li>
                                 Placeholder
                             </li>
-                        <ul>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -89,7 +89,7 @@ function lyftCard() {
                             </li>
                             <li>
                                 Created and pushed new automation best practices to follow to reduce weekly maintaince load on test engineers, while expanding test suite to focus on the highest value items.                            </li>
-                        <ul>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -156,7 +156,7 @@ function atreoCard() {
                             <li>
                                 Lead a small team of Automation Engineers, and up-skilled manual quality assurance engineers to quality automation engineers.
                             </li>
-                        <ul>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -237,7 +237,7 @@ function emcCard() {
                             <li>
                                 Trained and worked with the rest of my bonds team to prepare them to transition from mapper to C# as the company transitioned to a modern language.
                             </li>
-                        <ul>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -269,7 +269,7 @@ function geekSquadCard() {
                                 Created the scam simulator website, that would act as some malicious ads were at the time, for example requiring customers 
                                 to call a number to remove a pop up that would lock down their browser by throwing an alert in a loop. 
                             </li>
-                        <ul>
+                        </ul>
                     </div>
                 </div>
             </div>

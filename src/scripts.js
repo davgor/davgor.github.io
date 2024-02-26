@@ -29,14 +29,3 @@ function dogPage() {
         </div>
     `);
 }
-
-function contactMePage() {
-    clearBody();
-    $('#Content_Body').append(`
-        <div class="card">
-            <div class="card-body">
-                Contact me page will be here
-            </div>
-        </div>
-    `);
-}
