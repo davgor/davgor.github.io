@@ -20,13 +20,58 @@ function blackPointCyberCard() {
                     <div class="card-body">
                         <h5 class="card-title">Blackpoint Cyber - QA Manager - 05/21/2023 - Current </h5>
                         <p class="card-text">
-                            Placeholder
+                            <h6><b>Why I was hired</b></h5>
+                                I was hired as the QA manager to help build out Blackpoint Cyber's QA department, which at the time consisted of
+                                only 3 QA, who had all started less then a year before me. Blackpoint Cyber was also begining the pursuit of automated
+                                testing with playwright so I was brought on to help train a small group of manual QA's to use playwright test, as
+                                well as hire multiple new manual QA's to also train.
+                            <h6><b>Playwright Training</b></h5>
+                                I started by creating an extensively documented, and recorded course on playwright stored within the teams 
+                                confluence page. Allowing my team to progress on the training as they had time, so this way we could progress on
+                                company projects while improving their skills. The training course consisteted of not only utilizing playwright
+                                but also teaching them how to code with typescript. 
+                            <h6><b>Team Expansion</b></h5>
+                                After the training course was finished I brought in 2 new QA testers to the team, and started training them utilizing
+                                the course that I had created. Initially we followed an embedded approach to the team, however engineering had an influx of 
+                                projects to complete, during this time. I helped more directly manage my team to help keep them going during the context
+                                switching of multiple teams and projects, as well as helping to manage releases. 
+                            <h6><b>Swarm of projects, and bug squashing</b></h5>
+                                During this breakneck pace of development, bugs started to get into production, so I worked with the other leaders in 
+                                engineering to come up with a solution to dramatically reduce high impact production bugs (90%) without cutting velocity. This 
+                                breakneck pace continued from Q3, to Q4, where I had to more directly lead my team to keep the pace without sacraficing quality. 
+                                Once completed we had managed to convince the organization to move away from chaotically throwing developers to different teams 
+                                to maintain an unsustainable velocity, and got static product teams re-established. 
+                            <h6><b>Shift Left</b></h5>
+                                With formal product teams formed again I was able to directly imbed by QA team into those teams, and begin working on a few new different
+                                processes. First was an implementation of shift left, by working with the project managers, and other engineering teams I created
+                                formalized deliverables at each stage of the project lifecycle, and got QA brought into the project meetings. The organizations embrace
+                                of shift left that I pushed once again dramatically reduced the number of bugs found during development, and the number of bugs released into 
+                                production. Development bugs went from 300-400 in the first projects we tested, down to about 20. With production bugs being down to 2-3, each
+                                had no revenue impact, and were counted as low impact bugs for rare edge cases.
+                            <h6><b>Embedded QA's</b></h5>
+                                With the switches to shift left, and fully embedded QA's I had started getting more requests on increasing transparency on QA processes
+                                that were followed. So I developed an extensive test plan template and worked with the rest of the engineering leaders to ensure we were covering
+                                all our bases. Then trained the team on these new expectations, and helped mentor them in the templates utilization for the first few projects.
+                            <h6><b>Test Case Review</b></h5>
+                                Now with the team operating as a well oiled machine, fully integrated into the development teams. As well as dramatically improving the 
+                                quality of releases going to production. I began implementing a test case review process. Since each test case created for each project
+                                had to be hand crafted and detailed in Jira I began reviewing the older test cases in the company to make sure they are kept up to our 
+                                standards, while my team was chipping away at reviewing the test cases that they were creating in their day to day work.  
                         </p>
                         <h6><b>Achievements</b></h6>
                         <ul>
                             <li>
-                                Placeholder
+                                Reduced bug ticket count from 300-400 from the initial project down to 20.
                             </li>
+                            <li>
+                                Trained a manual QA team to use Typescript, and Playwright and begin writing automated tests
+                            </li>
+                            <li>
+                                Managed the quality of 10 projects in 8 months
+                            </li>
+                            <li>
+                                Implemented the test case review process and brought up our test suite to. 200 automated tests, 
+                            </li> 
                         </ul>
                     </div>
                 </div>
