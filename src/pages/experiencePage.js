@@ -70,7 +70,7 @@ function blackPointCyberCard() {
                                 Managed the quality of 10 projects in 8 months
                             </li>
                             <li>
-                                Implemented the test case review process and brought up our test suite to. 200 automated tests, 
+                                Implemented the test case review process and brought up our test suite to 200 automated tests, 
                             </li> 
                         </ul>
                     </div>

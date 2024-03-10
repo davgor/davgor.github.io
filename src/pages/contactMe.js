@@ -12,7 +12,7 @@ function contactMeCard() {
                         <h5 class="card-title">Contact me!</h5>
                         <p class="card-text">
                             I am always open to hearing about new job opportunities, so if you are reading this page and have any roles
-                            that match feel free to reach out.                          
+                            that match feel free to reach out.                        
                         </p>
                         <h6><b>Title's I will interview for:</b></h6>
                         <ul>
@@ -38,7 +38,7 @@ function contactMeCard() {
                                 <b>Email:</b>davgor4@gmail.com
                             </li>
                             <li>
-                                <a href="https://www.linkedin.com/in/davgor4/">LinkedIn</a>
+                                <a href="https://www.linkedin.com/in/davgor4/">linkedin.com/in/davgor4/</a>
                             </li>
                         </ul>
                     </div>
