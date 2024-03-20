@@ -1,5 +1,11 @@
 import { test, expect } from './modules/fixtures';
 
+test.beforeEach(async ({ page, directory }) => {
+    await test.step('Given', async () => {
+        await page.goto(directory);
+    });
+});
+
 test.describe('Navigation Tests', () => {
     test('Resume loads', async ({ page }) => {
         await test.step('Then', async () => {

@@ -1,4 +1,4 @@
-const jobs = [
+export const jobs = [
     {
         website: "https://blackpointcyber.com/",
         logo: "./assets/blackpointlogo.png",

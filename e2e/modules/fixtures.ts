@@ -17,9 +17,3 @@ export const test = base.extend<MyFixtures>({
 });
 
 export { expect } from '@playwright/test';
-
-test.beforeEach(async ({ page, directory }) => {
-    await test.step('Load homepage', async () => {
-        await page.goto(directory);
-    });
-});

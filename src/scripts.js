@@ -57,7 +57,7 @@ function paragraghGenerator(content) {
     content.roles.forEach(role => {
         finalList += `<div class="card-body"><h5 class="card-title">${role.title}</h5><p class="card-text">`
         role.paragraphs.forEach(element => {
-            if (element.title) {
+            if (element.title != "") {
                 finalList += `<h6><b>${element.title}</b></h5>`;
             }
             finalList += `<p>${element.text}</p>`
