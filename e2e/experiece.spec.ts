@@ -16,8 +16,6 @@ test.describe('Verifying data off jobs file', () => {
         
             await test.step('Then', async () => {
                 await expect(await (await page.waitForSelector('.card')).isVisible()).toBeTruthy();
-                // await expect(await (await page.getByRole('link', {})).isVisible()).toBeTruthy();
-                // await page.getByRole('link', { name: 'Experience' }).isVisible();
                 await expect(await (await page.waitForSelector(`[href*="${company.website}"]`)).isVisible()).toBeTruthy();
                 await expect(await (await page.waitForSelector(`[src*="${company.logo}"]`)).isVisible()).toBeTruthy();
                 for (const role of company.roles) {

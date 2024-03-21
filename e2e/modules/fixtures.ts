@@ -9,7 +9,7 @@ interface MyFixtures {
 
 export const test = base.extend<MyFixtures>({
     directory: async ({}, use) => {
-        await use(`file:${path.join(__dirname, 'index.html')}`.replace('/e2e/modules', ''));
+        await use(`file:${path.join(__dirname, 'index.html')}`.replace('/e2e/modules', '').replace('\\e2e\\modules', ''));
     },
     navigation: async ({page}, use) => {
         await use (new Navigation(page));
