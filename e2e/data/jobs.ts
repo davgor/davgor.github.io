@@ -32,6 +32,10 @@ export const jobs = [
                     {
                         title: "Test Case Review",
                         text : "Now with the team operating as a well oiled machine, fully integrated into the development teams. As well as dramatically improving the quality of releases going to production. I began implementing a test case review process. Since each test case created for each project had to be hand crafted and detailed in Jira I began reviewing the older test cases in the company to make sure they are kept up to our standards, while my team was chipping away at reviewing the test cases that they were creating in their day to day work."
+                    },
+                    {
+                        title: "Manual to Automation First",
+                        text: "Now that we have test plans standardized, test cases standardized, and the team trained on how to code typescript, and write playwright tests. It was time for us to begin transitioning to an automated first approach. To enable this we needed to reinforce and automate regular tasks in the embedded QA’s daily workload. For example generating tests in Xray off of the test results from playwright, as well as handling auto uploading of evidence. Most importantly as we begin this transition we need to make the current workload easier to perform with automated tests rather than manual tests. I did this by creating a CLI tool for them that performs all the above actions locally, allowing them to move quickly through the Xray components of their daily work, and allowing them more time to harden, and modularize the test case without blocking deployments."
                     }
                 ],
             achievements: {
