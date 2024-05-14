@@ -52,7 +52,9 @@ export const jobs = [
                     "Reduced bug ticket count from 300-400 from the initial project down to 20.",
                     "Trained a manual QA team to use Typescript, and Playwright and begin writing automated tests",
                     "Managed the quality of 10 projects in 8 months",
-                    "Implemented the test case review process and brought up our test suite to 200 automated tests"
+                    "Implemented the test case review process and brought up our test suite to 200 automated tests",
+                    "Implemented custom CLI tool, that integrates into existing repositories via NPM.",
+                    "Endpoint automated testing, creating a scalable robust testing platform for mixed OS, and web test cases."
                 ]
             }
         }]
