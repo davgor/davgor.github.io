@@ -36,7 +36,15 @@ export const jobs = [
                     {
                         title: "Manual to Automation First",
                         text: "Now that we have test plans standardized, test cases standardized, and the team trained on how to code typescript, and write playwright tests. It was time for us to begin transitioning to an automated first approach. To enable this we needed to reinforce and automate regular tasks in the embedded QA’s daily workload. For example generating tests in Xray off of the test results from playwright, as well as handling auto uploading of evidence. Most importantly as we begin this transition we need to make the current workload easier to perform with automated tests rather than manual tests. I did this by creating a CLI tool for them that performs all the above actions locally, allowing them to move quickly through the Xray components of their daily work, and allowing them more time to harden, and modularize the test case without blocking deployments."
-                    }
+                    },
+                    {
+                        title: "BPCTest a CLI Tool",
+                        text: "One of the core elements to getting a team automating first, is to make sure that they have the tooling support that best enables them to do the work. This is where the CLI tool comes into play, I created a CLI tool that at first would enable our QA's to write, and create Xray tests from playwright instead of the other way around. After that I included a test execution integration, meaning that they could submit automated test executions to complete stories without needing to go through the extensive github review process. This was to transition their current workflows over to a faster light, and more code centric approach that is more condusive to automation. We also now have a shared CLI tool that can be accessed from multiple projects, and serve as a container for the helper scripts that are still manual driven."
+                    },
+                    {
+                        title: "Endpoint Automation",
+                        text: "We have a windows application that needed testing, since it acted very similar to that of an anti-virus we need to be able to interact with the operating system to create automated test cases. While still providing a unified tooling system that enabled our QA's to write tests even without extensive knowledge on programming. To do this I used the playwright test runner which each of my team members where familiar with, and hybridized it with python scripts to perform small mutable actions on the virtual machine, that can be transfered from one operating system to the next, and incorporate much of our test code for our UI tests. Generally it wouldn't be ideal to mix languages mid project but doing so allows us to write more tests, and leverage more of our existing code without many changes."
+                    },
                 ],
             achievements: {
                 title: "Achievements",
