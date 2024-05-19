@@ -32,6 +32,10 @@ export const jobs = [
                     {
                         title: "Test Case Review",
                         text : "Now with the team operating as a well oiled machine, fully integrated into the development teams. As well as dramatically improving the quality of releases going to production. I began implementing a test case review process. Since each test case created for each project had to be hand crafted and detailed in Jira I began reviewing the older test cases in the company to make sure they are kept up to our standards, while my team was chipping away at reviewing the test cases that they were creating in their day to day work."
+                    },
+                    {
+                        title: "Automation First",
+                        text : "Now with the team operating as a well oiled machine, fully integrated into the development teams. As well as dramatically improving the quality of releases going to production. I began implementing a test case review process. Since each test case created for each project had to be hand crafted and detailed in Jira I began reviewing the older test cases in the company to make sure they are kept up to our standards, while my team was chipping away at reviewing the test cases that they were creating in their day to day work."
                     }
                 ],
             achievements: {
