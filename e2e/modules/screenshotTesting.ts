@@ -22,6 +22,7 @@ export class ScreenshotInteraction {
             const coords = await this.findLocatorViaScreenshot(existing.screenshotPath);
             if (coords === null) {
                 await this.captureScreenshot(selector);
+                await this.interact(selector, options);
             } else {
                 //TODO: perform the requested interaction with the element
             }
