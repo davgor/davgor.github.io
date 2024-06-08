@@ -4,5 +4,9 @@
   },
   "scripts": {
     "test": "npx playwright test"
+  },
+  "dependencies": {
+    "jimp": "^0.22.12",
+    "uuid": "^9.0.1"
   }
 }
