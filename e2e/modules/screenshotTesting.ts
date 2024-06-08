@@ -20,7 +20,11 @@ export class ScreenshotInteraction {
         const existing = this.screenshotDB.elements.find(x => x.locator === selector);
         if (existing) {
             const coords = await this.findLocatorViaScreenshot(existing.screenshotPath);
-            
+            if (coords === null) {
+                await this.captureScreenshot(selector);
+            } else {
+                //TODO: perform the requested interaction with the element
+            }
         } else {
             await this.captureScreenshot(selector);
             await this.interact(selector);
