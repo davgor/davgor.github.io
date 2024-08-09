@@ -36,6 +36,18 @@ const jobs = [
                     {
                         title: "Automation First",
                         text : "Now with the team operating as a well oiled machine, fully integrated into the development teams. As well as dramatically improving the quality of releases going to production. I began implementing a test case review process. Since each test case created for each project had to be hand crafted and detailed in Jira I began reviewing the older test cases in the company to make sure they are kept up to our standards, while my team was chipping away at reviewing the test cases that they were creating in their day to day work."
+                    },
+                    {
+                        title: "Endpoint Automation",
+                        text : "We have some very complex software at Blackpoint Cyber, and much of the complexity centers around our agents (think an antivirus, that acts as a hacker defense tool as well). This complexity makes testing the agent extremely arduous and complex, as well as risky, as we all found out with the Crowdstrike incident. We needed a testing framework that could perform end to end tests on our headless agent, this way we never have our own global incident. This tool performs actions on a machine designed to trigger events, and then validates that the agent performs as expected, but most importantly it does this on newly created devices for any version of windows that is supported, allowing us to have a clean test each time, and it performs the tests within about 10 minutes. Not only did this shave off 3 days of manual testing from 1 test, but this means we can test our agent for critical failures like the Crowdstrike issue in the developers CI, preventing the breaking code from ever leaving the PR stage."
+                    },
+                    {
+                        title: "Team change",
+                        text : "With the teams’ earlier shift left the business decided it was time to fully move the embedded QA engineers over to the engineering managers in charge of the dev teams, during this time I took over as the engineering manager for the QA automation team. In which I left my embedded QA’s a few small projects to help grow them into senior QAs and began assessing my new team’s position within the company. As we helped cover off quality gaps in a few big migrations across the board, we worked to improve the end-to-end regression suite, reducing the run time from 1 hour for 175 test cases down to 10 minutes. This time hack even persisted once we added 50 more test cases."
+                    },
+                    {
+                        title: "Shift Right",
+                        text : "Now that we had a well-oiled QA machine embedded within the developer teams, we started to look at other areas for quality improvement, now in most organizations, there are interdependencies between services that are hard to map, and even harder to test. Leaving a gap in testing where bugs can slip through shift left can help to counter this, but shift right is one of the best approaches you can take to counter act these issues especially if a shift left approach is already implemented and able to catch 90% of the bugs. This is where my new team comes in, we review test plans, and act as agents of the customer, while primarily writing end to end tests that focus on full complex flows designed to expose interdependencies. We do this with new layers of end-to-end testing within the regression test, as well as implementing production test cases that serve as canaries in the coal mine. Alerting us to issues ideally before customers are even impacted. Since adding shift right to our overall QA strategy my team has prevented dozens of bugs from going into production, and caught gaps within existing test plans. "
                     }
                 ],
             achievements: {
@@ -44,7 +56,9 @@ const jobs = [
                     "Reduced bug ticket count from 300-400 from the initial project down to 20.",
                     "Trained a manual QA team to use Typescript, and Playwright and begin writing automated tests",
                     "Managed the quality of 10 projects in 8 months",
-                    "Implemented the test case review process and brought up our test suite to 200 automated tests"
+                    "Implemented the test case review process and brought up our test suite to 200 automated tests",
+                    "Successfully transitioned QA organization from a reactive testing group to a well oiled shift left org",
+                    "Brought down regression test time from 1 hour for 175 tests to 10 minutes, regardless of test volume"
                 ]
             }
         }]
