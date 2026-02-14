@@ -1,5 +1,4 @@
 import { test as base } from '@playwright/test'
-import * as path from 'path'
 import { Navigation } from './navigation';
 
 interface MyFixtures {
@@ -8,8 +7,8 @@ interface MyFixtures {
 }
 
 export const test = base.extend<MyFixtures>({
-    directory: async ({}, use) => {
-        await use(`file:${path.join(__dirname, 'index.html')}`.replace('/e2e/modules', '').replace('\\e2e\\modules', ''));
+    directory: async ({ baseURL }, use) => {
+        await use(baseURL || 'http://localhost:5173');
     },
     navigation: async ({page}, use) => {
         await use (new Navigation(page));

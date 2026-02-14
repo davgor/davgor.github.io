@@ -17,6 +17,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
+    baseURL: 'http://localhost:5173',
     headless: true,
     screenshot: 'only-on-failure',
     trace: 'on-first-retry',
@@ -39,4 +40,12 @@ export default defineConfig({
       use: { ...devices['Desktop Safari'] },
     },
   ],
+
+  /* Run dev server before starting tests */
+  webServer: {
+    command: 'npm run dev',
+    url: 'http://localhost:5173',
+    reuseExistingServer: !process.env.CI,
+    timeout: 120000,
+  },
 });

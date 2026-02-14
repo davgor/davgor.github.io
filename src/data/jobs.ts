@@ -1,4 +1,6 @@
-const jobs = [
+import { Job } from '../types';
+
+export const jobs: Job[] = [
     {
         website: "https://blackpointcyber.com/",
         logo: "./assets/blackpointlogo.png",

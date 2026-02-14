@@ -1,75 +1,47 @@
-import { test, expect } from './modules/fixtures';
+import { test, expect } from '@playwright/test';
 
-test.beforeEach(async ({ page, directory }) => {
-    await test.step('Given', async () => {
-        await page.goto(directory);
-    });
+test.beforeEach(async ({ page }) => {
+  await page.goto('http://localhost:5173');
 });
 
 test.describe('Navigation Tests', () => {
-    test('Resume loads', async ({ page }) => {
-        await test.step('Then', async () => {
-            await expect(await (await page.waitForSelector('#menu')).isVisible()).toBeTruthy();
-        });
-    });
+  test('Resume loads', async ({ page }) => {
+    await expect(page.locator('#menu')).toBeVisible();
+  });
 
-    test('about me', async ({ page, navigation }) => {
-        await test.step('When', async () => {
-            await navigation.NavigateAboutMe();
-        });
+  test('about me', async ({ page }) => {
+    await page.getByRole('link', { name: 'About Me' }).click();
+    await expect(page.locator('.card')).toBeVisible();
+    await expect(page).toHaveURL(/\//);
+  });
+  
+  test('experience', async ({ page }) => {
+    await page.getByRole('link', { name: 'Experience' }).click();
+    await expect(page.locator('.card')).toBeVisible();
+    await expect(page).toHaveURL(/\/experience/);
+  });
+  
+  test('Coding Reference', async ({ page }) => {
+    await page.getByRole('link', { name: 'Coding Reference' }).click();
+    await expect(page.locator('.card')).toBeVisible();
+    await expect(page).toHaveURL(/\/coding-reference/);
+  });
+  
+  test('Dogs', async ({ page }) => {
+    await page.getByRole('link', { name: 'Dogs!' }).click();
+    await expect(page.locator('.card')).toBeVisible();
+    await expect(page).toHaveURL(/\/dogs/);
+  });
+  
+  test('Hobbies', async ({ page }) => {
+    await page.getByRole('link', { name: 'Hobbies' }).click();
+    await expect(page.locator('.card')).toBeVisible();
+    await expect(page).toHaveURL(/\/hobbies/);
+  });
 
-        await test.step('Then', async () => {
-            await expect(await (await page.waitForSelector('.card')).isVisible()).toBeTruthy();
-        });
-    });
-    
-    test('experience', async ({ page, navigation }) => {
-        await test.step('When', async () => {
-            await navigation.NavigateExperience();
-        });
-
-        await test.step('Then', async () => {
-            await expect(await (await page.waitForSelector('.card')).isVisible()).toBeTruthy();
-        });
-    });
-    
-    test('Coding Refrence', async ({ page, navigation }) => {
-        await test.step('When', async () => {
-            await navigation.NavigateCodingReference();
-        });
-
-        await test.step('Then', async () => {
-            await expect(await (await page.waitForSelector('.card')).isVisible()).toBeTruthy();
-        });
-    });
-    
-    test('Dogs', async ({ page, navigation }) => {
-        await test.step('When', async () => {
-            await navigation.NavigateDogs();
-        });
-
-        await test.step('Then', async () => {
-            await expect(await (await page.waitForSelector('.card')).isVisible()).toBeTruthy();
-        });
-    });
-    
-    test('Hobbies', async ({ page, navigation }) => {
-        await test.step('When', async () => {
-            await navigation.NavigateHobbies();
-        });
-
-        await test.step('Then', async () => {
-            await expect(await (await page.waitForSelector('.card')).isVisible()).toBeTruthy();
-        });
-    });
-
-    test('Contact Me', async ({ page, navigation }) => {
-        await test.step('When', async () => {
-            await navigation.NavigateContactMe();
-        });
-
-        await test.step('Then', async () => {
-            await expect(await (await page.waitForSelector('.card')).isVisible()).toBeTruthy();
-        });
-    });
+  test('Contact Me', async ({ page }) => {
+    await page.getByRole('link', { name: 'Contact Me' }).click();
+    await expect(page.locator('.card')).toBeVisible();
+    await expect(page).toHaveURL(/\/contact/);
+  });
 });
