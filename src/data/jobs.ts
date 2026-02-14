@@ -5,7 +5,7 @@ export const jobs: Job[] = [
         website: "https://blackpointcyber.com/",
         logo: "./assets/blackpointlogo.png",
         roles: [{
-            title: "Blackpoint Cyber - QA Manager - 05/21/2023 - Current",
+            title: "Blackpoint Cyber - QA Manager - 05/21/2023 - 09/01/2025",
             paragraphs:[
                     {
                         title: "Why I was hired",
