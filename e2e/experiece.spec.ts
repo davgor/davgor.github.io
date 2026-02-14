@@ -1,42 +1,95 @@
 import { expect, test } from "@playwright/test";
+import { jobs } from "../src/data/jobs.ts";
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('http://localhost:5173/experience');
+  await page.goto('./experience');
 });
 
-test.describe('Experience Page Tests', () => {
-  test('should display experience cards', async ({ page }) => {
-    // Verify at least one card is visible
-    await expect(page.locator('.card').first()).toBeVisible();
-  });
+test.describe('Experience Page - Job Data Validation', () => {
+  // Loop through each job
+  for (const job of jobs) {
+    test.describe(`${job.id} - Job Card Tests`, () => {
+      test('should display job card and logo', async ({ page }) => {
+        // Verify job card is visible
+        await expect(page.getByTestId(`job-card-${job.id}`)).toBeVisible();
+        
+        // Verify logo is visible
+        await expect(page.getByTestId(`job-logo-${job.id}`)).toBeVisible();
+        
+        // Verify website link exists
+        await expect(page.getByTestId(`job-website-link-${job.id}`)).toHaveAttribute('href', job.website);
+      });
 
-  test('should display Blackpoint Cyber experience', async ({ page }) => {
-    await expect(page.locator('[href*="blackpointcyber.com"]')).toBeVisible();
-    await expect(page.locator('[src*="blackpointlogo.png"]')).toBeVisible();
-    await expect(page.getByText(/Blackpoint Cyber - QA Manager/)).toBeVisible();
-  });
+      // Loop through each role in the job
+      for (let roleIndex = 0; roleIndex < job.roles.length; roleIndex++) {
+        const role = job.roles[roleIndex];
+        
+        test.describe(`Role ${roleIndex}: ${role.title}`, () => {
+          test('should display role title', async ({ page }) => {
+            // Verify role title is visible and contains correct text
+            const roleTitle = page.getByTestId(`job-role-title-${job.id}-${roleIndex}`);
+            await expect(roleTitle).toBeVisible();
+            await expect(roleTitle).toHaveText(role.title);
+          });
 
-  test('should display Lyft experience', async ({ page }) => {
-    await expect(page.locator('[href*="lyft.com"]')).toBeVisible();
-    await expect(page.locator('[src*="lyft-logo"]')).toBeVisible();
-    await expect(page.getByText(/Lyft - Software Engineer in Test/)).toBeVisible();
-  });
+          // Loop through each paragraph in the role
+          for (let paragraphIndex = 0; paragraphIndex < role.paragraphs.length; paragraphIndex++) {
+            const paragraph = role.paragraphs[paragraphIndex];
+            
+            test(`should display paragraph ${paragraphIndex}`, async ({ page }) => {
+              // If paragraph has a title, verify it
+              if (paragraph.title && paragraph.title.trim() !== "") {
+                const paragraphTitle = page.getByTestId(`job-paragraph-title-${job.id}-${roleIndex}-${paragraphIndex}`);
+                await expect(paragraphTitle).toBeVisible();
+                await expect(paragraphTitle).toContainText(paragraph.title);
+              }
+              
+              // Verify paragraph text is visible
+              const paragraphText = page.getByTestId(`job-paragraph-text-${job.id}-${roleIndex}-${paragraphIndex}`);
+              await expect(paragraphText).toBeVisible();
+              
+              // Strip HTML tags for text comparison
+              const cleanText = paragraph.text.replace(/<[^>]*>/g, '').trim();
+              if (cleanText) {
+                await expect(paragraphText).toContainText(cleanText.substring(0, 50)); // Check first 50 chars
+              }
+            });
+          }
 
-  test('should display Atreo experience', async ({ page }) => {
-    await expect(page.locator('[href*="atreo.io"]')).toBeVisible();
-    await expect(page.locator('[src*="Atreo_logo"]')).toBeVisible();
-    await expect(page.getByText(/Atreo\.io - Software Automation Engineer/)).toBeVisible();
-  });
+          // Loop through achievements if they exist
+          if (role.achievements && role.achievements.list.length > 0) {
+            test('should display achievements section', async ({ page }) => {
+              // Verify achievements container is visible
+              await expect(page.getByTestId(`job-achievements-${job.id}-${roleIndex}`)).toBeVisible();
+              
+              // Verify achievements title
+              const achievementsTitle = page.getByTestId(`job-achievements-title-${job.id}-${roleIndex}`);
+              await expect(achievementsTitle).toBeVisible();
+              if (role.achievements) {
+                await expect(achievementsTitle).toContainText(role.achievements.title);
+              }
+              
+              // Verify achievements list is visible
+              await expect(page.getByTestId(`job-achievements-list-${job.id}-${roleIndex}`)).toBeVisible();
+            });
 
-  test('should display EMC Insurance experience', async ({ page }) => {
-    await expect(page.locator('[href*="emcins.com"]')).toBeVisible();
-    await expect(page.locator('[src*="emc_insurance"]')).toBeVisible();
-    await expect(page.getByText(/EMC Insurance/)).toBeVisible();
-  });
-
-  test('should display Geek Squad experience', async ({ page }) => {
-    await expect(page.locator('[href*="geeksquad.com"]')).toBeVisible();
-    await expect(page.locator('[src*="geek_squad"]')).toBeVisible();
-    await expect(page.getByText(/Geek Squad - Consultation Agent/)).toBeVisible();
-  });
+            for (let achievementIndex = 0; achievementIndex < role.achievements.list.length; achievementIndex++) {
+              const achievement = role.achievements.list[achievementIndex];
+              
+              test(`should display achievement ${achievementIndex}`, async ({ page }) => {
+                const achievementItem = page.getByTestId(`job-achievement-item-${job.id}-${roleIndex}-${achievementIndex}`);
+                await expect(achievementItem).toBeVisible();
+                
+                // Strip HTML tags for text comparison
+                const cleanAchievement = achievement.replace(/<[^>]*>/g, '').trim();
+                if (cleanAchievement) {
+                  await expect(achievementItem).toContainText(cleanAchievement);
+                }
+              });
+            }
+          }
+        });
+      }
+    });
+  }
 });

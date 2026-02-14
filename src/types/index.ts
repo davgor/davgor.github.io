@@ -16,6 +16,7 @@ export interface Role {
 
 export interface Job {
   website: string;
+  id: string;
   logo: string;
   roles: Role[];
 }

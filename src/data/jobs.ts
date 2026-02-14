@@ -1,8 +1,94 @@
-import { Job } from '../types';
+import type { Job } from '../types/index.ts';
 
 export const jobs: Job[] = [
+        {
+        website: "https://onebrief.com/",
+        id: "onebrief",
+        logo: "./assets/onebrief.png",
+        roles: [{
+            title: "Onebrief - Engineering Manager, Quality - 10/01/2025 - Present",
+            paragraphs:[
+                    {
+                        title: "Why was I promoted?",
+                        text : "test"
+                    },
+                    {
+                        title: "Finalizing Quality Coach process",
+                        text : "test"
+                    },
+                    {
+                        title: "Implementing API testing",
+                        text : "test"
+                    },
+                ],
+            achievements: {
+                title: "Achievements",
+                list: [
+                    "Lead a project to re-write our end to end suite, unifying our end to end codebase. Taking flake rate down to sub 1%, and allowing us to navigate an extremely complex application with the use of locator libraries, and POMs.",
+                    "Trained team of 8 SDETs on playwright, and worked with them to design our POM locator library structure.",
+                    "Implemented Quality Coach process, allowing my engineers to support a larger ratio of developers, while still enabling them to work on challenging engineering issues.",
+                    "Quality Coach process shifted our escaped bug rate from 20%, down to 2% without sacraficing velocity.",
+                    "Rebuilt our load testing suite to be in line with industry standards leveraging K6.",
+                    "Rebuilt our CI framework to support a huge range of test configurations, and volumes.",
+                    "Rapidily integrated vendor test cases into our suite with my team, taking their tests with a flake rate of 17%, into our suite with a flake rate of >1%. While also shifting testing left.",
+                    "Implemented team driven contracts giving teams the ability to manage their testing contracts. Giving teams flexibility to manage their own testing needs, while also giving them the ability to hold each other accountable to their testing needs.",
+                    "Implemented playwright API testing which dramatically increased the speed of our testing, and improving the test coverage",
+                ]
+            }
+        },{
+            title: "Onebrief - Staff SDET - 09/01/2025 - 10/01/2025",
+            paragraphs:[
+                    {
+                        title: "Why I was hired",
+                        text : "Onebrief was just starting to build out their QA organization, and I was hired to help establish the QA embedded processess."
+                    },
+                    {
+                        title: "Team Odyssey",
+                        text : "test"
+                    },
+                    {
+                        title: "Test Automation Confidence",
+                        text : "test"
+                    },
+                    {
+                        title: "Building the team",
+                        text : "test"
+                    },
+                    {
+                        title: "Quality Champion",
+                        text : "test"
+                    },
+                    {
+                        title: "Artillery user load simulation",
+                        text : "test"
+                    },
+                    {
+                        title: "Shadow testing (e2e quarantine)",
+                        text : "test"
+                    },
+                    {
+                        title: "Print testing",
+                        text : "test"
+                    },
+                ],
+            achievements: {
+                title: "Achievements",
+                list: [
+                    "Designed a visual wait system for our end to end tests, completely elimating flakes due to rendering, and killing any need for explicit waits in our tests.",
+                    "Helped bring unit and integration tests into the developers development process.",
+                    "Implemented shift left testing practices, and got QA involved in the project meetings to help improve quality from the start of projects.",
+                    "Took test suite of 50 flaky tests, and 250 failing tests to 500 stable and trusted tests.",
+                    "Expanded testability of the test suite to dramatically reduce test flakes.",
+                    "Rewrote dated artillery suite, integrated in with fargate in AWS to allow for mass user load testing, allowing us to confirm our application could handle 10,000 real world users, helping validate a massive rewrite of the code base.",
+                    "Dramatically reduced frequency of sev0 incidents, with left shifted end to end testing. Reducing sev0 incidents from 2 a week, down to a handful a quarter.",
+                    "Dramatically reduced the frequency of print bugs with a new implementation of print testing in playwright. At a point we were getting them weekly, and now they are rare"
+                ]
+            }
+        }]
+    },
     {
         website: "https://blackpointcyber.com/",
+        id: "blackpointcyber",
         logo: "./assets/blackpointlogo.png",
         roles: [{
             title: "Blackpoint Cyber - QA Manager - 05/21/2023 - 09/01/2025",
@@ -67,6 +153,7 @@ export const jobs: Job[] = [
     },
     {
         website: "https://www.lyft.com/",
+        id: "lyft",
         logo: "./assets/lyft-logo-transparent.png",
         roles: [{
             title: "Lyft - Software Engineer in Test - 09/15/2022 - 04/28/2023",
@@ -107,6 +194,7 @@ export const jobs: Job[] = [
     },
     {
         website: "https://www.atreo.io/",
+        id: "atreo",
         logo: "./assets/Atreo_logo_transparent.png",
         roles: [{
             title: "Atreo.io - Software Automation Engineer - 07/23/2021 - 09/15/2022",
@@ -142,6 +230,7 @@ export const jobs: Job[] = [
     },
     {
         website: "https://www.emcins.com/",
+        id: "emcinsurance",
         logo: "./assets/emc_insurance.png",
         roles: [{
             title: "EMC Insurance - QA Engineer 3 - 02/01/2021 - 07/23/2021",
@@ -189,6 +278,7 @@ export const jobs: Job[] = [
     },
     {
         website: "https://geeksquad.com/",
+        id: "geeksquad",
         logo: "./assets/geek_squad.png",
         roles: [{
             title: "Geek Squad - Consultation Agent - 07/01/2015 - 08/15/2017",

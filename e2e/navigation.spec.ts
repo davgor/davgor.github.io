@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('http://localhost:5173');
+  await page.goto('./');
 });
 
 test.describe('Navigation Tests', () => {
@@ -17,7 +17,7 @@ test.describe('Navigation Tests', () => {
   
   test('experience', async ({ page }) => {
     await page.getByRole('link', { name: 'Experience' }).click();
-    await expect(page.locator('.card')).toBeVisible();
+    await expect(page.locator('.card').first()).toBeVisible();
     await expect(page).toHaveURL(/\/experience/);
   });
   
@@ -35,7 +35,7 @@ test.describe('Navigation Tests', () => {
   
   test('Hobbies', async ({ page }) => {
     await page.getByRole('link', { name: 'Hobbies' }).click();
-    await expect(page.locator('.card')).toBeVisible();
+    await expect(page.locator('.card').first()).toBeVisible();
     await expect(page).toHaveURL(/\/hobbies/);
   });
 
