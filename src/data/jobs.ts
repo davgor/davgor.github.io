@@ -10,10 +10,14 @@ export const jobs: Job[] = [
             paragraphs:[
                     {
                         title: "Why was I promoted?",
-                        text : "test"
+                        text : "After a year of being a staff SDET at Onebrief, we were expanding rapidly, I had just finished hiring the director of quality, working with senior leadership to fill the role, and there was still some ambiguity across the organization on my teams role in the day to day life. So I would take over officially as the engineering manager for my team, train my replacement, and work on rooting my teams reputation in the organization, as well as having the authority to implement a quality strategy for my team, and the organization to follow."
                     },
                     {
                         title: "Finalizing Quality Coach process",
+                        text : "As I took over as the engineering manager for the embedded quality team, I built out a team charter that clearly defined our roles and responsibilities that my team would have while they were embedded. This new strategy coined my teams new name as the Quality Coaches. We as a team focused heavily on being engineers who work on challenging problems, and SCRUM masters of quality that helped guide the teams. One of the first things we did was implement a quality contract with the teams, I would empower and help my team to build out these contracts following shift left principles, and then let them present it to the team and make further refinements as needed to match the teams culture. One of the big differences is we started to transition ownership of e2e test writing to the developers. We would aid in setting up the framework, and handle the complicated tests, but the developers would write the simple tests to coincide with their code. This was a massive success, as it allowed us to rapidly expand our test coverage, while also shifting left and getting the developers more familiar with the test automation, and how to use it effectively. This also allowed us to focus our efforts on the more complicated tests, which are often the most valuable tests to have automated."
+                    },
+                    {
+                        title: "POM Locator Library",
                         text : "test"
                     },
                     {
@@ -40,35 +44,35 @@ export const jobs: Job[] = [
             paragraphs:[
                     {
                         title: "Why I was hired",
-                        text : "Onebrief was just starting to build out their QA organization, and I was hired to help establish the QA embedded processess."
+                        text : "Onebrief was just starting to build out their QA organization, and I was hired to help establish the QA embedded processess, as well as help build out the higher end test automation suites. When I was hired they had a whopping 50 test cases they were running on CI, and 200 in a regression suite. These had a massive 75% flake rate."
                     },
                     {
                         title: "Team Odyssey",
-                        text : "test"
+                        text : "Starting off I was assigned to the development team odyssey, where I created a shift left contract, and helped the developers adopt unit and integration testing. While I worked to refine the end to end framework."
                     },
                     {
                         title: "Test Automation Confidence",
-                        text : "test"
+                        text : "One of the biggest issues I encountered when I first got to Onebrief was a lack of confidence in the test automation. This was due to a combination of a high flake rate, and a lack of understanding of how to use the test automation effectively and efficiently. To combat this I implemented a concept I first saw at lyft called shadowing, where you would keep running end to end tests that are flaky, failing or broken. This way you can collect metrics on the failing tests without blocking PRs or regression suites. After fixing, I took the 250 failing test cases and rewrote them using a series of implicit waits, and visual waits. Decreasing flake rate from 75% to sub 1%, and increasing confidence in the test automation, which led to a much higher utilization of the test automation, and a much higher bug catch rate."
                     },
                     {
                         title: "Building the team",
-                        text : "test"
+                        text : "There are many different approaches you can take to building a test automation team, but the one I chose indexed on 2 key points, technical compentency, and team leadership skills. This selection of candidates for my team allowed us to rapidly advance the test frameworks we had implemented, and build up a culture of quality from from the team level. Spreading it to the rest of the organization naturally."
                     },
                     {
                         title: "Quality Champion",
-                        text : "test"
+                        text : "Our first round for the quality strategy was to implement a quality champion approach, this is where the quality team would focus on the tenants of shift left, guide their teams from as early as project inception, and they themselves would work on the end to end test automation. This layed the groundwork for the quality coach processes we later implemented."
                     },
                     {
                         title: "Artillery user load simulation",
-                        text : "test"
+                        text : "There was a pre-existing artillery suite that the dev team had designed a year or so ago before I was hired. This suite was largely abandoned. It also has an emphasis on placing a site under load rather then providing accurate, and actionable data. We had a very small time window to prove the re-write of our code base would improve user performance. So I rebuilt the test code inside of it, while keeping its original capabilities around applying user load to save time. Afterwards I built out a series of datadog dashboards to coroborate with our grafana dashboards, allowing us to extrapolate a decent chunk of actionable data from the automation suite. In addition this ran through AWS fargate, so we were able to scale up the playwright instances to a large enough volume to mirror the users requirements for the event. This was a far from perfect re-work, but it did get us through the event with it being a massive success."
                     },
                     {
                         title: "Shadow testing (e2e quarantine)",
-                        text : "test"
+                        text : "We implemented a quarantine process for our end to end tests, this included building out a cron job that would match our CI and regression implementation. This way we can collect flake metrics to track which tests still needed adjustments and improvements and which tests were ready for prime time. This allowed us to rapidly improve our test suite, while not blocking PRs or regression suites. This was a massive success, taking our flake rate from 75% down to sub 1%. In addition this job allowed us to dramatically surge our test coverage, from 250 barely functioning test cases, to over 700 fully stable test cases."
                     },
                     {
                         title: "Print testing",
-                        text : "test"
+                        text : "One of the big uses of our software is to print documents that users are creating in our application. Our application would handle printing a number of varied different ways, which lead to a massive surge of bugs that coincided with spiked usage of our app. To combat this I created a new test that would load the generated PDFs in a wrapper in the browser, allowing me to do a pixel by pixel comparison with the golden file PDF. Then thanks to this being implemented in the existing test suite, I was able to attach to results to the test reports giving clear indications of what was different on the test files. In addition this allowed us make the maintaince process very easy, as if the results were expected you could just pull the actual out of the test report, and replace the golden path with it in S3 and voiala the test is updated."
                     },
                 ],
             achievements: {
@@ -81,7 +85,8 @@ export const jobs: Job[] = [
                     "Expanded testability of the test suite to dramatically reduce test flakes.",
                     "Rewrote dated artillery suite, integrated in with fargate in AWS to allow for mass user load testing, allowing us to confirm our application could handle 10,000 real world users, helping validate a massive rewrite of the code base.",
                     "Dramatically reduced frequency of sev0 incidents, with left shifted end to end testing. Reducing sev0 incidents from 2 a week, down to a handful a quarter.",
-                    "Dramatically reduced the frequency of print bugs with a new implementation of print testing in playwright. At a point we were getting them weekly, and now they are rare"
+                    "Dramatically reduced the frequency of print bugs with a new implementation of print testing in playwright. At a point we were getting them weekly, and now they are rare",
+                    "Significantly improved the number of tests we were able to run automated. Specifically I developed a multi user fixture that allowed us to create and manage a large number of users quickly for any scenario we had."
                 ]
             }
         }]
