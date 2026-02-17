@@ -29,7 +29,7 @@ test.describe('Navigation Tests', () => {
   
   test('Dogs', async ({ page }) => {
     await page.getByRole('link', { name: 'Dogs!' }).click();
-    await expect(page.locator('.card')).toBeVisible();
+    await expect(page.locator('.card').first()).toBeVisible();
     await expect(page).toHaveURL(/\/dogs/);
   });
   
