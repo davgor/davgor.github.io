@@ -23,7 +23,8 @@ const Hobbies: React.FC = () => {
       <BlogCard
         title="Warhammer, and miniature painting"
         content={[
-          "I've been painting warhammer miniatures for the better part of 5 years now. I've done a quite a lot of Warhammer 40k, and Age Of Sigmar. I don't play the actual game all that often, but I have found it extremely relaxing and helps me focus my mind when I am feeling scattered as you can just zero in and turn off your brain. <a href=\"https://www.instagram.com/gordenminiatures/\">Here is my instagram link</a> where I sometimes post the stuff I paint.",
+          "I've been painting warhammer miniatures for the better part of 5 years now. I've done a quite a lot of Warhammer 40k, and Age Of Sigmar. I don't play the actual game all that often, but I have found it extremely relaxing and helps me focus my mind when I am feeling scattered as you can just zero in and turn off your brain. Below is my instagram link where I sometimes post the stuff I paint.",
+          'https://www.instagram.com/gordenminiatures/'
         ]}
       />
     </>
