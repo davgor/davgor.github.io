@@ -4,6 +4,8 @@ import { writeFileSync } from "fs";
 import { resolve } from "path";
 
 // https://vitejs.dev/config/
+const basePath = process.env.BASE || process.env.VITE_BASE || "/";
+
 export default defineConfig({
   plugins: [
     react(),
@@ -15,7 +17,7 @@ export default defineConfig({
       },
     },
   ],
-  base: "/",
+  base: basePath,
   build: {
     outDir: "dist",
   },

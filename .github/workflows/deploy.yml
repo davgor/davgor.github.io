@@ -33,6 +33,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Verify build output
+        run: |
+          echo "Dist contents:" && ls -la dist || true
+          echo "Dist index.html (first 80 lines):" && head -n 80 dist/index.html || true
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
@@ -51,3 +56,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Show deployed URL
+        run: echo "Deployed to ${{ steps.deployment.outputs.page_url }}"
