@@ -23,7 +23,7 @@ test.describe('Navigation Tests', () => {
   
   test('Coding Reference', async ({ page }) => {
     await page.getByRole('link', { name: 'Coding Reference' }).click();
-    await expect(page.locator('.card')).toBeVisible();
+    await expect(page.locator('.card').first()).toBeVisible();
     await expect(page).toHaveURL(/\/coding-reference/);
   });
   
