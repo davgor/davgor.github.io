@@ -1,12 +1,14 @@
 import React from 'react';
+import BlogCard from '../components/BlogCard';
 
 const CodingReference: React.FC = () => {
   return (
-    <div className="card">
-      <div className="card-body">
-        Here is where I will discuss the different repositories I have made recently
-      </div>
-    </div>
+    <BlogCard
+      title="Coding Reference"
+      content={[
+        "Here is where I will discuss the different repositories I have made recently"
+      ]}
+    />
   );
 };
 

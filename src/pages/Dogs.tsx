@@ -1,12 +1,14 @@
 import React from 'react';
+import BlogCard from '../components/BlogCard';
 
 const Dogs: React.FC = () => {
   return (
-    <div className="card">
-      <div className="card-body">
-        My dog page will be here
-      </div>
-    </div>
+    <BlogCard
+      title="My Dogs"
+      content={[
+        "My dog page will be here"
+      ]}
+    />
   );
 };
 
