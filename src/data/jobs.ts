@@ -29,6 +29,22 @@ export const jobs: Job[] = [
             title: 'K6 performance testing',
             text: "As I speak of down below our existing performance test framework we implemented with artillery was extremely good at administering load to a site, and solved a key problem for the organization when it was implemented. HOWEVER, it is extremely flawed and will not scale well as the organization continues to mature. So I took my crack team of SDETs and we began exploring a solution. We ended up settling on K6, partially because of its grafana integrations, but also its ability to scale would greatly outpace artillery's. The organization wanted to know could we support 100,000 users K6 could tell us that, artillery could not. So we began implementation, one core issue we encountered is in the way our application handles async communication from one user to the next. It uses a novel approach with shared workers, which at the time K6 did not support. (the app would try to connect the shared worker, K6 didn't know how to deal with that worker type, so it dropped the connection). Instead of this leaving us dead on arrival, we looked into building out a sidecar implementation of our shared worker, this was a highly technical challenge for us to face. But we conquered it, allowing us to begin building out atomic actions (think extremely small user actions). These atomic actions could be rebuilt into workflow testing, or ran individually to look for performance issues. In addition to this, the sidecar investigation has recently unlocked a new layer of testing. One I am calling truely headless testing. More to come as we flesh out that project, and begin implementation.",
           },
+          {
+            title: 'End to end agentic solutions',
+            text: 'Once we had been given the greenlight to begin implementing agentic solutions across the organization, we began to train AI skills off of our POM arcitecture, which thankfully because we drove our POM around JSON objects it was quite easy for the AI to map out what was needed and where. So we began converting the vendor tests into our own e2e solution with the help of claude code. From there we would codify the lessons learned using skills and rules to help keep the agent operating to our standards for tests. This means the flake rate of AI driven tests was still within the sub 1% standard we had for our own end to end tests.'
+          },
+          {
+            title: 'AI bug bot',
+            text: 'As we began adopting agentic solutions across the organization, one of the big projects I lead, and helped implement the arcitecture for was the bug bot. This was a process that would trigger as a new bug was reported in and directed into our bug team. The bug would be combed over by claude, review our testing standards, and attempt to leverage our POM to recreate the bug. It would spend a few minutes doing it on each bug, but at the end we had a 60% recreation rate, which also left us with an end to end test that could be implemented alongside the bug fix.'
+          },
+          { 
+            title: 'AI quarentine bot',
+            text: 'With our agentic solutions now reliably combing over our bugs, and creating non-complex tests. We began to have it target our quarentined test cases, each day it would review a batch of the test cases in quarentine, and attempt to fix them leveraging our POM and our skills and rules. Saving us time on maintenance, and in addition served as a way for us to bring tests out of quarentine if they had proven reliable after a few cycles.'
+          },
+          {
+            title: 'Lighthouse playwright integration',
+            text: 'One of the big struggles we had with the performance of our application was not the backend servers, but instead the front end overloading customers thin clients. To help identify those hotspots we leveraged playwrights ability to hook into lighthouse metrics to begin to build our test profiles for our application under test.'
+          }
         ],
         achievements: {
           title: 'Achievements',
@@ -42,6 +58,8 @@ export const jobs: Job[] = [
             'Rapidily integrated vendor test cases into our suite with my team, taking their tests with a flake rate of 17%, into our suite with a flake rate of >1%. While also shifting testing left by impelemting those same tests that were release candidates into CI.',
             'Implemented team driven contracts giving teams the ability to manage their testing contracts. Giving teams flexibility to manage their own testing needs, while also giving them the ability to hold each other accountable to their testing needs.',
             'Implemented playwright API testing which dramatically increased the speed of our testing, and improving the test coverage',
+            'Our team was one of the first teams to begin embracing agentic solutions, not just using it to write code, but also to reduce some of the normally painful overhead in a quality space.',
+            'Dramatically spiked the number of tests we supported in our CI suite, spiking up from 50 tests from when I started to over 800, all running in under 15 minutes. Driving testing massively to the left, and preventing over 100 bugs per week from ever making it into master'
           ],
         },
       },
