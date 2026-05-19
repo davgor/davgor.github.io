@@ -44,6 +44,25 @@ export const jobs: Job[] = [
           {
             title: 'Lighthouse playwright integration',
             text: 'One of the big struggles we had with the performance of our application was not the backend servers, but instead the front end overloading customers\' thin clients. To help identify those hotspots we leveraged Playwright\'s ability to hook into Lighthouse metrics to begin to build our test profiles for our application under test.'
+          },
+          { 
+            title: 'The DevEx transition',
+            text: 
+              `As the organization continued to grow, our team could no longer scale in line with with the growth of the engineering organization, so we had to adapt to come up with a solution that allowed for greater lateral scaling. 
+              When looking at how other organizations handled quality at scale, I started diving deaper into the DevEx model, and I realized there was a lot of overlap with the quality coach model I had devised. So I began the process of reorganizing 
+              the quality organization to better align with these principles. To accomplish this goal I had to seperate our transition into 3 stages.`
+          },
+          {
+            title: 'Stage 1: Recovery',
+            text: 
+              `This stage was focused on building up some of the muscles we had lost with the rapid growth of the organization, and a few items that we traded off in order to maintain the quality coach model, this included things like documentation, 
+              pruning our quarentine process, building out more tooling for developers to operate further from us. As well as adding in a new layer of testing we called Seed Driven Automated Blackbox Testing, you may also know this as simulation testing. We set 
+              this up so developers could easily add more features into the testing queue, as well as gain some of the benefits of bug bashes or black box testing without needing to spend human hours on it. This was a massive success, and even discovered dozens 
+              of new bugs through its development and implementation. During this window we also reduced the embedded involvement on developer squads by 20%, to allow us to focus on these new recovery steps.`
+          },
+          {
+            title: 'Stage 2: Transition',
+            text: ``
           }
         ],
         achievements: {
