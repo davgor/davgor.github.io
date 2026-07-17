@@ -12,17 +12,17 @@ const Dogs: React.FC = () => {
       />
       <BlogCard
         title="Lestat, our little old man. Born in 2014"
-        titleImage="./assets/lestat.jpg"
+        titleImage="/assets/lestat.jpg"
         content={['German Shepard, terrier mix']}
       />
       <BlogCard
         title="Bilbo, our middle pup man. Born in 2019"
-        titleImage="./assets/bilbo.jpg"
+        titleImage="/assets/bilbo.jpg"
         content={['Greyhound, Beagle mix']}
       />
       <BlogCard
         title="Dorian, our youngest pup. Born in 2020"
-        titleImage="./assets/dorian.jpg"
+        titleImage="/assets/dorian.jpg"
         content={['Malenois, Pit mix']}
       />
     </>

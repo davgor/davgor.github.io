@@ -32,7 +32,7 @@ If unclear which mode, ask once before writing. For expand/edit, identify the ta
 ### New job or new role
 
 1. **Company** — name, website URL, `id` slug (lowercase, no spaces; e.g. `onebrief`)
-2. **Logo** — `./assets/...` path; if missing, pick a plausible path and tell the user to add the file
+2. **Logo** � `/assets/acme.png` style path (drop the file under `public/assets/`); if missing, pick a plausible path and tell the user to add it there
 3. **Role title** — job title only (skill formats the display string)
 4. **Dates** — `MM/DD/YYYY` start/end, or `Present`
 5. **Story paragraphs** — what they did, why it mattered, tech/process

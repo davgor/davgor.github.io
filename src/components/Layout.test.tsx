@@ -21,7 +21,18 @@ describe('Layout', () => {
       </Layout>
     );
     const profileImg = screen.getByAltText('Me!');
-    expect(profileImg).toHaveAttribute('src', './assets/professional_photo.jpg');
+    expect(profileImg).toHaveAttribute('src', '/assets/professional_photo.jpg');
+  });
+
+  it('sets a root-absolute beach backdrop so CSS url() resolves against the site root', () => {
+    const { container } = renderWithRouter(
+      <Layout>
+        <div>Content</div>
+      </Layout>
+    );
+    const shell = container.querySelector('.site-shell');
+    expect(shell).not.toBeNull();
+    expect(shell).toHaveStyle({ '--beach-image': "url('/assets/beach.jpg')" });
   });
 
   it('renders name as brand link to home', () => {

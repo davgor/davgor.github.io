@@ -23,7 +23,7 @@ Empty `title: ''` appears in older entries (Lyft, Atreo). Prefer **titled** sect
 {
   website: 'https://example.com/',
   id: 'example',
-  logo: './assets/example.png',
+  logo: '/assets/example.png',
   roles: [
     {
       title: 'Example - Staff SDET - 01/15/2026 - Present',

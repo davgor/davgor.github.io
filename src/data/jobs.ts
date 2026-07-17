@@ -4,7 +4,7 @@ export const jobs: Job[] = [
   {
     website: 'https://onebrief.com/',
     id: 'onebrief',
-    logo: './assets/onebrief.png',
+    logo: '/assets/onebrief.png',
     roles: [
       {
         title: 'Onebrief - Engineering Manager, Quality - 10/01/2025 - Present',
@@ -119,7 +119,7 @@ export const jobs: Job[] = [
   {
     website: 'https://blackpointcyber.com/',
     id: 'blackpointcyber',
-    logo: './assets/blackpointlogo.png',
+    logo: '/assets/blackpointlogo.png',
     roles: [
       {
         title: 'Blackpoint Cyber - QA Manager - 05/21/2023 - 09/01/2025',
@@ -186,7 +186,7 @@ export const jobs: Job[] = [
   {
     website: 'https://www.lyft.com/',
     id: 'lyft',
-    logo: './assets/lyft-logo-transparent.png',
+    logo: '/assets/lyft-logo-transparent.png',
     roles: [
       {
         title: 'Lyft - Software Engineer in Test - 09/15/2022 - 04/28/2023',
@@ -229,7 +229,7 @@ export const jobs: Job[] = [
   {
     website: 'https://www.atreo.io/',
     id: 'atreo',
-    logo: './assets/Atreo_logo_transparent.png',
+    logo: '/assets/Atreo_logo_transparent.png',
     roles: [
       {
         title: 'Atreo.io - Software Automation Engineer - 07/23/2021 - 09/15/2022',
@@ -267,7 +267,7 @@ export const jobs: Job[] = [
   {
     website: 'https://www.emcins.com/',
     id: 'emcinsurance',
-    logo: './assets/emc_insurance.png',
+    logo: '/assets/emc_insurance.png',
     roles: [
       {
         title: 'EMC Insurance - QA Engineer 3 - 02/01/2021 - 07/23/2021',
@@ -317,7 +317,7 @@ export const jobs: Job[] = [
   {
     website: 'https://geeksquad.com/',
     id: 'geeksquad',
-    logo: './assets/geek_squad.png',
+    logo: '/assets/geek_squad.png',
     roles: [
       {
         title: 'Geek Squad - Consultation Agent - 07/01/2015 - 08/15/2017',

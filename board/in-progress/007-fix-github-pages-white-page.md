@@ -16,3 +16,6 @@ Likely cause: Pages **source** set to “Deploy from a branch” (`main` / root)
 ## Notes
 
 Live check before fix: homepage script was `<script type="module" src="/src/main.tsx">`; `/.nojekyll` 404. Actions `deploy.yml` runs were green while branch-root publish was what visitors got.
+## Sub-ticket 007.1 (done)
+
+Root-absolute /assets/ paths applied in source and tests so nested routes load images correctly. See `board/done/007.1-fix-absolute-asset-paths.md`.

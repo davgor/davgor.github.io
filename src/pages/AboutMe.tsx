@@ -5,7 +5,7 @@ const AboutMe: React.FC = () => {
   return (
     <BlogCard
       title="David Gorden - 9+ years experience"
-      titleImage="./assets/fun_personal_photo.jpg"
+      titleImage="/assets/fun_personal_photo.jpg"
       titleImageObjectPosition="left center"
       content={[
         'My name is David Gorden, I have been an engineer for over 9 years now, during this time I have consistently rose to the challenges presented, and often naturally find myself adopting a leadership position within each employer.',

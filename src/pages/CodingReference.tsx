@@ -3,7 +3,7 @@ import BlogCard, { ContentImage } from '../components/BlogCard';
 
 const electronServerManager: ContentImage = {
   type: 'image',
-  src: './assets/Server_manager.png',
+  src: '/assets/Server_manager.png',
   alt: 'App screenshot',
 };
 

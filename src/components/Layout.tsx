@@ -20,7 +20,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <div
       className="site-shell"
-      style={{ ['--beach-image' as string]: "url('./assets/beach.jpg')" }}
+      style={{ ['--beach-image' as string]: "url('/assets/beach.jpg')" }}
     >
       <header className="site-header">
         <div className="site-header__inner">
@@ -28,7 +28,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             <img
               className="site-brand__avatar"
               alt="Me!"
-              src="./assets/professional_photo.jpg"
+              src="/assets/professional_photo.jpg"
               width={40}
               height={40}
             />

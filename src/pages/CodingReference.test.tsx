@@ -28,7 +28,7 @@ describe('CodingReference', () => {
     render(<CodingReference />);
     expect(screen.getByAltText('App screenshot')).toHaveAttribute(
       'src',
-      './assets/Server_manager.png'
+      '/assets/Server_manager.png'
     );
   });
 });
