@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -33,10 +33,11 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Verify build output
+      - name: Verify production build output
         run: |
           echo "Dist contents:" && ls -la dist || true
           echo "Dist index.html (first 80 lines):" && head -n 80 dist/index.html || true
+          node scripts/assert-dist-index.mjs dist/index.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -53,9 +54,31 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
 
       - name: Show deployed URL
         run: echo "Deployed to ${{ steps.deployment.outputs.page_url }}"
+
+      - name: Smoke-check live site serves production HTML
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          set -e
+          URL="${PAGE_URL%/}/"
+          echo "Checking $URL"
+          # Pages CDN can lag briefly after deploy
+          for i in 1 2 3 4 5 6; do
+            if node scripts/assert-dist-index.mjs "$URL"; then
+              exit 0
+            fi
+            echo "Attempt $i failed; waiting 20s for Pages CDN..."
+            sleep 20
+          done
+          echo "::error::Live site still looks like the Vite dev entry (/src/main.tsx)."
+          echo "::error::Set Settings → Pages → Source to 'GitHub Actions' (not Deploy from a branch / root)."
+          exit 1
