@@ -10,7 +10,7 @@ Vite + React + TypeScript. Engineering process (agent skills, ticket board, and 
 - **Strict lint.** ESLint with `--max-warnings 0`. Rules are never relaxed to make code pass — fix the code. After edits: `lint:fix` then `format` per [`.ai-instructions.md`](.ai-instructions.md).
 - **TypeScript strict mode.** No `any` escapes used to dodge a type problem.
 - **Ticket board.** Work is tracked as markdown tickets under `/board` (`backlog/` → `in-progress/` → `done/`). Epics are `NNN-*.md`, sub-tickets `NNN.M-*.md`, each with checkable acceptance criteria. The `complete-ticket` and `collapse-epic` skills in `.cursor/skills/` (mirrored in `.claude/skills/`) drive the workflow.
-- **Experience entries.** To add or update jobs/roles on the Experience page, use the `add-experience-entry` skill (`.cursor/skills/add-experience-entry/SKILL.md`).
+- **Experience entries.** To add, expand, or update jobs/roles on the Experience page, use the `add-experience-entry` skill (`.cursor/skills/add-experience-entry/SKILL.md`).
 - **No secrets committed.** `.env` stays gitignored.
 
 AI/agent delivery rules: [`.ai-instructions.md`](.ai-instructions.md) and
