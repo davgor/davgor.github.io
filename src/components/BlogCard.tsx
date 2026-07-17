@@ -82,7 +82,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
   if (titleImage) {
     return (
       <article className="content-card content-card--with-image" data-testid="content-card">
-        <div className="content-card__media">
+        <div className="content-card__media" data-testid="content-card-media">
           <img
             src={titleImage}
             alt={title}

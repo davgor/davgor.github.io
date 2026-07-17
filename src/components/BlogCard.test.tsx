@@ -56,6 +56,14 @@ describe('BlogCard', () => {
     expect(img).toHaveAttribute('src', '/title-image.png');
   });
 
+  it('wraps the title image in a media region for contained cover layout', () => {
+    render(<BlogCard title="Test Title" titleImage="/title-image.png" content={['Content']} />);
+    const media = screen.getByTestId('content-card-media');
+    expect(media).toHaveClass('content-card__media');
+    expect(media.querySelector('img')).toHaveAttribute('src', '/title-image.png');
+    expect(screen.getByTestId('content-card')).toHaveClass('content-card--with-image');
+  });
+
   it('applies titleImageObjectPosition to the title image', () => {
     render(
       <BlogCard

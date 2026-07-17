@@ -223,14 +223,19 @@ a:hover {
 
 .content-card--with-image {
   grid-template-columns: minmax(12rem, 40%) 1fr;
+  align-items: stretch;
 }
 
 .content-card__media {
-  min-height: 100%;
-  background: rgba(30, 42, 50, 0.08);
+  position: relative;
+  min-height: 14rem;
+  overflow: hidden;
+  background: rgba(30, 42, 50, 0.1);
 }
 
 .content-card__media img {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
@@ -428,6 +433,8 @@ a:hover {
   }
 
   .content-card__media {
+    min-height: 14rem;
+    height: 14rem;
     max-height: 14rem;
   }
 
