@@ -6,10 +6,9 @@ describe('AboutMe', () => {
   it('renders the page title and photo', () => {
     render(<AboutMe />);
     expect(screen.getByText('David Gorden - 9+ years experience')).toBeInTheDocument();
-    expect(screen.getByAltText('David Gorden - 9+ years experience')).toHaveAttribute(
-      'src',
-      './assets/fun_personal_photo.jpg'
-    );
+    const photo = screen.getByAltText('David Gorden - 9+ years experience');
+    expect(photo).toHaveAttribute('src', './assets/fun_personal_photo.jpg');
+    expect(photo).toHaveStyle({ objectPosition: 'left center' });
   });
 
   it('renders key biography content', () => {

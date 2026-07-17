@@ -6,6 +6,7 @@ const AboutMe: React.FC = () => {
     <BlogCard
       title="David Gorden - 9+ years experience"
       titleImage="./assets/fun_personal_photo.jpg"
+      titleImageObjectPosition="left center"
       content={[
         'My name is David Gorden, I have been an engineer for over 9 years now, during this time I have consistently rose to the challenges presented, and often naturally find myself adopting a leadership position within each employer.',
         "A bit of a background as too who I am and how I got here, I went into army when I was 20, I didn't know what I wanted to do, while I was in basic training, I was thinking truly on what I wanted to do post-military, and I realized the most fun I had doing work, was when I was modding oblivion while I was a teen. This motivation is what drove me into the computer science track. After doing some more research as to my career options, I realized programming, and development was the specific section of game development I was interested in.",

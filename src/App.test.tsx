@@ -8,13 +8,16 @@ describe('AppRoutes', () => {
   it('renders About Me on the home route', () => {
     renderWithRouter(<AppRoutes />, { route: '/' });
     expect(screen.getByText('David Gorden - 9+ years experience')).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /About Me/i })).toHaveClass('active');
+    expect(screen.getByRole('link', { name: /About Me/i })).toHaveAttribute('aria-current', 'page');
   });
 
   it('renders Experience on /experience', () => {
     renderWithRouter(<AppRoutes />, { route: '/experience' });
     expect(screen.getByTestId(`job-card-${jobs[0].id}`)).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /Experience/i })).toHaveClass('active');
+    expect(screen.getByRole('link', { name: /Experience/i })).toHaveAttribute(
+      'aria-current',
+      'page'
+    );
   });
 
   it('renders Coding Reference on /coding-reference', () => {

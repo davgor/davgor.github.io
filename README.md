@@ -57,3 +57,22 @@ Also mirrored:
 - `.github/workflows/deploy.yml` — GitHub Pages deploy on push to `main`
 
 Commits with `[skip ci]` in the message skip the push-triggered CI Checks jobs.
+
+## GitHub Pages deploy
+
+This site must be published from the **Vite `dist/` build via GitHub Actions**, not from the repo root on `main`.
+
+The repo-root `index.html` is the Vite *dev* entry (`/src/main.tsx`). If Pages is set to “Deploy from a branch” → `main` / root, browsers get that file, cannot execute `.tsx`, and show a **white page**. Redeploying only helps when the Actions artifact is what actually gets served.
+
+**Required setting:** repo **Settings → Pages → Build and deployment → Source = GitHub Actions** (not “Deploy from a branch”).
+
+After each deploy, the workflow:
+
+1. Asserts `dist/index.html` references hashed `/assets/*` bundles (not `/src/main.tsx`)
+2. Smoke-checks the live URL for the same production HTML shape
+
+Local check after `npm run build`:
+
+```bash
+npm run assert:dist
+```
