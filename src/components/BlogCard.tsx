@@ -16,6 +16,8 @@ export type ContentItem = string | ContentImage | ContentHtml;
 interface BlogCardProps {
   title: string;
   titleImage?: string;
+  /** CSS object-position for the title image (e.g. "left center"). */
+  titleImageObjectPosition?: string;
   content: ContentItem[];
 }
 
@@ -40,30 +42,35 @@ const linkifyText = (text: string): React.ReactNode => {
   });
 };
 
-const BlogCard: React.FC<BlogCardProps> = ({ title, titleImage, content }) => {
+const BlogCard: React.FC<BlogCardProps> = ({
+  title,
+  titleImage,
+  titleImageObjectPosition,
+  content,
+}) => {
   const renderContent = () => (
-    <div className="card-body">
-      <h5 className="card-title">{title}</h5>
+    <div className="content-card__body" data-testid="content-card-body">
+      <h2 className="content-card__title">{title}</h2>
       {content.map((item, index) => {
         if (typeof item === 'string') {
-          // If the entire string is a URL, render as a standalone link
           if (isUrl(item)) {
             return (
-              <p key={index} className="card-text">
+              <p key={index} className="content-card__text">
                 <a href={item.trim()} target="_blank" rel="noopener noreferrer">
                   {item.trim()}
                 </a>
               </p>
             );
           }
-          // Otherwise, linkify any URLs within the text
           return (
-            <p key={index} className="card-text">
+            <p key={index} className="content-card__text">
               {linkifyText(item)}
             </p>
           );
         } else if (item.type === 'image') {
-          return <img key={index} src={item.src} alt={item.alt || ''} className="img-fluid my-3" />;
+          return (
+            <img key={index} src={item.src} alt={item.alt || ''} className="content-card__image" />
+          );
         } else if (item.type === 'html') {
           return <div key={index} dangerouslySetInnerHTML={{ __html: item.content }} />;
         }
@@ -74,23 +81,25 @@ const BlogCard: React.FC<BlogCardProps> = ({ title, titleImage, content }) => {
 
   if (titleImage) {
     return (
-      <div className="card mb-3 bg-transparent border-0" style={{ maxWidth: '100%' }}>
-        <div className="row g-0 cardmargins">
-          <div className="col-md-4">
-            <img src={titleImage} className="img-fluid rounded-start" alt={title} />
-          </div>
-          <div className="col-md-8 cardbackdrop">{renderContent()}</div>
+      <article className="content-card content-card--with-image" data-testid="content-card">
+        <div className="content-card__media">
+          <img
+            src={titleImage}
+            alt={title}
+            style={
+              titleImageObjectPosition ? { objectPosition: titleImageObjectPosition } : undefined
+            }
+          />
         </div>
-      </div>
+        {renderContent()}
+      </article>
     );
   }
 
   return (
-    <div className="card mb-3 bg-transparent border-0" style={{ maxWidth: '100%' }}>
-      <div className="row g-0 cardmargins">
-        <div className="col-md-12 cardbackdrop">{renderContent()}</div>
-      </div>
-    </div>
+    <article className="content-card" data-testid="content-card">
+      {renderContent()}
+    </article>
   );
 };
 

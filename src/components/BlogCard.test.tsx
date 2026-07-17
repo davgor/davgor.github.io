@@ -56,15 +56,25 @@ describe('BlogCard', () => {
     expect(img).toHaveAttribute('src', '/title-image.png');
   });
 
+  it('applies titleImageObjectPosition to the title image', () => {
+    render(
+      <BlogCard
+        title="Test Title"
+        titleImage="/title-image.png"
+        titleImageObjectPosition="left center"
+        content={['Content']}
+      />
+    );
+    const img = screen.getByAltText('Test Title');
+    expect(img).toHaveStyle({ objectPosition: 'left center' });
+  });
+
   it('returns null for unknown content types', () => {
     const unknownContent = { type: 'unknown', data: 'test' } as unknown as ContentImage;
-    const { container } = render(<BlogCard title="Test" content={[unknownContent]} />);
-    // Should only have the title, no other content rendered
-    const cardBody = container.querySelector('.card-body');
+    render(<BlogCard title="Test" content={[unknownContent]} />);
+    const cardBody = screen.getByTestId('content-card-body');
     expect(cardBody).toBeInTheDocument();
-    // Just 1 child element (the h5 title) since unknown type returns null
-    const paragraphs = cardBody?.querySelectorAll('p');
-    expect(paragraphs?.length).toBe(0);
+    expect(cardBody.querySelectorAll('p').length).toBe(0);
   });
 
   it('renders image without alt text', () => {
@@ -76,5 +86,10 @@ describe('BlogCard', () => {
     const img = container.querySelector('img[src="/test-image.png"]');
     expect(img).toBeInTheDocument();
     expect(img).toHaveAttribute('alt', '');
+  });
+
+  it('exposes a content-card root for layout hooks', () => {
+    render(<BlogCard title="Test" content={['Hello']} />);
+    expect(screen.getByTestId('content-card')).toBeInTheDocument();
   });
 });

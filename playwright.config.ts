@@ -17,7 +17,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    baseURL: 'http://localhost:5173',
+    baseURL: 'http://localhost:5175',
     headless: true,
     screenshot: 'only-on-failure',
     trace: 'on-first-retry',
@@ -26,14 +26,18 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: {
+        ...devices['Desktop Chrome'],
+        // Prefer system Chrome when Playwright's bundled Chromium is unavailable.
+        ...(process.env.PW_USE_SYSTEM_CHROME === '1' ? { channel: 'chrome' as const } : {}),
+      },
     },
   ],
 
   /* Run dev server before starting tests */
   webServer: {
-    command: 'npm run dev',
-    url: 'http://localhost:5173',
+    command: 'npm run dev -- --port 5175 --strictPort',
+    url: 'http://localhost:5175',
     reuseExistingServer: !process.env.CI,
     timeout: 120000,
   },
