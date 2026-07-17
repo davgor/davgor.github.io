@@ -1,0 +1,32 @@
+---
+description: TDD, lint/test/build gate, and /board ticket traceability for all implementation work
+alwaysApply: true
+---
+
+# Delivery standards
+
+Any implementation work in this repo must follow `.cursor/skills/delivery-standards/SKILL.md` (also `.claude/skills/delivery-standards/SKILL.md`).
+
+## Required on every code change
+
+1. **TDD-first** — failing test(s) before implementation for components, pages, data helpers, and other testable logic.
+2. **Verify before done** — all must pass; do not report completion otherwise:
+   - `npm run lint:fix` then `npm run format`
+   - `npm run lint`
+   - `npm run format:check`
+   - `npm run test:unit`
+   - `npm run type-check`
+   - `npm run deadcode`
+   - `npm run build`
+   - `npm run test:e2e` (when UI/navigation/routes change)
+3. **Board traceability** — create a ticket in `/board/backlog/` or update the related epic/ticket before or as you start. If the user named a ticket id, use `complete-ticket` skill.
+
+## Also required
+
+- Read `README.md` and `.ai-instructions.md` for process and format/lint workflow.
+- Check off acceptance criteria only after verification; move tickets to `done/` when complete.
+- Do not commit unless the user explicitly asks.
+
+## Exceptions
+
+- Read-only answers with no code changes: no ticket or test gate required.

@@ -9,20 +9,13 @@ describe('BlogCard', () => {
   });
 
   it('renders string content as paragraphs', () => {
-    render(
-      <BlogCard
-        title="Test"
-        content={['First paragraph', 'Second paragraph']}
-      />
-    );
+    render(<BlogCard title="Test" content={['First paragraph', 'Second paragraph']} />);
     expect(screen.getByText('First paragraph')).toBeInTheDocument();
     expect(screen.getByText('Second paragraph')).toBeInTheDocument();
   });
 
   it('renders URLs as clickable links', () => {
-    render(
-      <BlogCard title="Test" content={['https://example.com']} />
-    );
+    render(<BlogCard title="Test" content={['https://example.com']} />);
     const link = screen.getByRole('link', { name: 'https://example.com' });
     expect(link).toHaveAttribute('href', 'https://example.com');
     expect(link).toHaveAttribute('target', '_blank');
@@ -30,12 +23,7 @@ describe('BlogCard', () => {
   });
 
   it('linkifies URLs within text', () => {
-    render(
-      <BlogCard
-        title="Test"
-        content={['Check out https://example.com for more info']}
-      />
-    );
+    render(<BlogCard title="Test" content={['Check out https://example.com for more info']} />);
     const link = screen.getByRole('link', { name: 'https://example.com' });
     expect(link).toBeInTheDocument();
     expect(screen.getByText(/Check out/)).toBeInTheDocument();
@@ -63,22 +51,14 @@ describe('BlogCard', () => {
   });
 
   it('renders title image when provided', () => {
-    render(
-      <BlogCard
-        title="Test Title"
-        titleImage="/title-image.png"
-        content={['Content']}
-      />
-    );
+    render(<BlogCard title="Test Title" titleImage="/title-image.png" content={['Content']} />);
     const img = screen.getByAltText('Test Title');
     expect(img).toHaveAttribute('src', '/title-image.png');
   });
 
   it('returns null for unknown content types', () => {
     const unknownContent = { type: 'unknown', data: 'test' } as unknown as ContentImage;
-    const { container } = render(
-      <BlogCard title="Test" content={[unknownContent]} />
-    );
+    const { container } = render(<BlogCard title="Test" content={[unknownContent]} />);
     // Should only have the title, no other content rendered
     const cardBody = container.querySelector('.card-body');
     expect(cardBody).toBeInTheDocument();

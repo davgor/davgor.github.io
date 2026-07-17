@@ -1,0 +1,41 @@
+name: Dead Code Check
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  deadcode:
+    if: ${{ github.event_name != 'push' || !contains(github.event.head_commit.message || '', '[skip ci]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run dead code detection (ts-prune)
+        shell: bash
+        run: |
+          npx -y ts-prune --project tsconfig.json > tsprune.out || true
+          if [ -f .tsprune-ignore ]; then
+            grep -v -F -f .tsprune-ignore tsprune.out > tsprune.new || true
+          else
+            cp tsprune.out tsprune.new || true
+          fi
+          if [ -s tsprune.new ]; then
+            echo "New dead exports detected:"
+            cat tsprune.new
+            exit 1
+          else
+            echo "No new dead exports found."
+          fi

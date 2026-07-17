@@ -11,11 +11,11 @@ export const jobs: Job[] = [
         paragraphs: [
           {
             title: 'Why was I promoted?',
-            text: 'After a year of being a staff SDET at Onebrief, we were expanding rapidly, I had just finished hiring the director of quality, working with senior leadership to fill the role, and there was still some ambiguity across the organization on my team\'s role in the day to day life. So I would take over officially as the engineering manager for my team, train my replacement, and work on rooting my team\'s reputation in the organization, as well as having the authority to implement a quality strategy for my team, and the organization to follow.',
+            text: "After a year of being a staff SDET at Onebrief, we were expanding rapidly, I had just finished hiring the director of quality, working with senior leadership to fill the role, and there was still some ambiguity across the organization on my team's role in the day to day life. So I would take over officially as the engineering manager for my team, train my replacement, and work on rooting my team's reputation in the organization, as well as having the authority to implement a quality strategy for my team, and the organization to follow.",
           },
           {
             title: 'Finalizing Quality Coach process',
-            text: 'As I took over as the engineering manager for the embedded quality team, I built out a team charter that clearly defined our roles and responsibilities that my team would have while they were embedded. This new strategy coined my team\'s new name as the Quality Coaches. We as a team focused heavily on being engineers who work on challenging problems, and SCRUM masters of quality that helped guide the teams. One of the first things we did was implement a quality contract with the teams, I would empower and help my team to build out these contracts following shift left principles, and then let them present it to the team and make further refinements as needed to match the team\'s culture. One of the big differences is we started to transition ownership of e2e test writing to the developers. We would aid in setting up the framework, and handle the complicated tests, but the developers would write the simple tests to coincide with their code. This was a massive success, as it allowed us to rapidly expand our test coverage, while also shifting left and getting the developers more familiar with the test automation, and how to use it effectively. This also allowed us to focus our efforts on the more complicated tests, which are often the most valuable tests to have automated.',
+            text: "As I took over as the engineering manager for the embedded quality team, I built out a team charter that clearly defined our roles and responsibilities that my team would have while they were embedded. This new strategy coined my team's new name as the Quality Coaches. We as a team focused heavily on being engineers who work on challenging problems, and SCRUM masters of quality that helped guide the teams. One of the first things we did was implement a quality contract with the teams, I would empower and help my team to build out these contracts following shift left principles, and then let them present it to the team and make further refinements as needed to match the team's culture. One of the big differences is we started to transition ownership of e2e test writing to the developers. We would aid in setting up the framework, and handle the complicated tests, but the developers would write the simple tests to coincide with their code. This was a massive success, as it allowed us to rapidly expand our test coverage, while also shifting left and getting the developers more familiar with the test automation, and how to use it effectively. This also allowed us to focus our efforts on the more complicated tests, which are often the most valuable tests to have automated.",
           },
           {
             title: 'POM Locator Library',
@@ -31,20 +31,20 @@ export const jobs: Job[] = [
           },
           {
             title: 'End to end agentic solutions',
-            text: 'Once we had been given the greenlight to begin implementing agentic solutions across the organization, we began to train AI skills off of our POM architecture, which thankfully because we drove our POM around JSON objects it was quite easy for the AI to map out what was needed and where. So we began converting the vendor tests into our own e2e solution with the help of Claude Code. From there we would codify the lessons learned using skills and rules to help keep the agent operating to our standards for tests. This means the flake rate of AI driven tests was still within the sub 1% standard we had for our own end to end tests.'
+            text: 'Once we had been given the greenlight to begin implementing agentic solutions across the organization, we began to train AI skills off of our POM architecture, which thankfully because we drove our POM around JSON objects it was quite easy for the AI to map out what was needed and where. So we began converting the vendor tests into our own e2e solution with the help of Claude Code. From there we would codify the lessons learned using skills and rules to help keep the agent operating to our standards for tests. This means the flake rate of AI driven tests was still within the sub 1% standard we had for our own end to end tests.',
           },
           {
             title: 'AI bug bot',
-            text: 'As we began adopting agentic solutions across the organization, one of the big projects I led, and helped implement the architecture for was the bug bot. This was a process that would trigger as a new bug was reported in and directed into our bug team. The bug would be combed over by Claude, review our testing standards, and attempt to leverage our POM to recreate the bug. It would spend a few minutes doing it on each bug, but at the end we had a 60% recreation rate, which also left us with an end to end test that could be implemented alongside the bug fix.'
+            text: 'As we began adopting agentic solutions across the organization, one of the big projects I led, and helped implement the architecture for was the bug bot. This was a process that would trigger as a new bug was reported in and directed into our bug team. The bug would be combed over by Claude, review our testing standards, and attempt to leverage our POM to recreate the bug. It would spend a few minutes doing it on each bug, but at the end we had a 60% recreation rate, which also left us with an end to end test that could be implemented alongside the bug fix.',
           },
-          { 
+          {
             title: 'AI quarentine bot',
-            text: 'With our agentic solutions now reliably combing over our bugs, and creating non-complex tests, we began to have it target our quarantined test cases. Each day it would review a batch of the test cases in quarantine, and attempt to fix them leveraging our POM and our skills and rules. Saving us time on maintenance, and in addition served as a way for us to bring tests out of quarantine if they had proven reliable after a few cycles.'
+            text: 'With our agentic solutions now reliably combing over our bugs, and creating non-complex tests, we began to have it target our quarantined test cases. Each day it would review a batch of the test cases in quarantine, and attempt to fix them leveraging our POM and our skills and rules. Saving us time on maintenance, and in addition served as a way for us to bring tests out of quarantine if they had proven reliable after a few cycles.',
           },
           {
             title: 'Lighthouse playwright integration',
-            text: 'One of the big struggles we had with the performance of our application was not the backend servers, but instead the front end overloading customers\' thin clients. To help identify those hotspots we leveraged Playwright\'s ability to hook into Lighthouse metrics to begin to build our test profiles for our application under test.'
-          }
+            text: "One of the big struggles we had with the performance of our application was not the backend servers, but instead the front end overloading customers' thin clients. To help identify those hotspots we leveraged Playwright's ability to hook into Lighthouse metrics to begin to build our test profiles for our application under test.",
+          },
         ],
         achievements: {
           title: 'Achievements',
@@ -59,7 +59,7 @@ export const jobs: Job[] = [
             'Implemented team driven contracts giving teams the ability to manage their testing contracts. Giving teams flexibility to manage their own testing needs, while also giving them the ability to hold each other accountable to their testing needs.',
             'Implemented Playwright API testing which dramatically increased the speed of our testing and improved the test coverage.',
             'Our team was one of the first teams to begin embracing agentic solutions, not just using it to write code, but also to reduce some of the normally painful overhead in a quality space.',
-            'Dramatically spiked the number of tests we supported in our CI suite, spiking up from 50 tests from when I started to over 800, all running in under 15 minutes. Driving testing massively to the left, and preventing over 100 bugs per week from ever making it into master.'
+            'Dramatically spiked the number of tests we supported in our CI suite, spiking up from 50 tests from when I started to over 800, all running in under 15 minutes. Driving testing massively to the left, and preventing over 100 bugs per week from ever making it into master.',
           ],
         },
       },
@@ -88,7 +88,7 @@ export const jobs: Job[] = [
           },
           {
             title: 'Artillery user load simulation',
-            text: 'There was a pre-existing Artillery suite that the dev team had designed a year or so ago before I was hired. This suite was largely abandoned. It also had an emphasis on placing a site under load rather than providing accurate, and actionable data. We had a very small time window to prove the rewrite of our code base would improve user performance. So I rebuilt the test code inside of it, while keeping its original capabilities around applying user load to save time. Afterwards I built out a series of Datadog dashboards to corroborate with our Grafana dashboards, allowing us to extrapolate a decent chunk of actionable data from the automation suite. In addition this ran through AWS Fargate, so we were able to scale up the Playwright instances to a large enough volume to mirror the users\' requirements for the event. This was a far from perfect rework, but it did get us through the event with it being a massive success.',
+            text: "There was a pre-existing Artillery suite that the dev team had designed a year or so ago before I was hired. This suite was largely abandoned. It also had an emphasis on placing a site under load rather than providing accurate, and actionable data. We had a very small time window to prove the rewrite of our code base would improve user performance. So I rebuilt the test code inside of it, while keeping its original capabilities around applying user load to save time. Afterwards I built out a series of Datadog dashboards to corroborate with our Grafana dashboards, allowing us to extrapolate a decent chunk of actionable data from the automation suite. In addition this ran through AWS Fargate, so we were able to scale up the Playwright instances to a large enough volume to mirror the users' requirements for the event. This was a far from perfect rework, but it did get us through the event with it being a massive success.",
           },
           {
             title: 'Shadow testing (e2e quarantine)',
@@ -130,7 +130,7 @@ export const jobs: Job[] = [
           },
           {
             title: 'Playwright Training',
-            text: 'I started by creating an extensively documented and recorded course on Playwright stored within the team\'s Confluence page. Allowing my team to progress on the training as they had time, so this way we could progress on company projects while improving their skills. The training course consisted of not only utilizing Playwright but also teaching them how to code with TypeScript.',
+            text: "I started by creating an extensively documented and recorded course on Playwright stored within the team's Confluence page. Allowing my team to progress on the training as they had time, so this way we could progress on company projects while improving their skills. The training course consisted of not only utilizing Playwright but also teaching them how to code with TypeScript.",
           },
           {
             title: 'Team Expansion',
@@ -142,7 +142,7 @@ export const jobs: Job[] = [
           },
           {
             title: 'Shift Left',
-            text: 'With formal product teams formed again I was able to directly embed my QA team into those teams, and begin working on a few new different processes. First was an implementation of shift left, by working with the project managers, and other engineering teams I created formalized deliverables at each stage of the project lifecycle, and got QA brought into the project meetings. The organization\'s embrace of shift left that I pushed once again dramatically reduced the number of bugs found during development, and the number of bugs released into production. Development bugs went from 300-400 in the first projects we tested, down to about 20. With production bugs being down to 2-3, each had no revenue impact, and were counted as low impact bugs for rare edge cases.',
+            text: "With formal product teams formed again I was able to directly embed my QA team into those teams, and begin working on a few new different processes. First was an implementation of shift left, by working with the project managers, and other engineering teams I created formalized deliverables at each stage of the project lifecycle, and got QA brought into the project meetings. The organization's embrace of shift left that I pushed once again dramatically reduced the number of bugs found during development, and the number of bugs released into production. Development bugs went from 300-400 in the first projects we tested, down to about 20. With production bugs being down to 2-3, each had no revenue impact, and were counted as low impact bugs for rare edge cases.",
           },
           {
             title: "Embedded QA's",
@@ -158,7 +158,7 @@ export const jobs: Job[] = [
           },
           {
             title: 'Endpoint Automation',
-            text: 'We have some very complex software at Blackpoint Cyber, and much of the complexity centers around our agents (think an antivirus, that acts as a hacker defense tool as well). This complexity makes testing the agent extremely arduous and complex, as well as risky, as we all found out with the CrowdStrike incident. We needed a testing framework that could perform end to end tests on our headless agent, this way we never have our own global incident. This tool performs actions on a machine designed to trigger events, and then validates that the agent performs as expected, but most importantly it does this on newly created devices for any version of Windows that is supported, allowing us to have a clean test each time, and it performs the tests within about 10 minutes. Not only did this shave off 3 days of manual testing from 1 test, but this means we can test our agent for critical failures like the CrowdStrike issue in the developers\' CI, preventing the breaking code from ever leaving the PR stage.',
+            text: "We have some very complex software at Blackpoint Cyber, and much of the complexity centers around our agents (think an antivirus, that acts as a hacker defense tool as well). This complexity makes testing the agent extremely arduous and complex, as well as risky, as we all found out with the CrowdStrike incident. We needed a testing framework that could perform end to end tests on our headless agent, this way we never have our own global incident. This tool performs actions on a machine designed to trigger events, and then validates that the agent performs as expected, but most importantly it does this on newly created devices for any version of Windows that is supported, allowing us to have a clean test each time, and it performs the tests within about 10 minutes. Not only did this shave off 3 days of manual testing from 1 test, but this means we can test our agent for critical failures like the CrowdStrike issue in the developers' CI, preventing the breaking code from ever leaving the PR stage.",
           },
           {
             title: 'Team change',
@@ -209,7 +209,7 @@ export const jobs: Job[] = [
           },
           {
             title: '',
-            text: "Once we had our tests automated, we would set up our jobs in Buildkite to automatically run (normally daily), and give the developers the ability to run the suites through their PRs on GitHub directly.",
+            text: 'Once we had our tests automated, we would set up our jobs in Buildkite to automatically run (normally daily), and give the developers the ability to run the suites through their PRs on GitHub directly.',
           },
         ],
         achievements: {
@@ -244,7 +244,7 @@ export const jobs: Job[] = [
           },
           {
             title: '',
-            text: 'Coupling this with a listener on <b>AWS</b> that would track incoming requests for a service on GitHub Actions, then spin up a new server that contained a pre-built image for our QA build. Then be assigned the jobs outside of the matrix. Once they were no longer needed they would be collapsed and removed. By doing this we were able to drastically reduce execution time, without sacrificing the test suite\'s value.',
+            text: "Coupling this with a listener on <b>AWS</b> that would track incoming requests for a service on GitHub Actions, then spin up a new server that contained a pre-built image for our QA build. Then be assigned the jobs outside of the matrix. Once they were no longer needed they would be collapsed and removed. By doing this we were able to drastically reduce execution time, without sacrificing the test suite's value.",
           },
           {
             title: '',
@@ -274,7 +274,7 @@ export const jobs: Job[] = [
         paragraphs: [
           {
             title: '',
-            text: "After working with the QA team for several years at this point, I transitioned over to the QA department as a fully fledged QA. I was assigned to the forms team, and was given a small team of contractors to help write up automated tests, and improve the QA coverage on the forms team. During this time, I helped train my QAs on how to use ReadyAPI to create automated API tests, that would request a form, and do a pixel-by-pixel comparison with the template to ensure that the forms generated matched with the requested design. After working with the team for a few months I built out a series of documents that helped standardize our workflow, and dramatically improved the efficiency of the team. To such an extent that I no longer needed to request 5 contractors for the forms team, eventually rolling off 2 forms QAs and by the time I left the role, I was able to leave without the role needing to be backfilled, and was taken over by one of the contractors I trained.",
+            text: 'After working with the QA team for several years at this point, I transitioned over to the QA department as a fully fledged QA. I was assigned to the forms team, and was given a small team of contractors to help write up automated tests, and improve the QA coverage on the forms team. During this time, I helped train my QAs on how to use ReadyAPI to create automated API tests, that would request a form, and do a pixel-by-pixel comparison with the template to ensure that the forms generated matched with the requested design. After working with the team for a few months I built out a series of documents that helped standardize our workflow, and dramatically improved the efficiency of the team. To such an extent that I no longer needed to request 5 contractors for the forms team, eventually rolling off 2 forms QAs and by the time I left the role, I was able to leave without the role needing to be backfilled, and was taken over by one of the contractors I trained.',
           },
         ],
         achievements: {
@@ -298,7 +298,7 @@ export const jobs: Job[] = [
           },
           {
             title: '',
-            text: "After I had helped spin up the transition project for the QA team, the company began transitioning away from mapper, and began training the entire development department on more modern languages than mapper such as C#. I worked with my team to show them the ins and outs of Visual Studio and C#. After teaching them the principles of Object Oriented Programming, we began a transition to C#.",
+            text: 'After I had helped spin up the transition project for the QA team, the company began transitioning away from mapper, and began training the entire development department on more modern languages than mapper such as C#. I worked with my team to show them the ins and outs of Visual Studio and C#. After teaching them the principles of Object Oriented Programming, we began a transition to C#.',
           },
         ],
         achievements: {

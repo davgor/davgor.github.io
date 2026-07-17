@@ -13,9 +13,20 @@
     "deploy": "npm run build && npx gh-pages -d dist",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css}\"",
-    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "lint": "eslint \"src/**/*.{ts,tsx}\" --max-warnings 0",
     "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix",
+    "type-check": "tsc --noEmit",
+    "deadcode": "npx -y ts-prune --project tsconfig.json",
     "prepare": "husky"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "prettier --write",
+      "eslint --fix --max-warnings 0"
+    ],
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -42,6 +53,7 @@
     "husky": "^9.1.7",
     "jimp": "^0.22.12",
     "jsdom": "^28.1.0",
+    "lint-staged": "^15.2.0",
     "prettier": "^3.8.1",
     "typescript": "^5.2.2",
     "uuid": "^9.0.1",

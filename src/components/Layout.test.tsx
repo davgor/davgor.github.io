@@ -1,12 +1,7 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import { MemoryRouter } from 'react-router-dom';
 import Layout from './Layout';
-
-const renderWithRouter = (ui: React.ReactElement, { route = '/' } = {}) => {
-  return render(<MemoryRouter initialEntries={[route]}>{ui}</MemoryRouter>);
-};
+import { renderWithRouter } from '../test/renderWithRouter';
 
 describe('Layout', () => {
   it('renders children content', () => {
@@ -125,8 +120,14 @@ describe('Layout', () => {
       </Layout>
     );
     expect(screen.getByRole('link', { name: /About Me/i })).toHaveAttribute('href', '/');
-    expect(screen.getByRole('link', { name: /Experience/i })).toHaveAttribute('href', '/experience');
-    expect(screen.getByRole('link', { name: /Coding Reference/i })).toHaveAttribute('href', '/coding-reference');
+    expect(screen.getByRole('link', { name: /Experience/i })).toHaveAttribute(
+      'href',
+      '/experience'
+    );
+    expect(screen.getByRole('link', { name: /Coding Reference/i })).toHaveAttribute(
+      'href',
+      '/coding-reference'
+    );
     expect(screen.getByRole('link', { name: /Dogs!/i })).toHaveAttribute('href', '/dogs');
     expect(screen.getByRole('link', { name: /Hobbies/i })).toHaveAttribute('href', '/hobbies');
     expect(screen.getByRole('link', { name: /Contact Me/i })).toHaveAttribute('href', '/contact');

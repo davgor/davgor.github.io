@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import JobCard from './JobCard';
-import { Job } from '../types';
+import type { Job } from '../types';
 
 const mockJob: Job = {
   id: 'test-job',
@@ -38,46 +38,44 @@ describe('JobCard', () => {
     render(<JobCard job={mockJob} />);
     const logo = screen.getByTestId('job-logo-test-job');
     expect(logo).toHaveAttribute('src', '/test-logo.png');
-    
+
     const link = screen.getByTestId('job-website-link-test-job');
     expect(link).toHaveAttribute('href', 'https://testcompany.com');
   });
 
   it('renders role title', () => {
     render(<JobCard job={mockJob} />);
-    expect(screen.getByTestId('job-role-title-test-job-0')).toHaveTextContent(
-      'Software Engineer'
-    );
+    expect(screen.getByTestId('job-role-title-test-job-0')).toHaveTextContent('Software Engineer');
   });
 
   it('renders paragraph with title', () => {
     render(<JobCard job={mockJob} />);
-    expect(
-      screen.getByTestId('job-paragraph-title-test-job-0-0')
-    ).toHaveTextContent('Responsibilities');
-    expect(
-      screen.getByTestId('job-paragraph-text-test-job-0-0')
-    ).toHaveTextContent('Building awesome software');
+    expect(screen.getByTestId('job-paragraph-title-test-job-0-0')).toHaveTextContent(
+      'Responsibilities'
+    );
+    expect(screen.getByTestId('job-paragraph-text-test-job-0-0')).toHaveTextContent(
+      'Building awesome software'
+    );
   });
 
   it('renders paragraph without title', () => {
     render(<JobCard job={mockJob} />);
-    expect(
-      screen.getByTestId('job-paragraph-text-test-job-0-1')
-    ).toHaveTextContent('Working with a great team');
+    expect(screen.getByTestId('job-paragraph-text-test-job-0-1')).toHaveTextContent(
+      'Working with a great team'
+    );
   });
 
   it('renders achievements section', () => {
     render(<JobCard job={mockJob} />);
-    expect(
-      screen.getByTestId('job-achievements-title-test-job-0')
-    ).toHaveTextContent('Key Achievements');
-    expect(
-      screen.getByTestId('job-achievement-item-test-job-0-0')
-    ).toHaveTextContent('Shipped major feature');
-    expect(
-      screen.getByTestId('job-achievement-item-test-job-0-1')
-    ).toHaveTextContent('Improved performance by 50%');
+    expect(screen.getByTestId('job-achievements-title-test-job-0')).toHaveTextContent(
+      'Key Achievements'
+    );
+    expect(screen.getByTestId('job-achievement-item-test-job-0-0')).toHaveTextContent(
+      'Shipped major feature'
+    );
+    expect(screen.getByTestId('job-achievement-item-test-job-0-1')).toHaveTextContent(
+      'Improved performance by 50%'
+    );
   });
 
   it('renders multiple roles', () => {
@@ -95,11 +93,24 @@ describe('JobCard', () => {
       ],
     };
     render(<JobCard job={jobWithMultipleRoles} />);
-    expect(screen.getByTestId('job-role-title-test-job-0')).toHaveTextContent(
-      'Senior Engineer'
-    );
-    expect(screen.getByTestId('job-role-title-test-job-1')).toHaveTextContent(
-      'Junior Engineer'
+    expect(screen.getByTestId('job-role-title-test-job-0')).toHaveTextContent('Senior Engineer');
+    expect(screen.getByTestId('job-role-title-test-job-1')).toHaveTextContent('Junior Engineer');
+  });
+
+  it('omits achievements section when a role has none', () => {
+    const jobWithoutAchievements: Job = {
+      ...mockJob,
+      roles: [
+        {
+          title: 'Contractor',
+          paragraphs: [{ title: '', text: 'Short engagement' }],
+        },
+      ],
+    };
+    render(<JobCard job={jobWithoutAchievements} />);
+    expect(screen.queryByTestId('job-achievements-test-job-0')).not.toBeInTheDocument();
+    expect(screen.getByTestId('job-paragraph-text-test-job-0-0')).toHaveTextContent(
+      'Short engagement'
     );
   });
 });

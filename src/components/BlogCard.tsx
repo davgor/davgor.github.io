@@ -57,7 +57,11 @@ const BlogCard: React.FC<BlogCardProps> = ({ title, titleImage, content }) => {
             );
           }
           // Otherwise, linkify any URLs within the text
-          return <p key={index} className="card-text">{linkifyText(item)}</p>;
+          return (
+            <p key={index} className="card-text">
+              {linkifyText(item)}
+            </p>
+          );
         } else if (item.type === 'image') {
           return <img key={index} src={item.src} alt={item.alt || ''} className="img-fluid my-3" />;
         } else if (item.type === 'html') {
