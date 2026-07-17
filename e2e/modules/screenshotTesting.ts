@@ -1,5 +1,5 @@
 import {Locator, Page} from '@playwright/test'
-import Jimp from 'jimp';
+import { Jimp } from 'jimp';
 import fs from 'fs';
 import path from 'path';
 import { v4 as uuidv4 } from 'uuid';
@@ -37,10 +37,10 @@ export class ScreenshotInteraction {
         const screenshot = await Jimp.read(await this.page.screenshot({ fullPage: true }));
         const buttonScreenshot = await Jimp.read(buttonScreenshotPath);
     
-        const screenshotWidth = screenshot.getWidth();
-        const screenshotHeight = screenshot.getHeight();
-        const buttonWidth = buttonScreenshot.getWidth();
-        const buttonHeight = buttonScreenshot.getHeight();
+        const screenshotWidth = screenshot.width;
+        const screenshotHeight = screenshot.height;
+        const buttonWidth = buttonScreenshot.width;
+        const buttonHeight = buttonScreenshot.height;
     
         for (let x = 0; x < screenshotWidth - buttonWidth; x++) {
             for (let y = 0; y < screenshotHeight - buttonHeight; y++) {
