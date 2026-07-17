@@ -1,17 +1,15 @@
-# Baseline ignore for ts-prune (one pattern per line)
-# Add entries here for exports that are used dynamically or are false positives.
+# Baseline ignore for ts-prune (one pattern per line).
+# Match export identity only — CI strips ":line" before comparing so edits
+# that shift line numbers do not fail deadcode.
+#
+# Format: <path> - <export name>[ (used in module)]
+
 # App root default export (wired via main.tsx)
-\src\App.tsx:28 - default
-src/App.tsx:28 - default
+src/App.tsx - default
 # ContentItem is the BlogCard content union; used within the module
-\src\components\BlogCard.tsx:14 - ContentItem (used in module)
-src/components/BlogCard.tsx:14 - ContentItem (used in module)
+src/components/BlogCard.tsx - ContentItem (used in module)
 # Shared types: nested interfaces used within the module; Job/Role imported by JobCard/jobs
-\src\types\index.ts:1 - Paragraph (used in module)
-src/types/index.ts:1 - Paragraph (used in module)
-\src\types\index.ts:6 - Achievement (used in module)
-src/types/index.ts:6 - Achievement (used in module)
-\src\types\index.ts:11 - Role (used in module)
-src/types/index.ts:11 - Role (used in module)
-\src\types\index.ts:17 - Job
-src/types/index.ts:17 - Job
+src/types/index.ts - Paragraph (used in module)
+src/types/index.ts - Achievement (used in module)
+src/types/index.ts - Role (used in module)
+src/types/index.ts - Job

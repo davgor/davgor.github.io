@@ -27,10 +27,15 @@ jobs:
         shell: bash
         run: |
           npx -y ts-prune --project tsconfig.json > tsprune.out || true
+          # Normalize paths and drop line numbers so ignore entries survive
+          # Windows vs POSIX path separators and harmless line-number drift.
+          # "\src\App.tsx:34 - default" -> "src/App.tsx - default"
+          sed -E 's/\\/\//g; s/^\///; s/:[0-9]+ - / - /' tsprune.out > tsprune.normalized
           if [ -f .tsprune-ignore ]; then
-            grep -v -F -f .tsprune-ignore tsprune.out > tsprune.new || true
+            grep -v -E '^\s*(#|$)' .tsprune-ignore > tsprune.ignore.patterns || true
+            grep -v -F -f tsprune.ignore.patterns tsprune.normalized > tsprune.new || true
           else
-            cp tsprune.out tsprune.new || true
+            cp tsprune.normalized tsprune.new || true
           fi
           if [ -s tsprune.new ]; then
             echo "New dead exports detected:"
