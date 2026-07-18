@@ -17,7 +17,7 @@ describe('Dogs', () => {
       'src',
       '/assets/lestat.jpg'
     );
-    expect(screen.getByText('German Shepard, terrier mix')).toBeInTheDocument();
+    expect(screen.getByText('German Shepherd, terrier mix')).toBeInTheDocument();
 
     expect(screen.getByText(/Bilbo, our middle pup man/i)).toBeInTheDocument();
     expect(screen.getByAltText(/Bilbo, our middle pup man/i)).toHaveAttribute(
@@ -31,6 +31,12 @@ describe('Dogs', () => {
       'src',
       '/assets/dorian.jpg'
     );
-    expect(screen.getByText('Malenois, Pit mix')).toBeInTheDocument();
+    expect(screen.getByText('Malinois, Pit mix')).toBeInTheDocument();
+  });
+
+  it('uses correct capitalization and hyphenation in the intro', () => {
+    render(<Dogs />);
+    expect(screen.getByText(/no-kill shelter in Iowa/i)).toBeInTheDocument();
+    expect(screen.getByText(/pound in North Carolina/i)).toBeInTheDocument();
   });
 });

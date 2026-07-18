@@ -11,8 +11,16 @@ describe('ContactMe', () => {
 
   it('lists interview titles', () => {
     render(<ContactMe />);
+    expect(screen.getByText(/Titles I will interview for:/i)).toBeInTheDocument();
     expect(screen.getByText(/Senior Software Developer In Test \(SDET\)/i)).toBeInTheDocument();
     expect(screen.getByText(/Director of Quality Assurance/i)).toBeInTheDocument();
+  });
+
+  it('uses a comma before the call to action in the intro', () => {
+    render(<ContactMe />);
+    expect(
+      screen.getByText(/roles that match, feel free to reach out/i)
+    ).toBeInTheDocument();
   });
 
   it('exposes contact methods including LinkedIn', () => {

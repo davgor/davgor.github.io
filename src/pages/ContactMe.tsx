@@ -6,10 +6,10 @@ const ContactMe: React.FC = () => {
     <BlogCard
       title="Contact me!"
       content={[
-        'I am always open to hearing about new job opportunities, so if you are reading this page and have any roles that match feel free to reach out.',
+        'I am always open to hearing about new job opportunities, so if you are reading this page and have any roles that match, feel free to reach out.',
         {
           type: 'html',
-          content: `<h6><b>Title's I will interview for:</b></h6><ul><li>Senior Software Developer In Test (SDET)</li><li>Senior Automation Engineer</li><li>Quality Assurance Manager</li><li>Director of Quality Assurance</li></ul>`,
+          content: `<h6><b>Titles I will interview for:</b></h6><ul><li>Senior Software Developer In Test (SDET)</li><li>Senior Automation Engineer</li><li>Quality Assurance Manager</li><li>Director of Quality Assurance</li></ul>`,
         },
         {
           type: 'html',
