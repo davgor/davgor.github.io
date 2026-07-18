@@ -18,10 +18,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     path === '/' ? location.pathname === '/' : location.pathname.startsWith(path);
 
   return (
-    <div
-      className="site-shell"
-      style={{ ['--beach-image' as string]: "url('/assets/beach.jpg')" }}
-    >
+    <div className="site-shell" style={{ ['--beach-image' as string]: "url('/assets/beach.jpg')" }}>
       <header className="site-header">
         <div className="site-header__inner">
           <Link to="/" className="site-brand" onClick={() => setNavOpen(false)}>

@@ -19,8 +19,21 @@ describe('Hobbies', () => {
 
   it('mentions key hobby details', () => {
     render(<Hobbies />);
-    expect(screen.getByText(/modding in oblivion/i)).toBeInTheDocument();
+    expect(screen.getByText(/modding in Oblivion/i)).toBeInTheDocument();
     expect(screen.getByText(/paladin/i)).toBeInTheDocument();
     expect(screen.getByText(/Warhammer 40k/i)).toBeInTheDocument();
+  });
+
+  it('uses correct spelling and proper nouns in hobby copy', () => {
+    render(<Hobbies />);
+    expect(screen.getByText(/could lose time over modding/i)).toBeInTheDocument();
+    expect(screen.getByText(/even arguably I spent more time/i)).toBeInTheDocument();
+    expect(screen.getByText(/Creation Kit than I ever did/i)).toBeInTheDocument();
+    expect(screen.getByText(/Lethal Company/i)).toBeInTheDocument();
+    expect(screen.getByText(/Helldivers/i)).toBeInTheDocument();
+    expect(screen.getByText(/Dragon's Dogma/i)).toBeInTheDocument();
+    expect(screen.getByText(/in between Magic: The Gathering/i)).toBeInTheDocument();
+    expect(screen.getByText(/quite a lot of Warhammer 40k/i)).toBeInTheDocument();
+    expect(screen.getByText(/my Instagram link/i)).toBeInTheDocument();
   });
 });

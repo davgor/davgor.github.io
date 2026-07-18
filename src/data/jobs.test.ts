@@ -37,4 +37,28 @@ describe('jobs data', () => {
       }
     }
   });
+
+  it('uses correct spelling and grammar in key experience phrases', () => {
+    const allText = jobs
+      .flatMap((job) => job.roles)
+      .flatMap((role) => [
+        ...role.paragraphs.map((paragraph) => `${paragraph.title} ${paragraph.text}`),
+        ...(role.achievements?.list ?? []),
+      ])
+      .join('\n');
+
+    expect(allText).toContain('AI quarantine bot');
+    expect(allText).toContain('QA embedded processes');
+    expect(allText).toContain('development team Odyssey');
+    expect(allText).toContain('first saw at Lyft');
+    expect(allText).toContain('allowed us to create an extensive test plan');
+    expect(allText).toContain("keep the project's quality high");
+    expect(allText).toContain('well-oiled machine');
+    expect(allText).toContain('counteract these issues');
+    expect(allText).toContain("improve the team's efficiency to the point where");
+    expect(allText).toContain('full-fledged QA');
+    expect(allText).toContain('company-wide adoption');
+    expect(allText).toContain('After a month of being a staff SDET');
+    expect(allText).not.toMatch(/quarentine|processess|Title's|Shepard|Malenois/);
+  });
 });
