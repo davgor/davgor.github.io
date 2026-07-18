@@ -35,26 +35,26 @@ export const jobs: Job[] = [
           },
           {
             title: 'AI bug bot',
-            text: 'As we began adopting agentic solutions across the organization, one of the big projects I led, and helped implement the architecture for was the bug bot. This was a process that would trigger as a new bug was reported in and directed into our bug team. The bug would be combed over by Claude, review our testing standards, and attempt to leverage our POM to recreate the bug. It would spend a few minutes doing it on each bug, but at the end we had a 60% recreation rate, which also left us with an end to end test that could be implemented alongside the bug fix.',
+            text: 'As we began adopting agentic solutions across the organization, one of the big projects I led, and helped implement the architecture for, was the bug bot. This was a process that would trigger as a new bug was reported in and directed into our bug team. The bug would be combed over by Claude, review our testing standards, and attempt to leverage our POM to recreate the bug. It would spend a few minutes doing it on each bug, but at the end we had a 60% recreation rate, which also left us with an end-to-end test that could be implemented alongside the bug fix.',
           },
           {
             title: 'AI quarantine bot',
             text: 'With our agentic solutions now reliably combing over our bugs and creating non-complex tests, we began to have it target our quarantined test cases. Each day it would review a batch of the test cases in quarantine, and attempt to fix them leveraging our POM and our skills and rules. This saved us time on maintenance, and in addition served as a way for us to bring tests out of quarantine if they had proven reliable after a few cycles.',
           },
           {
-            title: 'Lighthouse playwright integration',
+            title: 'Lighthouse Playwright integration',
             text: "One of the big struggles we had with the performance of our application was not the backend servers, but instead the front end overloading customers' thin clients. To help identify those hotspots we leveraged Playwright's ability to hook into Lighthouse metrics to begin to build our test profiles for our application under test.",
           },
         ],
         achievements: {
           title: 'Achievements',
           list: [
-            'Led a project to rewrite our end to end suite, unifying our end to end codebase. Taking flake rate down to sub 1%, and allowing us to navigate an extremely complex application with the use of locator libraries, and POMs.',
-            'Trained team of 8 SDETs on playwright, and worked with them to design our POM locator library structure.',
+            'Led a project to rewrite our end-to-end suite, unifying our end-to-end codebase. Taking flake rate down to sub 1%, and allowing us to navigate an extremely complex application with the use of locator libraries and POMs.',
+            'Trained team of 8 SDETs on Playwright, and worked with them to design our POM locator library structure.',
             'Implemented Quality Coach process, allowing my engineers to support a larger ratio of developers, while still enabling them to work on challenging engineering issues.',
-            'Quality Coach process shifted our escaped bug rate from 20%, down to 2% without sacrificing velocity.',
+            'Quality Coach process shifted our escaped bug rate from 20% down to 2% without sacrificing velocity.',
             'Rebuilt our load testing suite to be in line with industry standards, leveraging K6.',
-            'Rebuilt our CI framework to support a huge range of test configurations, and volumes. Upwards of 1000 end to end test cases per 8 minutes.',
+            'Rebuilt our CI framework to support a huge range of test configurations and volumes. Upwards of 1000 end-to-end test cases per 8 minutes.',
             'Rapidly integrated vendor test cases into our suite with my team, taking their tests with a flake rate of 17%, into our suite with a flake rate of sub 1%. While also shifting testing left by implementing those same tests that were release candidates into CI.',
             'Implemented team driven contracts giving teams the ability to manage their testing contracts. Giving teams flexibility to manage their own testing needs, while also giving them the ability to hold each other accountable to their testing needs.',
             'Implemented Playwright API testing which dramatically increased the speed of our testing and improved the test coverage.',
@@ -84,7 +84,7 @@ export const jobs: Job[] = [
           },
           {
             title: 'Quality Champion',
-            text: 'Our first round for the quality strategy was to implement a quality champion approach, this is where the quality team would focus on the tenets of shift left, guide their teams from as early as project inception, and they themselves would work on the end to end test automation. This laid the groundwork for the quality coach processes we later implemented.',
+            text: 'Our first round for the quality strategy was to implement a quality champion approach. This is where the quality team would focus on the tenets of shift left, guide their teams from as early as project inception, and they themselves would work on the end-to-end test automation. This laid the groundwork for the quality coach processes we later implemented.',
           },
           {
             title: 'Artillery user load simulation',
@@ -102,15 +102,15 @@ export const jobs: Job[] = [
         achievements: {
           title: 'Achievements',
           list: [
-            'Designed a visual wait system for our end to end tests, completely eliminating flakes due to rendering, and killing any need for explicit waits in our tests.',
-            'Helped bring unit and integration tests into the developers development process.',
-            'Implemented shift left testing practices, and got QA involved in the project meetings to help improve quality from the start of projects.',
+            'Designed a visual wait system for our end-to-end tests, completely eliminating flakes due to rendering, and killing any need for explicit waits in our tests.',
+            "Helped bring unit and integration tests into the developers' development process.",
+            'Implemented shift-left testing practices, and got QA involved in the project meetings to help improve quality from the start of projects.',
             'Took test suite of 50 flaky tests, and 250 failing tests to 500 stable and trusted tests.',
             'Expanded testability of the test suite to dramatically reduce test flakes.',
-            'Rewrote dated Artillery suite, integrated with Fargate in AWS to allow for mass user load testing, allowing us to confirm our application could handle 10,000 real world users, helping validate a massive rewrite of the code base.',
-            'Dramatically reduced frequency of sev0 incidents with left-shifted end to end testing. Reducing sev0 incidents from 2 a week, down to a handful a quarter.',
+            'Rewrote dated Artillery suite, integrated with Fargate in AWS to allow for mass user load testing, allowing us to confirm our application could handle 10,000 real-world users, helping validate a massive rewrite of the code base.',
+            'Dramatically reduced frequency of sev0 incidents with left-shifted end-to-end testing. Reducing sev0 incidents from 2 a week, down to a handful a quarter.',
             'Dramatically reduced the frequency of print bugs with a new implementation of print testing in Playwright. At a point we were getting them weekly, and now they are rare.',
-            'Significantly improved the number of tests we were able to run automated. Specifically I developed a multi user fixture that allowed us to create and manage a large number of users quickly for any scenario we had.',
+            'Significantly improved the number of tests we were able to run automated. Specifically I developed a multi-user fixture that allowed us to create and manage a large number of users quickly for any scenario we had.',
           ],
         },
       },
@@ -145,8 +145,8 @@ export const jobs: Job[] = [
             text: "With formal product teams formed again I was able to directly embed my QA team into those teams, and begin working on a few new different processes. First was an implementation of shift left, by working with the project managers, and other engineering teams I created formalized deliverables at each stage of the project lifecycle, and got QA brought into the project meetings. The organization's embrace of shift left that I pushed once again dramatically reduced the number of bugs found during development, and the number of bugs released into production. Development bugs went from 300-400 in the first projects we tested, down to about 20. With production bugs being down to 2-3, each had no revenue impact, and were counted as low impact bugs for rare edge cases.",
           },
           {
-            title: "Embedded QA's",
-            text: "With the switches to shift left, and fully embedded QAs I had started getting more requests on increasing transparency on QA processes that were followed. So I developed an extensive test plan template and worked with the rest of the engineering leaders to ensure we were covering all our bases. Then trained the team on these new expectations, and helped mentor them in the template's utilization for the first few projects.",
+            title: 'Embedded QAs',
+            text: "With the switches to shift left, and fully embedded QAs, I had started getting more requests on increasing transparency on QA processes that were followed. So I developed an extensive test plan template and worked with the rest of the engineering leaders to ensure we were covering all our bases. Then I trained the team on these new expectations, and helped mentor them in the template's utilization for the first few projects.",
           },
           {
             title: 'Test Case Review',

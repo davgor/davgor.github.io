@@ -37,8 +37,6 @@ describe('CodingReference', () => {
     expect(screen.getByText(/check out my GitHub page/i)).toBeInTheDocument();
     expect(screen.getByText(/more in-depth information/i)).toBeInTheDocument();
     expect(screen.getByText(/It's a pretty simple page/i)).toBeInTheDocument();
-    expect(
-      screen.getByText(/local use case has me doing it on Windows/i)
-    ).toBeInTheDocument();
+    expect(screen.getByText(/local use case has me doing it on Windows/i)).toBeInTheDocument();
   });
 });

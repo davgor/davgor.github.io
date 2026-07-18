@@ -18,9 +18,7 @@ describe('ContactMe', () => {
 
   it('uses a comma before the call to action in the intro', () => {
     render(<ContactMe />);
-    expect(
-      screen.getByText(/roles that match, feel free to reach out/i)
-    ).toBeInTheDocument();
+    expect(screen.getByText(/roles that match, feel free to reach out/i)).toBeInTheDocument();
   });
 
   it('exposes contact methods including LinkedIn', () => {
