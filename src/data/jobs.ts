@@ -7,7 +7,7 @@ export const jobs: Job[] = [
     logo: '/assets/onebrief.png',
     roles: [
       {
-        title: 'Onebrief - Engineering Manager, Quality - 10/01/2025 - Present',
+        title: 'Onebrief - Engineering Manager, Quality - 10/01/2024 - Present',
         paragraphs: [
           {
             title: 'Why was I promoted?',
@@ -122,7 +122,7 @@ export const jobs: Job[] = [
     logo: '/assets/blackpointlogo.png',
     roles: [
       {
-        title: 'Blackpoint Cyber - QA Manager - 05/21/2023 - 09/01/2025',
+        title: 'Blackpoint Cyber - QA Manager - 05/21/2023 - 09/01/2024',
         paragraphs: [
           {
             title: 'Why I was hired',
