@@ -31,7 +31,8 @@ Each ticket has a description and checkable acceptance criteria. Implementation 
 ```bash
 npm install          # set up
 npm run dev          # Vite dev server
-npm run test:unit    # Vitest
+npm run test:unit    # Vitest (app + fireguard)
+npm run fireguard    # Grade new unit tests (A–F); F fails CI
 npm run test:e2e     # Playwright
 npm run lint         # ESLint (max-warnings 0)
 npm run format       # Prettier write
@@ -46,6 +47,7 @@ npm run deadcode     # ts-prune unused export scan
 `.github/workflows/pr-checks.yml` ("CI Checks") runs on every PR targeting `main` and on every push to `main`:
 
 - `test` — `npm run test:unit`
+- `fireguard` — grades **new** Vitest unit tests vs `main` (AST + 100× flake + mutation); letter **F** fails the job
 - `lint` — `npm run lint` + `npm run format:check`
 - `build` — `npm run type-check` && `npm run build`
 

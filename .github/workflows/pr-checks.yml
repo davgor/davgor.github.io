@@ -19,6 +19,27 @@ jobs:
       - run: npm ci
       - run: npm run test:unit
 
+  fireguard:
+    if: ${{ github.event_name != 'push' || !contains(github.event.head_commit.message || '', '[skip ci]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Fetch base ref for git diff
+        run: |
+          BASE="${{ github.base_ref || 'main' }}"
+          git fetch --no-tags origin "$BASE:refs/remotes/origin/$BASE" || git fetch --no-tags origin "$BASE"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci
+      - name: Grade new unit tests (fireguard)
+        run: npm run fireguard
+        env:
+          FIREGUARD_BASE_REF: origin/${{ github.base_ref || 'main' }}
+
   lint:
     if: ${{ github.event_name != 'push' || !contains(github.event.head_commit.message || '', '[skip ci]') }}
     runs-on: ubuntu-latest

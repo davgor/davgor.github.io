@@ -71,6 +71,7 @@ npm run format
 npm run lint
 npm run format:check
 npm run test:unit
+npm run fireguard   # when adding/changing unit tests — letter grade A–F; F fails
 npm run type-check
 npm run deadcode
 npm run build
@@ -78,6 +79,8 @@ npm run test:e2e   # when UI/navigation/routes change
 ```
 
 **Targeted tests during iteration** are fine (`npx vitest run path/to/foo.test.tsx`), but **finish with full `npm run test:unit`** unless the user scoped a subset.
+
+**Fireguard (unit-test quality):** After unit tests pass, run `npm run fireguard` whenever the change adds new Vitest unit tests (git diff vs `main`). Fireguard grades those tests (AST mock/tautology checks, 100× flake isolation, mutation on changed modules). A letter grade **F** is a delivery failure — rewrite the tests and re-grade. Playwright is not graded. See `fireguard/README.md`.
 
 ## 4. Close out
 
@@ -98,6 +101,7 @@ Delivery:
 - [ ] npm run lint — pass
 - [ ] npm run format:check — pass
 - [ ] npm run test:unit — pass
+- [ ] npm run fireguard — pass / not F (when new unit tests)
 - [ ] npm run type-check — pass
 - [ ] npm run deadcode — pass
 - [ ] npm run build — pass
