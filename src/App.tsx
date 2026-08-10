@@ -25,7 +25,7 @@ export const AppRoutes: React.FC = () => {
 
 const App: React.FC = () => {
   return (
-    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+    <Router>
       <AppRoutes />
     </Router>
   );
