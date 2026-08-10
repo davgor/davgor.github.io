@@ -1,7 +1,15 @@
 import { describe, it, expect, vi } from 'vitest';
 import { runCli } from '../src/cli.js';
 import { FIREGUARD_COMMENT_MARKER } from '../src/prComment.js';
-import { DEFAULT_CONFIG } from '../src/config.js';
+import type { FireguardReport } from '../src/types.js';
+
+const skippedReport: FireguardReport = {
+  grade: { letter: 'A', score: 100, reasons: ['no new tests to grade'] },
+  gates: {},
+  scope: { baseRef: 'main', newTestFiles: [], changedModules: [] },
+  skipped: true,
+  skipReason: 'No new unit tests vs base ref',
+};
 
 describe('runCli --comment-pr', () => {
   it('posts markdown grade comment and still exits 0 for skipped A', async () => {
@@ -26,8 +34,7 @@ describe('runCli --comment-pr', () => {
         writes[path] = data;
       },
       postComment,
-      // Force skip path by using a fake config load via env base ref that yields no new tests:
-      // runCli uses real git diff — on this branch there are no new src unit tests, so skip is fine.
+      runFireguardFn: async () => skippedReport,
     });
 
     expect(code).toBe(0);
@@ -37,11 +44,10 @@ describe('runCli --comment-pr', () => {
     ];
     const body = firstCall[0].body;
     expect(body).toContain(FIREGUARD_COMMENT_MARKER);
-    expect(body).toContain('Fireguard grade:');
+    expect(body).toContain('Fireguard grade: **A**');
     expect(writes['fg.md']).toContain(FIREGUARD_COMMENT_MARKER);
     expect(writes['summary.md']).toContain('Fireguard grade:');
     expect(out).toMatch(/PR comment created/);
-    void DEFAULT_CONFIG;
   });
 
   it('returns 2 when comment-pr lacks token/repo/pr', async () => {

@@ -12,7 +12,7 @@ import {
   resolvePullNumberFromEvent,
 } from './prComment.js';
 import { formatHumanReport, formatJsonReport } from './report.js';
-import { runFireguard } from './runFireguard.js';
+import { runFireguard, type RunFireguardDeps } from './runFireguard.js';
 import type { FireguardReport } from './types.js';
 
 export interface CliOptions {
@@ -24,6 +24,8 @@ export interface CliOptions {
   readFileSyncFn?: (path: string, encoding: 'utf8') => string;
   writeFileSyncFn?: (path: string, data: string) => void;
   postComment?: typeof postPrCommentViaGithub;
+  /** Test seam — overrides the default git/vitest-backed runner. */
+  runFireguardFn?: (deps: RunFireguardDeps) => Promise<FireguardReport>;
 }
 
 function flagValue(argv: string[], name: string): string | undefined {
@@ -78,14 +80,15 @@ Exit codes:
     const config = loadConfig({ cwd, env });
     const runOnce = createVitestRunner({ cwd, config });
     const applyAndTest = createMutationApplier({ cwd, runOnce });
-
-    report = await runFireguard({
+    const deps: RunFireguardDeps = {
       config,
       getDiffEntries: () => getGitDiffEntries({ cwd, baseRef: config.baseRef }),
       readFile: (path) => readWorkspaceFile(cwd, path),
       runOnce,
       applyAndTest,
-    });
+    };
+    const run = options.runFireguardFn ?? runFireguard;
+    report = await run(deps);
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
     stderr(`fireguard error: ${message}\n`);
