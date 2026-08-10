@@ -9,6 +9,7 @@ Vite + React + TypeScript. Engineering process (agent skills, ticket board, and 
 - **TDD-first.** Tests are written before the implementation that satisfies them for components, pages, data helpers, and anything else with testable behavior. See `.cursor/skills/delivery-standards/SKILL.md`.
 - **Strict lint.** ESLint with `--max-warnings 0`. Rules are never relaxed to make code pass — fix the code. After edits: `lint:fix` then `format` per [`.ai-instructions.md`](.ai-instructions.md).
 - **TypeScript strict mode.** No `any` escapes used to dodge a type problem.
+- **Antagonistic PR review.** Before merge-ready/close-out, agents must post an adversarial review (`antagonistic-pr-review` skill) and fix every blocking finding — including on their own PRs.
 - **Ticket board.** Work is tracked as markdown tickets under `/board` (`backlog/` → `in-progress/` → `done/`). Epics are `NNN-*.md`, sub-tickets `NNN.M-*.md`, each with checkable acceptance criteria. The `complete-ticket` and `collapse-epic` skills in `.cursor/skills/` (mirrored in `.claude/skills/`) drive the workflow.
 - **Experience entries.** To add, expand, or update jobs/roles on the Experience page, use the `add-experience-entry` skill (`.cursor/skills/add-experience-entry/SKILL.md`).
 - **No secrets committed.** `.env` stays gitignored.

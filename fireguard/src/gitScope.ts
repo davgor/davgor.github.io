@@ -24,18 +24,22 @@ export function resolveGitScope(options: {
   config: FireguardConfig;
   entries: DiffEntry[];
 }): GitScope {
-  const newTestFiles: string[] = [];
+  const gradedTestFiles: string[] = [];
   const changedModules: string[] = [];
 
   for (const entry of options.entries) {
     if (entry.status === 'D') continue;
     const path = entry.path;
 
+    // Grade added AND modified unit tests so agents cannot evade by editing existing files.
     if (
-      (entry.status === 'A' || entry.status === 'R' || entry.status === 'C') &&
+      (entry.status === 'A' ||
+        entry.status === 'M' ||
+        entry.status === 'R' ||
+        entry.status === 'C') &&
       isTestFile(path, options.config)
     ) {
-      newTestFiles.push(path);
+      gradedTestFiles.push(path);
     }
 
     if (
@@ -50,7 +54,7 @@ export function resolveGitScope(options: {
   }
 
   return {
-    newTestFiles: [...new Set(newTestFiles)].sort(),
+    gradedTestFiles: [...new Set(gradedTestFiles)].sort(),
     changedModules: [...new Set(changedModules)].sort(),
   };
 }

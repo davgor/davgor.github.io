@@ -46,10 +46,6 @@ export function generateMutants(file: string, source: string): Mutant[] {
   let counter = 0;
 
   const visit = (node: ts.Node): void => {
-    if (ts.isPrefixUnaryExpression(node) && node.operator === ts.SyntaxKind.ExclamationToken) {
-      // skip nesting noise
-    }
-
     if (ts.isBinaryExpression(node)) {
       const swap = BINARY_SWAPS[node.operatorToken.kind];
       if (swap !== undefined) {

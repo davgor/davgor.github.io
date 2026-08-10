@@ -59,13 +59,9 @@ function getCallName(node: ts.CallExpression): string | undefined {
 
 function collectsMockCall(node: ts.CallExpression): boolean {
   const expr = node.expression;
+  // Only count Vitest `vi.*` mock APIs — not arbitrary `.fn` / `.mock` property access.
   if (ts.isPropertyAccessExpression(expr)) {
-    if (isViIdentifier(expr.expression) && MOCK_PROPERTY_NAMES.has(expr.name.text)) {
-      return true;
-    }
-    if (MOCK_PROPERTY_NAMES.has(expr.name.text)) {
-      return true;
-    }
+    return isViIdentifier(expr.expression) && MOCK_PROPERTY_NAMES.has(expr.name.text);
   }
   return false;
 }
@@ -81,11 +77,12 @@ function getExpectRootArgument(node: ts.CallExpression): ts.Expression | undefin
 function expressionLooksMocked(expr: ts.Expression | undefined, mockIdents: Set<string>): boolean {
   if (!expr) return false;
   if (ts.isIdentifier(expr)) {
-    return mockIdents.has(expr.text) || /mock/i.test(expr.text);
+    return mockIdents.has(expr.text);
   }
   if (ts.isPropertyAccessExpression(expr)) {
-    if (expr.name.text === 'mock' || TAUTOLOGY_MATCHERS.has(expr.name.text)) return true;
-    return expressionLooksMocked(expr.expression, mockIdents);
+    // `fn.mock.results` / mock object internals tied to a known mock binding
+    if (expressionLooksMocked(expr.expression, mockIdents)) return true;
+    return false;
   }
   if (ts.isCallExpression(expr)) {
     return expressionLooksMocked(expr.expression, mockIdents);

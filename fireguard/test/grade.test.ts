@@ -20,10 +20,12 @@ function flake(partial: Partial<FlakeGateResult> & { pass: boolean }): FlakeGate
   return {
     name: 'flake',
     runs: 100,
+    configuredRuns: 100,
     failures: 0,
     flakeRate: 0,
     files: ['a.test.ts'],
     failedRuns: [],
+    failFast: true,
     ...partial,
   };
 }

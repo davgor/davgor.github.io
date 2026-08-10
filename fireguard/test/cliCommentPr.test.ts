@@ -6,15 +6,16 @@ import type { FireguardReport } from '../src/types.js';
 const skippedReport: FireguardReport = {
   grade: { letter: 'A', score: 100, reasons: ['no new tests to grade'] },
   gates: {},
-  scope: { baseRef: 'main', newTestFiles: [], changedModules: [] },
+  scope: { baseRef: 'main', gradedTestFiles: [], changedModules: [] },
   skipped: true,
-  skipReason: 'No new unit tests vs base ref',
+  skipReason: 'No added/modified unit tests vs base ref',
 };
 
 describe('runCli --comment-pr', () => {
   it('posts markdown grade comment and still exits 0 for skipped A', async () => {
     const postComment = vi.fn(async () => 'created' as const);
     const writes: Record<string, string> = {};
+    const appends: Record<string, string> = {};
     let out = '';
 
     const code = await runCli({
@@ -33,6 +34,9 @@ describe('runCli --comment-pr', () => {
       writeFileSyncFn: (path, data) => {
         writes[path] = data;
       },
+      appendFileSyncFn: (path, data) => {
+        appends[path] = (appends[path] ?? '') + data;
+      },
       postComment,
       runFireguardFn: async () => skippedReport,
     });
@@ -46,7 +50,8 @@ describe('runCli --comment-pr', () => {
     expect(body).toContain(FIREGUARD_COMMENT_MARKER);
     expect(body).toContain('Fireguard grade: **A**');
     expect(writes['fg.md']).toContain(FIREGUARD_COMMENT_MARKER);
-    expect(writes['summary.md']).toContain('Fireguard grade:');
+    expect(writes['summary.md']).toBeUndefined();
+    expect(appends['summary.md']).toContain('Fireguard grade:');
     expect(out).toMatch(/PR comment created/);
   });
 

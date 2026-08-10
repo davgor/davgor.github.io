@@ -3,7 +3,7 @@ import { resolveGitScope } from '../src/gitScope.js';
 import { DEFAULT_CONFIG } from '../src/config.js';
 
 describe('resolveGitScope', () => {
-  it('selects only added unit test files as new tests', () => {
+  it('grades added and modified unit test files', () => {
     const scope = resolveGitScope({
       config: DEFAULT_CONFIG,
       entries: [
@@ -14,7 +14,10 @@ describe('resolveGitScope', () => {
         { status: 'M', path: 'src/data/jobs.ts' },
       ],
     });
-    expect(scope.newTestFiles).toEqual(['src/pages/NewPage.test.tsx']);
+    expect(scope.gradedTestFiles).toEqual([
+      'src/pages/Experience.test.tsx',
+      'src/pages/NewPage.test.tsx',
+    ]);
     expect(scope.changedModules).toEqual(['src/data/jobs.ts', 'src/pages/NewPage.tsx']);
   });
 
@@ -30,15 +33,15 @@ describe('resolveGitScope', () => {
         { status: 'M', path: 'src/__mocks__/api.ts' },
       ],
     });
-    expect(scope.newTestFiles).toEqual(['src/utils/math.test.ts']);
+    expect(scope.gradedTestFiles).toEqual(['src/utils/math.test.ts']);
     expect(scope.changedModules).toEqual([]);
   });
 
-  it('treats renames as added at the new path', () => {
+  it('treats renames as graded at the new path', () => {
     const scope = resolveGitScope({
       config: DEFAULT_CONFIG,
       entries: [{ status: 'R', path: 'src/foo.test.ts', oldPath: 'src/bar.test.ts' }],
     });
-    expect(scope.newTestFiles).toEqual(['src/foo.test.ts']);
+    expect(scope.gradedTestFiles).toEqual(['src/foo.test.ts']);
   });
 });

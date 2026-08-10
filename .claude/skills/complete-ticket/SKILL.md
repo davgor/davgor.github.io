@@ -62,7 +62,9 @@ If something fails, fix it — don't check off a criterion that doesn't actually
 
 **Targeted tests during iteration** are fine (`npx vitest run src/components/Foo.test.tsx`), but **finish with full `npm run test:unit`** unless the user scoped a subset.
 
-**Fireguard:** If the ticket adds new unit tests, `npm run fireguard` must not return grade **F** before close-out. See `fireguard/README.md`.
+**Fireguard:** If the ticket adds or modifies unit tests, `npm run fireguard` must not return grade **F** before close-out. See `fireguard/README.md`.
+
+**Antagonistic PR review:** Before close-out on work that has (or will have) a PR, run [antagonistic-pr-review](../antagonistic-pr-review/SKILL.md), post the review on the PR, and fix every **Blocking** finding. Do not mark the ticket done with open blocking review items.
 
 **CI parity:** This repo's GitHub Actions workflows (`.github/workflows/pr-checks.yml`, `deadcode.yml`, `playwright.yml`) mirror the local gate. Before calling a ticket done on substantial work, confirm the equivalent local commands all pass — you don't need `act` unless the user asks for it.
 

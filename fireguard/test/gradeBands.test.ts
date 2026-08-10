@@ -21,10 +21,12 @@ function flake(pass = true): FlakeGateResult {
     name: 'flake',
     pass,
     runs: 100,
+    configuredRuns: 100,
     failures: pass ? 0 : 1,
     flakeRate: pass ? 0 : 0.01,
     files: ['a.test.ts'],
     failedRuns: pass ? [] : [{ run: 1, error: 'x' }],
+    failFast: true,
   };
 }
 

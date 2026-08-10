@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from 'node:fs';
+import { appendFileSync, readFileSync, writeFileSync } from 'node:fs';
 import { loadConfig } from './config.js';
 import {
   createMutationApplier,
@@ -23,6 +23,7 @@ export interface CliOptions {
   stderr?: (text: string) => void;
   readFileSyncFn?: (path: string, encoding: 'utf8') => string;
   writeFileSyncFn?: (path: string, data: string) => void;
+  appendFileSyncFn?: (path: string, data: string) => void;
   postComment?: typeof postPrCommentViaGithub;
   /** Test seam — overrides the default git/vitest-backed runner. */
   runFireguardFn?: (deps: RunFireguardDeps) => Promise<FireguardReport>;
@@ -42,6 +43,8 @@ export async function runCli(options: CliOptions = {}): Promise<number> {
   const stderr = options.stderr ?? ((text: string) => process.stderr.write(text));
   const readFile = options.readFileSyncFn ?? ((path, encoding) => readFileSync(path, encoding));
   const writeFile = options.writeFileSyncFn ?? ((path, data) => writeFileSync(path, data, 'utf8'));
+  const appendFile =
+    options.appendFileSyncFn ?? ((path, data) => appendFileSync(path, data, 'utf8'));
   const postComment = options.postComment ?? postPrCommentViaGithub;
 
   const json = argv.includes('--json');
@@ -56,9 +59,9 @@ export async function runCli(options: CliOptions = {}): Promise<number> {
 Usage:
   fireguard [--json] [--comment-pr] [--markdown-out path] [--json-out path]
 
-Grades NEW unit tests (git diff vs baseRef, default main) through:
+Grades added or modified unit tests (git diff vs baseRef, default main) through:
   Gate 1  AST mock/assert/tautology/empty checks
-  Gate 2  Flakiness (default 100 isolated runs, 0% flake)
+  Gate 2  Flakiness (default 100 isolated runs, 0% flake; fail-fast)
   Gate 3  Mutation score on changed production modules (≥75%)
 
 PR integration:
@@ -112,7 +115,8 @@ Exit codes:
   const stepSummary = env.GITHUB_STEP_SUMMARY;
   if (stepSummary) {
     try {
-      writeFile(stepSummary, markdown);
+      // Append — never truncate other job summary content.
+      appendFile(stepSummary, `${markdown}\n`);
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
       stderr(`fireguard warning: could not write GITHUB_STEP_SUMMARY: ${message}\n`);

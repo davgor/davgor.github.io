@@ -28,35 +28,45 @@ export async function runFireguard(deps: RunFireguardDeps): Promise<FireguardRep
   const entries = await deps.getDiffEntries();
   const scope = resolveGitScope({ config: deps.config, entries });
 
-  // Agentic grading targets NEW unit tests. Module-only diffs are not graded here
-  // (no new test payload). Mutation requires both new tests and changed modules.
-  if (scope.newTestFiles.length === 0) {
+  const scopePayload = {
+    baseRef: deps.config.baseRef,
+    gradedTestFiles: scope.gradedTestFiles,
+    changedModules: scope.changedModules,
+  };
+
+  // Fail closed: production module changes without graded test updates cannot earn a free A.
+  if (scope.gradedTestFiles.length === 0 && scope.changedModules.length > 0) {
+    return {
+      grade: {
+        letter: 'F',
+        score: 0,
+        reasons: ['production modules changed without graded unit test updates'],
+      },
+      gates: {},
+      scope: scopePayload,
+      skipped: false,
+      skipReason: undefined,
+    };
+  }
+
+  if (scope.gradedTestFiles.length === 0) {
     return {
       grade: {
         letter: 'A',
         score: 100,
-        reasons: ['no new tests to grade'],
+        reasons: ['no graded unit tests to evaluate'],
       },
       gates: {},
-      scope: {
-        baseRef: deps.config.baseRef,
-        newTestFiles: [],
-        changedModules: scope.changedModules,
-      },
+      scope: scopePayload,
       skipped: true,
-      skipReason: 'No new unit tests vs base ref',
+      skipReason: 'No added/modified unit tests vs base ref',
     };
   }
 
   const gates: FireguardReport['gates'] = {};
-  const scopePayload = {
-    baseRef: deps.config.baseRef,
-    newTestFiles: scope.newTestFiles,
-    changedModules: scope.changedModules,
-  };
 
   const files = await Promise.all(
-    scope.newTestFiles.map(async (path) => ({
+    scope.gradedTestFiles.map(async (path) => ({
       path,
       source: await deps.readFile(path),
     }))
@@ -73,7 +83,7 @@ export async function runFireguard(deps: RunFireguardDeps): Promise<FireguardRep
 
   gates.flake = await runFlakeGate({
     config: deps.config,
-    files: scope.newTestFiles,
+    files: scope.gradedTestFiles,
     runOnce: deps.runOnce,
   });
   if (!gates.flake.pass) {
@@ -95,7 +105,7 @@ export async function runFireguard(deps: RunFireguardDeps): Promise<FireguardRep
     gates.mutation = await runMutationGate({
       config: deps.config,
       modules,
-      relatedTests: scope.newTestFiles,
+      relatedTests: scope.gradedTestFiles,
       applyAndTest: deps.applyAndTest,
     });
   }

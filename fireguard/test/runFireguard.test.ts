@@ -3,7 +3,7 @@ import { runFireguard } from '../src/runFireguard.js';
 import { DEFAULT_CONFIG } from '../src/config.js';
 
 describe('runFireguard', () => {
-  it('skips with informational grade when no new tests (even if modules changed)', async () => {
+  it('fails closed with F when modules change without graded test updates', async () => {
     const report = await runFireguard({
       config: DEFAULT_CONFIG,
       getDiffEntries: async () => [{ status: 'M', path: 'src/data/jobs.ts' }],
@@ -11,10 +11,40 @@ describe('runFireguard', () => {
       runOnce: async () => ({ ok: true }),
       applyAndTest: async () => ({ ok: false }),
     });
-    expect(report.skipped).toBe(true);
-    expect(report.grade.letter).toBe('A');
-    expect(report.skipReason).toMatch(/no new unit tests/i);
+    expect(report.skipped).toBe(false);
+    expect(report.grade.letter).toBe('F');
+    expect(report.grade.reasons.join(' ')).toMatch(/without graded unit test/i);
     expect(report.gates.mutation).toBeUndefined();
+  });
+
+  it('grades modified unit tests (not only newly added files)', async () => {
+    const solidTest = `
+import { describe, it, expect } from 'vitest';
+import { add } from './add';
+describe('add', () => {
+  it('works', () => { expect(add(1, 2)).toBe(3); });
+});
+`;
+    const report = await runFireguard({
+      config: {
+        ...DEFAULT_CONFIG,
+        thresholds: { ...DEFAULT_CONFIG.thresholds, agenticFlakinessRuns: 2 },
+      },
+      getDiffEntries: async () => [
+        { status: 'M', path: 'src/add.test.ts' },
+        { status: 'M', path: 'src/add.ts' },
+      ],
+      readFile: async (path) =>
+        path.endsWith('.test.ts')
+          ? solidTest
+          : 'export function add(a:number,b:number){return a+b;}',
+      runOnce: async () => ({ ok: true }),
+      applyAndTest: async () => ({ ok: false }),
+    });
+    expect(report.skipped).toBe(false);
+    expect(report.scope.gradedTestFiles).toEqual(['src/add.test.ts']);
+    expect(report.gates.ast?.pass).toBe(true);
+    expect(report.grade.letter).not.toBe('F');
   });
 
   it('fail-fasts on AST before flake/mutation', async () => {

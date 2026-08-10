@@ -5,7 +5,7 @@ Deterministic unit-test quality grader for agent-authored Vitest tests.
 Fireguard assigns a letter grade (**A–F**) using three fail-fast gates — no LLM evaluation:
 
 1. **AST** — mock/assert ratio, tautological assertions, empty tests  
-2. **Flake** — new tests (git diff vs `main`) must pass **100** isolated runs at **0%** flake  
+2. **Flake** — added/modified tests (git diff vs `main`) must pass **100** isolated runs at **0%** flake (fail-fast; reports `executed/configuredRuns`)  
 3. **Mutation** — changed production modules must kill ≥ **75%** of mutants  
 
 Playwright / e2e is out of scope.
@@ -73,10 +73,12 @@ Env overrides: `FIREGUARD_MIN_MUTATION_SCORE`, `FIREGUARD_MAX_MOCK_RATIO`, `FIRE
 
 ## Scope rules
 
-- **New tests** — paths with git status `A`/`R`/`C` matching `include` vs `baseRef`
+- **Graded tests** — paths with git status `A`/`M`/`R`/`C` matching `include` vs `baseRef`
 - **Changed modules** — added/modified production `src|lib|app` files (not tests)
-- No new unit tests vs base ref → skip with grade A (module-only diffs are not graded)
-- Mutation runs only when there are both new tests and changed modules
+- Production modules changed with **no** graded test updates → grade **F** (fail closed)
+- No graded tests and no module changes → skip with grade A
+- Mutation runs when there are graded tests and changed modules
+- Mutation writes in-place with `try/finally` restore plus a process `exit` hook to avoid dirty trees
 
 ## Grades
 

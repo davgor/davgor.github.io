@@ -15,6 +15,8 @@ describe('runFlakeGate', () => {
     });
     expect(gate.pass).toBe(true);
     expect(gate.runs).toBe(5);
+    expect(gate.configuredRuns).toBe(5);
+    expect(gate.failFast).toBe(true);
     expect(gate.failures).toBe(0);
     expect(runOnce).toHaveBeenCalledTimes(5);
   });
@@ -36,6 +38,9 @@ describe('runFlakeGate', () => {
     });
     expect(gate.pass).toBe(false);
     expect(gate.failures).toBe(1);
+    expect(gate.configuredRuns).toBe(5);
+    expect(gate.runs).toBe(3);
+    expect(gate.flakeRate).toBe(1 / 5);
     expect(gate.failedRuns[0]).toEqual({ run: 3, error: 'boom' });
     expect(runOnce).toHaveBeenCalledTimes(3);
   });

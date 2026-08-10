@@ -1,5 +1,7 @@
 import { spawn } from 'node:child_process';
 import { readFile, writeFile } from 'node:fs/promises';
+import { writeFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { parseNameStatus } from './gitScope.js';
 import type { DiffEntry, FireguardConfig, RunOnceResult } from './types.js';
 
@@ -69,6 +71,27 @@ export function createVitestRunner(options: {
   };
 }
 
+/** Pending in-place restores so process `exit` can put sources back. */
+const pendingRestores = new Map<string, string>();
+let exitHookInstalled = false;
+
+function restoreAllPending(): void {
+  for (const [filePath, original] of pendingRestores) {
+    try {
+      writeFileSync(filePath, original, 'utf8');
+    } catch {
+      // best-effort on process teardown
+    }
+  }
+  pendingRestores.clear();
+}
+
+function installExitHook(): void {
+  if (exitHookInstalled) return;
+  exitHookInstalled = true;
+  process.on('exit', restoreAllPending);
+}
+
 export function createMutationApplier(options: {
   cwd: string;
   runOnce: (files: string[]) => Promise<RunOnceResult>;
@@ -78,23 +101,24 @@ export function createMutationApplier(options: {
   mutatedSource: string;
   relatedTests: string[];
 }) => Promise<RunOnceResult> {
+  installExitHook();
   return async (input) => {
-    const { join } = await import('node:path');
     const filePath = join(options.cwd, input.file);
+    pendingRestores.set(filePath, input.originalSource);
     await writeFile(filePath, input.mutatedSource, 'utf8');
     try {
       if (input.relatedTests.length === 0) {
-        // No related new tests — treat mutant as survived (cannot validate)
+        // No related graded tests — treat mutant as survived (cannot validate)
         return { ok: true };
       }
       return await options.runOnce(input.relatedTests);
     } finally {
       await writeFile(filePath, input.originalSource, 'utf8');
+      pendingRestores.delete(filePath);
     }
   };
 }
 
 export async function readWorkspaceFile(cwd: string, path: string): Promise<string> {
-  const { join } = await import('node:path');
   return readFile(join(cwd, path), 'utf8');
 }

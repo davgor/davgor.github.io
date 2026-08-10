@@ -14,16 +14,16 @@ export function formatPrMarkdown(report: FireguardReport): string {
     lines.push(`_${report.skipReason ?? 'Nothing to grade.'}_`);
     lines.push('');
     lines.push(
-      'New Vitest unit tests vs the base ref are graded for mock/assert quality, 100× flake isolation, and mutation kill rate on changed modules.'
+      'Added/modified Vitest unit tests vs the base ref are graded for mock/assert quality, flake isolation, and mutation kill rate on changed modules. Module-only diffs without test updates fail closed with F.'
     );
     return `${lines.join('\n')}\n`;
   }
 
   lines.push(`Base ref: \`${report.scope.baseRef}\``);
   lines.push(
-    `New tests: ${
-      report.scope.newTestFiles.length > 0
-        ? report.scope.newTestFiles.map((f) => `\`${f}\``).join(', ')
+    `Graded tests: ${
+      report.scope.gradedTestFiles.length > 0
+        ? report.scope.gradedTestFiles.map((f) => `\`${f}\``).join(', ')
         : '_(none)_'
     }`
   );
@@ -49,7 +49,7 @@ export function formatPrMarkdown(report: FireguardReport): string {
   const flake = report.gates.flake;
   if (flake) {
     lines.push(
-      `- **Gate 2 Flake:** ${flake.pass ? 'PASS' : 'FAIL'} (${flake.failures}/${flake.runs} failed)`
+      `- **Gate 2 Flake:** ${flake.pass ? 'PASS' : 'FAIL'} (${flake.failures} failed; executed ${flake.runs}/${flake.configuredRuns}${flake.failFast ? ', fail-fast' : ''})`
     );
     for (const failed of flake.failedRuns.slice(0, 5)) {
       lines.push(`  - run #${failed.run}: ${failed.error}`);

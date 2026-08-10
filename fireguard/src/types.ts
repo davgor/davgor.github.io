@@ -40,11 +40,15 @@ export interface AstGateResult {
 export interface FlakeGateResult {
   name: 'flake';
   pass: boolean;
+  /** How many runs were actually executed (may be < configuredRuns on fail-fast). */
   runs: number;
+  /** Configured agentic flake run budget. */
+  configuredRuns: number;
   failures: number;
   flakeRate: number;
   files: string[];
   failedRuns: Array<{ run: number; error: string }>;
+  failFast: boolean;
 }
 
 export interface MutationSurvivor {
@@ -81,7 +85,8 @@ export interface FireguardReport {
   };
   scope: {
     baseRef: string;
-    newTestFiles: string[];
+    /** Added or modified unit test files in scope for grading. */
+    gradedTestFiles: string[];
     changedModules: string[];
   };
   skipped: boolean;
@@ -89,7 +94,8 @@ export interface FireguardReport {
 }
 
 export interface GitScope {
-  newTestFiles: string[];
+  /** Added or modified unit test files matching include globs. */
+  gradedTestFiles: string[];
   changedModules: string[];
 }
 

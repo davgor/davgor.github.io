@@ -26,7 +26,7 @@ const failingReport: FireguardReport = {
   },
   scope: {
     baseRef: 'main',
-    newTestFiles: ['src/x.test.ts'],
+    gradedTestFiles: ['src/x.test.ts'],
     changedModules: ['src/x.ts'],
   },
   skipped: false,

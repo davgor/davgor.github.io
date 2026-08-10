@@ -12,7 +12,7 @@ export function formatHumanReport(report: FireguardReport): string {
   }
 
   lines.push(`Base ref: ${report.scope.baseRef}`);
-  lines.push(`New tests: ${report.scope.newTestFiles.join(', ') || '(none)'}`);
+  lines.push(`Graded tests: ${report.scope.gradedTestFiles.join(', ') || '(none)'}`);
   lines.push(`Changed modules: ${report.scope.changedModules.join(', ') || '(none)'}`);
   lines.push('');
 
@@ -35,7 +35,9 @@ export function formatHumanReport(report: FireguardReport): string {
   const flake = report.gates.flake;
   if (flake) {
     lines.push(`Gate 2 Flake: ${flake.pass ? 'PASS' : 'FAIL'}`);
-    lines.push(`  runs=${flake.runs} failures=${flake.failures} rate=${flake.flakeRate}`);
+    lines.push(
+      `  executed=${flake.runs}/${flake.configuredRuns} failures=${flake.failures} rate=${flake.flakeRate} failFast=${flake.failFast}`
+    );
     for (const failed of flake.failedRuns) {
       lines.push(`  - run #${failed.run}: ${failed.error}`);
     }
