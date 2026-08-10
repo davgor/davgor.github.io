@@ -9,6 +9,7 @@ Vite + React + TypeScript. Engineering process (agent skills, ticket board, and 
 - **TDD-first.** Tests are written before the implementation that satisfies them for components, pages, data helpers, and anything else with testable behavior. See `.cursor/skills/delivery-standards/SKILL.md`.
 - **Strict lint.** ESLint with `--max-warnings 0`. Rules are never relaxed to make code pass — fix the code. After edits: `lint:fix` then `format` per [`.ai-instructions.md`](.ai-instructions.md).
 - **TypeScript strict mode.** No `any` escapes used to dodge a type problem.
+- **Antagonistic PR review.** Before merge-ready/close-out, agents must post an adversarial review (`antagonistic-pr-review` skill) and fix every blocking finding — including on their own PRs.
 - **Ticket board.** Work is tracked as markdown tickets under `/board` (`backlog/` → `in-progress/` → `done/`). Epics are `NNN-*.md`, sub-tickets `NNN.M-*.md`, each with checkable acceptance criteria. The `complete-ticket` and `collapse-epic` skills in `.cursor/skills/` (mirrored in `.claude/skills/`) drive the workflow.
 - **Experience entries.** To add, expand, or update jobs/roles on the Experience page, use the `add-experience-entry` skill (`.cursor/skills/add-experience-entry/SKILL.md`).
 - **No secrets committed.** `.env` stays gitignored.
@@ -31,7 +32,8 @@ Each ticket has a description and checkable acceptance criteria. Implementation 
 ```bash
 npm install          # set up
 npm run dev          # Vite dev server
-npm run test:unit    # Vitest
+npm run test:unit    # Vitest (app + fireguard)
+npm run fireguard    # Grade new unit tests (A–F); F fails CI
 npm run test:e2e     # Playwright
 npm run lint         # ESLint (max-warnings 0)
 npm run format       # Prettier write
@@ -46,6 +48,7 @@ npm run deadcode     # ts-prune unused export scan
 `.github/workflows/pr-checks.yml` ("CI Checks") runs on every PR targeting `main` and on every push to `main`:
 
 - `test` — `npm run test:unit`
+- `fireguard` — grades **new** Vitest unit tests vs `main` (AST + 100× flake + mutation); letter **F** fails the job; posts/updates a sticky PR comment with the grade
 - `lint` — `npm run lint` + `npm run format:check`
 - `build` — `npm run type-check` && `npm run build`
 

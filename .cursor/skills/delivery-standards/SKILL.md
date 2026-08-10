@@ -71,6 +71,7 @@ npm run format
 npm run lint
 npm run format:check
 npm run test:unit
+npm run fireguard   # when adding/changing unit tests — letter grade A–F; F fails
 npm run type-check
 npm run deadcode
 npm run build
@@ -79,11 +80,24 @@ npm run test:e2e   # when UI/navigation/routes change
 
 **Targeted tests during iteration** are fine (`npx vitest run path/to/foo.test.tsx`), but **finish with full `npm run test:unit`** unless the user scoped a subset.
 
-## 4. Close out
+**Fireguard (unit-test quality):** After unit tests pass, run `npm run fireguard` whenever the change adds or modifies Vitest unit tests (git diff vs `main`). Fireguard grades those tests (AST mock/tautology checks, 100× flake isolation, mutation on changed modules). A letter grade **F** is a delivery failure — rewrite the tests and re-grade. Playwright is not graded. See `fireguard/README.md`.
+
+## 4. Antagonistic PR review (required)
+
+Before calling the work merge-ready or moving tickets to `done/`, run the
+[antagonistic-pr-review](../antagonistic-pr-review/SKILL.md) skill on the PR
+**including PRs you authored**. Post the review on GitHub with marker
+`<!-- antagonistic-pr-review -->`.
+
+- Any **Blocking** finding → treat as failed delivery until fixed and pushed
+- Do not rubber-stamp; if you find nothing blocking, say what you attacked and why it held
+- Pure docs typo-only changes may skip when explicitly noted
+
+## 5. Close out
 
 - Check off verified acceptance criteria (`- [x]`)
 - `git mv` ticket to `/board/done/` when all criteria met
-- Summarize: what changed, test/lint/build output, ticket ids touched
+- Summarize: what changed, test/lint/build output, ticket ids touched, antagonistic review outcome
 - Do **not** commit unless the user explicitly asks
 
 ## Quick checklist
@@ -98,9 +112,11 @@ Delivery:
 - [ ] npm run lint — pass
 - [ ] npm run format:check — pass
 - [ ] npm run test:unit — pass
+- [ ] npm run fireguard — pass / not F (when unit tests added/modified)
 - [ ] npm run type-check — pass
 - [ ] npm run deadcode — pass
 - [ ] npm run build — pass
 - [ ] npm run test:e2e — pass (when UI/routes change)
+- [ ] Antagonistic PR review posted; blocking findings fixed
 - [ ] Acceptance criteria checked off only when verified
 ```

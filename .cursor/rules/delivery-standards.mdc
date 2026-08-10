@@ -15,11 +15,13 @@ Any implementation work in this repo must follow `.cursor/skills/delivery-standa
    - `npm run lint`
    - `npm run format:check`
    - `npm run test:unit`
+   - `npm run fireguard` (when unit tests added/modified)
    - `npm run type-check`
    - `npm run deadcode`
    - `npm run build`
    - `npm run test:e2e` (when UI/navigation/routes change)
 3. **Board traceability** — create a ticket in `/board/backlog/` or update the related epic/ticket before or as you start. If the user named a ticket id, use `complete-ticket` skill.
+4. **Antagonistic PR review** — before done/merge-ready, run `.cursor/skills/antagonistic-pr-review/SKILL.md`, post the review on the PR, and fix every **Blocking** finding. Applies to agent-authored PRs too.
 
 ## Also required
 

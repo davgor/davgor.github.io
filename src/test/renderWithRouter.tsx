@@ -10,13 +10,5 @@ export function renderWithRouter(
   ui: React.ReactElement,
   { route = '/', ...options }: RenderWithRouterOptions = {}
 ) {
-  return render(
-    <MemoryRouter
-      initialEntries={[route]}
-      future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
-    >
-      {ui}
-    </MemoryRouter>,
-    options
-  );
+  return render(<MemoryRouter initialEntries={[route]}>{ui}</MemoryRouter>, options);
 }

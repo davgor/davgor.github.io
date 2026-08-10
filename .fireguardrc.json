@@ -1,0 +1,15 @@
+{
+  "thresholds": {
+    "maxMockToAssertRatio": 1.5,
+    "maxTautologicalRatio": 0.1,
+    "minAssertionsPerFile": 1,
+    "minMutationScore": 75,
+    "flakinessRuns": 3,
+    "agenticFlakinessRuns": 100,
+    "maxFlakeRate": 0
+  },
+  "include": ["src/**/*.{test,spec}.{ts,tsx}"],
+  "exclude": ["**/__mocks__/**", "**/node_modules/**", "e2e/**", "fireguard/**"],
+  "baseRef": "main",
+  "testCommand": "npx vitest run"
+}
