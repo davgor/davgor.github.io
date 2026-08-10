@@ -44,4 +44,16 @@ describe('resolveGitScope', () => {
     });
     expect(scope.gradedTestFiles).toEqual(['src/foo.test.ts']);
   });
+
+  it('does not treat src/test helpers as production modules', () => {
+    const scope = resolveGitScope({
+      config: DEFAULT_CONFIG,
+      entries: [
+        { status: 'M', path: 'src/test/renderWithRouter.tsx' },
+        { status: 'M', path: 'src/App.tsx' },
+      ],
+    });
+    expect(scope.changedModules).toEqual(['src/App.tsx']);
+    expect(scope.gradedTestFiles).toEqual([]);
+  });
 });

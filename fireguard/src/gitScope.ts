@@ -16,6 +16,8 @@ function isProductionModule(path: string, config: FireguardConfig): boolean {
   if (path.endsWith('.d.ts')) return false;
   if (path.includes('e2e/')) return false;
   if (path.includes('fireguard/')) return false;
+  // Test helpers (render wrappers, setup) are not production modules.
+  if (path.startsWith('src/test/')) return false;
   // Prefer src/ modules; still allow other app roots when included by convention
   return path.startsWith('src/') || path.startsWith('lib/') || path.startsWith('app/');
 }
