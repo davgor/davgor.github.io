@@ -28,11 +28,7 @@ export interface LoadConfigOptions {
 }
 
 type DeepPartial<T> = {
-  [K in keyof T]?: T[K] extends (infer U)[]
-    ? U[]
-    : T[K] extends object
-      ? DeepPartial<T[K]>
-      : T[K];
+  [K in keyof T]?: T[K] extends (infer U)[] ? U[] : T[K] extends object ? DeepPartial<T[K]> : T[K];
 };
 
 export function mergeConfig(
