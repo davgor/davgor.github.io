@@ -33,6 +33,7 @@ Playwright / e2e is out of scope.
 ```bash
 npm run fireguard
 npm run fireguard -- --json
+npm run fireguard -- --comment-pr
 npm run fireguard -- --help
 ```
 
@@ -41,6 +42,12 @@ npm run fireguard -- --help
 | 0 | Pass (grade A–D) |
 | 1 | Quality failure (grade **F**) |
 | 2 | Tool error |
+
+### PR grade comments
+
+On GitHub Actions pull requests, pass `--comment-pr` (requires `pull-requests: write` and `GITHUB_TOKEN`). Fireguard upserts a sticky comment marked `<!-- fireguard-report -->` with the letter grade so agents see **F** on the PR without opening job logs.
+
+Also writes `GITHUB_STEP_SUMMARY` when that env var is set.
 
 ## Config (`.fireguardrc.json`)
 

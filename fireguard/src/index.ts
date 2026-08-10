@@ -7,6 +7,13 @@ export { generateMutants, runMutationGate, scoreMutations } from './gates/mutati
 export { runFireguard } from './runFireguard.js';
 export { formatHumanReport, formatJsonReport } from './report.js';
 export { runCli } from './cli.js';
+export {
+  FIREGUARD_COMMENT_MARKER,
+  formatPrMarkdown,
+  upsertPrComment,
+  postPrCommentViaGithub,
+  resolvePullNumberFromEvent,
+} from './prComment.js';
 export type {
   LetterGrade,
   FireguardConfig,

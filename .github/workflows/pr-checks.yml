@@ -22,6 +22,9 @@ jobs:
   fireguard:
     if: ${{ github.event_name != 'push' || !contains(github.event.head_commit.message || '', '[skip ci]') }}
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -36,9 +39,10 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Grade new unit tests (fireguard)
-        run: npm run fireguard
+        run: npm run fireguard -- --comment-pr --markdown-out fireguard-pr.md --json-out fireguard-report.json
         env:
           FIREGUARD_BASE_REF: origin/${{ github.base_ref || 'main' }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   lint:
     if: ${{ github.event_name != 'push' || !contains(github.event.head_commit.message || '', '[skip ci]') }}

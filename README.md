@@ -47,7 +47,7 @@ npm run deadcode     # ts-prune unused export scan
 `.github/workflows/pr-checks.yml` ("CI Checks") runs on every PR targeting `main` and on every push to `main`:
 
 - `test` — `npm run test:unit`
-- `fireguard` — grades **new** Vitest unit tests vs `main` (AST + 100× flake + mutation); letter **F** fails the job
+- `fireguard` — grades **new** Vitest unit tests vs `main` (AST + 100× flake + mutation); letter **F** fails the job; posts/updates a sticky PR comment with the grade
 - `lint` — `npm run lint` + `npm run format:check`
 - `build` — `npm run type-check` && `npm run build`
 

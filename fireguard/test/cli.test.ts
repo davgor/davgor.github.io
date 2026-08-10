@@ -15,5 +15,6 @@ describe('runCli', () => {
     expect(code).toBe(0);
     expect(out).toContain('fireguard');
     expect(out).toContain('Exit codes');
+    expect(out).toContain('--comment-pr');
   });
 });
