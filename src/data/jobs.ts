@@ -42,6 +42,10 @@ export const jobs: Job[] = [
             text: 'With our agentic solutions now reliably combing over our bugs and creating non-complex tests, we began to have it target our quarantined test cases. Each day it would review a batch of the test cases in quarantine, and attempt to fix them leveraging our POM and our skills and rules. This saved us time on maintenance, and in addition served as a way for us to bring tests out of quarantine if they had proven reliable after a few cycles.',
           },
           {
+            title: 'The Agentic Test Lifecycle',
+            text: "We implemented a test case manager that would review live test statistics from OTEL, then based on those metrics we were able to dictate if the test was fast and reliable enough for CI (with overrides for high-value tests), post-merge/regression tests, or if the test needed to be quarantined. When a test's error rate or flake rate would spike we would then have the test case manager move those tests into shadow, and send an alert to the QA team. It would also trigger an agentic workflow loop that would begin triage, where it would diagnose the test as flaky, defective, or bugged. If it was flaky or defective we would then route it into the next loop where it would attempt to repair the test by looking at the changed application code that caused it to break, then make updates to the test to increase its stability again. If the test was bugged, we would route it into the bug crusher which would take the same scoped change context, review the break in the code, and then fix the code, returning a PR to the quality team for review and merge. If it failed to fix the bug, or repair the test, it would inform the quality team that the test needed human triage to resolve, triggering an on-call alert. This fully agentic workflow allowed us to match pace with the ever-increasing speed of the developers. Test flake rate was maintained at 0.5%, the quality team saved an average of 120 total hours of triage time weekly, and our escape rate which had spiked to 20%, returned back to 2% allowing us to focus on our next projects with confidence.",
+          },
+          {
             title: 'Lighthouse Playwright integration',
             text: "One of the big struggles we had with the performance of our application was not the backend servers, but instead the front end overloading customers' thin clients. To help identify those hotspots we leveraged Playwright's ability to hook into Lighthouse metrics to begin to build our test profiles for our application under test.",
           },
@@ -60,6 +64,8 @@ export const jobs: Job[] = [
             'Implemented Playwright API testing which dramatically increased the speed of our testing and improved the test coverage.',
             'Our team was one of the first teams to begin embracing agentic solutions, not just using it to write code, but also to reduce some of the normally painful overhead in a quality space.',
             'Dramatically spiked the number of tests we supported in our CI suite, spiking up from 50 tests from when I started to over 800, all running in under 15 minutes. Driving testing massively to the left, and preventing over 100 bugs per week from ever making it into master.',
+            'Built The Agentic Test Lifecycle with an OTEL-driven test case manager, keeping flake rate at 0.5% while matching developer velocity.',
+            'Agentic triage, repair, and bug-crusher loops saved the quality team an average of 120 total hours of triage time weekly.',
           ],
         },
       },
