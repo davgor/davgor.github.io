@@ -63,6 +63,7 @@ describe('runCli --comment-pr', () => {
       stdout: () => undefined,
       stderr: () => undefined,
       postComment: vi.fn(async () => 'created' as const),
+      runFireguardFn: async () => skippedReport,
     });
     expect(code).toBe(2);
   });
