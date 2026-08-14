@@ -1,8 +1,17 @@
 import { describe, it, expect } from 'vitest';
-import { screen } from '@testing-library/react';
-import { AppRoutes } from './App';
+import { render, screen } from '@testing-library/react';
+import App, { AppRoutes } from './App';
 import { renderWithRouter } from './test/renderWithRouter';
 import { jobs } from './data/jobs';
+
+describe('App', () => {
+  it('boots BrowserRouter without legacy v6 future flags and shows About Me', () => {
+    window.history.pushState({}, '', '/');
+    render(<App />);
+    expect(screen.getByText('David Gorden - 9+ years experience')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /About Me/i })).toHaveAttribute('aria-current', 'page');
+  });
+});
 
 describe('AppRoutes', () => {
   it('renders About Me on the home route', () => {

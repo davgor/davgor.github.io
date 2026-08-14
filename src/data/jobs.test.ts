@@ -48,6 +48,12 @@ describe('jobs data', () => {
       .join('\n');
 
     expect(allText).toContain('AI quarantine bot');
+    expect(allText).toContain('The Agentic Test Lifecycle');
+    expect(allText).toContain('test case manager');
+    expect(allText).toContain('OTEL');
+    expect(allText).toContain('bug crusher');
+    expect(allText).toContain('0.5%');
+    expect(allText).toContain('120 total hours');
     expect(allText).toContain('QA embedded processes');
     expect(allText).toContain('development team Odyssey');
     expect(allText).toContain('first saw at Lyft');
