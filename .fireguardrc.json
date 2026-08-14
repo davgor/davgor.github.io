@@ -9,7 +9,7 @@
     "maxFlakeRate": 0
   },
   "include": ["src/**/*.{test,spec}.{ts,tsx}"],
-  "exclude": ["**/__mocks__/**", "**/node_modules/**", "e2e/**", "fireguard/**"],
+  "exclude": ["**/__mocks__/**", "**/node_modules/**", "e2e/**", "fireguard/**", "scripts/**"],
   "baseRef": "main",
   "testCommand": "npx vitest run"
 }

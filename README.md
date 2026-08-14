@@ -2,14 +2,14 @@
 
 This repo hosts the portfolio at [davgor.github.io](https://davgor.github.io): experience, company detail, and related pages.
 
-Vite + React + TypeScript. Engineering process (agent skills, ticket board, and CI) mirrored from [ElectronServerManager](https://github.com/davgor/ElectronServerManager) and [electronGameTest](https://github.com/davgor/electronGameTest).
+Vite + React + TypeScript. Engineering process (agent skills, ticket board, fireguard, red-team review, and CI) aligned with [BoosterSeat](https://github.com/davgor/BoosterSeat) and [CapitalGains](https://github.com/davgor/CapitalGains).
 
 ## Engineering process
 
 - **TDD-first.** Tests are written before the implementation that satisfies them for components, pages, data helpers, and anything else with testable behavior. See `.cursor/skills/delivery-standards/SKILL.md`.
 - **Strict lint.** ESLint with `--max-warnings 0`. Rules are never relaxed to make code pass — fix the code. After edits: `lint:fix` then `format` per [`.ai-instructions.md`](.ai-instructions.md).
 - **TypeScript strict mode.** No `any` escapes used to dodge a type problem.
-- **Antagonistic PR review.** Before merge-ready/close-out, agents must post an adversarial review (`antagonistic-pr-review` skill) and fix every blocking finding — including on their own PRs.
+- **Red team review (mandatory).** Before merge-ready / ticket `done`, run `red-team-review` (alias: `antagonistic-pr-review`), post on the PR, and fix every **Blocking** finding — including on agent-authored PRs. See [`.ai-instructions.md`](.ai-instructions.md) step 11.
 - **Ticket board.** Work is tracked as markdown tickets under `/board` (`backlog/` → `in-progress/` → `done/`). Epics are `NNN-*.md`, sub-tickets `NNN.M-*.md`, each with checkable acceptance criteria. The `complete-ticket` and `collapse-epic` skills in `.cursor/skills/` (mirrored in `.claude/skills/`) drive the workflow.
 - **Experience entries.** To add, expand, or update jobs/roles on the Experience page, use the `add-experience-entry` skill (`.cursor/skills/add-experience-entry/SKILL.md`).
 - **No secrets committed.** `.env` stays gitignored.
@@ -25,22 +25,24 @@ Work is tracked as markdown tickets under [`board/`](board/):
 - `board/in-progress/` — active
 - `board/done/` — completed (epics may collapse sub-tickets)
 
-Each ticket has a description and checkable acceptance criteria. Implementation follows TDD, then lint, format, unit tests, type-check, deadcode, and build before criteria are checked off. Run Playwright e2e when UI/routes change. See the [complete-ticket](.claude/skills/complete-ticket/SKILL.md) skill for the full flow.
+Each ticket has a description and checkable acceptance criteria. Implementation follows TDD, then lint, format, unit tests, fireguard (when tests change), type-check, deadcode, build, and red-team review before criteria are checked off. Run Playwright e2e when UI/routes change. See the [complete-ticket](.claude/skills/complete-ticket/SKILL.md) skill for the full flow.
 
 ## Commands
 
 ```bash
 npm install          # set up
 npm run dev          # Vite dev server
-npm run test:unit    # Vitest (app + fireguard)
+npm run test:unit    # Vitest (app + fireguard + scripts)
 npm run fireguard    # Grade new unit tests (A–F); F fails CI
 npm run test:e2e     # Playwright
 npm run lint         # ESLint (max-warnings 0)
 npm run format       # Prettier write
 npm run format:check # Prettier check
-npm run type-check   # tsc --noEmit
+npm run type-check   # tsc --noEmit (+ fireguard)
 npm run build        # tsc + vite build
-npm run deadcode     # ts-prune unused export scan
+npm run deadcode     # ts-prune vs .tsprune-ignore
+npm run deadcode:refresh
+npm run assert:dist  # after build — production HTML shape
 ```
 
 ## CI
@@ -54,12 +56,15 @@ npm run deadcode     # ts-prune unused export scan
 
 Also mirrored:
 
-- `.github/workflows/deadcode.yml` — `ts-prune`; fails on new findings not listed in `.tsprune-ignore`
+- `.github/workflows/deadcode.yml` — `npm run deadcode`; fails on new findings not listed in `.tsprune-ignore`
 - `.github/workflows/security-audit.yml` — `npm audit`, fails PRs on moderate+ vulnerabilities
 - `.github/workflows/playwright.yml` — Playwright e2e
+- `.github/workflows/auto-revert.yml` — reverts `main` when CI Checks fails
 - `.github/workflows/deploy.yml` — GitHub Pages deploy on push to `main`
 
 Commits with `[skip ci]` in the message skip the push-triggered CI Checks jobs.
+
+Treat `test`, `fireguard`, `lint`, and `build` as **required status checks** for `main`.
 
 ## GitHub Pages deploy
 

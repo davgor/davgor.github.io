@@ -45,6 +45,15 @@ const CodingReference: React.FC = () => {
           'https://github.com/davgor/AI-DND-Matrix',
         ]}
       />
+      <BlogCard
+        title="BoosterSeat"
+        content={[
+          'BoosterSeat is my quick-start template for spinning up a new CRUD app. I pulled the battle-tested process from CapitalGains and this site—CI/CD, fireguard, board tickets, Cursor/Claude skills—and wrapped it around a replaceable Vite + React + TypeScript CRUD scaffold so I am not rebuilding scaffolding from scratch every time.',
+          'Out of the box you get the engineering process I actually use: TDD-first delivery standards, strict ESLint, a markdown ticket board, and mandatory red-team review before merge. CI runs unit tests, fireguard grading on new tests, lint, type-check, deadcode, security audit, and Playwright, plus auto-revert when main goes red. Deploy defaults to GitHub Pages via Actions with a production HTML smoke check.',
+          'There are stack playbooks for React Pages (the default) and Electron conversion under templates/, plus docs for turning the fork into a real product. If I am starting something new and want the agent process and quality gates already wired, this is what I copy.',
+          'https://github.com/davgor/BoosterSeat',
+        ]}
+      />
     </>
   );
 };

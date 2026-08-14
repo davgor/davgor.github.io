@@ -1,19 +1,22 @@
 ---
 name: delivery-standards
 description: >-
-  Enforces TDD-first implementation, lint/unit-test/build verification, and
-  /board ticket or epic updates for all code work in this portfolio site. Use for
-  every feature, bug fix, refactor, or follow-up unless the user explicitly
-  asks for a read-only answer with no code changes.
+  Enforces TDD-first implementation, lint/unit-test/build verification,
+  mandatory red-team review before completion, and /board ticket or epic updates
+  for all code work in this project. Use for every feature, bug fix, refactor,
+  or follow-up unless the user explicitly asks for a read-only answer with no
+  code changes.
 ---
 
 # Delivery standards (all implementation work)
 
 Mirrors `.cursor/skills/delivery-standards/SKILL.md` — keep both in sync when changing workflow rules.
 
+Process aligned with [BoosterSeat](https://github.com/davgor/BoosterSeat) and [CapitalGains](https://github.com/davgor/CapitalGains).
+
 ## Standing rules
 
-Any work you do going forward needs to have the lint, unit test, and build confirming, everything needs to be written TDD style, and you either need to create a ticket, or update an epic if it relates.
+Any work you do going forward needs to have the lint, unit test, and build confirming, everything needs to be written TDD style, and you either need to create a ticket, or update an epic if it relates. Before completion you must also run a **red team review**.
 
 Read `README.md` and `.ai-instructions.md` for process boundaries. For board tickets already in scope, also follow [complete-ticket](../complete-ticket/SKILL.md).
 
@@ -41,11 +44,11 @@ Description paragraph: what, why, dependencies.
 - [ ] Tests / runbook step named explicitly where relevant
 ```
 
-Do not check off criteria or move tickets to `done/` until section 3 passes.
+Do not check off criteria or move tickets to `done/` until section 3 and section 4 pass.
 
 ## 2. TDD-first implementation
 
-For components, pages, data helpers, and any logic with testable behavior:
+For components, pages, data helpers, stores, and any logic with testable behavior:
 
 1. **Red** — write failing test(s) for the acceptance criterion or bug repro
 2. **Green** — minimum code to pass
@@ -82,23 +85,24 @@ npm run test:e2e   # when UI/navigation/routes change
 
 **Fireguard (unit-test quality):** After unit tests pass, run `npm run fireguard` whenever the change adds or modifies Vitest unit tests (git diff vs `main`). Fireguard grades those tests (AST mock/tautology checks, 100× flake isolation, mutation on changed modules). A letter grade **F** is a delivery failure — rewrite the tests and re-grade. Playwright is not graded. See `fireguard/README.md`.
 
-## 4. Antagonistic PR review (required)
+## 4. Red team review (required before completion)
 
 Before calling the work merge-ready or moving tickets to `done/`, run the
-[antagonistic-pr-review](../antagonistic-pr-review/SKILL.md) skill on the PR
+[red-team-review](../red-team-review/SKILL.md) skill on the PR
 **including PRs you authored**. Post the review on GitHub with marker
-`<!-- antagonistic-pr-review -->`.
+`<!-- red-team-review -->`.
 
 - Any **Blocking** finding → treat as failed delivery until fixed and pushed
 - Do not rubber-stamp; if you find nothing blocking, say what you attacked and why it held
 - Pure docs typo-only changes may skip when explicitly noted
+- Completion reports must include the red-team verdict
 
 ## 5. Close out
 
 - Check off verified acceptance criteria (`- [x]`)
-- `git mv` ticket to `/board/done/` when all criteria met
-- Summarize: what changed, test/lint/build output, ticket ids touched, antagonistic review outcome
-- Do **not** commit unless the user explicitly asks
+- `git mv` ticket to `/board/done/` when all criteria met **and** red-team Blocking items are clear
+- Summarize: what changed, test/lint/build output, ticket ids touched, red-team review outcome
+- Do **not** commit unless the user explicitly asks (cloud agents that are instructed to commit/push may do so)
 
 ## Quick checklist
 
@@ -117,6 +121,6 @@ Delivery:
 - [ ] npm run deadcode — pass
 - [ ] npm run build — pass
 - [ ] npm run test:e2e — pass (when UI/routes change)
-- [ ] Antagonistic PR review posted; blocking findings fixed
+- [ ] Red team review posted; blocking findings fixed
 - [ ] Acceptance criteria checked off only when verified
 ```

@@ -1,0 +1,23 @@
+---
+description: Mandatory red-team review before claiming work complete or merge-ready
+alwaysApply: true
+---
+
+# Red team review (required before completion)
+
+Before marking implementation work **done**, moving tickets to `board/done/`, or
+calling a PR merge-ready, you **must** run the red-team review gate:
+
+→ `.cursor/skills/red-team-review/SKILL.md`
+
+Also encoded in `.ai-instructions.md` step 11 and `.cursor/skills/delivery-standards/SKILL.md`.
+
+## Non-negotiables
+
+1. Diff the real code (not only the PR summary).
+2. Post a PR review with marker `<!-- red-team-review -->`.
+3. Fix every **Blocking** finding; re-run lint/tests/build after fixes.
+4. Report the red-team verdict in your completion summary.
+5. Applies to **your own** PRs too — no self-exemption.
+
+Skip only for pure docs typo fixes, or when the user explicitly waives the review.

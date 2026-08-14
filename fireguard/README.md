@@ -15,18 +15,19 @@ Playwright / e2e is out of scope.
 1. Copy the entire `fireguard/` directory.
 2. Copy `.fireguardrc.json` (or create one from the defaults below).
 3. Ensure peer tooling exists: `typescript`, `vitest`, `tsx`, `minimatch`.
-4. Add scripts:
+4. If the host `package.json` is **not** `"type": "module"` (common for Electron), keep `fireguard/package.json` with `"type": "module"` and run via `node fireguard/bin/fireguard.mjs`.
+5. Add scripts:
 
 ```json
 {
   "scripts": {
-    "fireguard": "tsx fireguard/src/main.ts",
+    "fireguard": "node fireguard/bin/fireguard.mjs",
     "test:fireguard": "vitest run --config fireguard/vitest.config.ts"
   }
 }
 ```
 
-5. Call `npm run fireguard` in CI on pull requests. Exit `1` means grade **F**.
+6. Call `npm run fireguard` in CI on pull requests. Exit `1` means grade **F**.
 
 ## CLI
 
