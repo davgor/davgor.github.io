@@ -12,11 +12,12 @@ describe('CodingReference', () => {
     );
   });
 
-  it('renders portfolio, Electron Server Manager, and AI-DND-Matrix project cards', () => {
+  it('renders portfolio, Electron Server Manager, AI-DND-Matrix, and BoosterSeat project cards', () => {
     render(<CodingReference />);
     expect(screen.getByText('davgor.github.io')).toBeInTheDocument();
     expect(screen.getByText('Electron Server Manager')).toBeInTheDocument();
     expect(screen.getByText('AI-DND-Matrix')).toBeInTheDocument();
+    expect(screen.getByText('BoosterSeat')).toBeInTheDocument();
     expect(
       screen.getByRole('link', { name: 'https://github.com/davgor/davgor.github.io' })
     ).toBeInTheDocument();
@@ -25,6 +26,9 @@ describe('CodingReference', () => {
     ).toBeInTheDocument();
     expect(
       screen.getByRole('link', { name: 'https://github.com/davgor/AI-DND-Matrix' })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('link', { name: 'https://github.com/davgor/BoosterSeat' })
     ).toBeInTheDocument();
   });
 
@@ -56,6 +60,17 @@ describe('CodingReference', () => {
     expect(screen.getByText(/deterministic rules engine/i)).toBeInTheDocument();
     expect(screen.getByText(/re-grounded from SQLite/i)).toBeInTheDocument();
     expect(screen.getByText(/Claude by default, plus a local Player2 option/i)).toBeInTheDocument();
+  });
+
+  it('describes BoosterSeat as a quick-start app template', () => {
+    render(<CodingReference />);
+    expect(screen.getByText(/quick-start template/i)).toBeInTheDocument();
+    expect(screen.getByText(/Vite \+ React \+ TypeScript CRUD scaffold/i)).toBeInTheDocument();
+    expect(screen.getByText(/fireguard grading on new tests/i)).toBeInTheDocument();
+    expect(screen.getByText(/board tickets/i)).toBeInTheDocument();
+    expect(screen.getByText(/red-team review/i)).toBeInTheDocument();
+    expect(screen.getByText(/GitHub Pages via Actions/i)).toBeInTheDocument();
+    expect(screen.getByText(/Electron conversion/i)).toBeInTheDocument();
   });
 
   it('uses correct grammar in project descriptions', () => {

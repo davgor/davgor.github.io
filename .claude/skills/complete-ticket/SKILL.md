@@ -51,6 +51,7 @@ npm run format
 npm run lint
 npm run format:check
 npm run test:unit
+npm run fireguard   # when the ticket adds new Vitest unit tests — F fails delivery
 npm run type-check
 npm run deadcode
 npm run build
@@ -60,6 +61,10 @@ npm run test:e2e   # when UI/navigation/routes change
 If something fails, fix it — don't check off a criterion that doesn't actually pass, and don't mark the ticket done with failing checks.
 
 **Targeted tests during iteration** are fine (`npx vitest run src/components/Foo.test.tsx`), but **finish with full `npm run test:unit`** unless the user scoped a subset.
+
+**Fireguard:** If the ticket adds or modifies unit tests, `npm run fireguard` must not return grade **F** before close-out. See `fireguard/README.md`.
+
+**Red team review (mandatory):** Before close-out on work that has (or will have) a PR, run [red-team-review](../red-team-review/SKILL.md), post the review on the PR with `<!-- red-team-review -->`, and fix every **Blocking** finding. Do not mark the ticket done with open blocking review items. Summarize the red-team verdict in your report.
 
 **CI parity:** This repo's GitHub Actions workflows (`.github/workflows/pr-checks.yml`, `deadcode.yml`, `playwright.yml`) mirror the local gate. Before calling a ticket done on substantial work, confirm the equivalent local commands all pass — you don't need `act` unless the user asks for it.
 

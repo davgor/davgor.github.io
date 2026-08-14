@@ -1,5 +1,5 @@
 ---
-description: TDD, lint/test/build gate, and /board ticket traceability for all implementation work
+description: TDD, lint/test/build gate, red-team review, and /board ticket traceability for all implementation work
 alwaysApply: true
 ---
 
@@ -9,23 +9,25 @@ Any implementation work in this repo must follow `.cursor/skills/delivery-standa
 
 ## Required on every code change
 
-1. **TDD-first** — failing test(s) before implementation for components, pages, data helpers, and other testable logic.
+1. **TDD-first** — failing test(s) before implementation for components, pages, stores, data helpers, and other testable logic.
 2. **Verify before done** — all must pass; do not report completion otherwise:
    - `npm run lint:fix` then `npm run format`
    - `npm run lint`
    - `npm run format:check`
    - `npm run test:unit`
+   - `npm run fireguard` (when unit tests added/modified)
    - `npm run type-check`
-   - `npm run deadcode`
+   - `npm run deadcode` (ts-prune vs `.tsprune-ignore`; if export moves/deletes drift the baseline, run `npm run deadcode:refresh` after confirming the new findings are intentional)
    - `npm run build`
    - `npm run test:e2e` (when UI/navigation/routes change)
 3. **Board traceability** — create a ticket in `/board/backlog/` or update the related epic/ticket before or as you start. If the user named a ticket id, use `complete-ticket` skill.
+4. **Red team review (mandatory)** — before done/merge-ready, run `.cursor/skills/red-team-review/SKILL.md`, post the review on the PR with `<!-- red-team-review -->`, and fix every **Blocking** finding. Applies to agent-authored PRs too. See also `.cursor/rules/red-team-review.mdc` and `.ai-instructions.md` step 11.
 
 ## Also required
 
 - Read `README.md` and `.ai-instructions.md` for process and format/lint workflow.
 - Check off acceptance criteria only after verification; move tickets to `done/` when complete.
-- Do not commit unless the user explicitly asks.
+- Do not commit unless the user explicitly asks (cloud agents instructed to commit/push may do so).
 
 ## Exceptions
 

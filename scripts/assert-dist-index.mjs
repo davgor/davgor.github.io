@@ -13,16 +13,15 @@ export function isProductionIndexHtml(html) {
 }
 
 const label = process.argv[2] ?? 'dist/index.html';
-const html = label.startsWith('http://') || label.startsWith('https://')
-  ? await (await fetch(label)).text()
-  : readFileSync(label, 'utf8');
+const html =
+  label.startsWith('http://') || label.startsWith('https://')
+    ? await (await fetch(label)).text()
+    : readFileSync(label, 'utf8');
 
 if (!isProductionIndexHtml(html)) {
+  console.error(`${label} looks like a Vite dev entry (or is missing hashed /assets bundles).`);
   console.error(
-    `${label} looks like a Vite dev entry (or is missing hashed /assets bundles).`,
-  );
-  console.error(
-    'GitHub Pages must serve the Vite dist/ build via Actions, not the repo-root source.',
+    'GitHub Pages must serve the Vite dist/ build via Actions, not the repo-root source.'
   );
   console.error('Check Settings → Pages → Source = GitHub Actions.');
   process.exit(1);

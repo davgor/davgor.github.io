@@ -12,6 +12,9 @@ node_modules
 dist
 dist-ssr
 *.local
+.env
+.env.*
+!.env.example
 
 # Editor directories and files
 .vscode/*
@@ -24,6 +27,19 @@ dist-ssr
 *.sln
 *.sw?
 *code-workspace
+
+# Coverage / reports
+coverage
+fireguard-pr.md
+fireguard-report.json
+tsprune.out
+tsprune.normalized
+tsprune.new
+tsprune.ignore.patterns
+audit.json
+
+# Husky
+.husky/_
 
 # Playwright
 /test-results/

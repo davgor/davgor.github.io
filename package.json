@@ -9,15 +9,19 @@
     "preview": "vite preview",
     "assert:dist": "node scripts/assert-dist-index.mjs dist/index.html",
     "test": "npm run test:unit && npm run test:e2e",
-    "test:unit": "vitest run",
+    "test:unit": "vitest run && vitest run --config fireguard/vitest.config.ts",
+    "test:fireguard": "vitest run --config fireguard/vitest.config.ts",
+    "fireguard": "node fireguard/bin/fireguard.mjs",
     "test:e2e": "npx playwright test",
     "deploy": "npm run build && npm run assert:dist && echo \"Deploy via GitHub Actions only. Set Settings → Pages → Source to GitHub Actions, then push to main (or run workflow_dispatch).\"",
-    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css}\"",
-    "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css}\"",
-    "lint": "eslint \"src/**/*.{ts,tsx}\" --max-warnings 0",
-    "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix",
-    "type-check": "tsc --noEmit",
-    "deadcode": "npx -y ts-prune --project tsconfig.json",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css}\" \"scripts/**/*.{mjs,js}\" \"fireguard/**/*.{ts,tsx,js,mjs,json}\" \".fireguardrc.json\" \"e2e/**/*.{ts,tsx}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css}\" \"scripts/**/*.{mjs,js}\" \"fireguard/**/*.{ts,tsx,js,mjs,json}\" \".fireguardrc.json\" \"e2e/**/*.{ts,tsx}\"",
+    "lint": "eslint \"src/**/*.{ts,tsx}\" \"fireguard/**/*.{ts,tsx}\" --max-warnings 0",
+    "lint:fix": "eslint \"src/**/*.{ts,tsx}\" \"fireguard/**/*.{ts,tsx}\" --fix",
+    "type-check": "tsc --noEmit && tsc --noEmit -p fireguard/tsconfig.json",
+    "deadcode": "node scripts/deadcode-check.mjs",
+    "deadcode:refresh": "node scripts/deadcode-refresh.mjs",
+    "bump:minor": "node scripts/bump-minor-version.mjs",
     "prepare": "husky"
   },
   "lint-staged": {
@@ -26,6 +30,9 @@
       "eslint --fix --max-warnings 0"
     ],
     "src/**/*.{js,jsx,json,css}": [
+      "prettier --write"
+    ],
+    "scripts/**/*.{mjs,js}": [
       "prettier --write"
     ]
   },
@@ -40,6 +47,8 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
+    "@types/minimatch": "^5.1.2",
+    "@types/node": "^22.13.10",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^8.56.0",
@@ -55,7 +64,10 @@
     "jimp": "^1.6.1",
     "jsdom": "^28.1.0",
     "lint-staged": "^15.2.0",
+    "minimatch": "^10.2.6",
     "prettier": "^3.8.1",
+    "ts-prune": "^0.10.3",
+    "tsx": "^4.23.11",
     "typescript": "^5.2.2",
     "uuid": "^11.1.1",
     "vite": "^6.4.3",
