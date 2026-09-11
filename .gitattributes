@@ -1,2 +1,7 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Static MathLab snapshots carry exact-byte hashes in their manifest.
+public/mathlab/crossroads.html -text
+public/mathlab/frost.html -text
+public/mathlab/islands.html -text
