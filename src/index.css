@@ -472,3 +472,29 @@ a:hover {
     transform: none;
   }
 }
+
+.mathlab-showcase {
+  background: var(--color-surface-strong);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+.mathlab-showcase h2 {
+  font-family: var(--font-display);
+}
+.mathlab-showcase p {
+  line-height: 1.6;
+}
+.mathlab-window {
+  display: block;
+  width: 100%;
+  height: 900px;
+  border: 1px solid #405362;
+  border-radius: 8px;
+}
+@media (max-width: 600px) {
+  .mathlab-window {
+    height: 760px;
+  }
+}

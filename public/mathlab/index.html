@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Icarus MathLab — world showcase</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#111820;color:#e1e8ed;font:15px system-ui}header{padding:16px 20px;border-bottom:1px solid #405362}h1{font-size:20px;margin:0 0 8px}p{color:#bdcbd5;line-height:1.5;margin:8px 0}.toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap}select{font:inherit;padding:8px;background:#24333f;color:inherit;border:1px solid #78909f;border-radius:6px}a{color:#9ae2d8}iframe{display:block;width:100%;height:calc(100dvh - 195px);min-height:520px;border:0}#loading{font-size:13px}a:focus-visible,select:focus-visible{outline:3px solid #e9cd80;outline-offset:3px}
+</style>
+</head>
+<body>
+<header>
+<h1>Icarus MathLab</h1>
+<p>Three saved worlds. Rotate the globe, combine magical layers, and inspect settlements and beast lairs.</p>
+<div class="toolbar"><label for="world">World</label><select id="world"><option value="crossroads">The Crossroads</option><option value="frost">The Frostbound Reach</option><option value="islands">The Shattered Coast</option></select><a id="open" href="./crossroads.html" target="_blank" rel="noopener">Open selected world</a></div>
+<p id="loading" role="status">Loading saved world… Each interactive snapshot is about 9 MB.</p>
+</header>
+<iframe id="viewer" title="Selected MathLab world" src="./crossroads.html" sandbox="allow-scripts allow-downloads"></iframe>
+<script>
+const picker=document.getElementById('world'),viewer=document.getElementById('viewer'),openLink=document.getElementById('open'),status=document.getElementById('loading');
+const worlds={crossroads:'Five magical networks, habitats and beast lairs. Seed 42.',frost:'Cold climates and mountain refuges. Seed 73.',islands:'Ocean archipelagos, floating islands and coastal communities. Seed 108.'};
+viewer.addEventListener('load',()=>{status.textContent=worlds[picker.value]+' Saved snapshot; no live generator required.';});
+picker.addEventListener('change',()=>{if(!Object.hasOwn(worlds,picker.value))return;status.textContent='Loading saved world…';viewer.src='./'+picker.value+'.html';openLink.href='./'+picker.value+'.html';});
+</script>
+</body>
+</html>

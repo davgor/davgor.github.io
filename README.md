@@ -84,3 +84,17 @@ Local check after `npm run build`:
 ```bash
 npm run assert:dist
 ```
+
+## MathLab showcase
+
+Coding Reference embeds `public/mathlab/index.html`; `/mathlab/` also opens the showcase directly on Pages. Three self-contained 65-grid snapshots load individually (about 9 MB each) with globe/atlas controls, magical overlays, settlements and beast-lair inspection. They do not call a generator service. This is a standalone simulation showcase, not packaged Unreal gameplay.
+
+To refresh the saved worlds, use Python 3.12 with the reviewed Icarus MathLab source checkout:
+
+```powershell
+python scripts/build-mathlab-showcase.py --source C:/path/to/icarusUnreal
+```
+
+The initial source includes the LAB-006 beast-anchor work. `public/mathlab/manifest.json` records source-file SHA-256 hashes, each world's recipe/seed/overrides and generated HTML hashes, avoiding dependence on a source branch name or a local absolute path. The source checkout must provide the recorded modules and `terrain_lab.report`; a version predating LAB-006 cannot produce these lair exports. Review changed exports, rerun gates and deploy the Vite dist through the existing Actions workflow. No Python runtime, user prompts, credentials or local server URLs are shipped as configuration.
+
+World choices are authored in `scripts/build-mathlab-showcase.py` and the selector in `public/mathlab/index.html`; keep their IDs, titles, seeds and file links aligned. Run `e2e/mathlab.spec.ts` after updating either. The public wrapper and snapshot frames are sandboxed without same-origin privilege; downloads and intentional full-window links are permitted. Viewer controls that require a running Python server are hidden. Browser work and memory remain significant for these diagnostic snapshots; only the selected world is loaded, and the outer embed loads lazily.
