@@ -79,4 +79,18 @@ describe('CodingReference', () => {
     expect(screen.getByText(/more in-depth information/i)).toBeInTheDocument();
     expect(screen.getByText(/It's a pretty simple page/i)).toBeInTheDocument();
   });
+  it('embeds the static showcase with restricted permissions and a safe full-window link', () => {
+    render(<CodingReference />);
+    const viewer = screen.getByTitle('MathLab world showcase');
+    expect(viewer).toHaveAttribute('src', '/mathlab/index.html');
+    expect(viewer).toHaveAttribute('loading', 'lazy');
+    expect(viewer).toHaveAttribute(
+      'sandbox',
+      'allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox'
+    );
+    const fullWindow = screen.getByRole('link', { name: 'Open showcase in a full window' });
+    expect(fullWindow).toHaveAttribute('href', '/mathlab/');
+    expect(fullWindow).toHaveAttribute('target', '_blank');
+    expect(fullWindow).toHaveAttribute('rel', 'noopener noreferrer');
+  });
 });

@@ -17,6 +17,26 @@ const CodingReference: React.FC = () => {
           'https://github.com/davgor',
         ]}
       />
+      <section aria-labelledby="mathlab-title" className="mathlab-showcase">
+        <h2 id="mathlab-title">Icarus MathLab — World Showcase</h2>
+        <p>
+          A procedural fantasy-world simulation: overlapping magical networks, cold and aquatic
+          habitats, settlements, floating islands, and catalogue-driven beast lairs. Explore three
+          saved worlds below. This is the standalone simulation lab, not Unreal gameplay.
+        </p>
+        <p>
+          <a href="/mathlab/" target="_blank" rel="noopener noreferrer">
+            Open showcase in a full window
+          </a>
+        </p>
+        <iframe
+          title="MathLab world showcase"
+          src="/mathlab/index.html"
+          loading="lazy"
+          sandbox="allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox"
+          className="mathlab-window"
+        />
+      </section>
       <BlogCard
         title="davgor.github.io"
         content={[
