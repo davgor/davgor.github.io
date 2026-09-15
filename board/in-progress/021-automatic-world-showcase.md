@@ -1,6 +1,6 @@
 # 021 — Automatically refresh Fantasy World Generator showcase
 
-Replace the legacy Icarus MathLab sample section with FantasyWorldGenerator and regenerate samples in Pages builds.
+Replace the legacy Icarus MathLab sample section with FantasyWorldGenerator and regenerate samples in the generator’s merge workflow before Pages deployment.
 
 ## Acceptance criteria
 

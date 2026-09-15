@@ -18,7 +18,7 @@ test('Coding Reference showcases interactive worlds without a generator service'
   const window = page.frameLocator('iframe[title="MathLab world showcase"]');
   await expect(window.getByRole('combobox', { name: 'World' })).toBeVisible();
   const world = window.frameLocator('iframe[title="Selected MathLab world"]');
-  await expect(world.locator('#world-nest-summary')).toContainText('381 candidate species');
+  await expect(world.locator('#world-nest-summary')).toContainText(/[1-9]\d* candidate species/);
   await expect(world.locator('#world-generate')).toBeHidden();
   await expect(world.locator('#local-lab')).toBeHidden();
   await expect(
