@@ -26,3 +26,7 @@ before activating the merge publisher. The portfolio can serve its reviewed comm
 
 Initial Pages deployment verification remains the next site-side check. Keep this ticket in progress
 until the merge-triggered source-to-portfolio publication has also been observed end to end.
+
+Deployment follow-up: the added browser install exposed that Ubuntu 24.04 lacks the `libasound2`
+package expected by the locked Playwright release. Pin the Pages build to Ubuntu 22.04, matching the
+passing dedicated browser CI, then verify deployment again. No dependency or gate changes.

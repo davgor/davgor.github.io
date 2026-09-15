@@ -16,7 +16,8 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # Match playwright.yml: the locked Playwright version supports Ubuntu 22.04.
+    runs-on: ubuntu-22.04
     timeout-minutes: 30
     steps:
       - name: Checkout
