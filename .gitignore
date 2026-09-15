@@ -46,3 +46,6 @@ audit.json
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# Python exporter cache
+__pycache__/
