@@ -8,7 +8,7 @@ Replace the legacy Icarus MathLab sample section with FantasyWorldGenerator and 
 - [x] Three generated samples support inspection and export without a Python service.
 - [ ] Generator merges rebuild from a clean, recorded source commit; failed gates prevent publication.
 - [x] Export integration test verifies reproducibility, recipes and hashes; browser tests cover world switching and no live controls.
-- [ ] Full delivery gates and posted red-team review pass; live deployment verified.
+- [x] Full delivery gates and posted red-team review pass; live deployment verified.
 
 ## Verification and remaining integration
 
@@ -24,8 +24,11 @@ module. The separate development working tree passed its validator but was prese
 user's choice about including it. Land that work, reconcile provenance and rerun the source gates
 before activating the merge publisher. The portfolio can serve its reviewed committed samples meanwhile.
 
-Initial Pages deployment verification remains the next site-side check. Keep this ticket in progress
-until the merge-triggered source-to-portfolio publication has also been observed end to end.
+Pages deployment 35007895733 succeeded after runner-fix PR #10 passed all checks and merged. Live
+browser verification confirmed source links, seeds 42/73/108, a downloaded seed-108 JSON, zero browser
+errors and zero generator API calls. The deployed manifest records source 6b71e8df74236d3bed78ee6b1c298780ea65c70b.
+Keep this ticket in progress until the merge-triggered source-to-portfolio publication has also been
+observed end to end; source PR #1 remains blocked as described above.
 
 Deployment follow-up: the added browser install exposed that Ubuntu 24.04 lacks the `libasound2`
 package expected by the locked Playwright release. Pin the Pages build to Ubuntu 22.04, matching the
