@@ -1,42 +1,43 @@
 {
   "format": 2,
   "source_repository": "https://github.com/davgor/FantasyWorldGenerator",
-  "source_revision": "6b71e8df74236d3bed78ee6b1c298780ea65c70b",
+  "source_revision": "26227ef04e00fa297ef1286e935aa50996492cde",
   "timings": "omitted",
   "source_files": {
-    "Sim/icarus_sim/__init__.py": "be1ae72cf462cb2250f787301581488eb7202254eac5afba8362cd0508e7ae9b",
-    "Sim/icarus_sim/terrain_area.py": "c31cf80f734c79e4b759b4e039e4613933c4b14b9111011ca153c1c2e6abe806",
-    "Sim/icarus_sim/terrain_biomes.py": "a702df217c6759cd4828ad7e6b2605dd55ff4faede345193092bfdd62081858b",
+    "Sim/icarus_sim/__init__.py": "c87f7e51e806af2dfa52141629861cc315694240c01430721e6ee8aa8bb178f9",
+    "Sim/icarus_sim/terrain_area.py": "f015b60eebfb0fc4d30f4cec7dc5bbb60595feb2b725c1b1f8721b05a94a341f",
+    "Sim/icarus_sim/terrain_biomes.py": "31addcb83aec4f3360764b05c5654f5885477a3668e53c8b9b93a84880c0f192",
     "Sim/icarus_sim/terrain_city_building_packs.json": "87e214559a0dce5332096e2929fe6346042c92568f4b96ed3519f7bca41a4173",
     "Sim/icarus_sim/terrain_city_layout_profiles.json": "388705198ff866bed2f9a5931ef40d850d88e1f604a4b3b5865873bde0cf1c00",
     "Sim/icarus_sim/terrain_climate.py": "7319f488ccf76c6eafa708f93a4174c73128d335984425a720ef7a5ae12bca5c",
     "Sim/icarus_sim/terrain_ecology.py": "bbe079783b0e0ed6a737af602d035e9f1486dfaf15b49652a051c9997039844e",
     "Sim/icarus_sim/terrain_erosion.py": "27ea45c648ba1d5102888b611ce3a6c7711c117be109c1a17fac8f369b4f5469",
     "Sim/icarus_sim/terrain_globe.py": "bf807be788d39e769c9feaafd967713099dd7a54521bbeb7a0eb7a79b22c1af1",
-    "Sim/icarus_sim/terrain_humans.py": "ef7a5f88d8100e9275bb0a37c0445e134a86bc157535a9c4ca7126f31b91a1fb",
-    "Sim/icarus_sim/terrain_lab.py": "8d6223661f796e610d83a6dae29f37cec2f16ed60f77d0f77ee38c0207a1efbe",
-    "Sim/icarus_sim/terrain_leyline_history.py": "785acc9fc4e9c6502606da846bb55304978555d01c41dbd8ffacd37a72d764b0",
-    "Sim/icarus_sim/terrain_magic.py": "9377ce7f834b2c3c092bd7aba115aeeea004e1361cd1a3979c4b6baf235d8ffb",
-    "Sim/icarus_sim/terrain_nest_profiles.json": "323c7597299d4a14ac815d492531bf0b5e0427a4e38c941aa22c3f935599b789",
-    "Sim/icarus_sim/terrain_nests.py": "b20b313db07d84c3fdb0428f5577ef4457c909e4f66c9bb2a7da44f372c74953",
+    "Sim/icarus_sim/terrain_history.py": "354957214f51d37873a1ae3e640fb4b6e85908cd103e7472f152b96138037d51",
+    "Sim/icarus_sim/terrain_humans.py": "7bf22304c5d477398d50861a053b8d3840e4414d36dc7c98bf69fd4ef2fa96f4",
+    "Sim/icarus_sim/terrain_lab.py": "a53b28577ca5d05a18bd1795ce336154d16c4e0da6b3ce74b527594ac895651d",
+    "Sim/icarus_sim/terrain_leyline_history.py": "513eaa3dcf13b611e65ab9e79c219b0a4566e5999cafbbf4d3eb0292bc0f9b5f",
+    "Sim/icarus_sim/terrain_magic.py": "6f8c7c862629676bf6e425f181ff837a5e2ef35c97bc1eb776bf40068b4786bb",
+    "Sim/icarus_sim/terrain_nest_profiles.json": "031cc969a0154c73ffdd416a433c5b141bf1de3ce00d8640669df5d7195a23d6",
+    "Sim/icarus_sim/terrain_nests.py": "2013d0a101a16c22bac7f3ad83e3e6f3a2bcf9071f2fbf711b4361c53fac421c",
     "Sim/icarus_sim/terrain_patch.py": "f630c5cf4d642c0f17a2f99eb759b6f13f72c74390e0301731c4632ab8246ef6",
-    "Sim/icarus_sim/terrain_profiles.json": "299493145f31a0266d473876e814281875e2e0dde00372be6d14f8aa65a88212",
+    "Sim/icarus_sim/terrain_profiles.json": "584b82cc40e3355c6c8ccad66f5ff5c3f2c8e8b8518418501609100802b2d861",
     "Sim/icarus_sim/terrain_profiles.py": "614b5ce9b2826c31f4c61c45d143ef2b9f8a5e04a8ba29abfdf306e72d4ca0c1",
-    "Sim/icarus_sim/terrain_recipes.py": "330feca8d7cc5a6d78e4d751b6210188b6d49656eef458e5ba37b73cf534aa25",
-    "Sim/icarus_sim/terrain_seasons.py": "b65c0916c77ca43ace5823abd3e7a11085a9874c80a44e6c68d2f7d414de579d",
+    "Sim/icarus_sim/terrain_recipes.py": "498b3caa0a83a624fc1ef834aea9495bb4bbbad23a2f597a5eca8740117ef710",
+    "Sim/icarus_sim/terrain_seasons.py": "90f4551f33fb5cd256aaf74770773d016f8fc58c67a75313955561f412da398b",
     "Sim/icarus_sim/terrain_seed.py": "87fedc0ac502ddb9b20ecf9f01ae47d1acc32a7813168256a59b9cbff4d9d502",
-    "Sim/icarus_sim/terrain_settlements.py": "aa157544488077045569b66597093d304fb0a8f5ffc0fb972dc2e1a67e8b045c",
+    "Sim/icarus_sim/terrain_settlements.py": "1d50f192a0ee2d46c79e683c350706cf887ba618a99fba15b4502b9f3fac0ce4",
     "Sim/icarus_sim/terrain_society.py": "cab671a79e79b4f6c8101f6b7041991fdc2f5b2458da41479d294419834089b1",
-    "Sim/icarus_sim/terrain_tectonics.py": "d415f83c05c954aeba2943ded62e01fd52803cdc696ba30d6a138641f2046b9c",
-    "Sim/icarus_sim/terrain_water.py": "dddc4cec3fd9e2e68206e775e4dbc5e5d9afa035c7da462c13c2dff734ba9522",
-    "Sim/icarus_sim/terrain_world.py": "6d1508721e0bf38931aadf4c40f99ef5a3f779ac025036ebee1026515ff67787",
+    "Sim/icarus_sim/terrain_tectonics.py": "9be1cc523c2fc1735640bbb59409e5d12f8a4c3de7af4e7ff47618376c649758",
+    "Sim/icarus_sim/terrain_water.py": "1e89409f0aaac596f6ba66f48d30a78df6d55566ad41b5f6d64587c3cb00a6cc",
+    "Sim/icarus_sim/terrain_world.py": "b8458216d2aa8da1558c577334bac34677770cdf511b6e3b60045725deab0eeb",
     "tools/build_extraction_manifest.py": "22feaaaaa0312814267cab045aee35e3c412c6c55b6d800862aa96e5a98b1d05",
-    "tools/export_showcase.py": "951aeafcf693ba12f74ba20a20fde9b93ef44739a8c1d32a4070522fe25e540e",
+    "tools/export_showcase.py": "5acd94dac4e7793ceed126f3fc54ac07170980ace4ba3ed058494f6a99290cfb",
     "tools/mathlab-showcase.html": "b0988f0422a2d425dc5bf84921434cd1f493bc4fab145fd78aeb5c09e8f81f60",
     "tools/smoke_lab.py": "cf1fe69f774a818070f6bf7f6de5e1820a0a3bd7db3dc2b3e87ef220cb1500b0",
-    "tools/terrain_lab.html": "cf0abced6c365b5fe86fe38a5a205296192adae94af4f1ad12aacdf7e4cca89d",
-    "tools/terrain_lab.py": "31171a00e700712852062761e50226cb49e2f3f2a71cff3f309d70480d72c81f",
-    "tools/terrain_world.js": "c1b1faf42712771845e6b69617012b44bff5a2851adbae78e2b3adcf60432429",
+    "tools/terrain_lab.html": "79a1ca408b6632990616805279ffa0f8ad7e9bb9c857c7dfabd43635b7816ff3",
+    "tools/terrain_lab.py": "b2e6944b86b0e23201ccb0496c47dbd30f6871d7e6f71e32c36d55cf36b9f390",
+    "tools/terrain_world.js": "de7a3e738f368454da3bdea2bdecce23eebb13afef8c19d256ea24080fd4407f",
     "tools/validate_repo.py": "542fca1a5f516d2d53dbe87b34104a91e2923eb67a618aa483666c7b8e956014",
     "tools/verify_provenance.py": "a0be6a1baff5eb7e954f37e03fe25de0af3f947aba65d09f9f996b8298e003b3"
   },
@@ -48,13 +49,13 @@
       "file": "crossroads.html",
       "seed": 42,
       "recipe": {
-        "version": 1,
+        "version": 2,
         "seed": 42,
         "overrides": {
           "size": 65
         },
         "resolved": {
-          "world_recipe": 1,
+          "world_recipe": 2,
           "world_options": "{}",
           "world_size": "small",
           "auto_parameters": 0,
@@ -62,7 +63,7 @@
           "shape": "globe",
           "globe_radius": 10000,
           "tectonics": 1,
-          "phase": 9,
+          "phase": 16,
           "magic_enabled": 1,
           "ley_nodes": 10,
           "ley_width": 180.0,
@@ -161,18 +162,6 @@
           "infernal_strength": 0.45,
           "infernal_instability": 0.65,
           "infernal_variation": 0,
-          "holy_occurrence": 1.0,
-          "holy_nodes": 8,
-          "holy_width": 110.0,
-          "holy_strength": 0.45,
-          "holy_instability": 0.2,
-          "holy_variation": 0,
-          "primordial_occurrence": 1.0,
-          "primordial_nodes": 8,
-          "primordial_width": 110.0,
-          "primordial_strength": 0.45,
-          "primordial_instability": 0.2,
-          "primordial_variation": 0,
           "demonic_occurrence": 0.55,
           "demonic_extent": 0.22,
           "demonic_intensity": 0.8,
@@ -211,7 +200,37 @@
           "crystal_intensity": 0.8,
           "haunted_marsh_occurrence": 0.55,
           "haunted_marsh_extent": 0.22,
-          "haunted_marsh_intensity": 0.8
+          "haunted_marsh_intensity": 0.8,
+          "radiant_occurrence": 1.0,
+          "radiant_nodes": 8,
+          "radiant_width": 110.0,
+          "radiant_strength": 0.7,
+          "radiant_instability": 0.2,
+          "radiant_variation": 0,
+          "fire_occurrence": 1.0,
+          "fire_nodes": 8,
+          "fire_width": 110.0,
+          "fire_strength": 0.7,
+          "fire_instability": 0.2,
+          "fire_variation": 0,
+          "water_occurrence": 1.0,
+          "water_nodes": 8,
+          "water_width": 110.0,
+          "water_strength": 0.7,
+          "water_instability": 0.2,
+          "water_variation": 0,
+          "earth_occurrence": 1.0,
+          "earth_nodes": 8,
+          "earth_width": 110.0,
+          "earth_strength": 0.7,
+          "earth_instability": 0.2,
+          "earth_variation": 0,
+          "air_occurrence": 1.0,
+          "air_nodes": 8,
+          "air_width": 110.0,
+          "air_strength": 0.7,
+          "air_instability": 0.2,
+          "air_variation": 0
         },
         "parameters": {
           "world_size": {
@@ -270,13 +289,13 @@
             "max": 1
           },
           "phase": {
-            "default": 9,
+            "default": 16,
             "group": "World",
             "description": "phase",
             "type": "integer",
             "units": "",
             "min": 1,
-            "max": 9
+            "max": 16
           },
           "magic_enabled": {
             "default": 1,
@@ -1079,114 +1098,6 @@
             "units": "seed",
             "type": "integer"
           },
-          "holy_occurrence": {
-            "default": 1.0,
-            "min": 0.0,
-            "max": 1.0,
-            "group": "Holy",
-            "description": "Probability this magical network manifests",
-            "units": "relative",
-            "type": "number"
-          },
-          "holy_nodes": {
-            "default": 8,
-            "min": 3,
-            "max": 24,
-            "group": "Holy",
-            "description": "Independent ley node count",
-            "units": "nodes",
-            "type": "integer"
-          },
-          "holy_width": {
-            "default": 110.0,
-            "min": 10.0,
-            "max": 2000.0,
-            "group": "Holy",
-            "description": "Gaussian influence reach",
-            "units": "m",
-            "type": "number"
-          },
-          "holy_strength": {
-            "default": 0.45,
-            "min": 0.0,
-            "max": 2.0,
-            "group": "Holy",
-            "description": "Magical influence amplitude",
-            "units": "relative",
-            "type": "number"
-          },
-          "holy_instability": {
-            "default": 0.2,
-            "min": 0.0,
-            "max": 1.0,
-            "group": "Holy",
-            "description": "Instability independent of density",
-            "units": "relative",
-            "type": "number"
-          },
-          "holy_variation": {
-            "default": 0,
-            "min": 0,
-            "max": 4294967295,
-            "group": "Holy",
-            "description": "Independent network seed variation",
-            "units": "seed",
-            "type": "integer"
-          },
-          "primordial_occurrence": {
-            "default": 1.0,
-            "min": 0.0,
-            "max": 1.0,
-            "group": "Primordial",
-            "description": "Probability this magical network manifests",
-            "units": "relative",
-            "type": "number"
-          },
-          "primordial_nodes": {
-            "default": 8,
-            "min": 3,
-            "max": 24,
-            "group": "Primordial",
-            "description": "Independent ley node count",
-            "units": "nodes",
-            "type": "integer"
-          },
-          "primordial_width": {
-            "default": 110.0,
-            "min": 10.0,
-            "max": 2000.0,
-            "group": "Primordial",
-            "description": "Gaussian influence reach",
-            "units": "m",
-            "type": "number"
-          },
-          "primordial_strength": {
-            "default": 0.45,
-            "min": 0.0,
-            "max": 2.0,
-            "group": "Primordial",
-            "description": "Magical influence amplitude",
-            "units": "relative",
-            "type": "number"
-          },
-          "primordial_instability": {
-            "default": 0.2,
-            "min": 0.0,
-            "max": 1.0,
-            "group": "Primordial",
-            "description": "Instability independent of density",
-            "units": "relative",
-            "type": "number"
-          },
-          "primordial_variation": {
-            "default": 0,
-            "min": 0,
-            "max": 4294967295,
-            "group": "Primordial",
-            "description": "Independent network seed variation",
-            "units": "seed",
-            "type": "integer"
-          },
           "demonic_occurrence": {
             "default": 0.55,
             "min": 0.0,
@@ -1537,6 +1448,276 @@
             "description": "haunted marsh intensity",
             "units": "relative",
             "type": "number"
+          },
+          "radiant_occurrence": {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Radiant",
+            "description": "Probability this magical network manifests",
+            "units": "relative",
+            "type": "number"
+          },
+          "radiant_nodes": {
+            "default": 8,
+            "min": 3,
+            "max": 24,
+            "group": "Radiant",
+            "description": "Independent ley node count",
+            "units": "nodes",
+            "type": "integer"
+          },
+          "radiant_width": {
+            "default": 110.0,
+            "min": 10.0,
+            "max": 2000.0,
+            "group": "Radiant",
+            "description": "Gaussian influence reach",
+            "units": "m",
+            "type": "number"
+          },
+          "radiant_strength": {
+            "default": 0.7,
+            "min": 0.0,
+            "max": 2.0,
+            "group": "Radiant",
+            "description": "Magical influence amplitude",
+            "units": "relative",
+            "type": "number"
+          },
+          "radiant_instability": {
+            "default": 0.2,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Radiant",
+            "description": "Instability independent of density",
+            "units": "relative",
+            "type": "number"
+          },
+          "radiant_variation": {
+            "default": 0,
+            "min": 0,
+            "max": 4294967295,
+            "group": "Radiant",
+            "description": "Independent network seed variation",
+            "units": "seed",
+            "type": "integer"
+          },
+          "fire_occurrence": {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Fire",
+            "description": "Probability this magical network manifests",
+            "units": "relative",
+            "type": "number"
+          },
+          "fire_nodes": {
+            "default": 8,
+            "min": 3,
+            "max": 24,
+            "group": "Fire",
+            "description": "Independent ley node count",
+            "units": "nodes",
+            "type": "integer"
+          },
+          "fire_width": {
+            "default": 110.0,
+            "min": 10.0,
+            "max": 2000.0,
+            "group": "Fire",
+            "description": "Gaussian influence reach",
+            "units": "m",
+            "type": "number"
+          },
+          "fire_strength": {
+            "default": 0.7,
+            "min": 0.0,
+            "max": 2.0,
+            "group": "Fire",
+            "description": "Magical influence amplitude",
+            "units": "relative",
+            "type": "number"
+          },
+          "fire_instability": {
+            "default": 0.2,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Fire",
+            "description": "Instability independent of density",
+            "units": "relative",
+            "type": "number"
+          },
+          "fire_variation": {
+            "default": 0,
+            "min": 0,
+            "max": 4294967295,
+            "group": "Fire",
+            "description": "Independent network seed variation",
+            "units": "seed",
+            "type": "integer"
+          },
+          "water_occurrence": {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Water",
+            "description": "Probability this magical network manifests",
+            "units": "relative",
+            "type": "number"
+          },
+          "water_nodes": {
+            "default": 8,
+            "min": 3,
+            "max": 24,
+            "group": "Water",
+            "description": "Independent ley node count",
+            "units": "nodes",
+            "type": "integer"
+          },
+          "water_width": {
+            "default": 110.0,
+            "min": 10.0,
+            "max": 2000.0,
+            "group": "Water",
+            "description": "Gaussian influence reach",
+            "units": "m",
+            "type": "number"
+          },
+          "water_strength": {
+            "default": 0.7,
+            "min": 0.0,
+            "max": 2.0,
+            "group": "Water",
+            "description": "Magical influence amplitude",
+            "units": "relative",
+            "type": "number"
+          },
+          "water_instability": {
+            "default": 0.2,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Water",
+            "description": "Instability independent of density",
+            "units": "relative",
+            "type": "number"
+          },
+          "water_variation": {
+            "default": 0,
+            "min": 0,
+            "max": 4294967295,
+            "group": "Water",
+            "description": "Independent network seed variation",
+            "units": "seed",
+            "type": "integer"
+          },
+          "earth_occurrence": {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Earth",
+            "description": "Probability this magical network manifests",
+            "units": "relative",
+            "type": "number"
+          },
+          "earth_nodes": {
+            "default": 8,
+            "min": 3,
+            "max": 24,
+            "group": "Earth",
+            "description": "Independent ley node count",
+            "units": "nodes",
+            "type": "integer"
+          },
+          "earth_width": {
+            "default": 110.0,
+            "min": 10.0,
+            "max": 2000.0,
+            "group": "Earth",
+            "description": "Gaussian influence reach",
+            "units": "m",
+            "type": "number"
+          },
+          "earth_strength": {
+            "default": 0.7,
+            "min": 0.0,
+            "max": 2.0,
+            "group": "Earth",
+            "description": "Magical influence amplitude",
+            "units": "relative",
+            "type": "number"
+          },
+          "earth_instability": {
+            "default": 0.2,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Earth",
+            "description": "Instability independent of density",
+            "units": "relative",
+            "type": "number"
+          },
+          "earth_variation": {
+            "default": 0,
+            "min": 0,
+            "max": 4294967295,
+            "group": "Earth",
+            "description": "Independent network seed variation",
+            "units": "seed",
+            "type": "integer"
+          },
+          "air_occurrence": {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Air",
+            "description": "Probability this magical network manifests",
+            "units": "relative",
+            "type": "number"
+          },
+          "air_nodes": {
+            "default": 8,
+            "min": 3,
+            "max": 24,
+            "group": "Air",
+            "description": "Independent ley node count",
+            "units": "nodes",
+            "type": "integer"
+          },
+          "air_width": {
+            "default": 110.0,
+            "min": 10.0,
+            "max": 2000.0,
+            "group": "Air",
+            "description": "Gaussian influence reach",
+            "units": "m",
+            "type": "number"
+          },
+          "air_strength": {
+            "default": 0.7,
+            "min": 0.0,
+            "max": 2.0,
+            "group": "Air",
+            "description": "Magical influence amplitude",
+            "units": "relative",
+            "type": "number"
+          },
+          "air_instability": {
+            "default": 0.2,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Air",
+            "description": "Instability independent of density",
+            "units": "relative",
+            "type": "number"
+          },
+          "air_variation": {
+            "default": 0,
+            "min": 0,
+            "max": 4294967295,
+            "group": "Air",
+            "description": "Independent network seed variation",
+            "units": "seed",
+            "type": "integer"
           }
         },
         "provenance": {
@@ -1635,18 +1816,6 @@
           "infernal_strength": "default",
           "infernal_instability": "default",
           "infernal_variation": "default",
-          "holy_occurrence": "default",
-          "holy_nodes": "default",
-          "holy_width": "default",
-          "holy_strength": "default",
-          "holy_instability": "default",
-          "holy_variation": "default",
-          "primordial_occurrence": "default",
-          "primordial_nodes": "default",
-          "primordial_width": "default",
-          "primordial_strength": "default",
-          "primordial_instability": "default",
-          "primordial_variation": "default",
           "demonic_occurrence": "default",
           "demonic_extent": "default",
           "demonic_intensity": "default",
@@ -1685,12 +1854,42 @@
           "crystal_intensity": "default",
           "haunted_marsh_occurrence": "default",
           "haunted_marsh_extent": "default",
-          "haunted_marsh_intensity": "default"
+          "haunted_marsh_intensity": "default",
+          "radiant_occurrence": "default",
+          "radiant_nodes": "default",
+          "radiant_width": "default",
+          "radiant_strength": "default",
+          "radiant_instability": "default",
+          "radiant_variation": "default",
+          "fire_occurrence": "default",
+          "fire_nodes": "default",
+          "fire_width": "default",
+          "fire_strength": "default",
+          "fire_instability": "default",
+          "fire_variation": "default",
+          "water_occurrence": "default",
+          "water_nodes": "default",
+          "water_width": "default",
+          "water_strength": "default",
+          "water_instability": "default",
+          "water_variation": "default",
+          "earth_occurrence": "default",
+          "earth_nodes": "default",
+          "earth_width": "default",
+          "earth_strength": "default",
+          "earth_instability": "default",
+          "earth_variation": "default",
+          "air_occurrence": "default",
+          "air_nodes": "default",
+          "air_width": "default",
+          "air_strength": "default",
+          "air_instability": "default",
+          "air_variation": "default"
         },
         "biases": {}
       },
-      "bytes": 9082958,
-      "sha256": "26467aba33114f8f1ac8b472e8f3a295ed3698765f1ababaedbc81f9f8ae3a9f"
+      "bytes": 32158149,
+      "sha256": "8b71202c995f09f0f9c399361c764b3adab7738d9e830d015e2ed86f69460591"
     },
     {
       "id": "frost",
@@ -1699,7 +1898,7 @@
       "file": "frost.html",
       "seed": 73,
       "recipe": {
-        "version": 1,
+        "version": 2,
         "seed": 73,
         "overrides": {
           "size": 65,
@@ -1708,7 +1907,7 @@
           "mountain_abundance": 1.8
         },
         "resolved": {
-          "world_recipe": 1,
+          "world_recipe": 2,
           "world_options": "{\"mountain_abundance\": 1.8, \"seasonality\": 1.4}",
           "world_size": "small",
           "auto_parameters": 0,
@@ -1716,7 +1915,7 @@
           "shape": "globe",
           "globe_radius": 10000,
           "tectonics": 1,
-          "phase": 9,
+          "phase": 16,
           "magic_enabled": 1,
           "ley_nodes": 10,
           "ley_width": 180.0,
@@ -1815,18 +2014,6 @@
           "infernal_strength": 0.45,
           "infernal_instability": 0.65,
           "infernal_variation": 0,
-          "holy_occurrence": 1.0,
-          "holy_nodes": 8,
-          "holy_width": 110.0,
-          "holy_strength": 0.45,
-          "holy_instability": 0.2,
-          "holy_variation": 0,
-          "primordial_occurrence": 1.0,
-          "primordial_nodes": 8,
-          "primordial_width": 110.0,
-          "primordial_strength": 0.45,
-          "primordial_instability": 0.2,
-          "primordial_variation": 0,
           "demonic_occurrence": 0.55,
           "demonic_extent": 0.22,
           "demonic_intensity": 0.8,
@@ -1865,7 +2052,37 @@
           "crystal_intensity": 0.8,
           "haunted_marsh_occurrence": 0.55,
           "haunted_marsh_extent": 0.22,
-          "haunted_marsh_intensity": 0.8
+          "haunted_marsh_intensity": 0.8,
+          "radiant_occurrence": 1.0,
+          "radiant_nodes": 8,
+          "radiant_width": 110.0,
+          "radiant_strength": 0.7,
+          "radiant_instability": 0.2,
+          "radiant_variation": 0,
+          "fire_occurrence": 1.0,
+          "fire_nodes": 8,
+          "fire_width": 110.0,
+          "fire_strength": 0.7,
+          "fire_instability": 0.2,
+          "fire_variation": 0,
+          "water_occurrence": 1.0,
+          "water_nodes": 8,
+          "water_width": 110.0,
+          "water_strength": 0.7,
+          "water_instability": 0.2,
+          "water_variation": 0,
+          "earth_occurrence": 1.0,
+          "earth_nodes": 8,
+          "earth_width": 110.0,
+          "earth_strength": 0.7,
+          "earth_instability": 0.2,
+          "earth_variation": 0,
+          "air_occurrence": 1.0,
+          "air_nodes": 8,
+          "air_width": 110.0,
+          "air_strength": 0.7,
+          "air_instability": 0.2,
+          "air_variation": 0
         },
         "parameters": {
           "world_size": {
@@ -1924,13 +2141,13 @@
             "max": 1
           },
           "phase": {
-            "default": 9,
+            "default": 16,
             "group": "World",
             "description": "phase",
             "type": "integer",
             "units": "",
             "min": 1,
-            "max": 9
+            "max": 16
           },
           "magic_enabled": {
             "default": 1,
@@ -2733,114 +2950,6 @@
             "units": "seed",
             "type": "integer"
           },
-          "holy_occurrence": {
-            "default": 1.0,
-            "min": 0.0,
-            "max": 1.0,
-            "group": "Holy",
-            "description": "Probability this magical network manifests",
-            "units": "relative",
-            "type": "number"
-          },
-          "holy_nodes": {
-            "default": 8,
-            "min": 3,
-            "max": 24,
-            "group": "Holy",
-            "description": "Independent ley node count",
-            "units": "nodes",
-            "type": "integer"
-          },
-          "holy_width": {
-            "default": 110.0,
-            "min": 10.0,
-            "max": 2000.0,
-            "group": "Holy",
-            "description": "Gaussian influence reach",
-            "units": "m",
-            "type": "number"
-          },
-          "holy_strength": {
-            "default": 0.45,
-            "min": 0.0,
-            "max": 2.0,
-            "group": "Holy",
-            "description": "Magical influence amplitude",
-            "units": "relative",
-            "type": "number"
-          },
-          "holy_instability": {
-            "default": 0.2,
-            "min": 0.0,
-            "max": 1.0,
-            "group": "Holy",
-            "description": "Instability independent of density",
-            "units": "relative",
-            "type": "number"
-          },
-          "holy_variation": {
-            "default": 0,
-            "min": 0,
-            "max": 4294967295,
-            "group": "Holy",
-            "description": "Independent network seed variation",
-            "units": "seed",
-            "type": "integer"
-          },
-          "primordial_occurrence": {
-            "default": 1.0,
-            "min": 0.0,
-            "max": 1.0,
-            "group": "Primordial",
-            "description": "Probability this magical network manifests",
-            "units": "relative",
-            "type": "number"
-          },
-          "primordial_nodes": {
-            "default": 8,
-            "min": 3,
-            "max": 24,
-            "group": "Primordial",
-            "description": "Independent ley node count",
-            "units": "nodes",
-            "type": "integer"
-          },
-          "primordial_width": {
-            "default": 110.0,
-            "min": 10.0,
-            "max": 2000.0,
-            "group": "Primordial",
-            "description": "Gaussian influence reach",
-            "units": "m",
-            "type": "number"
-          },
-          "primordial_strength": {
-            "default": 0.45,
-            "min": 0.0,
-            "max": 2.0,
-            "group": "Primordial",
-            "description": "Magical influence amplitude",
-            "units": "relative",
-            "type": "number"
-          },
-          "primordial_instability": {
-            "default": 0.2,
-            "min": 0.0,
-            "max": 1.0,
-            "group": "Primordial",
-            "description": "Instability independent of density",
-            "units": "relative",
-            "type": "number"
-          },
-          "primordial_variation": {
-            "default": 0,
-            "min": 0,
-            "max": 4294967295,
-            "group": "Primordial",
-            "description": "Independent network seed variation",
-            "units": "seed",
-            "type": "integer"
-          },
           "demonic_occurrence": {
             "default": 0.55,
             "min": 0.0,
@@ -3191,6 +3300,276 @@
             "description": "haunted marsh intensity",
             "units": "relative",
             "type": "number"
+          },
+          "radiant_occurrence": {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Radiant",
+            "description": "Probability this magical network manifests",
+            "units": "relative",
+            "type": "number"
+          },
+          "radiant_nodes": {
+            "default": 8,
+            "min": 3,
+            "max": 24,
+            "group": "Radiant",
+            "description": "Independent ley node count",
+            "units": "nodes",
+            "type": "integer"
+          },
+          "radiant_width": {
+            "default": 110.0,
+            "min": 10.0,
+            "max": 2000.0,
+            "group": "Radiant",
+            "description": "Gaussian influence reach",
+            "units": "m",
+            "type": "number"
+          },
+          "radiant_strength": {
+            "default": 0.7,
+            "min": 0.0,
+            "max": 2.0,
+            "group": "Radiant",
+            "description": "Magical influence amplitude",
+            "units": "relative",
+            "type": "number"
+          },
+          "radiant_instability": {
+            "default": 0.2,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Radiant",
+            "description": "Instability independent of density",
+            "units": "relative",
+            "type": "number"
+          },
+          "radiant_variation": {
+            "default": 0,
+            "min": 0,
+            "max": 4294967295,
+            "group": "Radiant",
+            "description": "Independent network seed variation",
+            "units": "seed",
+            "type": "integer"
+          },
+          "fire_occurrence": {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Fire",
+            "description": "Probability this magical network manifests",
+            "units": "relative",
+            "type": "number"
+          },
+          "fire_nodes": {
+            "default": 8,
+            "min": 3,
+            "max": 24,
+            "group": "Fire",
+            "description": "Independent ley node count",
+            "units": "nodes",
+            "type": "integer"
+          },
+          "fire_width": {
+            "default": 110.0,
+            "min": 10.0,
+            "max": 2000.0,
+            "group": "Fire",
+            "description": "Gaussian influence reach",
+            "units": "m",
+            "type": "number"
+          },
+          "fire_strength": {
+            "default": 0.7,
+            "min": 0.0,
+            "max": 2.0,
+            "group": "Fire",
+            "description": "Magical influence amplitude",
+            "units": "relative",
+            "type": "number"
+          },
+          "fire_instability": {
+            "default": 0.2,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Fire",
+            "description": "Instability independent of density",
+            "units": "relative",
+            "type": "number"
+          },
+          "fire_variation": {
+            "default": 0,
+            "min": 0,
+            "max": 4294967295,
+            "group": "Fire",
+            "description": "Independent network seed variation",
+            "units": "seed",
+            "type": "integer"
+          },
+          "water_occurrence": {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Water",
+            "description": "Probability this magical network manifests",
+            "units": "relative",
+            "type": "number"
+          },
+          "water_nodes": {
+            "default": 8,
+            "min": 3,
+            "max": 24,
+            "group": "Water",
+            "description": "Independent ley node count",
+            "units": "nodes",
+            "type": "integer"
+          },
+          "water_width": {
+            "default": 110.0,
+            "min": 10.0,
+            "max": 2000.0,
+            "group": "Water",
+            "description": "Gaussian influence reach",
+            "units": "m",
+            "type": "number"
+          },
+          "water_strength": {
+            "default": 0.7,
+            "min": 0.0,
+            "max": 2.0,
+            "group": "Water",
+            "description": "Magical influence amplitude",
+            "units": "relative",
+            "type": "number"
+          },
+          "water_instability": {
+            "default": 0.2,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Water",
+            "description": "Instability independent of density",
+            "units": "relative",
+            "type": "number"
+          },
+          "water_variation": {
+            "default": 0,
+            "min": 0,
+            "max": 4294967295,
+            "group": "Water",
+            "description": "Independent network seed variation",
+            "units": "seed",
+            "type": "integer"
+          },
+          "earth_occurrence": {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Earth",
+            "description": "Probability this magical network manifests",
+            "units": "relative",
+            "type": "number"
+          },
+          "earth_nodes": {
+            "default": 8,
+            "min": 3,
+            "max": 24,
+            "group": "Earth",
+            "description": "Independent ley node count",
+            "units": "nodes",
+            "type": "integer"
+          },
+          "earth_width": {
+            "default": 110.0,
+            "min": 10.0,
+            "max": 2000.0,
+            "group": "Earth",
+            "description": "Gaussian influence reach",
+            "units": "m",
+            "type": "number"
+          },
+          "earth_strength": {
+            "default": 0.7,
+            "min": 0.0,
+            "max": 2.0,
+            "group": "Earth",
+            "description": "Magical influence amplitude",
+            "units": "relative",
+            "type": "number"
+          },
+          "earth_instability": {
+            "default": 0.2,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Earth",
+            "description": "Instability independent of density",
+            "units": "relative",
+            "type": "number"
+          },
+          "earth_variation": {
+            "default": 0,
+            "min": 0,
+            "max": 4294967295,
+            "group": "Earth",
+            "description": "Independent network seed variation",
+            "units": "seed",
+            "type": "integer"
+          },
+          "air_occurrence": {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Air",
+            "description": "Probability this magical network manifests",
+            "units": "relative",
+            "type": "number"
+          },
+          "air_nodes": {
+            "default": 8,
+            "min": 3,
+            "max": 24,
+            "group": "Air",
+            "description": "Independent ley node count",
+            "units": "nodes",
+            "type": "integer"
+          },
+          "air_width": {
+            "default": 110.0,
+            "min": 10.0,
+            "max": 2000.0,
+            "group": "Air",
+            "description": "Gaussian influence reach",
+            "units": "m",
+            "type": "number"
+          },
+          "air_strength": {
+            "default": 0.7,
+            "min": 0.0,
+            "max": 2.0,
+            "group": "Air",
+            "description": "Magical influence amplitude",
+            "units": "relative",
+            "type": "number"
+          },
+          "air_instability": {
+            "default": 0.2,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Air",
+            "description": "Instability independent of density",
+            "units": "relative",
+            "type": "number"
+          },
+          "air_variation": {
+            "default": 0,
+            "min": 0,
+            "max": 4294967295,
+            "group": "Air",
+            "description": "Independent network seed variation",
+            "units": "seed",
+            "type": "integer"
           }
         },
         "provenance": {
@@ -3289,18 +3668,6 @@
           "infernal_strength": "default",
           "infernal_instability": "default",
           "infernal_variation": "default",
-          "holy_occurrence": "default",
-          "holy_nodes": "default",
-          "holy_width": "default",
-          "holy_strength": "default",
-          "holy_instability": "default",
-          "holy_variation": "default",
-          "primordial_occurrence": "default",
-          "primordial_nodes": "default",
-          "primordial_width": "default",
-          "primordial_strength": "default",
-          "primordial_instability": "default",
-          "primordial_variation": "default",
           "demonic_occurrence": "default",
           "demonic_extent": "default",
           "demonic_intensity": "default",
@@ -3339,12 +3706,42 @@
           "crystal_intensity": "default",
           "haunted_marsh_occurrence": "default",
           "haunted_marsh_extent": "default",
-          "haunted_marsh_intensity": "default"
+          "haunted_marsh_intensity": "default",
+          "radiant_occurrence": "default",
+          "radiant_nodes": "default",
+          "radiant_width": "default",
+          "radiant_strength": "default",
+          "radiant_instability": "default",
+          "radiant_variation": "default",
+          "fire_occurrence": "default",
+          "fire_nodes": "default",
+          "fire_width": "default",
+          "fire_strength": "default",
+          "fire_instability": "default",
+          "fire_variation": "default",
+          "water_occurrence": "default",
+          "water_nodes": "default",
+          "water_width": "default",
+          "water_strength": "default",
+          "water_instability": "default",
+          "water_variation": "default",
+          "earth_occurrence": "default",
+          "earth_nodes": "default",
+          "earth_width": "default",
+          "earth_strength": "default",
+          "earth_instability": "default",
+          "earth_variation": "default",
+          "air_occurrence": "default",
+          "air_nodes": "default",
+          "air_width": "default",
+          "air_strength": "default",
+          "air_instability": "default",
+          "air_variation": "default"
         },
         "biases": {}
       },
-      "bytes": 9074999,
-      "sha256": "d0a2249db450ca6d4df33d7774a9c566945dbcdb12cf8356217cea00bbe34ba6"
+      "bytes": 34039721,
+      "sha256": "98b49ca65f9752dbd2156a0c5b649be2a86fb3ee05ab8bfb6aa591dcf6e90266"
     },
     {
       "id": "islands",
@@ -3353,7 +3750,7 @@
       "file": "islands.html",
       "seed": 108,
       "recipe": {
-        "version": 1,
+        "version": 2,
         "seed": 108,
         "overrides": {
           "size": 65,
@@ -3363,7 +3760,7 @@
           "sky_clusters": 5
         },
         "resolved": {
-          "world_recipe": 1,
+          "world_recipe": 2,
           "world_options": "{\"archipelago_count\": 10, \"archipelago_occurrence\": 1.0, \"sky_clusters\": 5, \"sky_occurrence\": 1.0}",
           "world_size": "small",
           "auto_parameters": 0,
@@ -3371,7 +3768,7 @@
           "shape": "globe",
           "globe_radius": 10000,
           "tectonics": 1,
-          "phase": 9,
+          "phase": 16,
           "magic_enabled": 1,
           "ley_nodes": 10,
           "ley_width": 180.0,
@@ -3470,18 +3867,6 @@
           "infernal_strength": 0.45,
           "infernal_instability": 0.65,
           "infernal_variation": 0,
-          "holy_occurrence": 1.0,
-          "holy_nodes": 8,
-          "holy_width": 110.0,
-          "holy_strength": 0.45,
-          "holy_instability": 0.2,
-          "holy_variation": 0,
-          "primordial_occurrence": 1.0,
-          "primordial_nodes": 8,
-          "primordial_width": 110.0,
-          "primordial_strength": 0.45,
-          "primordial_instability": 0.2,
-          "primordial_variation": 0,
           "demonic_occurrence": 0.55,
           "demonic_extent": 0.22,
           "demonic_intensity": 0.8,
@@ -3520,7 +3905,37 @@
           "crystal_intensity": 0.8,
           "haunted_marsh_occurrence": 0.55,
           "haunted_marsh_extent": 0.22,
-          "haunted_marsh_intensity": 0.8
+          "haunted_marsh_intensity": 0.8,
+          "radiant_occurrence": 1.0,
+          "radiant_nodes": 8,
+          "radiant_width": 110.0,
+          "radiant_strength": 0.7,
+          "radiant_instability": 0.2,
+          "radiant_variation": 0,
+          "fire_occurrence": 1.0,
+          "fire_nodes": 8,
+          "fire_width": 110.0,
+          "fire_strength": 0.7,
+          "fire_instability": 0.2,
+          "fire_variation": 0,
+          "water_occurrence": 1.0,
+          "water_nodes": 8,
+          "water_width": 110.0,
+          "water_strength": 0.7,
+          "water_instability": 0.2,
+          "water_variation": 0,
+          "earth_occurrence": 1.0,
+          "earth_nodes": 8,
+          "earth_width": 110.0,
+          "earth_strength": 0.7,
+          "earth_instability": 0.2,
+          "earth_variation": 0,
+          "air_occurrence": 1.0,
+          "air_nodes": 8,
+          "air_width": 110.0,
+          "air_strength": 0.7,
+          "air_instability": 0.2,
+          "air_variation": 0
         },
         "parameters": {
           "world_size": {
@@ -3579,13 +3994,13 @@
             "max": 1
           },
           "phase": {
-            "default": 9,
+            "default": 16,
             "group": "World",
             "description": "phase",
             "type": "integer",
             "units": "",
             "min": 1,
-            "max": 9
+            "max": 16
           },
           "magic_enabled": {
             "default": 1,
@@ -4388,114 +4803,6 @@
             "units": "seed",
             "type": "integer"
           },
-          "holy_occurrence": {
-            "default": 1.0,
-            "min": 0.0,
-            "max": 1.0,
-            "group": "Holy",
-            "description": "Probability this magical network manifests",
-            "units": "relative",
-            "type": "number"
-          },
-          "holy_nodes": {
-            "default": 8,
-            "min": 3,
-            "max": 24,
-            "group": "Holy",
-            "description": "Independent ley node count",
-            "units": "nodes",
-            "type": "integer"
-          },
-          "holy_width": {
-            "default": 110.0,
-            "min": 10.0,
-            "max": 2000.0,
-            "group": "Holy",
-            "description": "Gaussian influence reach",
-            "units": "m",
-            "type": "number"
-          },
-          "holy_strength": {
-            "default": 0.45,
-            "min": 0.0,
-            "max": 2.0,
-            "group": "Holy",
-            "description": "Magical influence amplitude",
-            "units": "relative",
-            "type": "number"
-          },
-          "holy_instability": {
-            "default": 0.2,
-            "min": 0.0,
-            "max": 1.0,
-            "group": "Holy",
-            "description": "Instability independent of density",
-            "units": "relative",
-            "type": "number"
-          },
-          "holy_variation": {
-            "default": 0,
-            "min": 0,
-            "max": 4294967295,
-            "group": "Holy",
-            "description": "Independent network seed variation",
-            "units": "seed",
-            "type": "integer"
-          },
-          "primordial_occurrence": {
-            "default": 1.0,
-            "min": 0.0,
-            "max": 1.0,
-            "group": "Primordial",
-            "description": "Probability this magical network manifests",
-            "units": "relative",
-            "type": "number"
-          },
-          "primordial_nodes": {
-            "default": 8,
-            "min": 3,
-            "max": 24,
-            "group": "Primordial",
-            "description": "Independent ley node count",
-            "units": "nodes",
-            "type": "integer"
-          },
-          "primordial_width": {
-            "default": 110.0,
-            "min": 10.0,
-            "max": 2000.0,
-            "group": "Primordial",
-            "description": "Gaussian influence reach",
-            "units": "m",
-            "type": "number"
-          },
-          "primordial_strength": {
-            "default": 0.45,
-            "min": 0.0,
-            "max": 2.0,
-            "group": "Primordial",
-            "description": "Magical influence amplitude",
-            "units": "relative",
-            "type": "number"
-          },
-          "primordial_instability": {
-            "default": 0.2,
-            "min": 0.0,
-            "max": 1.0,
-            "group": "Primordial",
-            "description": "Instability independent of density",
-            "units": "relative",
-            "type": "number"
-          },
-          "primordial_variation": {
-            "default": 0,
-            "min": 0,
-            "max": 4294967295,
-            "group": "Primordial",
-            "description": "Independent network seed variation",
-            "units": "seed",
-            "type": "integer"
-          },
           "demonic_occurrence": {
             "default": 0.55,
             "min": 0.0,
@@ -4846,6 +5153,276 @@
             "description": "haunted marsh intensity",
             "units": "relative",
             "type": "number"
+          },
+          "radiant_occurrence": {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Radiant",
+            "description": "Probability this magical network manifests",
+            "units": "relative",
+            "type": "number"
+          },
+          "radiant_nodes": {
+            "default": 8,
+            "min": 3,
+            "max": 24,
+            "group": "Radiant",
+            "description": "Independent ley node count",
+            "units": "nodes",
+            "type": "integer"
+          },
+          "radiant_width": {
+            "default": 110.0,
+            "min": 10.0,
+            "max": 2000.0,
+            "group": "Radiant",
+            "description": "Gaussian influence reach",
+            "units": "m",
+            "type": "number"
+          },
+          "radiant_strength": {
+            "default": 0.7,
+            "min": 0.0,
+            "max": 2.0,
+            "group": "Radiant",
+            "description": "Magical influence amplitude",
+            "units": "relative",
+            "type": "number"
+          },
+          "radiant_instability": {
+            "default": 0.2,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Radiant",
+            "description": "Instability independent of density",
+            "units": "relative",
+            "type": "number"
+          },
+          "radiant_variation": {
+            "default": 0,
+            "min": 0,
+            "max": 4294967295,
+            "group": "Radiant",
+            "description": "Independent network seed variation",
+            "units": "seed",
+            "type": "integer"
+          },
+          "fire_occurrence": {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Fire",
+            "description": "Probability this magical network manifests",
+            "units": "relative",
+            "type": "number"
+          },
+          "fire_nodes": {
+            "default": 8,
+            "min": 3,
+            "max": 24,
+            "group": "Fire",
+            "description": "Independent ley node count",
+            "units": "nodes",
+            "type": "integer"
+          },
+          "fire_width": {
+            "default": 110.0,
+            "min": 10.0,
+            "max": 2000.0,
+            "group": "Fire",
+            "description": "Gaussian influence reach",
+            "units": "m",
+            "type": "number"
+          },
+          "fire_strength": {
+            "default": 0.7,
+            "min": 0.0,
+            "max": 2.0,
+            "group": "Fire",
+            "description": "Magical influence amplitude",
+            "units": "relative",
+            "type": "number"
+          },
+          "fire_instability": {
+            "default": 0.2,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Fire",
+            "description": "Instability independent of density",
+            "units": "relative",
+            "type": "number"
+          },
+          "fire_variation": {
+            "default": 0,
+            "min": 0,
+            "max": 4294967295,
+            "group": "Fire",
+            "description": "Independent network seed variation",
+            "units": "seed",
+            "type": "integer"
+          },
+          "water_occurrence": {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Water",
+            "description": "Probability this magical network manifests",
+            "units": "relative",
+            "type": "number"
+          },
+          "water_nodes": {
+            "default": 8,
+            "min": 3,
+            "max": 24,
+            "group": "Water",
+            "description": "Independent ley node count",
+            "units": "nodes",
+            "type": "integer"
+          },
+          "water_width": {
+            "default": 110.0,
+            "min": 10.0,
+            "max": 2000.0,
+            "group": "Water",
+            "description": "Gaussian influence reach",
+            "units": "m",
+            "type": "number"
+          },
+          "water_strength": {
+            "default": 0.7,
+            "min": 0.0,
+            "max": 2.0,
+            "group": "Water",
+            "description": "Magical influence amplitude",
+            "units": "relative",
+            "type": "number"
+          },
+          "water_instability": {
+            "default": 0.2,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Water",
+            "description": "Instability independent of density",
+            "units": "relative",
+            "type": "number"
+          },
+          "water_variation": {
+            "default": 0,
+            "min": 0,
+            "max": 4294967295,
+            "group": "Water",
+            "description": "Independent network seed variation",
+            "units": "seed",
+            "type": "integer"
+          },
+          "earth_occurrence": {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Earth",
+            "description": "Probability this magical network manifests",
+            "units": "relative",
+            "type": "number"
+          },
+          "earth_nodes": {
+            "default": 8,
+            "min": 3,
+            "max": 24,
+            "group": "Earth",
+            "description": "Independent ley node count",
+            "units": "nodes",
+            "type": "integer"
+          },
+          "earth_width": {
+            "default": 110.0,
+            "min": 10.0,
+            "max": 2000.0,
+            "group": "Earth",
+            "description": "Gaussian influence reach",
+            "units": "m",
+            "type": "number"
+          },
+          "earth_strength": {
+            "default": 0.7,
+            "min": 0.0,
+            "max": 2.0,
+            "group": "Earth",
+            "description": "Magical influence amplitude",
+            "units": "relative",
+            "type": "number"
+          },
+          "earth_instability": {
+            "default": 0.2,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Earth",
+            "description": "Instability independent of density",
+            "units": "relative",
+            "type": "number"
+          },
+          "earth_variation": {
+            "default": 0,
+            "min": 0,
+            "max": 4294967295,
+            "group": "Earth",
+            "description": "Independent network seed variation",
+            "units": "seed",
+            "type": "integer"
+          },
+          "air_occurrence": {
+            "default": 1.0,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Air",
+            "description": "Probability this magical network manifests",
+            "units": "relative",
+            "type": "number"
+          },
+          "air_nodes": {
+            "default": 8,
+            "min": 3,
+            "max": 24,
+            "group": "Air",
+            "description": "Independent ley node count",
+            "units": "nodes",
+            "type": "integer"
+          },
+          "air_width": {
+            "default": 110.0,
+            "min": 10.0,
+            "max": 2000.0,
+            "group": "Air",
+            "description": "Gaussian influence reach",
+            "units": "m",
+            "type": "number"
+          },
+          "air_strength": {
+            "default": 0.7,
+            "min": 0.0,
+            "max": 2.0,
+            "group": "Air",
+            "description": "Magical influence amplitude",
+            "units": "relative",
+            "type": "number"
+          },
+          "air_instability": {
+            "default": 0.2,
+            "min": 0.0,
+            "max": 1.0,
+            "group": "Air",
+            "description": "Instability independent of density",
+            "units": "relative",
+            "type": "number"
+          },
+          "air_variation": {
+            "default": 0,
+            "min": 0,
+            "max": 4294967295,
+            "group": "Air",
+            "description": "Independent network seed variation",
+            "units": "seed",
+            "type": "integer"
           }
         },
         "provenance": {
@@ -4944,18 +5521,6 @@
           "infernal_strength": "default",
           "infernal_instability": "default",
           "infernal_variation": "default",
-          "holy_occurrence": "default",
-          "holy_nodes": "default",
-          "holy_width": "default",
-          "holy_strength": "default",
-          "holy_instability": "default",
-          "holy_variation": "default",
-          "primordial_occurrence": "default",
-          "primordial_nodes": "default",
-          "primordial_width": "default",
-          "primordial_strength": "default",
-          "primordial_instability": "default",
-          "primordial_variation": "default",
           "demonic_occurrence": "default",
           "demonic_extent": "default",
           "demonic_intensity": "default",
@@ -4994,12 +5559,42 @@
           "crystal_intensity": "default",
           "haunted_marsh_occurrence": "default",
           "haunted_marsh_extent": "default",
-          "haunted_marsh_intensity": "default"
+          "haunted_marsh_intensity": "default",
+          "radiant_occurrence": "default",
+          "radiant_nodes": "default",
+          "radiant_width": "default",
+          "radiant_strength": "default",
+          "radiant_instability": "default",
+          "radiant_variation": "default",
+          "fire_occurrence": "default",
+          "fire_nodes": "default",
+          "fire_width": "default",
+          "fire_strength": "default",
+          "fire_instability": "default",
+          "fire_variation": "default",
+          "water_occurrence": "default",
+          "water_nodes": "default",
+          "water_width": "default",
+          "water_strength": "default",
+          "water_instability": "default",
+          "water_variation": "default",
+          "earth_occurrence": "default",
+          "earth_nodes": "default",
+          "earth_width": "default",
+          "earth_strength": "default",
+          "earth_instability": "default",
+          "earth_variation": "default",
+          "air_occurrence": "default",
+          "air_nodes": "default",
+          "air_width": "default",
+          "air_strength": "default",
+          "air_instability": "default",
+          "air_variation": "default"
         },
         "biases": {}
       },
-      "bytes": 9328294,
-      "sha256": "21f652231637e6c0dfae41c4c0c27715dcbc7441c00fde0b8614cdd494cbbc57"
+      "bytes": 33248353,
+      "sha256": "4cfd5d9a2e0c05fda336d53d63805b725ff5a13150f276ed450dd2f8c3d84969"
     }
   ]
 }
