@@ -88,6 +88,13 @@ describe('CodingReference', () => {
       'sandbox',
       'allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox'
     );
+    expect(screen.getByRole('link', { name: 'Fantasy World Generator source' })).toHaveAttribute(
+      'href',
+      'https://github.com/davgor/FantasyWorldGenerator'
+    );
+    expect(
+      screen.getByRole('heading', { name: 'Fantasy World Generator — World Showcase' })
+    ).toBeVisible();
     const fullWindow = screen.getByRole('link', { name: 'Open showcase in a full window' });
     expect(fullWindow).toHaveAttribute('href', '/mathlab/');
     expect(fullWindow).toHaveAttribute('target', '_blank');

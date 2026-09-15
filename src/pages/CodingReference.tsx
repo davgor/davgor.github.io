@@ -18,15 +18,24 @@ const CodingReference: React.FC = () => {
         ]}
       />
       <section aria-labelledby="mathlab-title" className="mathlab-showcase">
-        <h2 id="mathlab-title">Icarus MathLab — World Showcase</h2>
+        <h2 id="mathlab-title">Fantasy World Generator — World Showcase</h2>
         <p>
           A procedural fantasy-world simulation: overlapping magical networks, cold and aquatic
           habitats, settlements, floating islands, and catalogue-driven beast lairs. Explore three
-          saved worlds below. This is the standalone simulation lab, not Unreal gameplay.
+          saved worlds below, regenerated after each merge to the generator’s main branch. GitHub
+          Pages serves these samples; generate custom worlds by running the Python project locally.
         </p>
         <p>
           <a href="/mathlab/" target="_blank" rel="noopener noreferrer">
             Open showcase in a full window
+          </a>
+          {' · '}
+          <a
+            href="https://github.com/davgor/FantasyWorldGenerator"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Fantasy World Generator source
           </a>
         </p>
         <iframe

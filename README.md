@@ -85,16 +85,40 @@ Local check after `npm run build`:
 npm run assert:dist
 ```
 
-## MathLab showcase
+## Fantasy World Generator showcase
 
-Coding Reference embeds `public/mathlab/index.html`; `/mathlab/` also opens the showcase directly on Pages. Three self-contained 65-grid snapshots load individually (about 9 MB each) with globe/atlas controls, magical overlays, settlements and beast-lair inspection. They do not call a generator service. This is a standalone simulation showcase, not packaged Unreal gameplay.
+Coding Reference embeds `public/mathlab/index.html`, also available directly at `/mathlab/`.
+The three 65-grid worlds come from [FantasyWorldGenerator](https://github.com/davgor/FantasyWorldGenerator):
+Crossroads (seed 42), Frostbound Reach (73), and Shattered Coast (108). Each snapshot loads separately
+and supports globe/atlas inspection, layers, settlements, beast lairs and JSON download.
+Python generation and local patch controls are unavailable on Pages.
 
-To refresh the saved worlds, use Python 3.12 with the reviewed Icarus MathLab source checkout:
+The generator's merge workflow validates the source, regenerates all samples and commits only
+`public/mathlab/` into this repository's `main` using a dedicated portfolio deploy key.
+That push triggers the existing `deploy.yml` Pages workflow, which browser-tests the samples before
+publishing Vite `dist`. There is no scheduled refresh. A failed generator build never pushes samples;
+a failed Pages build leaves the previous live site online. Generated samples are stored here as well
+as in the Pages artifact. No-change exports do not create empty commits.
 
-```powershell
-python scripts/build-mathlab-showcase.py --source C:/path/to/icarusUnreal
+The exporter and wrapper template belong to FantasyWorldGenerator (`tools/export_showcase.py` and
+`tools/mathlab-showcase.html`). This repository's build script delegates to them for manual refreshes.
+
+To refresh and verify the checked-in fallback using Python 3.12 and a clean source checkout:
+
+```sh
+python scripts/build-mathlab-showcase.py --source ../FantasyWorldGenerator
+(cd ../FantasyWorldGenerator && python -m unittest discover -s tests -p test_showcase.py)
+npx playwright test e2e/mathlab.spec.ts
 ```
 
-The initial source includes the LAB-006 beast-anchor work. `public/mathlab/manifest.json` records source-file SHA-256 hashes, each world's recipe/seed/overrides and generated HTML hashes, avoiding dependence on a source branch name or a local absolute path. The source checkout must provide the recorded modules and `terrain_lab.report`; a version predating LAB-006 cannot produce these lair exports. Review changed exports, rerun gates and deploy the Vite dist through the existing Actions workflow. No Python runtime, user prompts, credentials or local server URLs are shipped as configuration.
+The exporter rejects dirty source checkouts so revision links stay accurate. Use a clean detached
+worktree when generator development is in progress. World choices live in the generator’s `tools/export_showcase.py`;
+the wrapper template generates its selector from that same list. Manifest format 2 records the source
+repository, exact commit, source-file SHA-256 hashes, recipes/overrides and HTML hashes. Unlike format 1,
+it omits wall-clock measurements (empty `timing_ms` maps) for byte-reproducible samples on the same Python
+runtime. Simulation arrays, generator/schema versions and seed configuration are preserved.
 
-World choices are authored in `scripts/build-mathlab-showcase.py` and the selector in `public/mathlab/index.html`; keep their IDs, titles, seeds and file links aligned. Run `e2e/mathlab.spec.ts` after updating either. The public wrapper and snapshot frames are sandboxed without same-origin privilege; downloads and intentional full-window links are permitted. Viewer controls that require a running Python server are hidden. Browser work and memory remain significant for these diagnostic snapshots; only the selected world is loaded, and the outer embed loads lazily.
+Both embed levels are sandboxed without same-origin privilege. Downloads and explicit full-window links
+remain available. Only the selected sample loads, and the outer iframe loads lazily. The full diagnostic
+snapshots still require substantial browser memory. This is a standalone Python simulation showcase;
+it does not provide Unreal integration or packaged gameplay.
