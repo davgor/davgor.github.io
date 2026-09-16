@@ -3,44 +3,55 @@
   "source_dirty": false,
   "publication_ready": true,
   "source_repository": "https://github.com/davgor/FantasyWorldGenerator",
-  "source_revision": "51eff538bbc4532f3ff0037b22dc5feab3036252",
+  "source_revision": "78381cb16063c356ab362bedf02978ab0eeb757d",
   "timings": "omitted",
   "source_files": {
     "Sim/icarus_sim/__init__.py": "c87f7e51e806af2dfa52141629861cc315694240c01430721e6ee8aa8bb178f9",
+    "Sim/icarus_sim/buildings.json": "ed0d42a3c23e267777c28d5b26f48a827a0a626ade44d6b77411e3799a4d532e",
+    "Sim/icarus_sim/city_geometry.py": "f1e058050643d291f24f08c15db5cd0a8d11269980fc519839bb17ac07feeae4",
+    "Sim/icarus_sim/city_planner.py": "58810a350d4cb5258fed03b20bb6bbd6454ad2f759674c6ff60cc179eeee630e",
+    "Sim/icarus_sim/city_shapes.json": "f843c7478870592df90e6d5f2abea62ef31facabb93b9567ed2eef422edf7e78",
+    "Sim/icarus_sim/city_shapes.py": "0ab5ff6651341def9759eab0d9f50646f5316a0dd1cbf245b74ec1295f4e7cab",
+    "Sim/icarus_sim/civilization_registry.py": "10501ba7115afea8f173337633094a7eacc4a5ebf29c33f73ab537b891a9d1c3",
+    "Sim/icarus_sim/civilizations.json": "041b726f0da03de817c4088ac722a610cf28a4db8cbe45949bbf8dbf10b037f7",
+    "Sim/icarus_sim/founding.py": "a419f22068f7ddec8ca70f33279b99a41c006885c38bc1b0bb7bf2a2a56d4660",
     "Sim/icarus_sim/terrain_area.py": "104aa13368f706cae63b0663534fec4333602edfba258356d4a93b6a20a4b453",
     "Sim/icarus_sim/terrain_biome_catalogue.py": "d2f8a62f4c10b270c26d3d6ffc7d04b9f9a5c1209d331c70e6017765d99a52ae",
     "Sim/icarus_sim/terrain_biomes.py": "ce7379f0d9218b6b02e9554d23d82f1018ecf6225be40d658aa3045bf4d6570d",
-    "Sim/icarus_sim/terrain_city_building_packs.json": "e2669a42c076fc5f37635b297469ed9432b141b566197f5234ed40d6cc2324b8",
-    "Sim/icarus_sim/terrain_city_layout_profiles.json": "388705198ff866bed2f9a5931ef40d850d88e1f604a4b3b5865873bde0cf1c00",
+    "Sim/icarus_sim/terrain_city_building_packs.json": "6a94ecd0b7eb630a6bdbc464a3edc1176547b1d8dd8554cea327b34dd4c15bc8",
+    "Sim/icarus_sim/terrain_city_layout_profiles.json": "cac5558d0ac179623333954cb287675b93f223681475a21ed554c0c0e7c35b7c",
+    "Sim/icarus_sim/terrain_civilizations.py": "f8bbb274e4c0bc212653d9253d1398271f40c2430f4c69df51f042131f0ba5c6",
     "Sim/icarus_sim/terrain_climate.py": "7319f488ccf76c6eafa708f93a4174c73128d335984425a720ef7a5ae12bca5c",
     "Sim/icarus_sim/terrain_ecology.py": "d64ca3046d7232eed6dec39dc9c953a2c1f90060abf9c6fface6e6e8146e82e3",
     "Sim/icarus_sim/terrain_erosion.py": "27ea45c648ba1d5102888b611ce3a6c7711c117be109c1a17fac8f369b4f5469",
     "Sim/icarus_sim/terrain_globe.py": "bf807be788d39e769c9feaafd967713099dd7a54521bbeb7a0eb7a79b22c1af1",
-    "Sim/icarus_sim/terrain_history.py": "4fc4b4d5f8cf08624d915496d1cfadf416bc24f561e585f51d5401d36227b62a",
-    "Sim/icarus_sim/terrain_humans.py": "e2fcb188b8aa5cf59beb7310fd843f3ca761beaec195f908b875cbf2298c7631",
-    "Sim/icarus_sim/terrain_lab.py": "f8581459e87bf310e033539c2a81535cfdbcd15cb2975ed4620ade65760c0af3",
-    "Sim/icarus_sim/terrain_leyline_history.py": "513eaa3dcf13b611e65ab9e79c219b0a4566e5999cafbbf4d3eb0292bc0f9b5f",
-    "Sim/icarus_sim/terrain_magic.py": "aa0d5911350822ea9207fda991bcafcebe9949cd9f1a52c0f7830378fcecd7f7",
+    "Sim/icarus_sim/terrain_history.py": "d4e104fd2ca19c46099a7cc7d21c3da0ebe63bd2b596e25cf37ccc06b11f3741",
+    "Sim/icarus_sim/terrain_humans.py": "a59b38a792a879e4d5aea7f9286b20ad519eeb13778dbafb8d45ec936ef335a9",
+    "Sim/icarus_sim/terrain_lab.py": "ae181ad260925764b5376e88bae70cf24293a904eb96e47863c7b4e0e77c40e2",
+    "Sim/icarus_sim/terrain_leyline_history.py": "7ba00527804404319e55d301fae64f4021a5751bd6f88deb99f8aee3b0df8ced",
+    "Sim/icarus_sim/terrain_magic.py": "c79f49b3d7fd2334470353275c6339d8d924b45d23e862ad4aca51293ace7ed4",
     "Sim/icarus_sim/terrain_nest_profiles.json": "031cc969a0154c73ffdd416a433c5b141bf1de3ce00d8640669df5d7195a23d6",
     "Sim/icarus_sim/terrain_nests.py": "2013d0a101a16c22bac7f3ad83e3e6f3a2bcf9071f2fbf711b4361c53fac421c",
     "Sim/icarus_sim/terrain_patch.py": "f630c5cf4d642c0f17a2f99eb759b6f13f72c74390e0301731c4632ab8246ef6",
-    "Sim/icarus_sim/terrain_profiles.json": "85183b2725b76825998c7323b5bc4a7dd6a48b891b1742ccf02304d6d9391667",
-    "Sim/icarus_sim/terrain_profiles.py": "cbd4cdfece87fed003bd72f5d9d552ea95e3e3ea83042326a68a73c6da8fc3f2",
+    "Sim/icarus_sim/terrain_profiles.json": "72742d9db5ec6cc1e33249a93bc7d3e2ffb8eaee3f094d3f5efeec0596f612a6",
+    "Sim/icarus_sim/terrain_profiles.py": "86c3f873e3644b4973c472c81242746162e5cd5bae88f977e74a5ca898b51672",
     "Sim/icarus_sim/terrain_recipes.py": "498b3caa0a83a624fc1ef834aea9495bb4bbbad23a2f597a5eca8740117ef710",
     "Sim/icarus_sim/terrain_seasons.py": "90f4551f33fb5cd256aaf74770773d016f8fc58c67a75313955561f412da398b",
     "Sim/icarus_sim/terrain_seed.py": "87fedc0ac502ddb9b20ecf9f01ae47d1acc32a7813168256a59b9cbff4d9d502",
-    "Sim/icarus_sim/terrain_settlements.py": "725e067c83a1fe1bfff828c2fd929c1f0f177f96d37fd4299af10452ba0f7071",
-    "Sim/icarus_sim/terrain_society.py": "cab671a79e79b4f6c8101f6b7041991fdc2f5b2458da41479d294419834089b1",
+    "Sim/icarus_sim/terrain_settlements.py": "7286228ab2f475dbef06cb9069169afa309336c9998851e007bfeb08d096b291",
+    "Sim/icarus_sim/terrain_society.py": "a829c5a4ca4e1b38dba352f4d3e7216426c8e8c3025cd29ad5a4d91afc30aab9",
     "Sim/icarus_sim/terrain_tectonics.py": "9be1cc523c2fc1735640bbb59409e5d12f8a4c3de7af4e7ff47618376c649758",
     "Sim/icarus_sim/terrain_water.py": "1e89409f0aaac596f6ba66f48d30a78df6d55566ad41b5f6d64587c3cb00a6cc",
-    "Sim/icarus_sim/terrain_world.py": "ce711fb481e3cdffd0aeab30eab0d6d8cb030f9fa0f14aad47bbf8ba927930b7",
+    "Sim/icarus_sim/terrain_world.py": "f02e7f02a563457d230781cb102ea4410ddba1d1c1a2d1807037d6185f41429c",
     "tools/build_extraction_manifest.py": "22feaaaaa0312814267cab045aee35e3c412c6c55b6d800862aa96e5a98b1d05",
+    "tools/city_view.js": "648aa740048f81e5b0dd0d231f9b592b64a1623a53cebaadd8330e0c4a725c76",
+    "tools/city_view_3d.js": "34df23a6952d7a58824a8ba61b66fe1cdb7514cf9ee47cce258072ae049b4c0f",
     "tools/export_showcase.py": "a811ca9fe721b04e55359ca2c1b39bfe38f7dd3f470b6dc7669273fb806fbf96",
     "tools/mathlab-showcase.html": "b0988f0422a2d425dc5bf84921434cd1f493bc4fab145fd78aeb5c09e8f81f60",
     "tools/smoke_lab.py": "cf1fe69f774a818070f6bf7f6de5e1820a0a3bd7db3dc2b3e87ef220cb1500b0",
-    "tools/terrain_lab.html": "fdc3b6254acfe96c279ae11b05be37172490a8178ead5e896634d7ada9c61292",
-    "tools/terrain_lab.py": "bc16372007929596011602df11f9e78edb044c684c5c8c85f111a504b6c681c9",
-    "tools/terrain_world.js": "3b0fae357f5b48c7d986868ff21df22d5d9cb1922f7196aa8f5a4b6afafc4a28",
+    "tools/terrain_lab.html": "33d050616910480275bf0da07ebb3a3b12594eafae30b4d6faf8e3278371ca47",
+    "tools/terrain_lab.py": "4816c9de95e0d1e5f151f2671cb6908559a82bf85a269213c86367a1e12d38f6",
+    "tools/terrain_world.js": "58fde55b6979b987d9fa736aec06a29b0da604f15e7e6ad96faa8f11ab97d26b",
     "tools/validate_repo.py": "542fca1a5f516d2d53dbe87b34104a91e2923eb67a618aa483666c7b8e956014",
     "tools/verify_provenance.py": "a0be6a1baff5eb7e954f37e03fe25de0af3f947aba65d09f9f996b8298e003b3"
   },
@@ -256,12 +267,32 @@
             "units": "",
             "choices": [
               "mixed",
-              "human",
+              "human_maritime",
+              "human_desert",
+              "human_cold",
+              "human_large_island",
+              "human_rainforest",
+              "human_heartland",
               "dwarf",
               "elf",
               "gnome",
-              "tidekin"
-            ]
+              "tidekin",
+              "hill_dwarf"
+            ],
+            "choice_labels": {
+              "human_maritime": "Maritime humans",
+              "human_desert": "Desert humans",
+              "human_cold": "Cold peoples",
+              "human_large_island": "Large islanders",
+              "human_rainforest": "Deep rainforest humans",
+              "human_heartland": "Heartland humans",
+              "dwarf": "Dwarves",
+              "elf": "High Elf",
+              "gnome": "Gnomes",
+              "tidekin": "Tidekin sea elves",
+              "hill_dwarf": "Hill Dwarves",
+              "mixed": "Humans, dwarves and elves"
+            }
           },
           "shape": {
             "default": "globe",
@@ -1891,8 +1922,8 @@
         },
         "biases": {}
       },
-      "bytes": 32079715,
-      "sha256": "30da9aa85d273a413661989505c0ab7c45f1e7b620ebd0d91ec676045a43588a"
+      "bytes": 37714957,
+      "sha256": "4b1977a8e2871f32dd72f690ec3857508d4a3d684feea0d811a2bd4fea6eabde"
     },
     {
       "id": "frost",
@@ -2108,12 +2139,32 @@
             "units": "",
             "choices": [
               "mixed",
-              "human",
+              "human_maritime",
+              "human_desert",
+              "human_cold",
+              "human_large_island",
+              "human_rainforest",
+              "human_heartland",
               "dwarf",
               "elf",
               "gnome",
-              "tidekin"
-            ]
+              "tidekin",
+              "hill_dwarf"
+            ],
+            "choice_labels": {
+              "human_maritime": "Maritime humans",
+              "human_desert": "Desert humans",
+              "human_cold": "Cold peoples",
+              "human_large_island": "Large islanders",
+              "human_rainforest": "Deep rainforest humans",
+              "human_heartland": "Heartland humans",
+              "dwarf": "Dwarves",
+              "elf": "High Elf",
+              "gnome": "Gnomes",
+              "tidekin": "Tidekin sea elves",
+              "hill_dwarf": "Hill Dwarves",
+              "mixed": "Humans, dwarves and elves"
+            }
           },
           "shape": {
             "default": "globe",
@@ -3743,8 +3794,8 @@
         },
         "biases": {}
       },
-      "bytes": 34032770,
-      "sha256": "fc0ced514ba498432af6ffeb07aeff5cd8fdd5df292bbee03d5f3c4653fd04e0"
+      "bytes": 40873903,
+      "sha256": "04dea6686758622d3bb80650d4b34864569c348043812494489042ca7b601c5b"
     },
     {
       "id": "islands",
@@ -3961,12 +4012,32 @@
             "units": "",
             "choices": [
               "mixed",
-              "human",
+              "human_maritime",
+              "human_desert",
+              "human_cold",
+              "human_large_island",
+              "human_rainforest",
+              "human_heartland",
               "dwarf",
               "elf",
               "gnome",
-              "tidekin"
-            ]
+              "tidekin",
+              "hill_dwarf"
+            ],
+            "choice_labels": {
+              "human_maritime": "Maritime humans",
+              "human_desert": "Desert humans",
+              "human_cold": "Cold peoples",
+              "human_large_island": "Large islanders",
+              "human_rainforest": "Deep rainforest humans",
+              "human_heartland": "Heartland humans",
+              "dwarf": "Dwarves",
+              "elf": "High Elf",
+              "gnome": "Gnomes",
+              "tidekin": "Tidekin sea elves",
+              "hill_dwarf": "Hill Dwarves",
+              "mixed": "Humans, dwarves and elves"
+            }
           },
           "shape": {
             "default": "globe",
@@ -5596,8 +5667,8 @@
         },
         "biases": {}
       },
-      "bytes": 33394897,
-      "sha256": "8900eabb731e7b9d465e07c342d6cd0a4b894a023e4b0218aef2a87aac11f5e4"
+      "bytes": 39733314,
+      "sha256": "0115774428b452de1bc81cc8dd9fce4cab00f0d635bce588a784987a4130573c"
     }
   ]
 }
