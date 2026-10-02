@@ -1,0 +1,786 @@
+{
+  "baseRevisionId": null,
+  "bundle": {
+    "edges": [
+      {
+        "from": "tk_01m3tyy00t1jfavcd6tvbg2aap",
+        "note": "POISON-EDGE-NOTE ss_01m3zzzzzz9sess10nzzzzzzzz",
+        "to": "tk_01m3tyy00tt645f375y7yrwt8p"
+      },
+      {
+        "from": "tk_01m3tyy00tkh5h3bt79580fmc8",
+        "to": "tk_01m3tyy00tggzp6b5c8v9p228c"
+      },
+      {
+        "from": "tk_01m3tyy00tf22qqgw75mypd694",
+        "to": "tk_01m3tyy00tggzp6b5c8v9p228c"
+      },
+      {
+        "from": "tk_01m3tyy00tt645f375y7yrwt8p",
+        "to": "tk_01m3tyy00tggzp6b5c8v9p228c"
+      },
+      {
+        "from": "tk_01m3tyy00tggzp6b5c8v9p228c",
+        "to": "tk_01m3tyy00t42vxye0zzpq2p2kg"
+      }
+    ],
+    "epic": {
+      "intent": "Add **Dark Mechanicus** to the Coding Reference page on davgor.github.io: a project card with accurate copy and real app screenshots, plus a **read-only plan view rendered from this epic's own saved plan** in `.darkmechanicus/`. Visitors see a real Dark Mechanicus plan, the one that delivered the section they are reading, not a mockup.\n\n**Who benefits:** visitors and reviewers of the portfolio, who get a concrete look at how the agentic planning and execution flow works.\n\n**Out of scope:** running Dark Mechanicus in the browser, any live MCP or network connection, editing plans from the site, other epics' plans, and changes to the DarkMechanicus repository itself.\n\nPOISON-INTENT: drafted in /Users/jdoe-secret/src/private-client-repo by jdoe-secret.",
+      "ownerRole": "jdoe-secret",
+      "projectId": "pj_01m3zzzzzz9pr0jectzzzzzzzz",
+      "successCriteria": [
+        {
+          "id": "s1",
+          "text": "Coding Reference shows a Dark Mechanicus project card whose first-person copy matches what v0.8.0 actually ships (MCP server + desktop app on shared repository-owned state, draft -> Save -> orchestrated run, human-approved sprint checkpoints) and links to the GitHub repo and its latest release."
+        },
+        {
+          "id": "s2",
+          "text": "The card includes 2-3 real desktop-app screenshots with descriptive alt text, none showing a private repository name, local path, username, or session/machine id."
+        },
+        {
+          "id": "s3",
+          "text": "The page renders a read-only plan view of this epic's own saved plan: sprints in order with goals, every ticket's display key, title and status, and every dependency edge, with an accessible text equivalent."
+        },
+        {
+          "id": "s4",
+          "text": "The plan view's data is generated from committed .darkmechanicus/ records at dev/build time, with no Dark Mechanicus install, through an allowlist that excludes paths, ids, ticket bodies, references and comments; the same records always produce byte-identical output."
+        },
+        {
+          "id": "s5",
+          "text": "Existing Coding Reference content (Fantasy World Generator showcase and project cards) still renders, and lint, format:check, test:unit, fireguard (no F), type-check, deadcode, build and test:e2e pass."
+        },
+        {
+          "id": "s6",
+          "text": "The change is merged to main via a PR with a posted red-team review, the Pages deploy succeeds, and https://davgor.github.io/coding-reference shows the card and plan view at desktop width and at 375px with no page-level horizontal scroll."
+        }
+      ],
+      "title": "Showcase Dark Mechanicus on Coding Reference"
+    },
+    "formatVersion": 1,
+    "policies": {
+      "leaseSeconds": 900,
+      "maxConcurrency": null,
+      "onTicketFailure": "continue_independent",
+      "retryLimit": 3
+    },
+    "rationale": "**Shape.** Three human-checkpointed sprints, following the layout the person chose: content (copy + screenshots), then data + view (export -> plan view), then ship (integrate -> release). Sprint 1's two tickets run in parallel; Sprint 2 is a strict chain because the view consumes the export's schema and fixture. DGI-5 is the integration join: Sprint 1 and Sprint 2 both touch `CodingReference.tsx` and its tests, and only there are the pieces combined and e2e-tested. DGI-6 verifies every success criterion end to end. Critical path: DGI-3 -> DGI-4 -> DGI-5 -> DGI-6.\n\n**Assumptions (change at a checkpoint if wrong):**\n- The card sits directly after the Fantasy World Generator showcase.\n- The plan view shows *this* epic only, by configured id, with statuses as of the committed records. The live page lags by one commit after the epic completes.\n- The export reads committed `.darkmechanicus/` JSON. `.darkmechanicus/` is currently untracked, and committing it is the person's call (Sprint 2 entry criterion).\n- Screenshots need the desktop GUI. If no worker has it, the person captures the raw images (DGI-2 says how to ask).\n- Prefer a dependency-free graph rendering to keep the bundle and the `npm audit` surface small.\n- No epic feature branch was named. Set one before the run starts (suggested: `epic/dark-mechanicus-showcase`); otherwise the run binds the current checkout branch.\n- Merging to main (DGI-6) is outward-facing and waits for the person's explicit go-ahead.\n\n**Process.** Every implementation ticket follows this repo's delivery standards: TDD-first, the full gate, and fireguard on new tests. DGI-6 carries the mandatory red-team review.\n\nPOISON-RATIONALE: session ss_01m3zzzzzz9sess10nzzzzzzzz on machine mc_01m3zzzzzz9mach1nezzzzzzzz.",
+    "relations": [
+      {
+        "from": "tk_01m3tyy00tkh5h3bt79580fmc8",
+        "kind": "related_to",
+        "to": "tk_01m3tyy00tf22qqgw75mypd694"
+      }
+    ],
+    "sprints": [
+      {
+        "checkpoint": {
+          "mode": "human"
+        },
+        "concurrencyCap": null,
+        "entryCriteria": [
+          {
+            "id": "e9",
+            "text": "POISON-ENTRY: checkout at C:\\Users\\jdoe-secret\\AppData\\Local\\private"
+          }
+        ],
+        "exitCriteria": [
+          {
+            "id": "x1",
+            "text": "The person has read and approved the card copy and its placement."
+          },
+          {
+            "id": "x2",
+            "text": "The person has approved the screenshots and confirmed they contain no private information."
+          },
+          {
+            "id": "x3",
+            "text": "The site gate is green on the sprint's changes."
+          }
+        ],
+        "goal": "The card's words and pictures are ready: accurate Dark Mechanicus copy on Coding Reference and privacy-safe app screenshots.",
+        "id": "sp_01m3tyvkcvrxpb4j0j6qc6p9zd",
+        "ordinal": 1,
+        "sessionId": "ss_01m3zzzzzz9sess10nzzzzzzzz",
+        "ticketIds": ["tk_01m3tyy00tkh5h3bt79580fmc8", "tk_01m3tyy00tf22qqgw75mypd694"]
+      },
+      {
+        "checkpoint": {
+          "mode": "human"
+        },
+        "concurrencyCap": null,
+        "entryCriteria": [
+          {
+            "id": "e1",
+            "text": "This epic's saved plan records (.darkmechanicus/epics/ep_01m3tyvkcv6kzg24j40g1mzh87/) are committed to the repository, with the person's approval."
+          }
+        ],
+        "exitCriteria": [
+          {
+            "id": "x1",
+            "text": "The person has approved the export's field allowlist."
+          },
+          {
+            "id": "x2",
+            "text": "The person has reviewed the plan view at desktop width and at 375px, in light and dark themes."
+          },
+          {
+            "id": "x3",
+            "text": "The site gate is green on the sprint's changes."
+          }
+        ],
+        "goal": "A real Dark Mechanicus plan renders on the site from committed records: sanitized export plus a read-only, accessible plan view.",
+        "id": "sp_01m3tyy00t1sevjnrqb6waspj4",
+        "ordinal": 2,
+        "ticketIds": ["tk_01m3tyy00t1jfavcd6tvbg2aap", "tk_01m3tyy00tt645f375y7yrwt8p"]
+      },
+      {
+        "checkpoint": {
+          "mode": "human"
+        },
+        "concurrencyCap": null,
+        "entryCriteria": [],
+        "exitCriteria": [
+          {
+            "id": "x1",
+            "text": "Every epic success criterion s1-s6 has recorded evidence."
+          },
+          {
+            "id": "x2",
+            "text": "The live page is verified at desktop width and at 375px."
+          }
+        ],
+        "goal": "Shipped: the card, screenshots and plan view are integrated, merged, deployed and verified live.",
+        "id": "sp_01m3tyy00t50yjhh9psm88wc4q",
+        "ordinal": 3,
+        "ticketIds": ["tk_01m3tyy00tggzp6b5c8v9p228c", "tk_01m3tyy00t42vxye0zzpq2p2kg"]
+      }
+    ],
+    "tickets": [
+      {
+        "acceptanceCriteria": [
+          {
+            "id": "a1",
+            "text": "Coding Reference renders a \"Dark Mechanicus\" card with 3-4 first-person paragraphs covering: the MCP server + desktop app on shared repository-owned state; draft -> Save -> orchestrated run with human-approved sprint checkpoints; and Git-tracked plan records under `.darkmechanicus/`."
+          },
+          {
+            "id": "a2",
+            "text": "The card links to https://github.com/davgor/DarkMechanicus and https://github.com/davgor/DarkMechanicus/releases/latest."
+          },
+          {
+            "id": "a3",
+            "text": "Every factual claim in the copy traces to the DarkMechanicus README or docs at v0.8.0. The submission lists each claim with its source line."
+          },
+          {
+            "id": "a4",
+            "text": "Unit tests assert the title, both links and at least four distinctive phrases and pass; all existing CodingReference tests still pass; fireguard does not grade the new tests F."
+          },
+          {
+            "id": "a5",
+            "text": "`npm run lint`, `format:check`, `type-check`, `deadcode` and `build` pass."
+          }
+        ],
+        "body": "Add a `BlogCard` for **Dark Mechanicus** to `src/pages/CodingReference.tsx`, following the BoosterSeat card pattern (board ticket 018).\n\n**Copy:** first person, matching the voice of the existing cards, 3-4 paragraphs. Source every claim from the DarkMechanicus README and docs at v0.8.0. Cover:\n- what it is: local planning and execution coordination for agentic development, with an MCP server for agents and an Electron desktop app for people, both operating on the same repository-owned state under the same rules;\n- the flow: an agent drafts an epic, a person reviews the plan graph and presses **Save**, then an orchestrator runs the saved revision, claims ready tickets and stops at each sprint checkpoint for human approval;\n- the design choices worth showing an engineer: the server enforces the rules, roles are fixed at launch, plans are Git-tracked JSON under `.darkmechanicus/` while the SQLite working database stays local, and agents can run with the desktop closed;\n- stack and release: Electron, React, TypeScript, `node:sqlite`, MCP SDK, React Flow, zod; Win + Mac builds with auto-update.\n\n**Placement (assumption):** directly after the Fantasy World Generator showcase section. The person can move it at the Sprint 1 checkpoint.\n\n**Links:** `https://github.com/davgor/DarkMechanicus` and `https://github.com/davgor/DarkMechanicus/releases/latest`. Use `/latest` rather than pinning a version, so the link does not go stale.\n\n**Out of scope:** screenshots (DGI-2), the plan view (Sprint 2), and wiring images into the card (DGI-5).\n\n**TDD:** write the CodingReference unit tests first and watch them fail.\n\n> POISON-COMMENT quoted from jdoe-secret: \"see /Users/jdoe-secret/src/private-client-repo/notes.md\" (session ss_01m3zzzzzz9sess10nzzzzzzzz, run rn_01m3zzzzzz9r0nzzzzzzzzzzzz)",
+        "capability": {
+          "constraints": {
+            "dataLocation": null,
+            "environments": ["node-24", "local-checkout"],
+            "maxCostUsd": null,
+            "maxDurationMinutes": null
+          },
+          "context": {
+            "estimatedInputTokens": 40000,
+            "requiredArtifacts": [
+              "src/pages/CodingReference.tsx",
+              "src/components/BlogCard.tsx",
+              "DarkMechanicus README.md",
+              "C:\\Users\\jdoe-secret\\AppData\\Local\\private\\secrets.txt"
+            ]
+          },
+          "modalities": ["text"],
+          "preferences": {
+            "autonomy": "autonomous",
+            "cost": null,
+            "latency": null,
+            "modelOverride": "POISON-MODEL-OVERRIDE",
+            "quality": "high"
+          },
+          "reasoning": {
+            "level": "routine",
+            "rationale": "Copywriting plus one component pattern that already exists in the repo."
+          },
+          "skills": ["typescript", "react", "vitest", "copywriting", "testing"],
+          "tools": ["repo_read", "repo_write", "shell", "test_execution"],
+          "workType": "implementation"
+        },
+        "expectedArtifacts": [
+          "src/pages/CodingReference.tsx",
+          "src/pages/CodingReference.test.tsx",
+          "POISON-ARTIFACT /Users/jdoe-secret/src/private-client-repo/out.zip"
+        ],
+        "id": "tk_01m3tyy00tkh5h3bt79580fmc8",
+        "key": "DGI-1",
+        "optional": false,
+        "priority": "normal",
+        "references": [
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Coding Reference page",
+            "location": "src/pages/CodingReference.tsx",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "BlogCard component",
+            "location": "src/components/BlogCard.tsx",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "BoosterSeat card ticket (pattern)",
+            "location": "board/done/018-coding-reference-boosterseat.md",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "url",
+            "label": "DarkMechanicus README",
+            "location": "https://github.com/davgor/DarkMechanicus/blob/main/README.md",
+            "remoteOnly": true
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "POISON-REFERENCE private notes",
+            "location": "/Users/jdoe-secret/src/private-client-repo/notes/plan.md",
+            "remoteOnly": false
+          }
+        ],
+        "tags": ["content", "coding-reference", "poison-tag"],
+        "title": "Write the Dark Mechanicus project card"
+      },
+      {
+        "acceptanceCriteria": [
+          {
+            "id": "a1",
+            "text": "2-3 screenshots of the real desktop app exist under `public/assets/darkmechanicus/`, each ≤ 400 KB and ≤ 1600px wide; one shows a plan graph."
+          },
+          {
+            "id": "a2",
+            "text": "No screenshot shows a private repository name, a local filesystem path, a username or a session/machine/project id; the submission confirms each image was checked."
+          },
+          {
+            "id": "a3",
+            "text": "Each image has written alt text describing what it shows, recorded in the submission for DGI-5 to use."
+          },
+          {
+            "id": "a4",
+            "text": "`npm run build` passes, and the images are copied to `dist/assets/darkmechanicus/`."
+          }
+        ],
+        "body": "Capture 2-3 screenshots of the **real** packaged desktop app (v0.8.0 or later). Mockups from `docs/design/mockups` do not count.\n1. **Plan graph:** ideally this very epic, so the picture matches the plan view built in Sprint 2. Required.\n2. **Ticket editor:** acceptance criteria and capability profile visible.\n3. **Checkpoint review / sprint report:** optional; include it only if a run has reached a checkpoint.\n\n**Privacy (hard requirement):** the sidebar lists every tracked folder on this machine. Crop, or arrange the app so only public repositories (`davgor.github.io`, `DarkMechanicus`) are visible. No usernames, home-directory paths, session/machine/project ids or private repo names may appear anywhere in the image.\n\n**Format:** PNG or WebP under `public/assets/darkmechanicus/`, max 1600px wide, ≤ 400 KB each, kebab-case file names.\n\n**If the worker cannot drive the desktop GUI** (no screen-recording access), leave an `add_comment` on this ticket asking the person to capture the raw screenshots, then do the cropping, optimization and alt text.\n\n**Out of scope:** wiring images into the page (DGI-5).\n\n> POISON-COMMENT quoted from jdoe-secret: \"see /Users/jdoe-secret/src/private-client-repo/notes.md\" (session ss_01m3zzzzzz9sess10nzzzzzzzz, run rn_01m3zzzzzz9r0nzzzzzzzzzzzz)",
+        "capability": {
+          "constraints": {
+            "dataLocation": null,
+            "environments": ["macos-desktop-gui", "local-checkout"],
+            "maxCostUsd": null,
+            "maxDurationMinutes": null
+          },
+          "context": {
+            "estimatedInputTokens": 20000,
+            "requiredArtifacts": [
+              "DarkMechanicus desktop app v0.8.0+",
+              "C:\\Users\\jdoe-secret\\AppData\\Local\\private\\secrets.txt"
+            ]
+          },
+          "modalities": ["text", "images"],
+          "preferences": {
+            "autonomy": "supervised",
+            "cost": null,
+            "latency": null,
+            "modelOverride": "POISON-MODEL-OVERRIDE",
+            "quality": "high"
+          },
+          "reasoning": {
+            "level": "routine",
+            "rationale": "Capture, crop and optimize images, with a careful privacy check."
+          },
+          "skills": ["screenshots", "image-optimization", "privacy-review"],
+          "tools": ["repo_read", "repo_write", "shell"],
+          "workType": "implementation"
+        },
+        "expectedArtifacts": [
+          "public/assets/darkmechanicus/*.png|webp",
+          "alt text list in the submission",
+          "POISON-ARTIFACT /Users/jdoe-secret/src/private-client-repo/out.zip"
+        ],
+        "id": "tk_01m3tyy00tf22qqgw75mypd694",
+        "key": "DGI-2",
+        "optional": true,
+        "priority": "normal",
+        "references": [
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Existing screenshot asset (pattern)",
+            "location": "public/assets/Server_manager.png",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "url",
+            "label": "DarkMechanicus README (feature names)",
+            "location": "https://github.com/davgor/DarkMechanicus/blob/main/README.md",
+            "remoteOnly": true
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "POISON-REFERENCE private notes",
+            "location": "/Users/jdoe-secret/src/private-client-repo/notes/plan.md",
+            "remoteOnly": false
+          }
+        ],
+        "tags": ["assets", "coding-reference", "privacy", "poison-tag"],
+        "title": "Capture and prepare Dark Mechanicus app screenshots"
+      },
+      {
+        "acceptanceCriteria": [
+          {
+            "id": "a1",
+            "text": "Running the export against the committed records yields JSON with the epic, sprints in ordinal order, tickets with display key/title/status and dependency edges by key, and no field outside the documented allowlist."
+          },
+          {
+            "id": "a2",
+            "text": "A unit test feeds a fixture containing absolute paths, usernames, session/machine/project ids, ticket bodies, references and comment text, and asserts none of them appear in the output."
+          },
+          {
+            "id": "a3",
+            "text": "Exporting the same records twice produces byte-identical output (unit test)."
+          },
+          {
+            "id": "a4",
+            "text": "Missing records, an unknown format/formatVersion, a missing snapshot and a dangling edge each fail with an error naming the file; each case has a unit test."
+          },
+          {
+            "id": "a5",
+            "text": "`npm run dev` serves `/darkmechanicus/plan.json`, and `npm run build` in a clean checkout writes it into `dist/` without Dark Mechanicus installed."
+          },
+          {
+            "id": "a6",
+            "text": "The README documents the generation and how to change the configured epic; lint, format:check, type-check, deadcode, build and fireguard (no F) pass."
+          }
+        ],
+        "body": "Add a dev/build-time export that reads this repository's committed Dark Mechanicus portable records and emits a static, sanitized plan JSON for the site.\n\n**Input** (formats documented in DarkMechanicus `docs/architecture.md`, \"Portable records\"):\n- `.darkmechanicus/epics/<epicId>/current.json`: `darkmechanicus.epic-pointer` v1, with `revisionId`.\n- `.darkmechanicus/epics/<epicId>/snapshots/<revisionId>.json`: the plan bundle, containing `epic`, `sprints[]` (ordinal, goal, exitCriteria, ticketIds), `tickets[]` (id, key, title, optional) and `edges[]` (from, to).\n- `.darkmechanicus/epics/<epicId>/state.json`: `darkmechanicus.epic-state` v1, with `status` and `ticketStatuses`.\n\n**Which epic:** a configured epic id (this epic, `ep_01m3tyvkcv6kzg24j40g1mzh87`) in one small config constant. Not \"latest\" and not \"all\".\n\n**Output: allowlist only, never a denylist.** Epic title, success-criteria text, epic status, revision number and saved-at date; sprints (ordinal, goal, exit criteria); tickets (display key, title, sprint ordinal, status, optional flag); edges by display key. **Excluded:** ticket bodies, references, capability profiles, comments, branch/commit data, run history, and all project/machine/session/run ids.\n\n**Mechanism (recommended):** a pure-Node module under `scripts/` plus a small Vite plugin, so `npm run dev` (which Playwright uses, port 5175), `npm run build` and CI all serve `/darkmechanicus/plan.json`. The output is generated, not committed. Unit tests use a committed fixture copied from real records, with poisoned values (paths, ids, bodies) added to prove the allowlist. Another mechanism is fine if it meets every criterion; record why in the submission.\n\n**Failure:** fail loudly with a message naming the file when records are missing, when `format`/`formatVersion` is unknown, when the pointer's snapshot is missing, or when an edge names an unknown ticket. The site must never silently ship an empty plan.\n\n**Determinism:** stable key order, sorted where order is not meaningful, no export-time timestamps.\n\n**Docs:** add a README section on how the plan view is generated and how to point it at another epic.\n\n**Entry precondition:** this epic's `.darkmechanicus/` records are committed (see the Sprint 2 entry criteria).\n\n> POISON-COMMENT quoted from jdoe-secret: \"see /Users/jdoe-secret/src/private-client-repo/notes.md\" (session ss_01m3zzzzzz9sess10nzzzzzzzz, run rn_01m3zzzzzz9r0nzzzzzzzzzzzz)",
+        "capability": {
+          "constraints": {
+            "dataLocation": null,
+            "environments": ["node-24", "local-checkout"],
+            "maxCostUsd": null,
+            "maxDurationMinutes": null
+          },
+          "context": {
+            "estimatedInputTokens": 70000,
+            "requiredArtifacts": [
+              ".darkmechanicus/epics/",
+              "vite.config.ts",
+              "playwright.config.ts",
+              "DarkMechanicus docs/architecture.md",
+              "C:\\Users\\jdoe-secret\\AppData\\Local\\private\\secrets.txt"
+            ]
+          },
+          "modalities": ["text"],
+          "preferences": {
+            "autonomy": "autonomous",
+            "cost": null,
+            "latency": null,
+            "modelOverride": "POISON-MODEL-OVERRIDE",
+            "quality": "high"
+          },
+          "reasoning": {
+            "level": "deep",
+            "rationale": "Parses repository files as untrusted input, must sanitize via an allowlist, and integrates with dev, build and CI."
+          },
+          "skills": ["typescript", "node", "vite", "vitest", "security", "testing"],
+          "tools": ["repo_read", "repo_write", "shell", "test_execution"],
+          "workType": "implementation"
+        },
+        "expectedArtifacts": [
+          "scripts/ export module + tests",
+          "Vite plugin wiring in vite.config.ts",
+          "test fixture of real records",
+          "README section",
+          "POISON-ARTIFACT /Users/jdoe-secret/src/private-client-repo/out.zip"
+        ],
+        "id": "tk_01m3tyy00t1jfavcd6tvbg2aap",
+        "key": "DGI-3",
+        "optional": false,
+        "priority": "high",
+        "references": [
+          {
+            "hash": null,
+            "kind": "url",
+            "label": "DarkMechanicus architecture: portable records",
+            "location": "https://github.com/davgor/DarkMechanicus/blob/main/docs/architecture.md",
+            "remoteOnly": true
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Dark Mechanicus records",
+            "location": ".darkmechanicus/",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Vite config",
+            "location": "vite.config.ts",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Playwright config (dev server on 5175)",
+            "location": "playwright.config.ts",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "README (MathLab rebuild notes pattern)",
+            "location": "README.md",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "POISON-REFERENCE private notes",
+            "location": "/Users/jdoe-secret/src/private-client-repo/notes/plan.md",
+            "remoteOnly": false
+          }
+        ],
+        "runId": "rn_01m3zzzzzz9r0nzzzzzzzzzzzz",
+        "tags": ["data", "build", "security", "coding-reference", "poison-tag"],
+        "title": "Export the saved plan as sanitized static JSON",
+        "worktree": "/Users/jdoe-secret/src/private-client-repo/.worktrees/dgi-3"
+      },
+      {
+        "acceptanceCriteria": [
+          {
+            "id": "a1",
+            "text": "Given the DGI-3 fixture, the component renders every sprint in order with its goal, and every ticket's display key, title and text status label (unit tests)."
+          },
+          {
+            "id": "a2",
+            "text": "Every dependency edge in the fixture is drawn, and the accessible list names each ticket's prerequisites (unit tests)."
+          },
+          {
+            "id": "a3",
+            "text": "A failed fetch or malformed JSON shows an error message without throwing (unit tests cover both)."
+          },
+          {
+            "id": "a4",
+            "text": "Sprints stack vertically below 768px; screenshots at 1280px and 375px in light and dark themes are attached to the submission."
+          },
+          {
+            "id": "a5",
+            "text": "No new runtime dependency, or a written justification with lazy loading and a clean `npm audit`; lint, format:check, type-check, deadcode, build and fireguard (no F) pass."
+          }
+        ],
+        "body": "A React component that renders the exported plan from DGI-3.\n\n**Layout:** sprints in order as columns, each headed by its ordinal and goal. Each ticket is a node showing display key, title and a status label. Dependency edges are drawn between nodes. The component is read-only: no buttons or affordances that imply editing or running anything.\n\n**Rendering approach:** prefer dependency-free (CSS grid + inline SVG edges). A graph library needs a written justification in the submission, must be lazy-loaded, and must keep `npm audit` clean.\n\n**Accessibility:** provide an equivalent structured text list (\"Sprint 2 · DGI-4 Build the read-only plan view, status: ready, requires DGI-3\"), so all information is available without seeing the edges. Status must be conveyed by text as well as color, and nothing traps keyboard focus.\n\n**Theme:** use the site's existing CSS tokens in `src/index.css` for light/dark.\n\n**Narrow screens:** below 768px, sprints stack vertically. At 375px the page must not scroll horizontally; the component may scroll internally.\n\n**Data loading:** fetch the JSON served by DGI-3, with loading and error states. A failed or malformed fetch shows a short plain message and never breaks the rest of the page.\n\n**Tests:** use DGI-3's fixture.\n\n**Out of scope:** embedding in Coding Reference (DGI-5).\n\n> POISON-COMMENT quoted from jdoe-secret: \"see /Users/jdoe-secret/src/private-client-repo/notes.md\" (session ss_01m3zzzzzz9sess10nzzzzzzzz, run rn_01m3zzzzzz9r0nzzzzzzzzzzzz)",
+        "capability": {
+          "constraints": {
+            "dataLocation": null,
+            "environments": ["node-24", "local-checkout"],
+            "maxCostUsd": null,
+            "maxDurationMinutes": null
+          },
+          "context": {
+            "estimatedInputTokens": 70000,
+            "requiredArtifacts": [
+              "src/index.css",
+              "DGI-3 export types and fixture",
+              "C:\\Users\\jdoe-secret\\AppData\\Local\\private\\secrets.txt"
+            ]
+          },
+          "modalities": ["text", "images"],
+          "preferences": {
+            "autonomy": "autonomous",
+            "cost": null,
+            "latency": null,
+            "modelOverride": "POISON-MODEL-OVERRIDE",
+            "quality": "high"
+          },
+          "reasoning": {
+            "level": "multi_step",
+            "rationale": "Graph layout plus an accessible equivalent and responsive behavior."
+          },
+          "skills": [
+            "typescript",
+            "react",
+            "ui",
+            "svg",
+            "css",
+            "accessibility",
+            "vitest",
+            "testing"
+          ],
+          "tools": ["repo_read", "repo_write", "shell", "test_execution", "browser"],
+          "workType": "implementation"
+        },
+        "expectedArtifacts": [
+          "src/components/ plan view component + tests",
+          "styles in src/index.css or a co-located stylesheet",
+          "4 screenshots in the submission",
+          "POISON-ARTIFACT /Users/jdoe-secret/src/private-client-repo/out.zip"
+        ],
+        "id": "tk_01m3tyy00tt645f375y7yrwt8p",
+        "key": "DGI-4",
+        "optional": false,
+        "priority": "high",
+        "references": [
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Site theme tokens",
+            "location": "src/index.css",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Coding Reference page",
+            "location": "src/pages/CodingReference.tsx",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "ticket",
+            "label": "Export schema and fixture",
+            "location": "DGI-3",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "POISON-REFERENCE private notes",
+            "location": "/Users/jdoe-secret/src/private-client-repo/notes/plan.md",
+            "remoteOnly": false
+          }
+        ],
+        "tags": ["ui", "accessibility", "coding-reference", "poison-tag"],
+        "title": "Build the read-only plan view component"
+      },
+      {
+        "acceptanceCriteria": [
+          {
+            "id": "a1",
+            "text": "Coding Reference shows the Dark Mechanicus card with its screenshots (descriptive alt text) and the plan view section; existing showcase and project cards still render (unit + e2e)."
+          },
+          {
+            "id": "a2",
+            "text": "The new Playwright spec covers card, links, screenshot loading, plan view contents and the 375px no-horizontal-scroll check; the submission includes its failing run before integration and its passing run after."
+          },
+          {
+            "id": "a3",
+            "text": "Production build served by `vite preview` loads every image and the plan JSON with no console errors."
+          },
+          {
+            "id": "a4",
+            "text": "The full gate passes: lint, format:check, test:unit, fireguard (no F), type-check, deadcode, build, test:e2e."
+          }
+        ],
+        "body": "**Integration ticket.** This is where Sprint 1 and Sprint 2 meet in shared files (`CodingReference.tsx` and its tests). It requires DGI-1, DGI-2 and DGI-4 (and DGI-3 transitively).\n\n1. **Write the e2e spec first** (`e2e/darkmechanicus.spec.ts`, using the existing `e2e/modules` helpers) and record the failing run. It must cover:\n   - the card is visible and both links are correct;\n   - every screenshot actually loads (`naturalWidth > 0`);\n   - the plan view lists every ticket of this epic;\n   - no page-level horizontal scroll at 375px;\n   - the Fantasy World Generator showcase and the other project cards still render.\n2. **Wire the screenshots** into the Dark Mechanicus card as `ContentImage` items, using the alt text from DGI-2.\n3. **Add the plan view section** after the card: a heading, a one-line caption saying this is the saved plan of the epic that added this section, with the revision number and saved date, and a link to the DarkMechanicus repo.\n4. **Merge** the Sprint 1 and 2 work onto the epic branch, resolving conflicts in shared files.\n5. **Run the full gate.**\n\n> POISON-COMMENT quoted from jdoe-secret: \"see /Users/jdoe-secret/src/private-client-repo/notes.md\" (session ss_01m3zzzzzz9sess10nzzzzzzzz, run rn_01m3zzzzzz9r0nzzzzzzzzzzzz)",
+        "capability": {
+          "constraints": {
+            "dataLocation": null,
+            "environments": ["node-24", "local-checkout"],
+            "maxCostUsd": null,
+            "maxDurationMinutes": null
+          },
+          "context": {
+            "estimatedInputTokens": 80000,
+            "requiredArtifacts": [
+              "src/pages/CodingReference.tsx",
+              "e2e/mathlab.spec.ts",
+              "playwright.config.ts",
+              "C:\\Users\\jdoe-secret\\AppData\\Local\\private\\secrets.txt"
+            ]
+          },
+          "modalities": ["text", "images"],
+          "preferences": {
+            "autonomy": "autonomous",
+            "cost": null,
+            "latency": null,
+            "modelOverride": "POISON-MODEL-OVERRIDE",
+            "quality": "high"
+          },
+          "reasoning": {
+            "level": "multi_step",
+            "rationale": "Joins three branches in shared files and adds an e2e spec over the combined result."
+          },
+          "skills": ["typescript", "react", "playwright", "integration", "testing"],
+          "tools": ["repo_read", "repo_write", "shell", "test_execution", "browser"],
+          "workType": "implementation"
+        },
+        "expectedArtifacts": [
+          "e2e/darkmechanicus.spec.ts",
+          "updated src/pages/CodingReference.tsx and tests",
+          "gate output in the submission",
+          "POISON-ARTIFACT /Users/jdoe-secret/src/private-client-repo/out.zip"
+        ],
+        "id": "tk_01m3tyy00tggzp6b5c8v9p228c",
+        "key": "DGI-5",
+        "optional": false,
+        "priority": "high",
+        "references": [
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Existing showcase e2e (pattern)",
+            "location": "e2e/mathlab.spec.ts",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "e2e helpers",
+            "location": "e2e/modules/",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Coding Reference page",
+            "location": "src/pages/CodingReference.tsx",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "POISON-REFERENCE private notes",
+            "location": "/Users/jdoe-secret/src/private-client-repo/notes/plan.md",
+            "remoteOnly": false
+          }
+        ],
+        "tags": ["integration", "e2e", "coding-reference", "poison-tag"],
+        "title": "Embed the card, screenshots and plan view on Coding Reference"
+      },
+      {
+        "acceptanceCriteria": [
+          {
+            "id": "a1",
+            "text": "PR merged to main with every CI check green, and a red-team review posted on it with no unresolved Blocking findings."
+          },
+          {
+            "id": "a2",
+            "text": "The GitHub Pages deploy for the merge commit succeeded."
+          },
+          {
+            "id": "a3",
+            "text": "The live page is verified at desktop width and at 375px (card, both links, screenshots, plan view, no console errors, no page-level horizontal scroll), with screenshots attached."
+          },
+          {
+            "id": "a4",
+            "text": "The submission maps each epic success criterion s1-s6 to concrete evidence."
+          }
+        ],
+        "body": "Final end-to-end ticket. Every epic success criterion is verified here.\n\n1. **Open the PR:** from the epic branch to `main`. Include the `.darkmechanicus/` records the export needs; the person approved committing them at Sprint 2.\n2. **Red-team review:** per `.claude/skills/red-team-review/SKILL.md`, posted on the PR with `<!-- red-team-review -->`. Fix every Blocking finding and re-run the gate.\n3. **Merge:** only after all PR checks are green **and the person gives a go-ahead in chat**. Merging is outward-facing.\n4. **Deploy:** confirm the GitHub Pages deploy for the merge commit succeeded, including the production HTML smoke check.\n5. **Verify live:** check https://davgor.github.io/coding-reference at desktop width and at 375px for the card, links, screenshots and plan view, with no console errors and no page-level horizontal scroll.\n6. **Report:** map each epic success criterion (s1-s6) to evidence: PR URL, merge SHA, deploy run URL, command output and screenshots.\n\n**Known limitation to state in the sprint report:** the live plan view shows ticket statuses as of the merged records. This ticket and the epic's completion only appear there after the person commits the final `.darkmechanicus/` state and it deploys. No code change is needed for that.\n\n> POISON-COMMENT quoted from jdoe-secret: \"see /Users/jdoe-secret/src/private-client-repo/notes.md\" (session ss_01m3zzzzzz9sess10nzzzzzzzz, run rn_01m3zzzzzz9r0nzzzzzzzzzzzz)",
+        "capability": {
+          "constraints": {
+            "dataLocation": null,
+            "environments": ["local-checkout", "github-cli-authenticated"],
+            "maxCostUsd": null,
+            "maxDurationMinutes": null
+          },
+          "context": {
+            "estimatedInputTokens": 50000,
+            "requiredArtifacts": [
+              ".claude/skills/red-team-review/SKILL.md",
+              ".github/workflows/",
+              "C:\\Users\\jdoe-secret\\AppData\\Local\\private\\secrets.txt"
+            ]
+          },
+          "modalities": ["text", "images"],
+          "preferences": {
+            "autonomy": "supervised",
+            "cost": null,
+            "latency": null,
+            "modelOverride": "POISON-MODEL-OVERRIDE",
+            "quality": "high"
+          },
+          "reasoning": {
+            "level": "multi_step",
+            "rationale": "Coordinates a PR, red-team review, CI, the Pages deploy and live browser checks, and maps evidence to success criteria."
+          },
+          "skills": ["github", "ci", "release", "security-review", "playwright"],
+          "tools": ["repo_read", "repo_write", "shell", "browser", "network", "test_execution"],
+          "workType": "testing"
+        },
+        "expectedArtifacts": [
+          "PR URL and merge SHA",
+          "deploy run URL",
+          "live screenshots (desktop + 375px)",
+          "success-criteria evidence table",
+          "POISON-ARTIFACT /Users/jdoe-secret/src/private-client-repo/out.zip"
+        ],
+        "id": "tk_01m3tyy00t42vxye0zzpq2p2kg",
+        "key": "DGI-6",
+        "optional": false,
+        "priority": "high",
+        "references": [
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Red-team review skill",
+            "location": ".claude/skills/red-team-review/SKILL.md",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "CI and deploy workflows",
+            "location": ".github/workflows/",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "url",
+            "label": "Live Coding Reference",
+            "location": "https://davgor.github.io/coding-reference",
+            "remoteOnly": true
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Prior live-verification closeout (pattern)",
+            "location": "board/done/020-mathlab-showcase.md",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "POISON-REFERENCE private notes",
+            "location": "/Users/jdoe-secret/src/private-client-repo/notes/plan.md",
+            "remoteOnly": false
+          }
+        ],
+        "tags": ["release", "verification", "coding-reference", "poison-tag"],
+        "title": "Ship and verify Dark Mechanicus showcase live"
+      }
+    ]
+  },
+  "contentHash": "sha256:ded953e206aef47513adb5d3cabf72afbb6d81d3b4c820620618d45fd4b4a041",
+  "createdAt": "2026-10-01T15:17:33.687Z",
+  "epicId": "ep_01m3tyvkcv6kzg24j40g1mzh87",
+  "format": "darkmechanicus.plan-snapshot",
+  "formatVersion": 1,
+  "machineId": "mc_01m3zzzzzz9mach1nezzzzzzzz",
+  "number": 1,
+  "revisionId": "rv_01m3w0nmbqpnt36b7w59957sfx",
+  "savedAt": "2026-10-01T15:17:33.687Z",
+  "workingDirectory": "/Users/jdoe-secret/src/private-client-repo"
+}

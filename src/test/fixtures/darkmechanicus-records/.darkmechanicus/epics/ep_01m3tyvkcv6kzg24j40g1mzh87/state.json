@@ -1,0 +1,36 @@
+{
+  "branch": {
+    "name": "jdoe-secret/wip",
+    "repository": "git@github.com:jdoe-secret/private-client-repo.git",
+    "startCommit": "0123456789abcdef0123456789abcdef01234567"
+  },
+  "completedAt": null,
+  "createdAt": "2026-10-01T05:26:37.723Z",
+  "epicId": "ep_01m3tyvkcv6kzg24j40g1mzh87",
+  "format": "darkmechanicus.epic-state",
+  "formatVersion": 1,
+  "generation": 3,
+  "machineId": "mc_01m3zzzzzz9mach1nezzzzzzzz",
+  "outcome": {
+    "recordedAt": null,
+    "runId": "rn_01m3zzzzzz9r0nzzzzzzzzzzzz",
+    "successCriteria": [],
+    "summary": "POISON-OUTCOME summary written in /Users/jdoe-secret/src/private-client-repo"
+  },
+  "provenance": {
+    "note": "POISON-PROVENANCE copied by jdoe-secret",
+    "sourceEpicId": "ep_01m3zzzzzz9s0rczzzzzzzzzzz"
+  },
+  "status": "in_progress",
+  "ticketStatuses": {
+    "tk_01m3tyy00t1jfavcd6tvbg2aap": "in_progress",
+    "tk_01m3tyy00t42vxye0zzpq2p2kg": "backlog",
+    "tk_01m3tyy00tf22qqgw75mypd694": "completed",
+    "tk_01m3tyy00tggzp6b5c8v9p228c": "backlog",
+    "tk_01m3tyy00tkh5h3bt79580fmc8": "completed",
+    "tk_01m3tyy00tt645f375y7yrwt8p": "backlog",
+    "tk_01m3zzzzzz9rem0vedzzzzzzzz": "completed"
+  },
+  "title": "Showcase Dark Mechanicus on Coding Reference",
+  "updatedAt": "2026-10-01T18:02:11.000Z"
+}
