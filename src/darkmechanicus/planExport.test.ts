@@ -491,6 +491,14 @@ describe('exportPlan: failures name the file (a4)', () => {
     expect(() => run(records)).toThrow(`${SNAPSHOT}: display key DGI-1 is used twice`);
   });
 
+  it('fails when two tickets share an id', () => {
+    const records = loadFixture();
+    const dgi1 = ticketId(records, 'DGI-1');
+    setAt(records, SNAPSHOT, ['bundle', 'tickets', 1, 'id'], dgi1);
+
+    expect(() => run(records)).toThrow(`${SNAPSHOT}: ticket id ${dgi1} is used twice`);
+  });
+
   it('fails when two sprints share an ordinal', () => {
     const records = loadFixture();
     setAt(records, SNAPSHOT, ['bundle', 'sprints', 2, 'ordinal'], 2);
