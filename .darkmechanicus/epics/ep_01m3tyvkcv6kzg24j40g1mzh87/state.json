@@ -5,7 +5,7 @@
   "epicId": "ep_01m3tyvkcv6kzg24j40g1mzh87",
   "format": "darkmechanicus.epic-state",
   "formatVersion": 1,
-  "generation": 1,
+  "generation": 2,
   "outcome": null,
   "provenance": null,
   "status": "backlog",
@@ -18,5 +18,5 @@
     "tk_01m3tyy00tt645f375y7yrwt8p": "backlog"
   },
   "title": "Showcase Dark Mechanicus on Coding Reference",
-  "updatedAt": "2026-10-01T15:17:33.712Z"
+  "updatedAt": "2026-10-02T21:11:56.635Z"
 }
