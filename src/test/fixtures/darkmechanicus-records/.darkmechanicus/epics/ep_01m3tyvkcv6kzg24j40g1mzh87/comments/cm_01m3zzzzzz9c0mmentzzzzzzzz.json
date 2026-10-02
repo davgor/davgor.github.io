@@ -1,0 +1,13 @@
+{
+  "author": {
+    "label": "jdoe-secret on mc_01m3zzzzzz9mach1nezzzzzzzz",
+    "role": "planner"
+  },
+  "body": "POISON-COMMENT-FILE: please keep /Users/jdoe-secret/src/private-client-repo private.",
+  "createdAt": "2026-10-01T06:00:00.000Z",
+  "epicId": "ep_01m3tyvkcv6kzg24j40g1mzh87",
+  "format": "darkmechanicus.comment",
+  "formatVersion": 1,
+  "id": "cm_01m3zzzzzz9c0mmentzzzzzzzz",
+  "ticketId": null
+}

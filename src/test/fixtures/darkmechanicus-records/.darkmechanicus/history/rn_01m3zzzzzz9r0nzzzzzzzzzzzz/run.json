@@ -1,0 +1,18 @@
+{
+  "attempts": [
+    {
+      "hostId": "jdoe-secret-macbook",
+      "outputs": ["/Users/jdoe-secret/src/private-client-repo/dist"],
+      "sessionId": "ss_01m3zzzzzz9sess10nzzzzzzzz"
+    }
+  ],
+  "branch": {
+    "name": "jdoe-secret/wip",
+    "startCommit": "0123456789abcdef0123456789abcdef01234567"
+  },
+  "epicId": "ep_01m3tyvkcv6kzg24j40g1mzh87",
+  "format": "darkmechanicus.run",
+  "formatVersion": 1,
+  "ownerMachineId": "mc_01m3zzzzzz9mach1nezzzzzzzz",
+  "runId": "rn_01m3zzzzzz9r0nzzzzzzzzzzzz"
+}

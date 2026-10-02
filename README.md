@@ -122,3 +122,48 @@ Both embed levels are sandboxed without same-origin privilege. Downloads and exp
 remain available. Only the selected sample loads, and the outer iframe loads lazily. The full diagnostic
 snapshots still require substantial browser memory. This is a standalone Python simulation showcase;
 it does not provide Unreal integration or packaged gameplay.
+
+## Dark Mechanicus plan view data
+
+The read-only plan view on Coding Reference fetches `darkmechanicus/plan.json` relative to the Vite base
+(`/darkmechanicus/plan.json` on Pages). That file is the saved plan of one
+[Dark Mechanicus](https://github.com/davgor/DarkMechanicus) epic, generated from the portable records
+committed under `.darkmechanicus/`. It is not committed itself, and generating it needs no Dark Mechanicus
+install: only the JSON records in this repository are read.
+
+`src/darkmechanicus/planPlugin.ts` is a small Vite plugin registered in `vite.config.ts`. `npm run dev`
+serves the JSON and regenerates it on every request, so record edits show without a restart. `npm run build`
+writes it to `dist/darkmechanicus/plan.json`, which `vite preview` and the Pages artifact serve. The plugin
+calls `exportPlan` in `src/darkmechanicus/planExport.ts`, which reads three records of the configured epic:
+`epics/<epicId>/current.json` (the saved-revision pointer), the snapshot it names under `snapshots/`, and
+`state.json` (epic and ticket statuses). Comments, run history, profiles and `project.json` are never read.
+
+The output is an allowlist, built field by field: epic title, success-criteria text, status, revision number
+and saved-at time; each sprint's ordinal, goal and exit criteria; each ticket's display key, title, sprint
+ordinal, status and optional flag; and dependency edges by display key (`{ "from": "DGI-3", "to": "DGI-4" }`
+means DGI-4 requires DGI-3). Ids, paths, ticket bodies, references, capability profiles, comments, branches
+and run data are left out. `ExportedPlan` in `src/types/darkmechanicusPlan.ts` is the contract for the view.
+Keys are sorted and arrays have a stable order, with no export-time values, so the same records always
+produce byte-identical JSON. Allowlisted free text (titles, goals, criteria) is published as written, so
+keep it free of anything private.
+
+The export fails loudly and names the file when a record is missing, has an unknown `format` or
+`formatVersion`, when the pointer's snapshot is missing, when an edge or sprint names an unknown ticket, or
+when the records disagree with each other. A failure stops `npm run build` (and therefore the Pages deploy).
+In dev it is logged when the server starts, and the JSON request answers 500 with the message. The site never
+ships an empty plan. Statuses come from the committed `state.json`, so the live view shows progress as of the
+last commit of the records.
+
+To show another epic, set `DARKMECHANICUS_PLAN_EPIC_ID` in `src/darkmechanicus/config.ts` to its id (the
+folder name under `.darkmechanicus/epics/`). Commit that epic's `current.json`, `state.json` and the snapshot
+the pointer names, then check the result locally:
+
+```sh
+npx vitest run src/darkmechanicus
+npm run build && cat dist/darkmechanicus/plan.json
+```
+
+The unit tests use a poisoned copy of real records in `src/test/fixtures/darkmechanicus-records/` to prove
+that paths, usernames, ids, bodies, references and comments never reach the output, and they also export the
+configured epic from the committed records. `src/test/fixtures/darkmechanicusPlan.ts` is that fixture's
+exported plan for component tests; a test keeps it identical to the exporter's output.
