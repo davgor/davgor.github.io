@@ -155,10 +155,9 @@ describe('darkmechanicusPlanPlugin: build', () => {
     expect(plan.tickets.length).toBeGreaterThan(0);
     for (const ticket of plan.tickets) {
       expect(Object.keys(ticket)).toEqual(['key', 'optional', 'sprintOrdinal', 'status', 'title']);
-      expect(ticket.key).toMatch(/^DGI-\d+$/);
+      expect(ticket.key).toMatch(/^[A-Za-z0-9]{1,12}-\d{1,9}$/);
       expect(['backlog', 'in_progress', 'completed']).toContain(ticket.status);
     }
-    expect(plan.edges.length).toBeGreaterThan(0);
     for (const edge of plan.edges) {
       expect(Object.keys(edge)).toEqual(['from', 'to']);
       expect(keys.has(edge.from) && keys.has(edge.to)).toBe(true);

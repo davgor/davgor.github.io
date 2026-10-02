@@ -190,8 +190,9 @@ export function exportPlan({
       const where = `bundle.sprints[${index}]`;
       const sprint = asObject(value, snapshotFile, where);
       const ordinal = asPositiveInteger(sprint.ordinal, snapshotFile, `${where}.ordinal`);
-      if (sprintOrdinals.has(ordinal))
+      if (sprintOrdinals.has(ordinal)) {
         fail(snapshotFile, `sprint ordinal ${ordinal} is used twice`);
+      }
       sprintOrdinals.add(ordinal);
       return {
         ordinal,
