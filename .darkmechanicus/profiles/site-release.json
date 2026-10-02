@@ -1,0 +1,57 @@
+{
+  "capability": {
+    "constraints": {
+      "dataLocation": null,
+      "environments": [
+        "local-checkout",
+        "github-cli-authenticated"
+      ],
+      "maxCostUsd": null,
+      "maxDurationMinutes": null
+    },
+    "context": {
+      "estimatedInputTokens": 50000,
+      "requiredArtifacts": [
+        ".claude/skills/red-team-review/SKILL.md",
+        ".github/workflows/"
+      ]
+    },
+    "modalities": [
+      "text",
+      "images"
+    ],
+    "preferences": {
+      "autonomy": "supervised",
+      "cost": null,
+      "latency": null,
+      "modelOverride": null,
+      "quality": "high"
+    },
+    "reasoning": {
+      "level": "multi_step",
+      "rationale": "Coordinates a PR, red-team review, CI, the Pages deploy and live browser checks, and maps evidence to success criteria."
+    },
+    "skills": [
+      "github",
+      "ci",
+      "release",
+      "security-review",
+      "playwright"
+    ],
+    "tools": [
+      "repo_read",
+      "repo_write",
+      "shell",
+      "browser",
+      "network",
+      "test_execution"
+    ],
+    "workType": "testing"
+  },
+  "createdAt": "2026-10-01T05:26:31.969Z",
+  "description": "Ship a davgor.github.io change: PR, red-team review, CI, GitHub Pages deploy, and live verification with evidence. Merging needs the person's go-ahead.",
+  "format": "darkmechanicus.profile",
+  "formatVersion": 1,
+  "name": "site-release",
+  "updatedAt": "2026-10-01T05:26:31.969Z"
+}
