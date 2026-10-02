@@ -47,6 +47,17 @@ const CodingReference: React.FC = () => {
         />
       </section>
       <BlogCard
+        title="Dark Mechanicus"
+        content={[
+          'Dark Mechanicus is my local planning and execution coordination tool for agentic development. It comes in two halves: an MCP server for agents and an Electron desktop app for people, both operating on the same repository-owned state under the same rules. Each tracked repository sorts its epics into In progress, Backlog, and Completed.',
+          'The flow is built around a human checkpoint. An agent helps me shape an epic, breaks it into tickets with acceptance criteria and capability profiles, wires up dependencies and sprint checkpoints, and writes the plan as a draft. I review the plan graph in the desktop app and press Save, and the saved plan only changes on Save. An orchestrator agent then runs that saved revision: it claims ready tickets for its own workers, records submissions and acceptance, and stops at each sprint checkpoint until I approve.',
+          'The design choice I would point an engineer at is that the server enforces the rules, not the agent’s instructions. Invalid plan edits are rejected with a concrete reason such as a cycle, and readiness is computed server-side, so an orchestrator cannot skip an unmet dependency by editing a status. Roles are fixed at launch and nothing a tool call says can change them, and approving a checkpoint is a desktop-only action that no agent role can perform. Plans and history are Git-tracked JSON under .darkmechanicus/, while the SQLite working database stays local and Git-ignored. The MCP server runs headless, so agents can plan and execute with the desktop closed.',
+          'It is Electron, React, and TypeScript, with SQLite through the built-in node:sqlite so the desktop and the headless MCP process share one repository-local database. The MCP SDK provides the stdio server, React Flow draws the plan graph, and zod validates input. CI packages builds for Windows and macOS and publishes them to GitHub Releases, and in-app updates come from there through electron-updater. The macOS builds are ad-hoc signed rather than notarized, so Gatekeeper blocks the first launch of a downloaded .dmg.',
+          'https://github.com/davgor/DarkMechanicus',
+          'https://github.com/davgor/DarkMechanicus/releases/latest',
+        ]}
+      />
+      <BlogCard
         title="davgor.github.io"
         content={[
           "Well, this site, obviously. I wanted to make a personal website where I can share my projects, give more in-depth information about my experiences, and about who I am as an engineer and a leader. I recently converted it over to using React over traditional HTML/JavaScript, and I'll mostly be using it as a place to lightly experiment with AI and React. Feel free to dig into any of the areas I have set up. It's a pretty simple page, but I think it does a decent enough job as an extended resume.",

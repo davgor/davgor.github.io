@@ -73,6 +73,78 @@ describe('CodingReference', () => {
     expect(screen.getByText(/Electron conversion/i)).toBeInTheDocument();
   });
 
+  it('renders a Dark Mechanicus card linking to the repository and latest release', () => {
+    render(<CodingReference />);
+    expect(screen.getByRole('heading', { name: 'Dark Mechanicus' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('link', { name: 'https://github.com/davgor/DarkMechanicus' })
+    ).toHaveAttribute('href', 'https://github.com/davgor/DarkMechanicus');
+    expect(
+      screen.getByRole('link', { name: 'https://github.com/davgor/DarkMechanicus/releases/latest' })
+    ).toHaveAttribute('href', 'https://github.com/davgor/DarkMechanicus/releases/latest');
+  });
+
+  it('describes Dark Mechanicus as an MCP server and desktop app on shared repository-owned state', () => {
+    render(<CodingReference />);
+    expect(
+      screen.getByText(/local planning and execution coordination tool for agentic development/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/an MCP server for agents and an Electron desktop app for people/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/same repository-owned state under the same rules/i)
+    ).toBeInTheDocument();
+  });
+
+  it('describes the draft, Save, orchestrated run, and human-approved sprint checkpoint flow', () => {
+    render(<CodingReference />);
+    expect(screen.getByText(/writes the plan as a draft/i)).toBeInTheDocument();
+    expect(screen.getByText(/the saved plan only changes on Save/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/orchestrator agent then runs that saved revision/i)
+    ).toBeInTheDocument();
+    expect(screen.getByText(/claims ready tickets for its own workers/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/stops at each sprint checkpoint until I approve/i)
+    ).toBeInTheDocument();
+  });
+
+  it('explains the Dark Mechanicus design choices: enforced rules, fixed roles, Git-tracked plans', () => {
+    render(<CodingReference />);
+    expect(screen.getByText(/the server enforces the rules/i)).toBeInTheDocument();
+    expect(screen.getByText(/roles are fixed at launch/i)).toBeInTheDocument();
+    expect(screen.getByText(/Git-tracked JSON under \.darkmechanicus\//)).toBeInTheDocument();
+    expect(screen.getByText(/SQLite working database stays local/i)).toBeInTheDocument();
+    expect(screen.getByText(/plan and execute with the desktop closed/i)).toBeInTheDocument();
+  });
+
+  it('lists the Dark Mechanicus stack and Windows and macOS release flow', () => {
+    render(<CodingReference />);
+    expect(screen.getByText(/built-in node:sqlite/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/MCP SDK provides the stdio server, React Flow draws the plan graph/i)
+    ).toBeInTheDocument();
+    expect(screen.getByText(/packages builds for Windows and macOS/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/in-app updates come from there through electron-updater/i)
+    ).toBeInTheDocument();
+  });
+
+  it('places the Dark Mechanicus card directly after the world showcase and before the site card', () => {
+    render(<CodingReference />);
+    const showcase = screen.getByRole('heading', {
+      name: 'Fantasy World Generator — World Showcase',
+    });
+    const card = screen.getByRole('heading', { name: 'Dark Mechanicus' });
+    const siteCard = screen.getByRole('heading', { name: 'davgor.github.io' });
+    expect(showcase.compareDocumentPosition(card) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(card.compareDocumentPosition(siteCard) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    const cards = screen.getAllByTestId('content-card');
+    expect(cards[1]).toContainElement(card);
+    expect(cards[2]).toContainElement(siteCard);
+  });
+
   it('uses correct grammar in project descriptions', () => {
     render(<CodingReference />);
     expect(screen.getByText(/check out my GitHub page/i)).toBeInTheDocument();
