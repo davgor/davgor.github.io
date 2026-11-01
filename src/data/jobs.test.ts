@@ -152,4 +152,23 @@ describe('jobs data', () => {
     expect(text).toContain('review and remediation');
     expect(text).toContain('"personas"');
   });
+
+  it('has Evals and monitoring as fourth paragraph of Outcome Engineering role', () => {
+    const onebrief = jobs.find((job) => job.id === 'onebrief');
+    expect(onebrief).toBeDefined();
+    const outcomeEngRole = onebrief!.roles[0];
+    expect(outcomeEngRole.paragraphs.length).toBeGreaterThanOrEqual(4);
+    expect(outcomeEngRole.paragraphs[3].title).toBe('Evals and monitoring');
+  });
+
+  it('Evals and monitoring paragraph includes key phrases about preventing poison the well and automatically adopting learnings', () => {
+    const onebrief = jobs.find((job) => job.id === 'onebrief');
+    expect(onebrief).toBeDefined();
+    const outcomeEngRole = onebrief!.roles[0];
+    expect(outcomeEngRole.paragraphs.length).toBeGreaterThanOrEqual(4);
+    const evalsParagraph = outcomeEngRole.paragraphs[3];
+    const text = `${evalsParagraph.title} ${evalsParagraph.text}`;
+    expect(text).toContain('"poison the well"');
+    expect(text).toContain('automatically adopt');
+  });
 });
