@@ -21,6 +21,10 @@ export const jobs: Job[] = [
             title: 'Onebrief Code Reviewer',
             text: 'Drawing from learnings across the organizations, we developed our own tailored version of CodeRabbit to aid in the review and remediation of code quality. We worked with different organizations in the company to extend its abilities with user "personas".',
           },
+          {
+            title: 'Evals and monitoring',
+            text: 'It\'s important that we prevent an instance where we "poison the well" so to speak. As learnings come in, we evaluate the updates alongside the prompts and workflows to ensure we can more safely pull in and automatically adopt learnings from all over the organization all the time.',
+          },
         ],
       },
       {
