@@ -132,4 +132,24 @@ describe('jobs data', () => {
     expect(text).toContain('Agentic Test Lifecycle');
     expect(text).not.toMatch(/orchestrate|effectively|we follow/i);
   });
+
+  it('has Onebrief Code Reviewer as third paragraph of Outcome Engineering role', () => {
+    const onebrief = jobs.find((job) => job.id === 'onebrief');
+    expect(onebrief).toBeDefined();
+    const outcomeEngRole = onebrief!.roles[0];
+    expect(outcomeEngRole.paragraphs.length).toBeGreaterThanOrEqual(3);
+    expect(outcomeEngRole.paragraphs[2].title).toBe('Onebrief Code Reviewer');
+  });
+
+  it('Onebrief Code Reviewer paragraph includes key phrases about CodeRabbit, review and remediation, and personas', () => {
+    const onebrief = jobs.find((job) => job.id === 'onebrief');
+    expect(onebrief).toBeDefined();
+    const outcomeEngRole = onebrief!.roles[0];
+    expect(outcomeEngRole.paragraphs.length).toBeGreaterThanOrEqual(3);
+    const codeReviewerParagraph = outcomeEngRole.paragraphs[2];
+    const text = `${codeReviewerParagraph.title} ${codeReviewerParagraph.text}`;
+    expect(text).toContain('CodeRabbit');
+    expect(text).toContain('review and remediation');
+    expect(text).toContain('"personas"');
+  });
 });

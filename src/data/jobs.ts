@@ -17,6 +17,10 @@ export const jobs: Job[] = [
             title: 'Dark Factory',
             text: 'The Dark Factory is our home for repeatable development workflows. It mixes deterministic workflows with non-deterministic (agentic) workflows, which lets us call various tooling. The Agentic Test Lifecycle is one example.',
           },
+          {
+            title: 'Onebrief Code Reviewer',
+            text: 'Drawing from learnings across the organizations, we developed our own tailored version of CodeRabbit to aid in the review and remediation of code quality. We worked with different organizations in the company to extend its abilities with user "personas".',
+          },
         ],
       },
       {
