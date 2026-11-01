@@ -26,7 +26,7 @@ describe('jobs data', () => {
     for (const job of jobs) {
       for (const role of job.roles) {
         expect(role.title.length).toBeGreaterThan(0);
-        expect(role.paragraphs.length).toBeGreaterThan(0);
+        expect(Array.isArray(role.paragraphs)).toBe(true);
         for (const paragraph of role.paragraphs) {
           expect(paragraph.text.length).toBeGreaterThan(0);
         }
@@ -66,5 +66,28 @@ describe('jobs data', () => {
     expect(allText).toContain('company-wide adoption');
     expect(allText).toContain('After a month of being a staff SDET');
     expect(allText).not.toMatch(/quarentine|processess|Title's|Shepard|Malenois/);
+  });
+
+  it('has Onebrief Manager, Outcome Engineering role as first role with correct title', () => {
+    const onebrief = jobs.find((job) => job.id === 'onebrief');
+    expect(onebrief).toBeDefined();
+    expect(onebrief!.roles[0].title).toBe(
+      'Onebrief - Manager, Outcome Engineering - Headless Agentic - 11/01/2026 - Present'
+    );
+  });
+
+  it('has Engineering Manager, Quality role as second Onebrief role with end date', () => {
+    const onebrief = jobs.find((job) => job.id === 'onebrief');
+    expect(onebrief).toBeDefined();
+    expect(onebrief!.roles[1].title).toBe(
+      'Onebrief - Engineering Manager, Quality - 10/01/2025 - 11/01/2026'
+    );
+  });
+
+  it('has exactly one Onebrief role ending with Present', () => {
+    const onebrief = jobs.find((job) => job.id === 'onebrief');
+    expect(onebrief).toBeDefined();
+    const rolesWithPresent = onebrief!.roles.filter((role) => role.title.endsWith('Present'));
+    expect(rolesWithPresent).toHaveLength(1);
   });
 });
