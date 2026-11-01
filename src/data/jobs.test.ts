@@ -125,7 +125,11 @@ describe('jobs data', () => {
     expect(outcomeEngRole.paragraphs.length).toBeGreaterThanOrEqual(2);
     const darkFactoryParagraph = outcomeEngRole.paragraphs[1];
     const text = `${darkFactoryParagraph.title} ${darkFactoryParagraph.text}`;
-    expect(text).toContain('deterministic');
+    expect(text).toContain('our home for repeatable development workflows');
+    expect(text).toMatch(/(?<!non-)bdeterministic workflowsb/);
+    expect(text).toContain('non-deterministic');
+    expect(text).toContain('various tooling');
     expect(text).toContain('Agentic Test Lifecycle');
+    expect(text).not.toMatch(/orchestrate|effectively|we follow/i);
   });
 });

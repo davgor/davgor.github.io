@@ -15,7 +15,7 @@ export const jobs: Job[] = [
           },
           {
             title: 'Dark Factory',
-            text: 'A home for repeatable development workflows, the Dark Factory mixes deterministic workflows with non-deterministic (agentic) workflows, allowing us to call various tooling. We follow patterns such as the Agentic Test Lifecycle to orchestrate these different workflow types effectively.',
+            text: 'The Dark Factory is our home for repeatable development workflows. It mixes deterministic workflows with non-deterministic (agentic) workflows, which lets us call various tooling. The Agentic Test Lifecycle is one example.',
           },
         ],
       },
