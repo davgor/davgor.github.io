@@ -13,6 +13,10 @@ export const jobs: Job[] = [
             title: 'Onebrief Harness',
             text: "I lead the team that created Onebrief's specialized agent harness, which connects to our knowledge graph that interlocks with our Dark Factory. This allows us to refine our developers' agents based on learnings from across all our agentic development platforms.",
           },
+          {
+            title: 'Dark Factory',
+            text: 'The Dark Factory is our home for repeatable development workflows. It mixes deterministic workflows with non-deterministic (agentic) workflows, which lets us call various tooling. The Agentic Test Lifecycle is one example.',
+          },
         ],
       },
       {
