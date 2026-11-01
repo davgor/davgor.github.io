@@ -109,4 +109,23 @@ describe('jobs data', () => {
     expect(text).toContain('knowledge graph');
     expect(text).toContain('Dark Factory');
   });
+
+  it('has Dark Factory as second paragraph of Outcome Engineering role', () => {
+    const onebrief = jobs.find((job) => job.id === 'onebrief');
+    expect(onebrief).toBeDefined();
+    const outcomeEngRole = onebrief!.roles[0];
+    expect(outcomeEngRole.paragraphs.length).toBeGreaterThanOrEqual(2);
+    expect(outcomeEngRole.paragraphs[1].title).toBe('Dark Factory');
+  });
+
+  it('Dark Factory paragraph includes key phrases about deterministic workflows and Agentic Test Lifecycle', () => {
+    const onebrief = jobs.find((job) => job.id === 'onebrief');
+    expect(onebrief).toBeDefined();
+    const outcomeEngRole = onebrief!.roles[0];
+    expect(outcomeEngRole.paragraphs.length).toBeGreaterThanOrEqual(2);
+    const darkFactoryParagraph = outcomeEngRole.paragraphs[1];
+    const text = `${darkFactoryParagraph.title} ${darkFactoryParagraph.text}`;
+    expect(text).toContain('deterministic');
+    expect(text).toContain('Agentic Test Lifecycle');
+  });
 });
