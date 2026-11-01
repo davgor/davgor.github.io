@@ -7,7 +7,11 @@ export const jobs: Job[] = [
     logo: '/assets/onebrief.png',
     roles: [
       {
-        title: 'Onebrief - Engineering Manager, Quality - 10/01/2025 - Present',
+        title: 'Onebrief - Manager, Outcome Engineering - Headless Agentic - 11/01/2026 - Present',
+        paragraphs: [],
+      },
+      {
+        title: 'Onebrief - Engineering Manager, Quality - 10/01/2025 - 11/01/2026',
         paragraphs: [
           {
             title: 'Why was I promoted?',
