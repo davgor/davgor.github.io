@@ -26,7 +26,7 @@ describe('jobs data', () => {
     for (const job of jobs) {
       for (const role of job.roles) {
         expect(role.title.length).toBeGreaterThan(0);
-        expect(Array.isArray(role.paragraphs)).toBe(true);
+        expect(role.paragraphs.length).toBeGreaterThan(0);
         for (const paragraph of role.paragraphs) {
           expect(paragraph.text.length).toBeGreaterThan(0);
         }
@@ -89,5 +89,24 @@ describe('jobs data', () => {
     expect(onebrief).toBeDefined();
     const rolesWithPresent = onebrief!.roles.filter((role) => role.title.endsWith('Present'));
     expect(rolesWithPresent).toHaveLength(1);
+  });
+
+  it('has Onebrief Harness as first paragraph of Outcome Engineering role', () => {
+    const onebrief = jobs.find((job) => job.id === 'onebrief');
+    expect(onebrief).toBeDefined();
+    const outcomeEngRole = onebrief!.roles[0];
+    expect(outcomeEngRole.title).toContain('Manager, Outcome Engineering');
+    expect(outcomeEngRole.paragraphs.length).toBeGreaterThan(0);
+    expect(outcomeEngRole.paragraphs[0].title).toBe('Onebrief Harness');
+  });
+
+  it('Onebrief Harness paragraph includes key phrases about knowledge graph and Dark Factory', () => {
+    const onebrief = jobs.find((job) => job.id === 'onebrief');
+    expect(onebrief).toBeDefined();
+    const outcomeEngRole = onebrief!.roles[0];
+    const harnessParagraph = outcomeEngRole.paragraphs[0];
+    const text = `${harnessParagraph.title} ${harnessParagraph.text}`;
+    expect(text).toContain('knowledge graph');
+    expect(text).toContain('Dark Factory');
   });
 });
