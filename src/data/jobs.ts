@@ -8,7 +8,12 @@ export const jobs: Job[] = [
     roles: [
       {
         title: 'Onebrief - Manager, Outcome Engineering - Headless Agentic - 11/01/2026 - Present',
-        paragraphs: [],
+        paragraphs: [
+          {
+            title: 'Onebrief Harness',
+            text: "I lead the team that created Onebrief's specialized agent harness, which connects to our knowledge graph that interlocks with our Dark Factory. This allows us to refine our developers' agents based on learnings from across all our agentic development platforms.",
+          },
+        ],
       },
       {
         title: 'Onebrief - Engineering Manager, Quality - 10/01/2025 - 11/01/2026',
