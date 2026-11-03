@@ -4,8 +4,18 @@
 # Refreshed 2026-08-14 (6 entries)
 
 src/App.tsx:34 - default
-src/components/BlogCard.tsx:14 - ContentItem
+src/components/BlogCard.tsx:19 - ContentItem
 src/types/index.ts:1 - Paragraph
 src/types/index.ts:11 - Role
 src/types/index.ts:17 - Job
 src/types/index.ts:6 - Achievement
+# DGI-3: plan types consumed by the plan view (DGI-4)
+src/types/darkMechanicusPlan.ts:2 - PlanStatus
+src/types/darkMechanicusPlan.ts:4 - PlanCriterion
+src/types/darkMechanicusPlan.ts:9 - PlanEpic
+src/types/darkMechanicusPlan.ts:18 - PlanSprint
+src/types/darkMechanicusPlan.ts:24 - PlanTicket
+src/types/darkMechanicusPlan.ts:35 - PlanEdge
+src/types/darkMechanicusPlan.ts:40 - DarkMechanicusPlan
+scripts/export-dm-plan.d.mts:3 - PLAN_EPIC_ID
+scripts/export-dm-plan.d.mts:5 - serializePlan

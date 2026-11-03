@@ -1,8 +1,12 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi, afterEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import CodingReference from './CodingReference';
 
 describe('CodingReference', () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
   it('renders intro card with GitHub profile link', () => {
     render(<CodingReference />);
     expect(screen.getByText('Coding Reference')).toBeInTheDocument();
@@ -12,14 +16,18 @@ describe('CodingReference', () => {
     );
   });
 
-  it('renders portfolio, Electron Server Manager, AI-DND-Matrix, and BoosterSeat project cards', () => {
+  it('renders portfolio, Dark Mechanicus, Electron Server Manager, AI-DND-Matrix, and BoosterSeat project cards', () => {
     render(<CodingReference />);
     expect(screen.getByText('davgor.github.io')).toBeInTheDocument();
+    expect(screen.getByText('Dark Mechanicus')).toBeInTheDocument();
     expect(screen.getByText('Electron Server Manager')).toBeInTheDocument();
     expect(screen.getByText('AI-DND-Matrix')).toBeInTheDocument();
     expect(screen.getByText('BoosterSeat')).toBeInTheDocument();
     expect(
       screen.getByRole('link', { name: 'https://github.com/davgor/davgor.github.io' })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('link', { name: 'https://github.com/davgor/DarkMechanicus' })
     ).toBeInTheDocument();
     expect(
       screen.getByRole('link', { name: 'https://github.com/davgor/ElectronServerManager' })
@@ -99,5 +107,77 @@ describe('CodingReference', () => {
     expect(fullWindow).toHaveAttribute('href', '/mathlab/');
     expect(fullWindow).toHaveAttribute('target', '_blank');
     expect(fullWindow).toHaveAttribute('rel', 'noopener noreferrer');
+  });
+
+  it('describes Dark Mechanicus as local planning and execution coordination for agentic development', () => {
+    render(<CodingReference />);
+    expect(screen.getByText(/I built Dark Mechanicus/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/MCP server for agents.*Electron desktop app for people/i)
+    ).toBeInTheDocument();
+    expect(screen.getByText(/repository-owned state/i)).toBeInTheDocument();
+    expect(screen.getByText(/I review the plan graph.*press Save/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/stops at every sprint checkpoint until I approve/i)
+    ).toBeInTheDocument();
+    expect(screen.getByText(/roles are fixed when a session registers/i)).toBeInTheDocument();
+    expect(screen.getByText(/\.darkmechanicus\//i)).toBeInTheDocument();
+  });
+
+  it('links Dark Mechanicus to GitHub repository and releases page', () => {
+    render(<CodingReference />);
+    const repoLink = screen.getByRole('link', { name: 'https://github.com/davgor/DarkMechanicus' });
+    expect(repoLink).toHaveAttribute('href', 'https://github.com/davgor/DarkMechanicus');
+    const releasesLink = screen.getByRole('link', {
+      name: 'https://github.com/davgor/DarkMechanicus/releases/latest',
+    });
+    expect(releasesLink).toHaveAttribute(
+      'href',
+      'https://github.com/davgor/DarkMechanicus/releases/latest'
+    );
+  });
+
+  it('renders the Dark Mechanicus screenshots with descriptive alt text', () => {
+    render(<CodingReference />);
+    const graph = screen.getByAltText(
+      /^Dark Mechanicus plan graph for the epic Showcase Dark Mechanicus/
+    );
+    expect(graph).toHaveAttribute('src', '/assets/darkmechanicus/plan-graph.png');
+    const editor = screen.getByAltText(/^Dark Mechanicus ticket editor panel for DGI-2/);
+    expect(editor).toHaveAttribute('src', '/assets/darkmechanicus/ticket-editor.png');
+  });
+
+  it('adds the plan view section with caption and repository link', () => {
+    vi.stubGlobal('fetch', vi.fn().mockReturnValue(new Promise(() => undefined)));
+    render(<CodingReference />);
+    expect(
+      screen.getByRole('heading', { name: 'Dark Mechanicus plan for this section' })
+    ).toBeInTheDocument();
+    expect(screen.getByText(/saved plan of the epic that added this section/)).toBeInTheDocument();
+    expect(screen.queryByText(/revision 2/)).not.toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Dark Mechanicus on GitHub' })).toHaveAttribute(
+      'href',
+      'https://github.com/davgor/DarkMechanicus'
+    );
+  });
+
+  it('puts the plan view inside the single Dark Mechanicus card', () => {
+    vi.stubGlobal('fetch', vi.fn().mockReturnValue(new Promise(() => undefined)));
+    render(<CodingReference />);
+    const card = screen
+      .getByRole('heading', { name: 'Dark Mechanicus', level: 2 })
+      .closest('article');
+    expect(card).not.toBeNull();
+    const planHeading = screen.getByRole('heading', {
+      name: 'Dark Mechanicus plan for this section',
+    });
+    expect(card!.contains(planHeading)).toBe(true);
+    expect(card!.querySelector('.plan-view')).not.toBeNull();
+    expect(card!.querySelectorAll('img[src^="/assets/darkmechanicus/"]')).toHaveLength(2);
+  });
+
+  it('still renders the Fantasy World Generator showcase', () => {
+    render(<CodingReference />);
+    expect(screen.getByTitle('MathLab world showcase')).toBeInTheDocument();
   });
 });

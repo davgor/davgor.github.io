@@ -1,0 +1,13 @@
+{
+  "author": {
+    "label": "Claude Code planner",
+    "role": "planner"
+  },
+  "body": "POISON_COMMENT_TEXT /Users/poisonuser",
+  "createdAt": "2026-10-02T21:10:58.705Z",
+  "epicId": "ep_01m3tyvkcv6kzg24j40g1mzh87",
+  "format": "darkmechanicus.comment",
+  "formatVersion": 1,
+  "id": "cm_01m3z79fch77n84b3v92mfc55r",
+  "ticketId": null
+}
