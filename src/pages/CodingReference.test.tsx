@@ -153,7 +153,8 @@ describe('CodingReference', () => {
     expect(
       screen.getByRole('heading', { name: 'Dark Mechanicus plan for this section' })
     ).toBeInTheDocument();
-    expect(screen.getByText(/revision 2, saved 2 October 2026/)).toBeInTheDocument();
+    expect(screen.getByText(/saved plan of the epic that added this section/)).toBeInTheDocument();
+    expect(screen.queryByText(/revision 2/)).not.toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Dark Mechanicus on GitHub' })).toHaveAttribute(
       'href',
       'https://github.com/davgor/DarkMechanicus'

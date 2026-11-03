@@ -75,8 +75,8 @@ const CodingReference: React.FC = () => {
       <section aria-labelledby="dm-plan-title" className="dm-plan-section">
         <h2 id="dm-plan-title">Dark Mechanicus plan for this section</h2>
         <p>
-          This is the saved plan (revision 2, saved 2 October 2026) of the epic that added this
-          section, read from the repository&apos;s committed Dark Mechanicus records.{' '}
+          This is the saved plan of the epic that added this section, read from the
+          repository&apos;s committed Dark Mechanicus records.{' '}
           <a
             href="https://github.com/davgor/DarkMechanicus"
             target="_blank"

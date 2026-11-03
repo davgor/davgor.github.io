@@ -103,7 +103,20 @@ const DarkMechanicusPlanView: React.FC<Props> = ({ url }) => {
 const sizeVars = (s: { w: number; h: number }, prefix: string) =>
   ({ [`--${prefix}w`]: `${s.w}px`, [`--${prefix}h`]: `${s.h}px` }) as CSSProperties;
 
+function formatSavedOn(iso: unknown): string | null {
+  if (typeof iso !== 'string') return null;
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return null;
+  return d.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+}
+
 const PlanBody: React.FC<{ plan: DarkMechanicusPlan }> = ({ plan }) => {
+  const savedOn = formatSavedOn(plan.epic.savedAt);
   const sprints = layoutPlan(plan);
   const titleOf = new Map(plan.tickets.map((t) => [t.key, t.title]));
   const prereqsOf = (key: string) =>
@@ -115,7 +128,8 @@ const PlanBody: React.FC<{ plan: DarkMechanicusPlan }> = ({ plan }) => {
         {plan.epic.title}
       </h3>
       <p className="plan-view__meta">
-        Read-only snapshot of the saved plan (revision {plan.epic.revisionNumber}).
+        Read-only snapshot of the saved plan (revision {plan.epic.revisionNumber}
+        {savedOn ? `, saved ${savedOn}` : ''}).
       </p>
       {sprints.map((sprint) => (
         <div className="plan-view__sprint" key={sprint.ordinal}>

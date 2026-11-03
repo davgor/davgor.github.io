@@ -276,3 +276,15 @@ describe('layoutPlan geometry', () => {
     expect(screen.queryByRole('alert')).toBeNull();
   });
 });
+
+describe('DarkMechanicusPlanView revision meta', () => {
+  it('shows the revision number and save date from the data, not hard-coded', async () => {
+    mockFetch({
+      ...plan,
+      epic: { ...plan.epic, revisionNumber: 7, savedAt: '2027-03-05T10:00:00.000Z' },
+    });
+    render(<DarkMechanicusPlanView />);
+    await screen.findByText(plan.epic.title);
+    expect(screen.getByText(/revision 7, saved 5 March 2027/)).toBeInTheDocument();
+  });
+});
