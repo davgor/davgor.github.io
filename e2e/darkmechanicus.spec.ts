@@ -45,6 +45,35 @@ test.describe('Coding Reference: Dark Mechanicus', () => {
     ).toHaveAttribute('href', 'https://github.com/davgor/DarkMechanicus');
   });
 
+  test('plan view sits inside one Dark Mechanicus card with a gap before the next card', async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await page.goto('/coding-reference');
+    const card = page.locator('article.content-card', {
+      has: page.getByRole('heading', { name: 'Dark Mechanicus', level: 2, exact: true }),
+    });
+    await expect(card).toHaveCount(1);
+    await expect(card.getByTestId('plan-list')).toBeVisible();
+    await expect(card.locator('.plan-view')).toHaveCount(1);
+    const next = page.locator('article.content-card', {
+      has: page.getByRole('heading', { name: 'davgor.github.io', level: 2, exact: true }),
+    });
+    const a = (await card.boundingBox())!;
+    const b = (await next.boundingBox())!;
+    expect(b.y - (a.y + a.height)).toBeGreaterThanOrEqual(16);
+    // The whole graph fits in the card without internal horizontal scrolling.
+    const scroller = card.locator('.plan-view__scroller').first();
+    const fits = await scroller.evaluate((el) => el.scrollWidth <= el.clientWidth);
+    expect(fits).toBe(true);
+    for (const key of KEYS) {
+      const node = card.getByTestId('plan-node').filter({ hasText: key });
+      const nb = (await node.boundingBox())!;
+      const cb = (await card.boundingBox())!;
+      expect(nb.x + nb.width).toBeLessThanOrEqual(cb.x + cb.width);
+    }
+  });
+
   test('no page-level horizontal scroll at 375px', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 800 });
     await page.goto('/coding-reference');

@@ -1,8 +1,8 @@
 import type { DarkMechanicusPlan, PlanEdge, PlanTicket } from '../types/darkMechanicusPlan';
 
-export const NODE_W = 208;
-export const NODE_H = 96;
-const COL_GAP = 64;
+export const NODE_W = 164;
+export const NODE_H = 112;
+const COL_GAP = 32;
 const ROW_GAP = 16;
 const PAD = 12;
 const LANE = 14;

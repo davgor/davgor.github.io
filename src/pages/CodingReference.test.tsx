@@ -161,6 +161,21 @@ describe('CodingReference', () => {
     );
   });
 
+  it('puts the plan view inside the single Dark Mechanicus card', () => {
+    vi.stubGlobal('fetch', vi.fn().mockReturnValue(new Promise(() => undefined)));
+    render(<CodingReference />);
+    const card = screen
+      .getByRole('heading', { name: 'Dark Mechanicus', level: 2 })
+      .closest('article');
+    expect(card).not.toBeNull();
+    const planHeading = screen.getByRole('heading', {
+      name: 'Dark Mechanicus plan for this section',
+    });
+    expect(card!.contains(planHeading)).toBe(true);
+    expect(card!.querySelector('.plan-view')).not.toBeNull();
+    expect(card!.querySelectorAll('img[src^="/assets/darkmechanicus/"]')).toHaveLength(2);
+  });
+
   it('still renders the Fantasy World Generator showcase', () => {
     render(<CodingReference />);
     expect(screen.getByTitle('MathLab world showcase')).toBeInTheDocument();

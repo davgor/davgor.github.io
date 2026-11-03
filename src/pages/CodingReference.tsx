@@ -20,6 +20,22 @@ const darkMechanicusTicketEditor: ContentImage = {
   alt: 'Dark Mechanicus ticket editor panel for DGI-2, Capture and prepare Dark Mechanicus app screenshots, open beside the plan graph, showing the four acceptance criteria and the capability profile (quality, work type, reasoning, tools, modalities, context and skills).',
 };
 
+const planSection = (
+  <section key="dm-plan" aria-labelledby="dm-plan-title" className="dm-plan-section">
+    <h3 id="dm-plan-title" className="content-card__subtitle">
+      Dark Mechanicus plan for this section
+    </h3>
+    <p className="content-card__text">
+      This is the saved plan of the epic that added this section, read from the repository&apos;s
+      committed Dark Mechanicus records.{' '}
+      <a href="https://github.com/davgor/DarkMechanicus" target="_blank" rel="noopener noreferrer">
+        Dark Mechanicus on GitHub
+      </a>
+    </p>
+    <DarkMechanicusPlanView />
+  </section>
+);
+
 const CodingReference: React.FC = () => {
   return (
     <>
@@ -70,23 +86,9 @@ const CodingReference: React.FC = () => {
           'https://github.com/davgor/DarkMechanicus/releases/latest',
           darkMechanicusPlanGraph,
           darkMechanicusTicketEditor,
+          { type: 'node', node: planSection },
         ]}
       />
-      <section aria-labelledby="dm-plan-title" className="dm-plan-section">
-        <h2 id="dm-plan-title">Dark Mechanicus plan for this section</h2>
-        <p>
-          This is the saved plan of the epic that added this section, read from the
-          repository&apos;s committed Dark Mechanicus records.{' '}
-          <a
-            href="https://github.com/davgor/DarkMechanicus"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Dark Mechanicus on GitHub
-          </a>
-        </p>
-        <DarkMechanicusPlanView />
-      </section>
       <BlogCard
         title="davgor.github.io"
         content={[

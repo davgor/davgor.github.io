@@ -4,7 +4,7 @@
 # Refreshed 2026-08-14 (6 entries)
 
 src/App.tsx:34 - default
-src/components/BlogCard.tsx:14 - ContentItem
+src/components/BlogCard.tsx:19 - ContentItem
 src/types/index.ts:1 - Paragraph
 src/types/index.ts:11 - Role
 src/types/index.ts:17 - Job

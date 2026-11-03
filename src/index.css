@@ -244,6 +244,8 @@ a:hover {
 }
 
 .content-card__body {
+  min-width: 0;
+  overflow-wrap: anywhere;
   padding: var(--space-md) var(--space-lg);
   background: var(--color-surface-strong);
 }
@@ -499,14 +501,23 @@ a:hover {
   }
 }
 
-/* ----- Dark Mechanicus plan view (read-only) ----- */
+/* ----- Dark Mechanicus plan view (read-only), inside the Dark Mechanicus card ----- */
+
+.dm-plan-section {
+  margin-top: var(--space-md);
+}
+
+.content-card__subtitle {
+  margin: 0 0 var(--space-sm);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.35;
+}
 
 .plan-view {
-  padding: var(--space-md);
-  border-radius: var(--radius-card);
-  background: var(--color-surface-strong);
   color: var(--color-text);
-  box-shadow: var(--shadow-card);
   max-width: 100%;
   min-width: 0;
 }

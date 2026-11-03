@@ -184,25 +184,25 @@ describe('layoutPlan geometry', () => {
       ['DGI-5', 2, 0],
       ['DGI-6', 3, 0],
     ]);
-    expect(at('DGI-2').wide).toEqual({ x: 12, y: 124 });
-    expect(at('DGI-3').wide).toEqual({ x: 12, y: 236 });
-    expect(at('DGI-4').wide).toEqual({ x: 284, y: 12 });
-    expect(at('DGI-6').wide).toEqual({ x: 828, y: 12 });
+    expect(at('DGI-2').wide).toEqual({ x: 12, y: 140 });
+    expect(at('DGI-3').wide).toEqual({ x: 12, y: 268 });
+    expect(at('DGI-4').wide).toEqual({ x: 208, y: 12 });
+    expect(at('DGI-6').wide).toEqual({ x: 600, y: 12 });
     expect(sprint.nodes.map((n) => n.narrow)).toEqual(
-      [12, 124, 236, 348, 460, 572].map((y) => ({ x: 12, y }))
+      [12, 140, 268, 396, 524, 652].map((y) => ({ x: 12, y }))
     );
-    expect(sprint.wideSize).toEqual({ w: 1048, h: 344 });
-    expect(sprint.narrowSize).toEqual({ w: 296, h: 680 });
+    expect(sprint.wideSize).toEqual({ w: 776, h: 392 });
+    expect(sprint.narrowSize).toEqual({ w: 252, h: 776 });
   });
 
   it('routes edges from the right of a prerequisite to the left of its dependant', () => {
     const [sprint] = layoutPlan(plan);
     const path = (from: string, to: string) =>
       sprint.edges.find((e) => e.edge.from === from && e.edge.to === to)!;
-    expect(path('DGI-3', 'DGI-4').wide).toBe('M220 284 C252 284 252 60 284 60');
-    expect(path('DGI-1', 'DGI-5').wide).toBe('M220 60 C388 60 388 60 556 60');
-    expect(path('DGI-3', 'DGI-4').narrow).toBe('M220 284 H256 V396 H220');
-    expect(path('DGI-5', 'DGI-6').narrow).toBe('M220 508 H228 V620 H220');
+    expect(path('DGI-3', 'DGI-4').wide).toBe('M176 324 C192 324 192 68 208 68');
+    expect(path('DGI-1', 'DGI-5').wide).toBe('M176 68 C290 68 290 68 404 68');
+    expect(path('DGI-3', 'DGI-4').narrow).toBe('M176 324 H212 V452 H176');
+    expect(path('DGI-5', 'DGI-6').narrow).toBe('M176 580 H184 V708 H176');
   });
 
   it('sizes the drawing surfaces from the layout', async () => {
@@ -211,11 +211,11 @@ describe('layoutPlan geometry', () => {
     await screen.findByText(plan.epic.title);
     const wide = container.querySelector('svg[data-layout="wide"]')!;
     const narrow = container.querySelector('svg[data-layout="narrow"]')!;
-    expect([wide.getAttribute('width'), wide.getAttribute('height')]).toEqual(['1048', '344']);
-    expect([narrow.getAttribute('width'), narrow.getAttribute('height')]).toEqual(['296', '680']);
+    expect([wide.getAttribute('width'), wide.getAttribute('height')]).toEqual(['776', '392']);
+    expect([narrow.getAttribute('width'), narrow.getAttribute('height')]).toEqual(['252', '776']);
     const canvas = container.querySelector('.plan-view__canvas') as HTMLElement;
-    expect(canvas.style.getPropertyValue('--w')).toBe('1048px');
-    expect(canvas.style.getPropertyValue('--nh')).toBe('680px');
+    expect(canvas.style.getPropertyValue('--w')).toBe('776px');
+    expect(canvas.style.getPropertyValue('--nh')).toBe('776px');
   });
 
   const multi: DarkMechanicusPlan = {
