@@ -1,0 +1,13 @@
+{
+  "author": {
+    "label": "dm CLI",
+    "role": "orchestrator"
+  },
+  "body": "Person approved the four section copy, and asked to include the npm audit dependency fixes in PR #11 (scope extension beyond the role data). Merge go-ahead given conditional on all tests passing. Role/EM Quality dates still being confirmed: person answered \"11/01/2025 for quality, 11/01/2026 for outcome\", which implies a one-year gap; clarification requested.",
+  "createdAt": "2026-11-03T00:32:13.749Z",
+  "epicId": "ep_01m69xdckz30dfj3kzedbd60ck",
+  "format": "darkmechanicus.comment",
+  "formatVersion": 1,
+  "id": "cm_01m6fd48dnz02rtbartxmz4cff",
+  "ticketId": "tk_01m69xhk0ccpj1s7gw21fv3b7n"
+}

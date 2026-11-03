@@ -1,0 +1,13 @@
+{
+  "author": {
+    "label": "dm CLI",
+    "role": "orchestrator"
+  },
+  "body": "**Review note (orchestrator):** the plan section caption in `src/pages/CodingReference.tsx` hard-codes *revision 2, saved 2 October 2026*. `plan.json` already carries `epic.revisionNumber` and `epic.savedAt`, and the plan view header shows the live revision. If a newer revision of this epic is ever saved and committed, the caption goes stale. This is not an acceptance-criteria failure. Your call whether to fix it in PR review (DGI-6) or leave it.",
+  "createdAt": "2026-11-03T00:52:14.154Z",
+  "epicId": "ep_01m3tyvkcv6kzg24j40g1mzh87",
+  "format": "darkmechanicus.comment",
+  "formatVersion": 1,
+  "id": "cm_01m6fe8wpa3d3ysw8trw7463d5",
+  "ticketId": "tk_01m3tyy00tggzp6b5c8v9p228c"
+}

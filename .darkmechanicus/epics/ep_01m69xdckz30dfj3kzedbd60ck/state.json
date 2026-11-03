@@ -1,0 +1,54 @@
+{
+  "branch": {
+    "name": "epic/onebrief-outcome-engineering",
+    "repository": null,
+    "startCommit": "063396f"
+  },
+  "completedAt": "2026-11-03T01:40:40.963Z",
+  "createdAt": "2026-10-31T21:21:23.583Z",
+  "epicId": "ep_01m69xdckz30dfj3kzedbd60ck",
+  "format": "darkmechanicus.epic-state",
+  "formatVersion": 1,
+  "generation": 18,
+  "outcome": {
+    "recordedAt": "2026-11-03T01:40:40.963Z",
+    "runId": "rn_01m6a2h1f245dvj7dv40rstydx",
+    "successCriteria": [
+      {
+        "criterionId": "s1",
+        "met": true,
+        "note": "roles[0] 'Onebrief - Manager, Outcome Engineering - Headless Agentic - 11/01/2026 - Present'; EM Quality ends 11/01/2026."
+      },
+      {
+        "criterionId": "s2",
+        "met": true,
+        "note": "Four titled paragraphs in order, first-person, faithful; copy approved by the person."
+      },
+      {
+        "criterionId": "s3",
+        "met": true,
+        "note": "jobs.test.ts asserts title, each section title at its index and key phrases; full gate passed (fireguard A)."
+      },
+      {
+        "criterionId": "s4",
+        "met": true,
+        "note": "PR #11 merged with red-team review; Pages deploy 41559296776 success; live page verified at desktop and 375px, no horizontal scroll."
+      }
+    ],
+    "summary": "The Experience page now shows the Manager, Outcome Engineering - Headless Agentic role first on the Onebrief card, with its four product sections, live on davgor.github.io."
+  },
+  "provenance": null,
+  "status": "completed",
+  "ticketStatuses": {
+    "tk_01m69xdckz1d6ythksxjfp2mgw": "completed",
+    "tk_01m69xgab34qxbyc9pny1srx1r": "completed",
+    "tk_01m69xgg2y1akc4p9ja2c7wt38": "completed",
+    "tk_01m69xgg2y3966yq65z9704f4r": "completed",
+    "tk_01m69xgg2yksvr88v32fdzynn3": "completed",
+    "tk_01m69xgg2ypkj7g5dnpe1d8w28": "completed",
+    "tk_01m69xhk0bh7w4rhbgvtxmjj40": "backlog",
+    "tk_01m69xhk0ccpj1s7gw21fv3b7n": "completed"
+  },
+  "title": "Onebrief: Manager, Outcome Engineering - Headless Agentic role",
+  "updatedAt": "2026-11-03T01:40:40.991Z"
+}
