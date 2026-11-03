@@ -1,5 +1,5 @@
 import { Locator, Page } from '@playwright/test';
-import { Jimp } from 'jimp';
+import { PNG } from 'pngjs';
 import fs from 'fs';
 import path from 'path';
 import { v4 as uuidv4 } from 'uuid';
@@ -36,22 +36,32 @@ export class ScreenshotInteraction {
   }
 
   async findLocatorViaScreenshot(buttonScreenshotPath: string) {
-    const screenshot = await Jimp.read(await this.page.screenshot({ fullPage: true }));
-    const buttonScreenshot = await Jimp.read(buttonScreenshotPath);
+    const screenshot = PNG.sync.read(await this.page.screenshot({ fullPage: true }));
+    const buttonScreenshot = PNG.sync.read(fs.readFileSync(buttonScreenshotPath));
 
     const screenshotWidth = screenshot.width;
     const screenshotHeight = screenshot.height;
     const buttonWidth = buttonScreenshot.width;
     const buttonHeight = buttonScreenshot.height;
 
+    // PNG.data is RGBA, 4 bytes per pixel, row-major.
+    const pixelMatches = (sx: number, sy: number, bx: number, by: number) => {
+      const s = (sy * screenshotWidth + sx) * 4;
+      const b = (by * buttonWidth + bx) * 4;
+      return (
+        screenshot.data[s] === buttonScreenshot.data[b] &&
+        screenshot.data[s + 1] === buttonScreenshot.data[b + 1] &&
+        screenshot.data[s + 2] === buttonScreenshot.data[b + 2] &&
+        screenshot.data[s + 3] === buttonScreenshot.data[b + 3]
+      );
+    };
+
     for (let x = 0; x < screenshotWidth - buttonWidth; x++) {
       for (let y = 0; y < screenshotHeight - buttonHeight; y++) {
         let match = true;
         for (let bx = 0; bx < buttonWidth; bx++) {
           for (let by = 0; by < buttonHeight; by++) {
-            if (
-              screenshot.getPixelColor(x + bx, y + by) !== buttonScreenshot.getPixelColor(bx, by)
-            ) {
+            if (!pixelMatches(x + bx, y + by, bx, by)) {
               match = false;
               break;
             }
