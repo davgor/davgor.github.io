@@ -3,6 +3,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { writeFileSync } from "fs";
 import { resolve } from "path";
+import { darkMechanicusPlan } from "./scripts/vite-plugin-dm-plan.mjs";
 
 // https://vitejs.dev/config/
 const basePath = process.env.BASE || process.env.VITE_BASE || "/";
@@ -10,6 +11,7 @@ const basePath = process.env.BASE || process.env.VITE_BASE || "/";
 export default defineConfig({
   plugins: [
     react(),
+    darkMechanicusPlan(),
     {
       name: "create-nojekyll",
       closeBundle() {

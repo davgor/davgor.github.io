@@ -11,7 +11,12 @@ export interface ContentHtml {
   content: string;
 }
 
-export type ContentItem = string | ContentImage | ContentHtml;
+interface ContentNode {
+  type: 'node';
+  node: React.ReactNode;
+}
+
+export type ContentItem = string | ContentImage | ContentHtml | ContentNode;
 
 interface BlogCardProps {
   title: string;
@@ -71,6 +76,8 @@ const BlogCard: React.FC<BlogCardProps> = ({
           return (
             <img key={index} src={item.src} alt={item.alt || ''} className="content-card__image" />
           );
+        } else if (item.type === 'node') {
+          return <React.Fragment key={index}>{item.node}</React.Fragment>;
         } else if (item.type === 'html') {
           return <div key={index} dangerouslySetInnerHTML={{ __html: item.content }} />;
         }
