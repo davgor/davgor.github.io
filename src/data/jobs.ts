@@ -7,7 +7,28 @@ export const jobs: Job[] = [
     logo: '/assets/onebrief.png',
     roles: [
       {
-        title: 'Onebrief - Engineering Manager, Quality - 10/01/2025 - Present',
+        title: 'Onebrief - Manager, Outcome Engineering - Headless Agentic - 11/01/2026 - Present',
+        paragraphs: [
+          {
+            title: 'Onebrief Harness',
+            text: "I lead the team that created Onebrief's specialized agent harness, which connects to our knowledge graph that interlocks with our Dark Factory. This allows us to refine our developers' agents based on learnings from across all our agentic development platforms.",
+          },
+          {
+            title: 'Dark Factory',
+            text: 'The Dark Factory is our home for repeatable development workflows. It mixes deterministic workflows with non-deterministic (agentic) workflows, which lets us call various tooling. The Agentic Test Lifecycle is one example.',
+          },
+          {
+            title: 'Onebrief Code Reviewer',
+            text: 'Drawing from learnings across the organizations, we developed our own tailored version of CodeRabbit to aid in the review and remediation of code quality. We worked with different organizations in the company to extend its abilities with user "personas".',
+          },
+          {
+            title: 'Evals and monitoring',
+            text: 'It\'s important that we prevent an instance where we "poison the well" so to speak. As learnings come in, we evaluate the updates alongside the prompts and workflows to ensure we can more safely pull in and automatically adopt learnings from all over the organization all the time.',
+          },
+        ],
+      },
+      {
+        title: 'Onebrief - Engineering Manager, Quality - 10/01/2025 - 11/01/2026',
         paragraphs: [
           {
             title: 'Why was I promoted?',
