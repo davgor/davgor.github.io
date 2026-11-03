@@ -1,10 +1,23 @@
 import React from 'react';
 import BlogCard, { ContentImage } from '../components/BlogCard';
+import DarkMechanicusPlanView from '../components/DarkMechanicusPlanView';
 
 const electronServerManager: ContentImage = {
   type: 'image',
   src: '/assets/Server_manager.png',
   alt: 'App screenshot',
+};
+
+const darkMechanicusPlanGraph: ContentImage = {
+  type: 'image',
+  src: '/assets/darkmechanicus/plan-graph.png',
+  alt: 'Dark Mechanicus plan graph for the epic Showcase Dark Mechanicus on Coding Reference: six ticket nodes (DGI-1 to DGI-6) in one sprint, joined by prerequisite arrows, with DGI-1, DGI-3 and DGI-4 accepted, DGI-2 running, DGI-5 and DGI-6 waiting, and the status legend at right.',
+};
+
+const darkMechanicusTicketEditor: ContentImage = {
+  type: 'image',
+  src: '/assets/darkmechanicus/ticket-editor.png',
+  alt: 'Dark Mechanicus ticket editor panel for DGI-2, Capture and prepare Dark Mechanicus app screenshots, open beside the plan graph, showing the four acceptance criteria and the capability profile (quality, work type, reasoning, tools, modalities, context and skills).',
 };
 
 const CodingReference: React.FC = () => {
@@ -45,6 +58,34 @@ const CodingReference: React.FC = () => {
           sandbox="allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox"
           className="mathlab-window"
         />
+      </section>
+      <BlogCard
+        title="Dark Mechanicus"
+        content={[
+          'I built Dark Mechanicus to coordinate planning and execution for agentic development on my own machine. It has an MCP server for agents and an Electron desktop app for people, and both work on the same repository-owned state under the same rules, on Windows and macOS.',
+          'The flow is the part I care about. An agent drafts an epic as tickets with acceptance criteria and capability profiles, wires up dependencies and sprint checkpoints, and saves it only as a draft. I review the plan graph in the desktop app and press Save, because the saved plan only changes on Save. An orchestrator agent then runs that saved revision, claims ready tickets for its workers, and stops at every sprint checkpoint until I approve.',
+          'Most of the design is about keeping those rules out of the clients. The rules live in one shared command layer, so the MCP handlers and the desktop app are only adapters, and roles are fixed when a session registers rather than taken from anything a caller supplies. Plans are written as JSON records under .darkmechanicus/ that Git tracks, while the SQLite working database sits in a Git-ignored local/ folder. The MCP server runs headless, so agents can plan and execute with the desktop closed.',
+          'I wrote it with Electron, React, and TypeScript, using the built-in node:sqlite, the MCP SDK, React Flow for the plan graph, and zod for validation. CI packages Windows and macOS builds to GitHub Releases, and packaged Windows builds update themselves through electron-updater; macOS installs are manual for now.',
+          'https://github.com/davgor/DarkMechanicus',
+          'https://github.com/davgor/DarkMechanicus/releases/latest',
+          darkMechanicusPlanGraph,
+          darkMechanicusTicketEditor,
+        ]}
+      />
+      <section aria-labelledby="dm-plan-title" className="dm-plan-section">
+        <h2 id="dm-plan-title">Dark Mechanicus plan for this section</h2>
+        <p>
+          This is the saved plan (revision 2, saved 2 October 2026) of the epic that added this
+          section, read from the repository&apos;s committed Dark Mechanicus records.{' '}
+          <a
+            href="https://github.com/davgor/DarkMechanicus"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Dark Mechanicus on GitHub
+          </a>
+        </p>
+        <DarkMechanicusPlanView />
       </section>
       <BlogCard
         title="davgor.github.io"

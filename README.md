@@ -122,3 +122,25 @@ Both embed levels are sandboxed without same-origin privilege. Downloads and exp
 remain available. Only the selected sample loads, and the outer iframe loads lazily. The full diagnostic
 snapshots still require substantial browser memory. This is a standalone Python simulation showcase;
 it does not provide Unreal integration or packaged gameplay.
+
+## Dark Mechanicus plan view
+
+Coding Reference renders a read-only plan from this repository's own committed
+[Dark Mechanicus](https://github.com/davgor/DarkMechanicus) records. The plan is generated, not
+committed: `scripts/export-dm-plan.mjs` reads `.darkmechanicus/epics/<epicId>/current.json`, the
+snapshot it points at, and `state.json`, and `scripts/vite-plugin-dm-plan.mjs` serves the result at
+`/darkmechanicus/plan.json` in `npm run dev` and `vite preview`, and writes it to
+`dist/darkmechanicus/plan.json` in `npm run build` (and so in CI). Dark Mechanicus does not need to
+be installed. The TypeScript shape is `DarkMechanicusPlan` in `src/types/darkMechanicusPlan.ts`.
+
+The export is an allowlist: epic title, status, revision number, saved-at date and success
+criteria; sprints (ordinal, goal, exit criteria); tickets (key, title, sprint, status, optional);
+edges by ticket key. Ticket bodies, references, capability profiles, comments, branch and commit
+data, run history and every project, machine, session and run id are never copied. It fails the
+build, naming the file, if records are missing, a `format`/`formatVersion` is unknown, the snapshot
+is missing, or an edge names an unknown ticket. Output is deterministic (no timestamps).
+
+To show another epic, change `PLAN_EPIC_ID` in `scripts/export-dm-plan.mjs` to its id (it must be
+committed under `.darkmechanicus/epics/`). Tests use the fixture in `scripts/__fixtures__/dm-plan`,
+which holds copied records plus poisoned values: `npx vitest run scripts/export-dm-plan.test.mjs`.
+Save a new plan revision in Dark Mechanicus and commit the updated records to refresh the view.
