@@ -25,6 +25,18 @@ export const jobs: Job[] = [
             title: 'Evals and monitoring',
             text: 'It\'s important that we prevent an instance where we "poison the well" so to speak. As learnings come in, we evaluate the updates alongside the prompts and workflows to ensure we can more safely pull in and automatically adopt learnings from all over the organization all the time.',
           },
+          {
+            title: 'Cloud sessions and persistent multiplayer',
+            text: 'I led the architecture and project direction for our in-house cloud sessions, with the team driving implementation directly in the harness on deployed EC2 development environments. Persistent multiplayer lets collaborators work on the same project, paired-programming style. People can jump in and work directly with the agents, or take a fire-and-forget approach.',
+          },
+          {
+            title: 'Just-in-time context bombs',
+            text: 'I led the architecture and direction for our just-in-time context bombs, with the team driving implementation. I think of the knowledge graph as a spiderweb: developer learnings sit at the center and are injected directly and immediately. Specialist knowledge, like product and UI/UX information, sits farther out and comes through the normal context-injection flow. Tags reference context injections against that knowledge graph.',
+          },
+          {
+            title: 'Braveheart initiative',
+            text: 'I led Braveheart, our internal beta program, coordinating with the different tools teams to build feedback loops. A big part of my role was helping people embrace the new technology and tooling.',
+          },
         ],
       },
       {
