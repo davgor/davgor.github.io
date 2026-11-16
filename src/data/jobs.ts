@@ -32,7 +32,7 @@ export const jobs: Job[] = [
         paragraphs: [
           {
             title: 'Why was I promoted?',
-            text: "After a month of being a staff SDET at Onebrief, we were expanding rapidly. I had just finished hiring the director of quality, working with senior leadership to fill the role, and there was still some ambiguity across the organization on my team's role in day-to-day life. So I would take over officially as the engineering manager for my team, train my replacement, and work on rooting my team's reputation in the organization, as well as having the authority to implement a quality strategy for my team and the organization to follow.",
+            text: "After a year of being a staff SDET at Onebrief, we were expanding rapidly. I had just finished hiring the director of quality, working with senior leadership to fill the role, and there was still some ambiguity across the organization on my team's role in day-to-day life. So I would take over officially as the engineering manager for my team, train my replacement, and work on rooting my team's reputation in the organization, as well as having the authority to implement a quality strategy for my team and the organization to follow.",
           },
           {
             title: 'Finalizing Quality Coach process',
@@ -91,7 +91,7 @@ export const jobs: Job[] = [
         },
       },
       {
-        title: 'Onebrief - Staff SDET - 09/01/2025 - 10/01/2025',
+        title: 'Onebrief - Staff SDET - 09/01/2024 - 10/01/2025',
         paragraphs: [
           {
             title: 'Why I was hired',
@@ -149,7 +149,7 @@ export const jobs: Job[] = [
     logo: '/assets/blackpointlogo.png',
     roles: [
       {
-        title: 'Blackpoint Cyber - QA Manager - 05/21/2023 - 09/01/2025',
+        title: 'Blackpoint Cyber - QA Manager - 05/21/2023 - 09/01/2024',
         paragraphs: [
           {
             title: 'Why I was hired',
