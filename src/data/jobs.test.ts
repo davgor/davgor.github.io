@@ -64,7 +64,7 @@ describe('jobs data', () => {
     expect(allText).toContain("improve the team's efficiency to the point where");
     expect(allText).toContain('full-fledged QA');
     expect(allText).toContain('company-wide adoption');
-    expect(allText).toContain('After a month of being a staff SDET');
+    expect(allText).toContain('After a year of being a staff SDET');
     expect(allText).not.toMatch(/quarentine|processess|Title's|Shepard|Malenois/);
   });
 
