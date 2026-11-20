@@ -25,6 +25,30 @@ export const jobs: Job[] = [
             title: 'Evals and monitoring',
             text: 'It\'s important that we prevent an instance where we "poison the well" so to speak. As learnings come in, we evaluate the updates alongside the prompts and workflows to ensure we can more safely pull in and automatically adopt learnings from all over the organization all the time.',
           },
+          {
+            title: 'Cloud sessions and persistent multiplayer',
+            text: 'I led the architecture and project direction for our in-house cloud sessions, with the team driving implementation directly in the harness on deployed EC2 development environments. Persistent multiplayer lets collaborators work on the same project, paired-programming style. People can jump in and work directly with the agents, or take a fire-and-forget approach.',
+          },
+          {
+            title: 'Just-in-time context bombs',
+            text: 'I led the architecture and direction for our just-in-time context bombs, with the team driving implementation. I think of the knowledge graph as a spiderweb: developer learnings sit at the center and are injected directly and immediately. Specialist knowledge, like product and UI/UX information, sits farther out and comes through the normal context-injection flow. Tags reference context injections against that knowledge graph.',
+          },
+          {
+            title: 'Braveheart initiative',
+            text: 'I led Braveheart, our internal beta program, coordinating with the different tools teams to build feedback loops. A big part of my role was helping people embrace the new technology and tooling.',
+          },
+          {
+            title: 'Fast feedback before more autonomy',
+            text: 'My quality background shapes how I approach headless development: agents need fast, trustworthy feedback. I push for test-driven development, defining the end-to-end behavior before implementation and supporting it with unit, database, integration, and component tests where they apply. The goal is to give the agents evidence they can act on, while engineers own the architecture, infrastructure, and acceptance criteria.',
+          },
+          {
+            title: 'Helping people work with agent swarms',
+            text: 'I approach adoption through hands-on collaboration. In multiplayer sessions, nontechnical collaborators can contribute as planners, discussing ideas and requirements while engineers refine the scope and keep the agents on track. With technical peers, I encourage building a small local software factory and using it on a real project. Understanding the orchestrator, its workers, and their feedback loops builds the confidence to direct the system yourself.',
+          },
+          {
+            title: 'An evolving engineering practice',
+            text: 'I use personal projects like Dark Mechanicus to explore orchestration and quality controls, and to capture reusable lessons from successful experiments. Evals and knowledge graphs remain areas I am actively developing my understanding of. Catching up on evals has reinforced a practical lesson: the ability to measure whether a change helps needs to grow alongside the ability to automate it.',
+          },
         ],
       },
       {
@@ -64,7 +88,7 @@ export const jobs: Job[] = [
           },
           {
             title: 'The Agentic Test Lifecycle',
-            text: "We implemented a test case manager that would review live test statistics from OTEL, then based on those metrics we were able to dictate if the test was fast and reliable enough for CI (with overrides for high-value tests), post-merge/regression tests, or if the test needed to be quarantined. When a test's error rate or flake rate would spike we would then have the test case manager move those tests into shadow, and send an alert to the QA team. It would also trigger an agentic workflow loop that would begin triage, where it would diagnose the test as flaky, defective, or bugged. If it was flaky or defective we would then route it into the next loop where it would attempt to repair the test by looking at the changed application code that caused it to break, then make updates to the test to increase its stability again. If the test was bugged, we would route it into the bug crusher which would take the same scoped change context, review the break in the code, and then fix the code, returning a PR to the quality team for review and merge. If it failed to fix the bug, or repair the test, it would inform the quality team that the test needed human triage to resolve, triggering an on-call alert. This fully agentic workflow allowed us to match pace with the ever-increasing speed of the developers. Test flake rate was maintained at 0.5%, and the quality team saved an average of 120 total hours of triage time weekly. Combined with the Quality Coach process, it also helped bring our escape rate—which had spiked to 20%—back to 2%, allowing us to focus on our next projects with confidence.",
+            text: "We implemented a test case manager that would review live test statistics from OTEL, then based on those metrics we were able to dictate if the test was fast and reliable enough for CI (with overrides for high-value tests), post-merge/regression tests, or if the test needed to be quarantined. When a test's error rate or flake rate would spike we would then have the test case manager move those tests into shadow, and send an alert to the QA team. It would also trigger an agentic workflow loop that would begin triage, where it would diagnose the test as flaky, defective, or bugged. If it was flaky or defective we would then route it into the next loop where it would attempt to repair the test by looking at the changed application code that caused it to break, then make updates to the test to increase its stability again. If the test was bugged, we would route it into the bug crusher which would take the same scoped change context, review the break in the code, and then fix the code, returning a PR to the quality team for review and merge. If it failed to fix the bug, or repair the test, it would inform the quality team that the test needed human triage to resolve, triggering an on-call alert. This fully agentic workflow allowed us to match pace with the ever-increasing speed of the developers. Test flake rate was maintained at 0.5%, and the quality team saved an average of 120 total hours of triage time weekly. Combined with the Quality Coach process, it also helped bring our escape rate-which had spiked to 20%-back to 2%, allowing us to focus on our next projects with confidence.",
           },
           {
             title: 'Lighthouse Playwright integration',
@@ -189,7 +213,7 @@ export const jobs: Job[] = [
           },
           {
             title: 'Team change',
-            text: 'With the teams’ earlier shift left the business decided it was time to fully move the embedded QA engineers over to the engineering managers in charge of the dev teams, during this time I took over as the engineering manager for the QA automation team. In which I left my embedded QA’s a few small projects to help grow them into senior QAs and began assessing my new team’s position within the company. As we helped cover off quality gaps in a few big migrations across the board, we worked to improve the end-to-end regression suite, reducing the run time from 1 hour for 175 test cases down to 10 minutes. This time hack even persisted once we added 50 more test cases.',
+            text: 'With the teams' earlier shift left the business decided it was time to fully move the embedded QA engineers over to the engineering managers in charge of the dev teams, during this time I took over as the engineering manager for the QA automation team. In which I left my embedded QA's a few small projects to help grow them into senior QAs and began assessing my new team's position within the company. As we helped cover off quality gaps in a few big migrations across the board, we worked to improve the end-to-end regression suite, reducing the run time from 1 hour for 175 test cases down to 10 minutes. This time hack even persisted once we added 50 more test cases.',
           },
           {
             title: 'Shift Right',

@@ -47,18 +47,18 @@ const CodingReference: React.FC = () => {
         ]}
       />
       <section aria-labelledby="mathlab-title" className="mathlab-showcase">
-        <h2 id="mathlab-title">Fantasy World Generator — World Showcase</h2>
+        <h2 id="mathlab-title">Fantasy World Generator - World Showcase</h2>
         <p>
           A procedural fantasy-world simulation: overlapping magical networks, cold and aquatic
           habitats, settlements, floating islands, and catalogue-driven beast lairs. Explore three
-          saved worlds below, regenerated after each merge to the generator’s main branch. GitHub
+          saved worlds below, regenerated after each merge to the generator's main branch. GitHub
           Pages serves these samples; generate custom worlds by running the Python project locally.
         </p>
         <p>
           <a href="/mathlab/" target="_blank" rel="noopener noreferrer">
             Open showcase in a full window
           </a>
-          {' · '}
+          {' � '}
           <a
             href="https://github.com/davgor/FantasyWorldGenerator"
             target="_blank"
@@ -82,6 +82,11 @@ const CodingReference: React.FC = () => {
           'The flow is the part I care about. An agent drafts an epic as tickets with acceptance criteria and capability profiles, wires up dependencies and sprint checkpoints, and saves it only as a draft. I review the plan graph in the desktop app and press Save, because the saved plan only changes on Save. An orchestrator agent then runs that saved revision, claims ready tickets for its workers, and stops at every sprint checkpoint until I approve.',
           'Most of the design is about keeping those rules out of the clients. The rules live in one shared command layer, so the MCP handlers and the desktop app are only adapters, and roles are fixed when a session registers rather than taken from anything a caller supplies. Plans are written as JSON records under .darkmechanicus/ that Git tracks, while the SQLite working database sits in a Git-ignored local/ folder. The MCP server runs headless, so agents can plan and execute with the desktop closed.',
           'I wrote it with Electron, React, and TypeScript, using the built-in node:sqlite, the MCP SDK, React Flow for the plan graph, and zod for validation. CI packages Windows and macOS builds to GitHub Releases, and packaged Windows builds update themselves through electron-updater; macOS installs are manual for now.',
+          'If you want to build your own local software factory, start with the MCP server and the orchestrator/worker model. Ask an agent to explain the pieces, adapt them, and use the result to build something small, like a GitHub Pages profile. My OMP experiments add complexity, but you do not need to understand every experiment to get started.',
+          'Fast feedback is my first design constraint. I often choose Electron or React because Playwright gives agents a practical way to exercise the Chromium UI. I define expected end-to-end behavior before implementation, then use unit, database, integration, and component tests where they add useful evidence.',
+          'Tests need testing too. I built Fireguard as a deterministic guard against weak agent-written tests: it introduces mutations and checks whether the tests fail when they should. Surviving mutations feed back into the agent for improvement. I combine that with feature-level end-to-end tests and an antagonistic review of the evidence. Coverage thresholds can help, but a high coverage number alone does not prove the assertions catch broken behavior.',
+          'My Bannerlord mod made the value of computer control especially clear. I relied heavily on Codex for those feedback loops, and I am working on bringing comparable computer-control capabilities into my own harness for Claude and Codex. That integration is still in progress.',
+          'For personal experiments, hackathons, and small CRUD apps, I often build quickly to turn ideas into something I can use, then redesign once I understand the problem better. The prototype becomes a living record of what I learned. I keep that willingness to rebuild scoped to experiments; production work still needs deliberate architecture and maintainability. Evals and knowledge graphs are also ongoing learning areas for me.',
           'https://github.com/davgor/DarkMechanicus',
           'https://github.com/davgor/DarkMechanicus/releases/latest',
           darkMechanicusPlanGraph,
@@ -113,14 +118,14 @@ const CodingReference: React.FC = () => {
           'AI-DND-Matrix (also called AI-TTRPG in the repo) is a single-player, text-adventure-style TTRPG desktop app built with Electron, React, and TypeScript. Two cooperating AI agents run the game: a DM agent that sets scenes, drives the plot, and designs encounters, and NPC/party-member agents that roleplay individual characters and enemies.',
           'Campaigns are generated from a free-text prompt and then played in a durable world. If you burn down a village, later scenes remember it is gone. Each campaign supports multiple player characters in one shared world, with a campaign hub for world preview and character management after the first character is created.',
           'The important design choice is that the engine and database are the source of truth. Agents narrate and propose actions, but a deterministic rules engine validates dice, checks, damage, and death before anything is persisted. Every agent call is re-grounded from SQLite rather than chat history, and NPCs keep isolated memory so they only know what they would have experienced.',
-          'The stack is Electron with a secure IPC baseline, React UI, TypeScript throughout, and SQLite via better-sqlite3 for one save per campaign. LLM providers are pluggable at runtime—Claude by default, plus a local Player2 option—without a rebuild. CI packages NSIS and portable Windows builds to GitHub Releases. Personal project for now, shared as a packaged .exe with friends.',
+          'The stack is Electron with a secure IPC baseline, React UI, TypeScript throughout, and SQLite via better-sqlite3 for one save per campaign. LLM providers are pluggable at runtime-Claude by default, plus a local Player2 option-without a rebuild. CI packages NSIS and portable Windows builds to GitHub Releases. Personal project for now, shared as a packaged .exe with friends.',
           'https://github.com/davgor/AI-DND-Matrix',
         ]}
       />
       <BlogCard
         title="BoosterSeat"
         content={[
-          'BoosterSeat is my quick-start template for spinning up a new CRUD app. I pulled the battle-tested process from CapitalGains and this site—CI/CD, fireguard, board tickets, Cursor/Claude skills—and wrapped it around a replaceable Vite + React + TypeScript CRUD scaffold so I am not rebuilding scaffolding from scratch every time.',
+          'BoosterSeat is my quick-start template for spinning up a new CRUD app. I pulled the battle-tested process from CapitalGains and this site-CI/CD, fireguard, board tickets, Cursor/Claude skills-and wrapped it around a replaceable Vite + React + TypeScript CRUD scaffold so I am not rebuilding scaffolding from scratch every time.',
           'Out of the box you get the engineering process I actually use: TDD-first delivery standards, strict ESLint, a markdown ticket board, and mandatory red-team review before merge. CI runs unit tests, fireguard grading on new tests, lint, type-check, deadcode, security audit, and Playwright, plus auto-revert when main goes red. Deploy defaults to GitHub Pages via Actions with a production HTML smoke check.',
           'There are stack playbooks for React Pages (the default) and Electron conversion under templates/, plus docs for turning the fork into a real product. If I am starting something new and want the agent process and quality gates already wired, this is what I copy.',
           'https://github.com/davgor/BoosterSeat',
