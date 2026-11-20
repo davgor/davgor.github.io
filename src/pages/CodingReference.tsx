@@ -47,18 +47,18 @@ const CodingReference: React.FC = () => {
         ]}
       />
       <section aria-labelledby="mathlab-title" className="mathlab-showcase">
-        <h2 id="mathlab-title">Fantasy World Generator - World Showcase</h2>
+        <h2 id="mathlab-title">Fantasy World Generator — World Showcase</h2>
         <p>
           A procedural fantasy-world simulation: overlapping magical networks, cold and aquatic
           habitats, settlements, floating islands, and catalogue-driven beast lairs. Explore three
-          saved worlds below, regenerated after each merge to the generator's main branch. GitHub
+          saved worlds below, regenerated after each merge to the generator’s main branch. GitHub
           Pages serves these samples; generate custom worlds by running the Python project locally.
         </p>
         <p>
           <a href="/mathlab/" target="_blank" rel="noopener noreferrer">
             Open showcase in a full window
           </a>
-          {' � '}
+          {' · '}
           <a
             href="https://github.com/davgor/FantasyWorldGenerator"
             target="_blank"
@@ -118,14 +118,14 @@ const CodingReference: React.FC = () => {
           'AI-DND-Matrix (also called AI-TTRPG in the repo) is a single-player, text-adventure-style TTRPG desktop app built with Electron, React, and TypeScript. Two cooperating AI agents run the game: a DM agent that sets scenes, drives the plot, and designs encounters, and NPC/party-member agents that roleplay individual characters and enemies.',
           'Campaigns are generated from a free-text prompt and then played in a durable world. If you burn down a village, later scenes remember it is gone. Each campaign supports multiple player characters in one shared world, with a campaign hub for world preview and character management after the first character is created.',
           'The important design choice is that the engine and database are the source of truth. Agents narrate and propose actions, but a deterministic rules engine validates dice, checks, damage, and death before anything is persisted. Every agent call is re-grounded from SQLite rather than chat history, and NPCs keep isolated memory so they only know what they would have experienced.',
-          'The stack is Electron with a secure IPC baseline, React UI, TypeScript throughout, and SQLite via better-sqlite3 for one save per campaign. LLM providers are pluggable at runtime-Claude by default, plus a local Player2 option-without a rebuild. CI packages NSIS and portable Windows builds to GitHub Releases. Personal project for now, shared as a packaged .exe with friends.',
+          'The stack is Electron with a secure IPC baseline, React UI, TypeScript throughout, and SQLite via better-sqlite3 for one save per campaign. LLM providers are pluggable at runtime—Claude by default, plus a local Player2 option—without a rebuild. CI packages NSIS and portable Windows builds to GitHub Releases. Personal project for now, shared as a packaged .exe with friends.',
           'https://github.com/davgor/AI-DND-Matrix',
         ]}
       />
       <BlogCard
         title="BoosterSeat"
         content={[
-          'BoosterSeat is my quick-start template for spinning up a new CRUD app. I pulled the battle-tested process from CapitalGains and this site-CI/CD, fireguard, board tickets, Cursor/Claude skills-and wrapped it around a replaceable Vite + React + TypeScript CRUD scaffold so I am not rebuilding scaffolding from scratch every time.',
+          'BoosterSeat is my quick-start template for spinning up a new CRUD app. I pulled the battle-tested process from CapitalGains and this site—CI/CD, fireguard, board tickets, Cursor/Claude skills—and wrapped it around a replaceable Vite + React + TypeScript CRUD scaffold so I am not rebuilding scaffolding from scratch every time.',
           'Out of the box you get the engineering process I actually use: TDD-first delivery standards, strict ESLint, a markdown ticket board, and mandatory red-team review before merge. CI runs unit tests, fireguard grading on new tests, lint, type-check, deadcode, security audit, and Playwright, plus auto-revert when main goes red. Deploy defaults to GitHub Pages via Actions with a production HTML smoke check.',
           'There are stack playbooks for React Pages (the default) and Electron conversion under templates/, plus docs for turning the fork into a real product. If I am starting something new and want the agent process and quality gates already wired, this is what I copy.',
           'https://github.com/davgor/BoosterSeat',
