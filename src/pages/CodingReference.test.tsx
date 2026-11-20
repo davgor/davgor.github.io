@@ -180,4 +180,18 @@ describe('CodingReference', () => {
     render(<CodingReference />);
     expect(screen.getByTitle('MathLab world showcase')).toBeInTheDocument();
   });
+
+  it('explains test quality and distinguishes experiments from completed capabilities', () => {
+    render(<CodingReference />);
+    expect(screen.getByText(/Tests need testing too/)).toHaveTextContent(
+      'deterministic guard against weak agent-written tests'
+    );
+    expect(screen.getByText(/My Bannerlord mod made/)).toHaveTextContent(
+      'That integration is still in progress.'
+    );
+    expect(screen.getByText(/For personal experiments, hackathons/)).toHaveTextContent(
+      'production work still needs deliberate architecture and maintainability'
+    );
+    expect(screen.getByText(/If you want to build your own local software factory/)).toBeVisible();
+  });
 });

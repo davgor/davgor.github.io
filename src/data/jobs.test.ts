@@ -171,4 +171,19 @@ describe('jobs data', () => {
     expect(text).toContain('"poison the well"');
     expect(text).toContain('automatically adopt');
   });
+
+  it('keeps feedback, collaboration, and evaluation learning in the current role', () => {
+    const current = jobs.find((job) => job.id === 'onebrief')!.roles[0];
+    const sections = new Map(current.paragraphs.map(({ title, text }) => [title, text]));
+    expect(sections.get('Fast feedback before more autonomy')).toContain('test-driven development');
+    expect(sections.get('Helping people work with agent swarms')).toContain(
+      'nontechnical collaborators can contribute as planners'
+    );
+    expect(sections.get('An evolving engineering practice')).toContain('Catching up on evals');
+    expect(sections.get('Cloud sessions and persistent multiplayer')).toContain(
+      'team driving implementation'
+    );
+    expect(sections.get('Just-in-time context bombs')).toContain('knowledge graph');
+    expect(sections.get('Braveheart initiative')).toContain('internal beta program');
+  });
 });

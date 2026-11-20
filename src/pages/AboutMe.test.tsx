@@ -26,4 +26,12 @@ describe('AboutMe', () => {
     expect(screen.getByText(/modding Oblivion/i)).toBeInTheDocument();
     expect(screen.getByText(/associate's degree/i)).toBeInTheDocument();
   });
+
+  it('connects current leadership with practical peer mentorship', () => {
+    render(<AboutMe />);
+    expect(screen.getByText(/Today I lead Outcome Engineering at Onebrief/)).toBeVisible();
+    expect(screen.getByText(/My advice to peers is to build something/)).toHaveTextContent(
+      'Start with a small local software factory'
+    );
+  });
 });
