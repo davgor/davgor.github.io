@@ -82,11 +82,32 @@ const CodingReference: React.FC = () => {
           'The flow is the part I care about. An agent drafts an epic as tickets with acceptance criteria and capability profiles, wires up dependencies and sprint checkpoints, and saves it only as a draft. I review the plan graph in the desktop app and press Save, because the saved plan only changes on Save. An orchestrator agent then runs that saved revision, claims ready tickets for its workers, and stops at every sprint checkpoint until I approve.',
           'Most of the design is about keeping those rules out of the clients. The rules live in one shared command layer, so the MCP handlers and the desktop app are only adapters, and roles are fixed when a session registers rather than taken from anything a caller supplies. Plans are written as JSON records under .darkmechanicus/ that Git tracks, while the SQLite working database sits in a Git-ignored local/ folder. The MCP server runs headless, so agents can plan and execute with the desktop closed.',
           'I wrote it with Electron, React, and TypeScript, using the built-in node:sqlite, the MCP SDK, React Flow for the plan graph, and zod for validation. CI packages Windows and macOS builds to GitHub Releases, and packaged Windows builds update themselves through electron-updater; macOS installs are manual for now.',
+          'If you want to build your own local software factory, start with the MCP server and the orchestrator/worker model. Ask an agent to explain the pieces, adapt them, and use the result to build something small, like a GitHub Pages profile. My OMP experiments add complexity, but you do not need to understand every experiment to get started.',
+          'Fast feedback is my first design constraint. I often choose Electron or React because Playwright gives agents a practical way to exercise the Chromium UI. I define expected end-to-end behavior before implementation, then use unit, database, integration, and component tests where they add useful evidence.',
+          'Tests need testing too. I built Fireguard as a deterministic guard against weak agent-written tests: it introduces mutations and checks whether the tests fail when they should. Surviving mutations feed back into the agent for improvement. I combine that with feature-level end-to-end tests and an antagonistic review of the evidence. Coverage thresholds can help, but a high coverage number alone does not prove the assertions catch broken behavior.',
+          'My Bannerlord mod made the value of computer control especially clear. I relied heavily on Codex for those feedback loops, and I am working on bringing comparable computer-control capabilities into my own harness for Claude and Codex. That integration is still in progress.',
+          'For personal experiments, hackathons, and small CRUD apps, I often build quickly to turn ideas into something I can use, then redesign once I understand the problem better. The prototype becomes a living record of what I learned. I keep that willingness to rebuild scoped to experiments; production work still needs deliberate architecture and maintainability. Evals and knowledge graphs are also ongoing learning areas for me.',
           'https://github.com/davgor/DarkMechanicus',
           'https://github.com/davgor/DarkMechanicus/releases/latest',
           darkMechanicusPlanGraph,
           darkMechanicusTicketEditor,
           { type: 'node', node: planSection },
+        ]}
+      />
+      <BlogCard
+        title="Reorganizing around agentic development"
+        content={[
+          'My approach to moving a company from AI-assisted work toward autonomous development starts at the right-hand side of the delivery lifecycle. The lifecycle is planning, building, reviewing, and post-implementation. I build the adoption capability in the opposite direction, starting with the systems that can detect mistakes and feed useful evidence back into development.',
+          'Start with the work after implementation: a Dark Factory that looks for bugs, code smells, and gaps in tests or coverage. Engineers review its proposed changes and correct the agents through PR conversations. Those corrections become candidate lessons for the platform, with evaluation before they become shared guidance.',
+          'Next, build an in-house reviewer around those lessons. Refine its judgment with engineers, then split review responsibilities into specialist personas for areas such as product behavior, security, and UI/UX. Once that feedback is dependable, bring it into the building stage through a shared harness, controlled tool access, and context drawn from the organization. Expand planning support as those downstream controls become reliable.',
+          'Evals start with the first stage and grow with the platform. Keep representative tasks, known failures, and acceptance criteria so changes to prompts, tools, or shared knowledge can be compared against a baseline. Track escaped defects, rework, review burden, and delivery time alongside cost. More generated code is not the outcome; working software and a sustainable engineering workload are.',
+          {
+            type: 'image',
+            src: '/assets/agentic-adoption.svg',
+            alt: 'Agentic adoption sequence: post-implementation, review, building, then planning; evals and human governance support every stage.',
+          },
+          'The organizational change is just as important as the tooling. Product and domain experts contribute goals, constraints, and acceptance criteria as planners in shared sessions. Engineers own architecture, infrastructure, and the controls that keep the agents on track. Quality specialists build the evaluation and test systems, while platform engineers maintain the harness, integrations, and shared context. These are responsibilities to assign clearly, not necessarily separate teams.',
+          'Roll this out through a pilot, using real work and feedback from the people doing it. Give each capability an owner, define which actions need human approval, and expand autonomy when the evidence supports it. Teams need time to improve the platform and teach its reviewers; adding agent output without changing review capacity and responsibilities can simply create more work. This is my evolving adoption approach, not a claim that every stage is already complete at Onebrief.',
         ]}
       />
       <BlogCard

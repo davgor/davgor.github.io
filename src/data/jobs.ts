@@ -25,6 +25,34 @@ export const jobs: Job[] = [
             title: 'Evals and monitoring',
             text: 'It\'s important that we prevent an instance where we "poison the well" so to speak. As learnings come in, we evaluate the updates alongside the prompts and workflows to ensure we can more safely pull in and automatically adopt learnings from all over the organization all the time.',
           },
+          {
+            title: 'Cloud sessions and persistent multiplayer',
+            text: 'I led the architecture and project direction for our in-house cloud sessions, with the team driving implementation directly in the harness on deployed EC2 development environments. Persistent multiplayer lets collaborators work on the same project, paired-programming style. People can jump in and work directly with the agents, or take a fire-and-forget approach.',
+          },
+          {
+            title: 'Just-in-time context bombs',
+            text: 'I led the architecture and direction for our just-in-time context bombs, with the team driving implementation. I think of the knowledge graph as a spiderweb: developer learnings sit at the center and are injected directly and immediately. Specialist knowledge, like product and UI/UX information, sits farther out and comes through the normal context-injection flow. Tags reference context injections against that knowledge graph.',
+          },
+          {
+            title: 'Braveheart initiative',
+            text: 'I led Braveheart, our internal beta program, coordinating with the different tools teams to build feedback loops. A big part of my role was helping people embrace the new technology and tooling.',
+          },
+          {
+            title: 'Growing autonomy from right to left',
+            text: 'My adoption strategy works backward through the delivery lifecycle: post-implementation, reviewing, building, then planning. Start with a Dark Factory that surfaces defects and test gaps, use engineer feedback to develop an in-house reviewer and specialist personas, then connect those controls through a shared development harness. Evals belong at the foundation. As autonomy grows, I focus on clear ownership: people define goals, architecture, infrastructure, and acceptance criteria, while the platform takes on more execution and routine verification.',
+          },
+          {
+            title: 'Fast feedback before more autonomy',
+            text: 'My quality background shapes how I approach headless development: agents need fast, trustworthy feedback. I push for test-driven development, defining the end-to-end behavior before implementation and supporting it with unit, database, integration, and component tests where they apply. The goal is to give the agents evidence they can act on, while engineers own the architecture, infrastructure, and acceptance criteria.',
+          },
+          {
+            title: 'Helping people work with agent swarms',
+            text: 'I approach adoption through hands-on collaboration. In multiplayer sessions, nontechnical collaborators can contribute as planners, discussing ideas and requirements while engineers refine the scope and keep the agents on track. With technical peers, I encourage building a small local software factory and using it on a real project. Understanding the orchestrator, its workers, and their feedback loops builds the confidence to direct the system yourself.',
+          },
+          {
+            title: 'An evolving engineering practice',
+            text: 'I use personal projects like Dark Mechanicus to explore orchestration and quality controls, and to capture reusable lessons from successful experiments. Evals and knowledge graphs remain areas I am actively developing my understanding of. Catching up on evals has reinforced a practical lesson: the ability to measure whether a change helps needs to grow alongside the ability to automate it.',
+          },
         ],
       },
       {
