@@ -95,6 +95,22 @@ const CodingReference: React.FC = () => {
         ]}
       />
       <BlogCard
+        title="Reorganizing around agentic development"
+        content={[
+          'My approach to moving a company from AI-assisted work toward autonomous development starts at the right-hand side of the delivery lifecycle. The lifecycle is planning, building, reviewing, and post-implementation. I build the adoption capability in the opposite direction, starting with the systems that can detect mistakes and feed useful evidence back into development.',
+          'Start with the work after implementation: a Dark Factory that looks for bugs, code smells, and gaps in tests or coverage. Engineers review its proposed changes and correct the agents through PR conversations. Those corrections become candidate lessons for the platform, with evaluation before they become shared guidance.',
+          'Next, build an in-house reviewer around those lessons. Refine its judgment with engineers, then split review responsibilities into specialist personas for areas such as product behavior, security, and UI/UX. Once that feedback is dependable, bring it into the building stage through a shared harness, controlled tool access, and context drawn from the organization. Expand planning support as those downstream controls become reliable.',
+          'Evals start with the first stage and grow with the platform. Keep representative tasks, known failures, and acceptance criteria so changes to prompts, tools, or shared knowledge can be compared against a baseline. Track escaped defects, rework, review burden, and delivery time alongside cost. More generated code is not the outcome; working software and a sustainable engineering workload are.',
+          {
+            type: 'image',
+            src: '/assets/agentic-adoption.svg',
+            alt: 'Agentic adoption sequence: post-implementation, review, building, then planning; evals and human governance support every stage.',
+          },
+          'The organizational change is just as important as the tooling. Product and domain experts contribute goals, constraints, and acceptance criteria as planners in shared sessions. Engineers own architecture, infrastructure, and the controls that keep the agents on track. Quality specialists build the evaluation and test systems, while platform engineers maintain the harness, integrations, and shared context. These are responsibilities to assign clearly, not necessarily separate teams.',
+          'Roll this out through a pilot, using real work and feedback from the people doing it. Give each capability an owner, define which actions need human approval, and expand autonomy when the evidence supports it. Teams need time to improve the platform and teach its reviewers; adding agent output without changing review capacity and responsibilities can simply create more work. This is my evolving adoption approach, not a claim that every stage is already complete at Onebrief.',
+        ]}
+      />
+      <BlogCard
         title="davgor.github.io"
         content={[
           "Well, this site, obviously. I wanted to make a personal website where I can share my projects, give more in-depth information about my experiences, and about who I am as an engineer and a leader. I recently converted it over to using React over traditional HTML/JavaScript, and I'll mostly be using it as a place to lightly experiment with AI and React. Feel free to dig into any of the areas I have set up. It's a pretty simple page, but I think it does a decent enough job as an extended resume.",

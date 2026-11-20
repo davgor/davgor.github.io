@@ -38,6 +38,10 @@ export const jobs: Job[] = [
             text: 'I led Braveheart, our internal beta program, coordinating with the different tools teams to build feedback loops. A big part of my role was helping people embrace the new technology and tooling.',
           },
           {
+            title: 'Growing autonomy from right to left',
+            text: 'My adoption strategy works backward through the delivery lifecycle: post-implementation, reviewing, building, then planning. Start with a Dark Factory that surfaces defects and test gaps, use engineer feedback to develop an in-house reviewer and specialist personas, then connect those controls through a shared development harness. Evals belong at the foundation. As autonomy grows, I focus on clear ownership: people define goals, architecture, infrastructure, and acceptance criteria, while the platform takes on more execution and routine verification.',
+          },
+          {
             title: 'Fast feedback before more autonomy',
             text: 'My quality background shapes how I approach headless development: agents need fast, trustworthy feedback. I push for test-driven development, defining the end-to-end behavior before implementation and supporting it with unit, database, integration, and component tests where they apply. The goal is to give the agents evidence they can act on, while engineers own the architecture, infrastructure, and acceptance criteria.',
           },

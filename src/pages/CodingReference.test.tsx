@@ -3,6 +3,21 @@ import { render, screen } from '@testing-library/react';
 import CodingReference from './CodingReference';
 
 describe('CodingReference', () => {
+  it('explains organizational adoption with an accessible process diagram', () => {
+    render(<CodingReference />);
+    expect(
+      screen.getByRole('heading', { name: 'Reorganizing around agentic development' })
+    ).toBeVisible();
+    expect(
+      screen.getByAltText(
+        'Agentic adoption sequence: post-implementation, review, building, then planning; evals and human governance support every stage.'
+      )
+    ).toHaveAttribute('src', '/assets/agentic-adoption.svg');
+    expect(screen.getByText(/Start with the work after implementation/)).toBeVisible();
+    expect(screen.getByText(/Evals start with the first stage/)).toBeVisible();
+    expect(screen.getByText(/The organizational change is just as important/)).toBeVisible();
+  });
+
   afterEach(() => {
     vi.unstubAllGlobals();
   });

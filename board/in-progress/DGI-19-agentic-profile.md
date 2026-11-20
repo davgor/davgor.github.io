@@ -39,3 +39,9 @@ Verdict: No content defects found in this task's diff; browser verification rema
 - Security: additions contain no HTML, new links, credentials, or executable input.
 - Electron/process/CI behavior: unchanged by this task.
 - Review recorded locally; no PR was created or review posted.
+
+## Follow-up scope and verification
+
+User requested the organizational adoption process and a diagram before merge. Added a dedicated section and accessible SVG showing post-implementation, review, building, then planning, with evals and human ownership throughout. Added a rendering test first and observed its failure before implementing the section.
+
+Remote Fireguard required tests even for copy changes. Three targeted content tests were added; the preceding head passed core CI and Fireguard grade A (no generated mutants for these static modules). The expanded final head must pass CI and browser tests before merge. PR #14 records final review and deployment evidence.
