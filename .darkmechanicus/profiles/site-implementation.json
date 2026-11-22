@@ -1,0 +1,54 @@
+{
+  "capability": {
+    "constraints": {
+      "dataLocation": null,
+      "environments": [
+        "node-24",
+        "local-checkout"
+      ],
+      "maxCostUsd": null,
+      "maxDurationMinutes": null
+    },
+    "context": {
+      "estimatedInputTokens": 60000,
+      "requiredArtifacts": [
+        ".ai-instructions.md",
+        ".claude/skills/delivery-standards/SKILL.md"
+      ]
+    },
+    "modalities": [
+      "text"
+    ],
+    "preferences": {
+      "autonomy": "autonomous",
+      "cost": null,
+      "latency": null,
+      "modelOverride": null,
+      "quality": "high"
+    },
+    "reasoning": {
+      "level": "multi_step",
+      "rationale": "TDD-first React + TypeScript change that must keep this site's lint, fireguard, deadcode, build and e2e gates green."
+    },
+    "skills": [
+      "typescript",
+      "react",
+      "vite",
+      "vitest",
+      "testing"
+    ],
+    "tools": [
+      "repo_read",
+      "repo_write",
+      "shell",
+      "test_execution"
+    ],
+    "workType": "implementation"
+  },
+  "createdAt": "2026-10-01T05:26:31.957Z",
+  "description": "TDD-first React/TypeScript change on davgor.github.io that must pass the full site gate (lint, format, unit, fireguard, type-check, deadcode, build).",
+  "format": "darkmechanicus.profile",
+  "formatVersion": 1,
+  "name": "site-implementation",
+  "updatedAt": "2026-10-01T05:26:31.957Z"
+}

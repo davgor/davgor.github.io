@@ -1,0 +1,13 @@
+{
+  "author": {
+    "label": "Claude Code planner",
+    "role": "planner"
+  },
+  "body": "**Planner notes: decide before pressing Save / Start run**\n\n1. **Epic branch:** none set. Suggest `epic/dark-mechanicus-showcase`. Without one, the run binds whatever branch is checked out.\n2. **Commit `.darkmechanicus/`:** the export (DGI-3) reads committed records, and the folder is currently untracked. This is the Sprint 2 entry criterion.\n3. **Screenshots (DGI-2):** need the desktop GUI. If no worker has screen access, you capture the raw images and the worker crops and optimizes them.\n4. **Card placement:** assumed directly after the Fantasy World Generator showcase. Easy to change at the Sprint 1 checkpoint.\n\nAlso saved two reusable capability profiles: `site-implementation` and `site-release`.",
+  "createdAt": "2026-10-01T05:28:12.483Z",
+  "epicId": "ep_01m3tyvkcv6kzg24j40g1mzh87",
+  "format": "darkmechanicus.comment",
+  "formatVersion": 1,
+  "id": "cm_01m3tyyfy3ze4jvhdp7nv2ns4x",
+  "ticketId": null
+}

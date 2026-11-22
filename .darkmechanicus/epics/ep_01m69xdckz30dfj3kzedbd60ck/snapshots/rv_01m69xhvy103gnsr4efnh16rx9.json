@@ -1,0 +1,921 @@
+{
+  "baseRevisionId": null,
+  "bundle": {
+    "edges": [
+      {
+        "from": "tk_01m69xgab34qxbyc9pny1srx1r",
+        "to": "tk_01m69xgg2y1akc4p9ja2c7wt38"
+      },
+      {
+        "from": "tk_01m69xgg2y1akc4p9ja2c7wt38",
+        "to": "tk_01m69xgg2ypkj7g5dnpe1d8w28"
+      },
+      {
+        "from": "tk_01m69xgg2ypkj7g5dnpe1d8w28",
+        "to": "tk_01m69xgg2yksvr88v32fdzynn3"
+      },
+      {
+        "from": "tk_01m69xgg2yksvr88v32fdzynn3",
+        "to": "tk_01m69xgg2y3966yq65z9704f4r"
+      },
+      {
+        "from": "tk_01m69xgg2y3966yq65z9704f4r",
+        "to": "tk_01m69xhk0ccpj1s7gw21fv3b7n"
+      }
+    ],
+    "epic": {
+      "intent": "Add the person's new Onebrief role, **Manager, Outcome Engineering - Headless Agentic**, to the Experience page as the newest role on the existing Onebrief card in `src/data/jobs.ts`, with four sections for the core products they own and are architecting alongside their developers: **Onebrief Harness**, **Dark Factory**, **Onebrief Code Reviewer**, and **Evals and monitoring**.\n\n**Who benefits:** recruiters, hiring managers and peers reading the portfolio, who see how the quality and agentic-testing work grew into a headless agentic outcome-engineering org.\n\n**Out of scope:** metrics or achievement bullets the person has not supplied, changes to other employers or roles' content, layout or component changes, and any confidential Onebrief detail beyond what the person wrote.",
+      "ownerRole": null,
+      "successCriteria": [
+        {
+          "id": "s1",
+          "text": "The Onebrief card's first (newest) role is titled 'Onebrief - Manager, Outcome Engineering - Headless Agentic - <start date> - Present', and the 'Engineering Manager, Quality' role shows an end date instead of 'Present'."
+        },
+        {
+          "id": "s2",
+          "text": "The new role has four titled paragraphs, in order: 'Onebrief Harness', 'Dark Factory', 'Onebrief Code Reviewer', 'Evals and monitoring', each in the portfolio's first-person voice and faithful to the person's own description, with no invented metrics or claims."
+        },
+        {
+          "id": "s3",
+          "text": "Unit tests in src/data/jobs.test.ts assert the new role title, the four section titles in order, and key phrases from each; lint, format:check, test:unit, fireguard (no F), type-check, deadcode, build and test:e2e pass."
+        },
+        {
+          "id": "s4",
+          "text": "The change is merged to main via a PR with a posted red-team review, the Pages deploy succeeds, and the live Experience page shows the new role and its four sections at desktop width and at 375px with no horizontal scroll."
+        }
+      ],
+      "title": "Onebrief: Manager, Outcome Engineering - Headless Agentic role"
+    },
+    "formatVersion": 1,
+    "policies": {
+      "leaseSeconds": 900,
+      "maxConcurrency": null,
+      "onTicketFailure": "continue_independent",
+      "retryLimit": 3
+    },
+    "rationale": "**Shape.** Two human-checkpointed sprints. Sprint 1 is content: a role scaffold, then the four product sections as a strict chain, because every ticket edits the same Onebrief role in `src/data/jobs.ts` and parallel edits would conflict; the acceptance node integrates them and gives the person rendered pages to review. Sprint 2 ships it: PR, red-team review, CI, merge with the person's go-ahead, Pages deploy, live check.\n\n**Assumptions (change at a checkpoint if wrong):**\n- Start date 11/01/2026, and the Engineering Manager, Quality role ends 11/01/2026. The person said they are starting the role but gave no date.\n- The new role goes on the existing Onebrief card as roles[0], not as a new employer card.\n- The four section titles are the product names exactly as the person gave them.\n- No achievements list or metrics: the person supplied none, and the tickets must not invent any. Add bullets later when real outcomes exist.\n- Copy stays faithful to the person's descriptions: grammar is tightened, nothing is added. 'Code rabbit' is written as CodeRabbit.\n- No epic branch is named. Set one before the run (suggested: `epic/onebrief-outcome-engineering`).\n\n**Process.** Each implementation ticket follows this repo's delivery standards: TDD first, the full gate, fireguard on new tests. The ship ticket carries the mandatory red-team review, and merging waits for the person.",
+    "relations": [],
+    "sprints": [
+      {
+        "checkpoint": {
+          "mode": "human"
+        },
+        "concurrencyCap": null,
+        "entryCriteria": [],
+        "exitCriteria": [
+          {
+            "id": "x1",
+            "text": "The person has confirmed the role's start date and the EM, Quality end date."
+          },
+          {
+            "id": "x2",
+            "text": "The person has read and approved the copy of all four sections."
+          },
+          {
+            "id": "x3",
+            "text": "The full site gate is green on the sprint's changes."
+          }
+        ],
+        "goal": "The new Outcome Engineering role and its four product sections are written, tested and integrated on the Onebrief card.",
+        "id": "sp_01m69xdckzzsxpdm634yqftksc",
+        "ordinal": 1,
+        "ticketIds": [
+          "tk_01m69xgab34qxbyc9pny1srx1r",
+          "tk_01m69xgg2y1akc4p9ja2c7wt38",
+          "tk_01m69xgg2ypkj7g5dnpe1d8w28",
+          "tk_01m69xgg2yksvr88v32fdzynn3",
+          "tk_01m69xgg2y3966yq65z9704f4r",
+          "tk_01m69xdckz1d6ythksxjfp2mgw"
+        ]
+      },
+      {
+        "checkpoint": {
+          "mode": "human"
+        },
+        "concurrencyCap": null,
+        "entryCriteria": [],
+        "exitCriteria": [
+          {
+            "id": "x1",
+            "text": "Every epic success criterion s1-s4 has recorded evidence."
+          },
+          {
+            "id": "x2",
+            "text": "The live page is verified at desktop width and at 375px."
+          }
+        ],
+        "goal": "Shipped: the role is merged, deployed and verified live on the Experience page.",
+        "id": "sp_01m69xhk0bd3jrzkgcpye49s86",
+        "ordinal": 2,
+        "ticketIds": [
+          "tk_01m69xhk0ccpj1s7gw21fv3b7n",
+          "tk_01m69xhk0bh7w4rhbgvtxmjj40"
+        ]
+      }
+    ],
+    "tickets": [
+      {
+        "acceptanceCriteria": [
+          {
+            "covers": "tk_01m69xgab34qxbyc9pny1srx1r",
+            "id": "a1",
+            "text": "Onebrief roles[0] is the Manager, Outcome Engineering - Headless Agentic role with the confirmed start date, and the EM, Quality role carries the end date."
+          },
+          {
+            "covers": "tk_01m69xgg2y1akc4p9ja2c7wt38",
+            "id": "a2",
+            "text": "Paragraph 1 is 'Onebrief Harness', faithful to the person's source text."
+          },
+          {
+            "covers": "tk_01m69xgg2ypkj7g5dnpe1d8w28",
+            "id": "a3",
+            "text": "Paragraph 2 is 'Dark Factory', faithful to the person's source text."
+          },
+          {
+            "covers": "tk_01m69xgg2yksvr88v32fdzynn3",
+            "id": "a4",
+            "text": "Paragraph 3 is 'Onebrief Code Reviewer', faithful to the person's source text."
+          },
+          {
+            "covers": "tk_01m69xgg2y3966yq65z9704f4r",
+            "id": "a5",
+            "text": "Paragraph 4 is 'Evals and monitoring', faithful to the person's source text; the role has exactly these four paragraphs and no invented claims or metrics."
+          },
+          {
+            "id": "a6",
+            "text": "lint, format:check, test:unit, fireguard (no F), type-check, deadcode, build and test:e2e pass on the integrated changes; local screenshots at desktop and 375px are attached for the checkpoint."
+          }
+        ],
+        "body": "On the integrated Sprint 1 changes, verify the new Onebrief role and its four sections together in `src/data/jobs.ts`, run the full site gate including test:e2e, and render the Experience page locally (desktop and 375px) for the person to review the copy and dates at the checkpoint.",
+        "capability": {
+          "constraints": {
+            "dataLocation": null,
+            "environments": [],
+            "maxCostUsd": null,
+            "maxDurationMinutes": null
+          },
+          "context": {
+            "estimatedInputTokens": null,
+            "requiredArtifacts": []
+          },
+          "modalities": [
+            "text"
+          ],
+          "preferences": {
+            "autonomy": null,
+            "cost": null,
+            "latency": null,
+            "modelOverride": null,
+            "quality": null
+          },
+          "reasoning": {
+            "level": "multi_step",
+            "rationale": ""
+          },
+          "skills": [],
+          "tools": [
+            "repo_read",
+            "repo_write"
+          ],
+          "workType": "testing"
+        },
+        "expectedArtifacts": [],
+        "id": "tk_01m69xdckz1d6ythksxjfp2mgw",
+        "key": "DGI-7",
+        "kind": "acceptance",
+        "optional": false,
+        "priority": "normal",
+        "references": [],
+        "tags": [],
+        "title": "Sprint 1 acceptance: role and four sections integrated"
+      },
+      {
+        "acceptanceCriteria": [
+          {
+            "id": "a1",
+            "text": "Onebrief `roles[0].title` is 'Onebrief - Manager, Outcome Engineering - Headless Agentic - <confirmed start> - Present'."
+          },
+          {
+            "id": "a2",
+            "text": "The 'Engineering Manager, Quality' role title ends with the confirmed end date, not 'Present'; its paragraphs and achievements are otherwise unchanged."
+          },
+          {
+            "id": "a3",
+            "text": "No achievement bullets or metrics are invented for the new role."
+          },
+          {
+            "id": "a4",
+            "text": "Unit tests for a1-a2 fail before the change and pass after; existing jobs tests and e2e navigation expectations still pass."
+          },
+          {
+            "id": "a5",
+            "text": "`npm run lint`, `format:check`, `test:unit`, fireguard (no F on new tests), `type-check`, `deadcode` and `build` pass."
+          }
+        ],
+        "body": "Add a new role as the **first** entry in the Onebrief job's `roles` array in `src/data/jobs.ts` (roles are newest-first), titled `Onebrief - Manager, Outcome Engineering - Headless Agentic - <START> - Present`, matching the existing `Onebrief - <title> - MM/DD/YYYY - Present` format. Change the `Engineering Manager, Quality` role's `Present` to the end date.\n\n**Dates (assumption, confirm at the Sprint 1 checkpoint):** the person said they are *starting* the role; this plan was written 2026-10-31, so use start `11/01/2026` and EM end `11/01/2026` unless the person has given other dates.\n\nThe section tickets fill the role's `paragraphs`. If the `Role` type in `src/types/index.ts` requires `achievements`, check how that renders when empty; do **not** invent achievement bullets or metrics.\n\n**TDD:** add tests in `src/data/jobs.test.ts` first: Onebrief `roles[0].title` is the new title; `roles[1]` (EM, Quality) no longer ends in `Present`; exactly one Onebrief role is `Present`.",
+        "capability": {
+          "constraints": {
+            "dataLocation": null,
+            "environments": [
+              "node-24",
+              "local-checkout"
+            ],
+            "maxCostUsd": null,
+            "maxDurationMinutes": null
+          },
+          "context": {
+            "estimatedInputTokens": 30000,
+            "requiredArtifacts": [
+              "src/data/jobs.ts",
+              "src/data/jobs.test.ts",
+              ".claude/skills/add-experience-entry/SKILL.md",
+              ".claude/skills/add-experience-entry/voice-and-examples.md"
+            ]
+          },
+          "modalities": [
+            "text"
+          ],
+          "preferences": {
+            "autonomy": "autonomous",
+            "cost": null,
+            "latency": null,
+            "modelOverride": null,
+            "quality": "high"
+          },
+          "reasoning": {
+            "level": "routine",
+            "rationale": "Data-only change to src/data/jobs.ts plus unit tests, following the add-experience-entry skill and an existing pattern (board ticket 017)."
+          },
+          "skills": [
+            "typescript",
+            "vitest",
+            "copywriting",
+            "testing"
+          ],
+          "tools": [
+            "repo_read",
+            "repo_write",
+            "shell",
+            "test_execution"
+          ],
+          "workType": "implementation"
+        },
+        "expectedArtifacts": [
+          "src/data/jobs.ts",
+          "src/data/jobs.test.ts"
+        ],
+        "id": "tk_01m69xgab34qxbyc9pny1srx1r",
+        "key": "DGI-8",
+        "optional": false,
+        "priority": "high",
+        "references": [
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Experience data",
+            "location": "src/data/jobs.ts",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Experience data tests",
+            "location": "src/data/jobs.test.ts",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "add-experience-entry voice guide",
+            "location": ".claude/skills/add-experience-entry/voice-and-examples.md",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Prior Onebrief section ticket (pattern)",
+            "location": "board/done/017-onebrief-agentic-test-lifecycle.md",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Job/Role types",
+            "location": "src/types/index.ts",
+            "remoteOnly": false
+          }
+        ],
+        "tags": [
+          "experience",
+          "onebrief"
+        ],
+        "title": "Add the Manager, Outcome Engineering - Headless Agentic role to the Onebrief card"
+      },
+      {
+        "acceptanceCriteria": [
+          {
+            "id": "a1",
+            "text": "The Outcome Engineering role's paragraph at index 0 is titled exactly 'Onebrief Harness'."
+          },
+          {
+            "id": "a2",
+            "text": "The paragraph covers: leading the team that built Onebrief's specialized agent harness; its connection to the knowledge graph that interlocks with the Dark Factory; tuning developers' agents from learnings across all of Onebrief's agentic development platforms; first person, with no claims beyond the source text."
+          },
+          {
+            "id": "a3",
+            "text": "Unit tests assert the title, its position and at least two key phrases; they fail before the change and pass after; existing jobs tests still pass."
+          },
+          {
+            "id": "a4",
+            "text": "`npm run lint`, `format:check`, `test:unit`, fireguard (no F on new tests), `type-check`, `deadcode` and `build` pass."
+          }
+        ],
+        "body": "Add a titled paragraph `Onebrief Harness` to the **Manager, Outcome Engineering - Headless Agentic** role in `src/data/jobs.ts`, as section 1 of 4 (order: Onebrief Harness, Dark Factory, Onebrief Code Reviewer, Evals and monitoring).\n\n**Person's source text (verbatim):**\n> Lead the team that created the Onebrief specialized harness. Connected into our knowledge graph that interlocked with our Dark Factory. This allowed us to tweak our developers agents based on learnings from all our agentic development platforms\n\nWrite in the portfolio's first-person voice per `.claude/skills/add-experience-entry/voice-and-examples.md`. Stay faithful to the person's source text below: tighten grammar and spelling, but do not add metrics, team sizes, vendors, dates or capabilities they did not state. The product names are the person's own choice to publish; add no internal detail beyond them.\n\nIf earlier sections are missing, insert at the correct position rather than appending.\n\n**TDD:** extend `src/data/jobs.test.ts` first (title present at index 0 of the role's paragraphs; key phrases present) and watch it fail.",
+        "capability": {
+          "constraints": {
+            "dataLocation": null,
+            "environments": [
+              "node-24",
+              "local-checkout"
+            ],
+            "maxCostUsd": null,
+            "maxDurationMinutes": null
+          },
+          "context": {
+            "estimatedInputTokens": 30000,
+            "requiredArtifacts": [
+              "src/data/jobs.ts",
+              "src/data/jobs.test.ts",
+              ".claude/skills/add-experience-entry/SKILL.md",
+              ".claude/skills/add-experience-entry/voice-and-examples.md"
+            ]
+          },
+          "modalities": [
+            "text"
+          ],
+          "preferences": {
+            "autonomy": "autonomous",
+            "cost": null,
+            "latency": null,
+            "modelOverride": null,
+            "quality": "high"
+          },
+          "reasoning": {
+            "level": "routine",
+            "rationale": "Data-only change to src/data/jobs.ts plus unit tests, following the add-experience-entry skill and an existing pattern (board ticket 017)."
+          },
+          "skills": [
+            "typescript",
+            "vitest",
+            "copywriting",
+            "testing"
+          ],
+          "tools": [
+            "repo_read",
+            "repo_write",
+            "shell",
+            "test_execution"
+          ],
+          "workType": "implementation"
+        },
+        "expectedArtifacts": [
+          "src/data/jobs.ts",
+          "src/data/jobs.test.ts"
+        ],
+        "id": "tk_01m69xgg2y1akc4p9ja2c7wt38",
+        "key": "DGI-9",
+        "optional": false,
+        "priority": "normal",
+        "references": [
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Experience data",
+            "location": "src/data/jobs.ts",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Experience data tests",
+            "location": "src/data/jobs.test.ts",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "add-experience-entry voice guide",
+            "location": ".claude/skills/add-experience-entry/voice-and-examples.md",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Prior Onebrief section ticket (pattern)",
+            "location": "board/done/017-onebrief-agentic-test-lifecycle.md",
+            "remoteOnly": false
+          }
+        ],
+        "tags": [
+          "experience",
+          "onebrief"
+        ],
+        "title": "Add 'Onebrief Harness' section to the Outcome Engineering role"
+      },
+      {
+        "acceptanceCriteria": [
+          {
+            "id": "a1",
+            "text": "The Outcome Engineering role's paragraph at index 1 is titled exactly 'Dark Factory'."
+          },
+          {
+            "id": "a2",
+            "text": "The paragraph covers: a home for repeatable development workflows; mixing deterministic and non-deterministic (agentic) workflows; calling various tooling; the Agentic Test Lifecycle (described in the role below) as an example of the pattern; first person, with no claims beyond the source text."
+          },
+          {
+            "id": "a3",
+            "text": "Unit tests assert the title, its position and at least two key phrases; they fail before the change and pass after; existing jobs tests still pass."
+          },
+          {
+            "id": "a4",
+            "text": "`npm run lint`, `format:check`, `test:unit`, fireguard (no F on new tests), `type-check`, `deadcode` and `build` pass."
+          }
+        ],
+        "body": "Add a titled paragraph `Dark Factory` to the **Manager, Outcome Engineering - Headless Agentic** role in `src/data/jobs.ts`, as section 2 of 4 (order: Onebrief Harness, Dark Factory, Onebrief Code Reviewer, Evals and monitoring).\n\n**Person's source text (verbatim):**\n> A place for repeatable development workflows, this mixes deterministic workflows, with non-deterministic workflows, allowing us to call various tooling. Think the Agentic test life cycle.\n\nWrite in the portfolio's first-person voice per `.claude/skills/add-experience-entry/voice-and-examples.md`. Stay faithful to the person's source text below: tighten grammar and spelling, but do not add metrics, team sizes, vendors, dates or capabilities they did not state. The product names are the person's own choice to publish; add no internal detail beyond them.\n\nIf earlier sections are missing, insert at the correct position rather than appending.\n\n**TDD:** extend `src/data/jobs.test.ts` first (title present at index 1 of the role's paragraphs; key phrases present) and watch it fail.",
+        "capability": {
+          "constraints": {
+            "dataLocation": null,
+            "environments": [
+              "node-24",
+              "local-checkout"
+            ],
+            "maxCostUsd": null,
+            "maxDurationMinutes": null
+          },
+          "context": {
+            "estimatedInputTokens": 30000,
+            "requiredArtifacts": [
+              "src/data/jobs.ts",
+              "src/data/jobs.test.ts",
+              ".claude/skills/add-experience-entry/SKILL.md",
+              ".claude/skills/add-experience-entry/voice-and-examples.md"
+            ]
+          },
+          "modalities": [
+            "text"
+          ],
+          "preferences": {
+            "autonomy": "autonomous",
+            "cost": null,
+            "latency": null,
+            "modelOverride": null,
+            "quality": "high"
+          },
+          "reasoning": {
+            "level": "routine",
+            "rationale": "Data-only change to src/data/jobs.ts plus unit tests, following the add-experience-entry skill and an existing pattern (board ticket 017)."
+          },
+          "skills": [
+            "typescript",
+            "vitest",
+            "copywriting",
+            "testing"
+          ],
+          "tools": [
+            "repo_read",
+            "repo_write",
+            "shell",
+            "test_execution"
+          ],
+          "workType": "implementation"
+        },
+        "expectedArtifacts": [
+          "src/data/jobs.ts",
+          "src/data/jobs.test.ts"
+        ],
+        "id": "tk_01m69xgg2ypkj7g5dnpe1d8w28",
+        "key": "DGI-10",
+        "optional": false,
+        "priority": "normal",
+        "references": [
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Experience data",
+            "location": "src/data/jobs.ts",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Experience data tests",
+            "location": "src/data/jobs.test.ts",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "add-experience-entry voice guide",
+            "location": ".claude/skills/add-experience-entry/voice-and-examples.md",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Prior Onebrief section ticket (pattern)",
+            "location": "board/done/017-onebrief-agentic-test-lifecycle.md",
+            "remoteOnly": false
+          }
+        ],
+        "tags": [
+          "experience",
+          "onebrief"
+        ],
+        "title": "Add 'Dark Factory' section to the Outcome Engineering role"
+      },
+      {
+        "acceptanceCriteria": [
+          {
+            "id": "a1",
+            "text": "The Outcome Engineering role's paragraph at index 2 is titled exactly 'Onebrief Code Reviewer'."
+          },
+          {
+            "id": "a2",
+            "text": "The paragraph covers: a tailored in-house code reviewer in the vein of CodeRabbit, fed by learnings from across the organization; aiding both review and remediation of code quality; working with other organizations in the company to extend it with user 'personas'; first person, with no claims beyond the source text."
+          },
+          {
+            "id": "a3",
+            "text": "Unit tests assert the title, its position and at least two key phrases; they fail before the change and pass after; existing jobs tests still pass."
+          },
+          {
+            "id": "a4",
+            "text": "`npm run lint`, `format:check`, `test:unit`, fireguard (no F on new tests), `type-check`, `deadcode` and `build` pass."
+          }
+        ],
+        "body": "Add a titled paragraph `Onebrief Code Reviewer` to the **Manager, Outcome Engineering - Headless Agentic** role in `src/data/jobs.ts`, as section 3 of 4 (order: Onebrief Harness, Dark Factory, Onebrief Code Reviewer, Evals and monitoring).\n\n**Person's source text (verbatim):**\n> As we take in all these learnings from across the organizations, we developed our own tailored version of code rabbit to aid in the review and remediation of code quality. In addition we worked with different organizations in the company to extend its abilities with user \"personas\"\n\nWrite in the portfolio's first-person voice per `.claude/skills/add-experience-entry/voice-and-examples.md`. Stay faithful to the person's source text below: tighten grammar and spelling, but do not add metrics, team sizes, vendors, dates or capabilities they did not state. The product names are the person's own choice to publish; add no internal detail beyond them.\n\nIf earlier sections are missing, insert at the correct position rather than appending.\n\n**TDD:** extend `src/data/jobs.test.ts` first (title present at index 2 of the role's paragraphs; key phrases present) and watch it fail.",
+        "capability": {
+          "constraints": {
+            "dataLocation": null,
+            "environments": [
+              "node-24",
+              "local-checkout"
+            ],
+            "maxCostUsd": null,
+            "maxDurationMinutes": null
+          },
+          "context": {
+            "estimatedInputTokens": 30000,
+            "requiredArtifacts": [
+              "src/data/jobs.ts",
+              "src/data/jobs.test.ts",
+              ".claude/skills/add-experience-entry/SKILL.md",
+              ".claude/skills/add-experience-entry/voice-and-examples.md"
+            ]
+          },
+          "modalities": [
+            "text"
+          ],
+          "preferences": {
+            "autonomy": "autonomous",
+            "cost": null,
+            "latency": null,
+            "modelOverride": null,
+            "quality": "high"
+          },
+          "reasoning": {
+            "level": "routine",
+            "rationale": "Data-only change to src/data/jobs.ts plus unit tests, following the add-experience-entry skill and an existing pattern (board ticket 017)."
+          },
+          "skills": [
+            "typescript",
+            "vitest",
+            "copywriting",
+            "testing"
+          ],
+          "tools": [
+            "repo_read",
+            "repo_write",
+            "shell",
+            "test_execution"
+          ],
+          "workType": "implementation"
+        },
+        "expectedArtifacts": [
+          "src/data/jobs.ts",
+          "src/data/jobs.test.ts"
+        ],
+        "id": "tk_01m69xgg2yksvr88v32fdzynn3",
+        "key": "DGI-11",
+        "optional": false,
+        "priority": "normal",
+        "references": [
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Experience data",
+            "location": "src/data/jobs.ts",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Experience data tests",
+            "location": "src/data/jobs.test.ts",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "add-experience-entry voice guide",
+            "location": ".claude/skills/add-experience-entry/voice-and-examples.md",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Prior Onebrief section ticket (pattern)",
+            "location": "board/done/017-onebrief-agentic-test-lifecycle.md",
+            "remoteOnly": false
+          }
+        ],
+        "tags": [
+          "experience",
+          "onebrief"
+        ],
+        "title": "Add 'Onebrief Code Reviewer' section to the Outcome Engineering role"
+      },
+      {
+        "acceptanceCriteria": [
+          {
+            "id": "a1",
+            "text": "The Outcome Engineering role's paragraph at index 3 is titled exactly 'Evals and monitoring'."
+          },
+          {
+            "id": "a2",
+            "text": "The paragraph covers: preventing 'poisoning the well'; evaluating incoming learnings alongside the prompts and workflows they change; so learnings from across the organization can be adopted safely and automatically, continuously; first person, with no claims beyond the source text."
+          },
+          {
+            "id": "a3",
+            "text": "Unit tests assert the title, its position and at least two key phrases; they fail before the change and pass after; existing jobs tests still pass."
+          },
+          {
+            "id": "a4",
+            "text": "`npm run lint`, `format:check`, `test:unit`, fireguard (no F on new tests), `type-check`, `deadcode` and `build` pass."
+          }
+        ],
+        "body": "Add a titled paragraph `Evals and monitoring` to the **Manager, Outcome Engineering - Headless Agentic** role in `src/data/jobs.ts`, as section 4 of 4 (order: Onebrief Harness, Dark Factory, Onebrief Code Reviewer, Evals and monitoring).\n\n**Person's source text (verbatim):**\n> Its important that we prevent a instance where we \"poison the well\" so to speak, so as learnings come in we evaluate the updates alongside the prompts, and workflows to ensure we can more safely pull in and automatically adopt learnings from all over the organization all the time.\n\nWrite in the portfolio's first-person voice per `.claude/skills/add-experience-entry/voice-and-examples.md`. Stay faithful to the person's source text below: tighten grammar and spelling, but do not add metrics, team sizes, vendors, dates or capabilities they did not state. The product names are the person's own choice to publish; add no internal detail beyond them.\n\nIf earlier sections are missing, insert at the correct position rather than appending.\n\n**TDD:** extend `src/data/jobs.test.ts` first (title present at index 3 of the role's paragraphs; key phrases present) and watch it fail.",
+        "capability": {
+          "constraints": {
+            "dataLocation": null,
+            "environments": [
+              "node-24",
+              "local-checkout"
+            ],
+            "maxCostUsd": null,
+            "maxDurationMinutes": null
+          },
+          "context": {
+            "estimatedInputTokens": 30000,
+            "requiredArtifacts": [
+              "src/data/jobs.ts",
+              "src/data/jobs.test.ts",
+              ".claude/skills/add-experience-entry/SKILL.md",
+              ".claude/skills/add-experience-entry/voice-and-examples.md"
+            ]
+          },
+          "modalities": [
+            "text"
+          ],
+          "preferences": {
+            "autonomy": "autonomous",
+            "cost": null,
+            "latency": null,
+            "modelOverride": null,
+            "quality": "high"
+          },
+          "reasoning": {
+            "level": "routine",
+            "rationale": "Data-only change to src/data/jobs.ts plus unit tests, following the add-experience-entry skill and an existing pattern (board ticket 017)."
+          },
+          "skills": [
+            "typescript",
+            "vitest",
+            "copywriting",
+            "testing"
+          ],
+          "tools": [
+            "repo_read",
+            "repo_write",
+            "shell",
+            "test_execution"
+          ],
+          "workType": "implementation"
+        },
+        "expectedArtifacts": [
+          "src/data/jobs.ts",
+          "src/data/jobs.test.ts"
+        ],
+        "id": "tk_01m69xgg2y3966yq65z9704f4r",
+        "key": "DGI-12",
+        "optional": false,
+        "priority": "normal",
+        "references": [
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Experience data",
+            "location": "src/data/jobs.ts",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Experience data tests",
+            "location": "src/data/jobs.test.ts",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "add-experience-entry voice guide",
+            "location": ".claude/skills/add-experience-entry/voice-and-examples.md",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Prior Onebrief section ticket (pattern)",
+            "location": "board/done/017-onebrief-agentic-test-lifecycle.md",
+            "remoteOnly": false
+          }
+        ],
+        "tags": [
+          "experience",
+          "onebrief"
+        ],
+        "title": "Add 'Evals and monitoring' section to the Outcome Engineering role"
+      },
+      {
+        "acceptanceCriteria": [
+          {
+            "covers": "tk_01m69xhk0ccpj1s7gw21fv3b7n",
+            "id": "a1",
+            "text": "PR merged with a posted red-team review and the person's go-ahead; Pages deploy succeeded; the live Experience page shows the new role first with its four sections in order at desktop and 375px; evidence recorded for s1-s4."
+          }
+        ],
+        "body": "Confirm the ship ticket evidence against every epic success criterion s1-s4.",
+        "capability": {
+          "constraints": {
+            "dataLocation": null,
+            "environments": [],
+            "maxCostUsd": null,
+            "maxDurationMinutes": null
+          },
+          "context": {
+            "estimatedInputTokens": null,
+            "requiredArtifacts": []
+          },
+          "modalities": [
+            "text"
+          ],
+          "preferences": {
+            "autonomy": null,
+            "cost": null,
+            "latency": null,
+            "modelOverride": null,
+            "quality": null
+          },
+          "reasoning": {
+            "level": "multi_step",
+            "rationale": ""
+          },
+          "skills": [],
+          "tools": [
+            "repo_read",
+            "repo_write"
+          ],
+          "workType": "testing"
+        },
+        "expectedArtifacts": [],
+        "id": "tk_01m69xhk0bh7w4rhbgvtxmjj40",
+        "key": "DGI-13",
+        "kind": "acceptance",
+        "optional": false,
+        "priority": "normal",
+        "references": [],
+        "tags": [],
+        "title": "Sprint 2 acceptance: live and verified"
+      },
+      {
+        "acceptanceCriteria": [
+          {
+            "id": "a1",
+            "text": "PR opened against main with a posted red-team review; every blocking finding fixed or explicitly waived by the person."
+          },
+          {
+            "id": "a2",
+            "text": "CI is green, including test:e2e."
+          },
+          {
+            "id": "a3",
+            "text": "Merged only after the person's explicit go-ahead; the Pages deploy succeeds."
+          },
+          {
+            "id": "a4",
+            "text": "Live Experience page verified at desktop and 375px with screenshots; evidence mapped to s1-s4."
+          }
+        ],
+        "body": "Open a PR with the role and its four sections, run the mandatory red-team review (`.claude/skills/red-team-review/SKILL.md`) and post it on the PR, get CI green, and **wait for the person's explicit go-ahead before merging to main**. After the Pages deploy, verify the live Experience page: the Onebrief card shows the new role first with all four sections in order, at desktop width and at 375px, with no page-level horizontal scroll. Record evidence per epic success criterion s1-s4.",
+        "capability": {
+          "constraints": {
+            "dataLocation": null,
+            "environments": [
+              "local-checkout",
+              "github-cli-authenticated"
+            ],
+            "maxCostUsd": null,
+            "maxDurationMinutes": null
+          },
+          "context": {
+            "estimatedInputTokens": 40000,
+            "requiredArtifacts": [
+              ".claude/skills/red-team-review/SKILL.md",
+              ".github/workflows/"
+            ]
+          },
+          "modalities": [
+            "text",
+            "images"
+          ],
+          "preferences": {
+            "autonomy": "supervised",
+            "cost": null,
+            "latency": null,
+            "modelOverride": null,
+            "quality": "high"
+          },
+          "reasoning": {
+            "level": "multi_step",
+            "rationale": "Coordinates PR, red-team review, CI, Pages deploy and live browser checks; merging needs the person's go-ahead."
+          },
+          "skills": [
+            "github",
+            "ci",
+            "release",
+            "security-review",
+            "playwright"
+          ],
+          "tools": [
+            "repo_read",
+            "repo_write",
+            "shell",
+            "browser",
+            "network",
+            "test_execution"
+          ],
+          "workType": "testing"
+        },
+        "expectedArtifacts": [],
+        "id": "tk_01m69xhk0ccpj1s7gw21fv3b7n",
+        "key": "DGI-14",
+        "optional": false,
+        "priority": "normal",
+        "references": [
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Experience data",
+            "location": "src/data/jobs.ts",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Experience data tests",
+            "location": "src/data/jobs.test.ts",
+            "remoteOnly": false
+          },
+          {
+            "hash": null,
+            "kind": "file",
+            "label": "Red-team review skill",
+            "location": ".claude/skills/red-team-review/SKILL.md",
+            "remoteOnly": false
+          }
+        ],
+        "tags": [
+          "release"
+        ],
+        "title": "Ship the Outcome Engineering role: PR, red-team review, deploy, live check"
+      }
+    ]
+  },
+  "contentHash": "sha256:ed3c7ca3d054617f4907fbc14fd0ed2f428001840666d3485b6cdde348ba2e82",
+  "createdAt": "2026-10-31T21:23:50.337Z",
+  "epicId": "ep_01m69xdckz30dfj3kzedbd60ck",
+  "format": "darkmechanicus.plan-snapshot",
+  "formatVersion": 1,
+  "number": 1,
+  "revisionId": "rv_01m69xhvy103gnsr4efnh16rx9",
+  "savedAt": "2026-10-31T21:23:50.337Z"
+}

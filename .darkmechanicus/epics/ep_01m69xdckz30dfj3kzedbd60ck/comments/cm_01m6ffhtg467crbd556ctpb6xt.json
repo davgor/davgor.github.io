@@ -1,0 +1,13 @@
+{
+  "author": {
+    "label": "dm CLI",
+    "role": "orchestrator"
+  },
+  "body": "Person confirmed the dates as in PR #11 (EM Quality 10/01/2025 - 11/01/2026; Outcome Engineering 11/01/2026 - Present) and asked for the major dependency upgrades (vitest 5, jimp replacement, minimatch 11/eslint) in this PR so npm audit is clean. Merge go-ahead conditional on all checks passing.",
+  "createdAt": "2026-11-03T01:14:35.396Z",
+  "epicId": "ep_01m69xdckz30dfj3kzedbd60ck",
+  "format": "darkmechanicus.comment",
+  "formatVersion": 1,
+  "id": "cm_01m6ffhtg467crbd556ctpb6xt",
+  "ticketId": "tk_01m69xhk0ccpj1s7gw21fv3b7n"
+}
