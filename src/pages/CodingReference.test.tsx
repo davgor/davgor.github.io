@@ -3,6 +3,21 @@ import { render, screen } from '@testing-library/react';
 import CodingReference from './CodingReference';
 
 describe('CodingReference', () => {
+  it('explains organizational adoption with an accessible process diagram', () => {
+    render(<CodingReference />);
+    expect(
+      screen.getByRole('heading', { name: 'Reorganizing around agentic development' })
+    ).toBeVisible();
+    expect(
+      screen.getByAltText(
+        'Agentic adoption sequence: post-implementation, review, building, then planning; evals and human governance support every stage.'
+      )
+    ).toHaveAttribute('src', '/assets/agentic-adoption.svg');
+    expect(screen.getByText(/Start with the work after implementation/)).toBeVisible();
+    expect(screen.getByText(/Evals start with the first stage/)).toBeVisible();
+    expect(screen.getByText(/The organizational change is just as important/)).toBeVisible();
+  });
+
   afterEach(() => {
     vi.unstubAllGlobals();
   });
@@ -179,5 +194,19 @@ describe('CodingReference', () => {
   it('still renders the Fantasy World Generator showcase', () => {
     render(<CodingReference />);
     expect(screen.getByTitle('MathLab world showcase')).toBeInTheDocument();
+  });
+
+  it('explains test quality and distinguishes experiments from completed capabilities', () => {
+    render(<CodingReference />);
+    expect(screen.getByText(/Tests need testing too/)).toHaveTextContent(
+      'deterministic guard against weak agent-written tests'
+    );
+    expect(screen.getByText(/My Bannerlord mod made/)).toHaveTextContent(
+      'That integration is still in progress.'
+    );
+    expect(screen.getByText(/For personal experiments, hackathons/)).toHaveTextContent(
+      'production work still needs deliberate architecture and maintainability'
+    );
+    expect(screen.getByText(/If you want to build your own local software factory/)).toBeVisible();
   });
 });

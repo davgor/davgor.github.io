@@ -64,7 +64,7 @@ describe('jobs data', () => {
     expect(allText).toContain("improve the team's efficiency to the point where");
     expect(allText).toContain('full-fledged QA');
     expect(allText).toContain('company-wide adoption');
-    expect(allText).toContain('After a month of being a staff SDET');
+    expect(allText).toContain('After a year of being a staff SDET');
     expect(allText).not.toMatch(/quarentine|processess|Title's|Shepard|Malenois/);
   });
 
@@ -170,5 +170,20 @@ describe('jobs data', () => {
     const text = `${evalsParagraph.title} ${evalsParagraph.text}`;
     expect(text).toContain('"poison the well"');
     expect(text).toContain('automatically adopt');
+  });
+
+  it('keeps feedback, collaboration, and evaluation learning in the current role', () => {
+    const current = jobs.find((job) => job.id === 'onebrief')!.roles[0];
+    const sections = new Map(current.paragraphs.map(({ title, text }) => [title, text]));
+    expect(sections.get('Fast feedback before more autonomy')).toContain('test-driven development');
+    expect(sections.get('Helping people work with agent swarms')).toContain(
+      'nontechnical collaborators can contribute as planners'
+    );
+    expect(sections.get('An evolving engineering practice')).toContain('Catching up on evals');
+    expect(sections.get('Cloud sessions and persistent multiplayer')).toContain(
+      'team driving implementation'
+    );
+    expect(sections.get('Just-in-time context bombs')).toContain('knowledge graph');
+    expect(sections.get('Braveheart initiative')).toContain('internal beta program');
   });
 });

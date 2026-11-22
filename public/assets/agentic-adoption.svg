@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="1120" viewBox="0 0 600 1120" role="img" aria-labelledby="title desc">
+  <title id="title">Build agentic adoption from feedback toward planning</title>
+  <desc id="desc">Adoption moves from post-implementation to review, building, then planning. Evals begin at the first stage. Humans retain goals, architecture, governance, and acceptance.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#6ee7d8" stroke-width="2"/></marker>
+  </defs>
+  <rect width="600" height="1120" rx="24" fill="#101b2d"/>
+  <g font-family="system-ui, sans-serif" fill="#f1f5f9">
+    <text x="36" y="52" font-size="28" font-weight="700">Build trust before more autonomy</text>
+    <text x="36" y="88" font-size="22" fill="#cbd5e1">Adoption runs backward through delivery.</text>
+    <rect x="30" y="116" width="540" height="96" rx="14" fill="#163a40" stroke="#6ee7d8"/>
+    <text x="52" y="153" font-size="25" font-weight="700">Evals from day one</text>
+    <text x="52" y="187" font-size="22">Baseline tasks, failures, and outcomes</text>
+    <g fill="#1c2d45" stroke="#69809e">
+      <rect x="30" y="246" width="540" height="140" rx="14"/>
+      <rect x="30" y="432" width="540" height="140" rx="14"/>
+      <rect x="30" y="618" width="540" height="140" rx="14"/>
+      <rect x="30" y="804" width="540" height="140" rx="14"/>
+    </g>
+    <g font-size="26" font-weight="700">
+      <text x="52" y="285">Post-implementation</text>
+      <text x="52" y="471">Reviewing</text>
+      <text x="52" y="657">Building</text>
+      <text x="52" y="843">Planning</text>
+    </g>
+    <g font-size="22" fill="#dbe5f3">
+      <text x="52" y="323">Dark Factory finds bugs and test gaps.</text>
+      <text x="52" y="357">Engineers correct proposed changes.</text>
+      <text x="52" y="509">Turn validated lessons into a reviewer.</text>
+      <text x="52" y="543">Develop specialist review personas.</text>
+      <text x="52" y="695">Connect feedback through a harness.</text>
+      <text x="52" y="729">Provide tools, context, and controls.</text>
+      <text x="52" y="881">Expand support for goals and plans.</text>
+      <text x="52" y="915">People refine scope and acceptance.</text>
+    </g>
+    <g stroke="#6ee7d8" stroke-width="3" marker-end="url(#arrow)">
+      <path d="M300 392 V417"/><path d="M300 578 V603"/><path d="M300 764 V789"/>
+    </g>
+    <rect x="30" y="980" width="540" height="110" rx="14" fill="#163a40" stroke="#6ee7d8"/>
+    <text x="52" y="1017" font-size="25" font-weight="700">Human ownership at every stage</text>
+    <text x="52" y="1051" font-size="22">Goals, architecture, governance,</text>
+    <text x="52" y="1078" font-size="22">and the decision to expand autonomy</text>
+  </g>
+</svg>
